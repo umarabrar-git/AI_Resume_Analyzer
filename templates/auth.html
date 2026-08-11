@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% if request.path == '/auth/login' %}
+Login - AI Resume Analyzer
+{% else %}
+Create Account - AI Resume Analyzer
+{% endif %}
+{% endblock %}
+
+{% block content %}
+{% include "components/auth/auth_page/auth_page.html" %}
+{% endblock %}

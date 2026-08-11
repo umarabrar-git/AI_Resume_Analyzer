@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Legal, privacy, security and AI transparency information for AI Resume Analyzer."
+    >
+
+    <title>Legal & Privacy | AI Resume Analyzer</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/legal/legal.css') }}"
+    >
+</head>
+
+<body>
+
+    {% include "components/pages/navbar/navbar.html" %}
+
+    <main class="legal-page">
+
+        <div class="container">
+
+            {% include "components/pages/legal/legal_header.html" %}
+
+            <div class="legal-layout">
+
+                {% include "components/pages/legal/legal_nav.html" %}
+
+                <div class="legal-content">
+
+                    {% include "components/pages/legal/terms.html" %}
+
+                    {% include "components/pages/legal/privacy.html" %}
+
+                    {% include "components/pages/legal/acceptable_use.html" %}
+
+                    {% include "components/pages/legal/cookies.html" %}
+
+                    {% include "components/pages/legal/ai_transparency.html" %}
+
+                    {% include "components/pages/legal/enterprise.html" %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    {% include "components/pages/index/footer/footer_section.html" %}
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script
+        type="module"
+        src="{{ url_for('static', filename='js/home/home.route.js') }}">
+    </script>
+
+    <script
+        type="module"
+        src="{{ url_for('static', filename='js/legal/legal.route.js') }}">
+    </script>
+
+</body>
+
+</html>

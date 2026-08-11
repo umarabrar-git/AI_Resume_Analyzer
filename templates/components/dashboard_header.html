@@ -1,0 +1,103 @@
+<div class="dashboard-header">
+
+    <div class="row align-items-center">
+
+        <!-- Candidate Photo -->
+
+        <div class="col-lg-2 text-center mb-4 mb-lg-0">
+
+            <div class="candidate-avatar">
+
+                <i class="bi bi-person-fill me-2"></i>
+
+            </div>
+
+            <h6 class="candidate-name mt-3">
+
+                {{ name }}
+
+            </h6>
+
+            <small class="candidate-role">
+
+                Resume Owner
+
+            </small>
+
+        </div>
+
+        <!-- Welcome Section -->
+
+        <div class="col-lg-7">
+
+            <h2 class="fw-bold mb-3">
+
+                <i class="bi bi-stars me-2"></i>
+
+                Welcome Back, {{ name }}
+
+            </h2>
+
+            <p class="mb-4">
+
+                Your resume has been analyzed successfully.
+                Review your ATS score, matched skills, and AI recommendations below.
+
+            </p>
+
+            <div class="d-flex flex-wrap gap-3">
+
+                <span class="badge bg-light text-dark px-3 py-2">
+
+                    <i class="bi bi-calendar-event me-2"></i>
+
+                    Today
+
+                </span>
+
+                <span class="badge bg-success px-3 py-2">
+
+                    <i class="bi bi-bar-chart-fill me-2"></i>
+
+                    ATS {{ ats_score }}%
+
+                </span>
+
+                <span class="badge bg-warning text-dark px-3 py-2">
+
+                    <i class="bi bi-tools me-2"></i>
+
+                    {{ skills|length }} Skills
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- Action Buttons -->
+
+        <div class="col-lg-3 text-lg-end text-center mt-4 mt-lg-0">
+
+            <a href="#report"
+               class="btn btn-primary btn-lg w-100 mb-3">
+
+                <i class="bi bi-file-earmark-text-fill me-2"></i>
+
+                View Report
+
+            </a>
+
+            <button class="btn btn-outline-primary w-100">
+
+                <i class="bi bi-download me-2"></i>
+
+                Download PDF
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

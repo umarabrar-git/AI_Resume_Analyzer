@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% if request.path == '/auth/login' %}
+Login - AI Resume Analyzer
+{% else %}
+Create Account - AI Resume Analyzer
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <!-- Auth Container -->
+    <div class="auth-container">
+        <!-- Left Side - Branding -->
+        <div class="auth-left">
+            <div class="auth-left__content">
+                <div class="auth-left__logo">
+                    <h1 class="auth-left__title">Resume Analyzer</h1>
+                    <p class="auth-left__subtitle">AI-Powered Resume Analysis</p>
+                </div>
+
+                <div class="auth-left__features">
+                    <div class="auth-left__feature">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <h3>ATS Optimized</h3>
+                        <p>Get your resume ATS-friendly in seconds</p>
+                    </div>
+                    <div class="auth-left__feature">
+                        <i class="bi bi-robot"></i>
+                        <h3>AI Assistant</h3>
+                        <p>Get personalized career guidance</p>
+                    </div>
+                    <div class="auth-left__feature">
+                        <i class="bi bi-bullseye"></i>
+                        <h3>Job Matching</h3>
+                        <p>Find your perfect job match</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Form -->
+        <div class="auth-right">
+            <div class="auth-right__content">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="auth-alert auth-alert--{{ category }}">
+                                <i class="bi bi-{% if category == 'success' %}check-circle{% elif category == 'error' %}x-circle{% else %}info-circle{% endif %}"></i>
+                                <span>{{ message }}</span>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <div class="auth-form-wrapper">
+                    {% if request.path == '/auth/login' %}
+                        <div class="auth-header">
+                            <h2 class="auth-header__title">Welcome Back</h2>
+                            <p class="auth-header__subtitle">Sign in to your account</p>
+                        </div>
+                        {% include "auth/login.html" %}
+                    {% else %}
+                        <div class="auth-header">
+                            <h2 class="auth-header__title">Create Your Account</h2>
+                            <p class="auth-header__subtitle">Start your resume journey</p>
+                        </div>
+                        {% include "auth/register.html" %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+<article class="status-card card-length">
+  <div class="card-head">
+    <div class="card-title-group">
+      <h3>Resume Insight</h3>
+      <p>AI-driven completeness score</p>
+    </div>
+    <span class="icon-chip"><i class="bi bi-lightbulb-fill"></i></span>
+  </div>
+
+  <div class="resume-insights-grid">
+    <div class="insight-card insight-status">
+      <span class="insight-label">Status</span>
+      <strong>{{ resume_status }}</strong>
+    </div>
+    <div class="insight-card insight-sections">
+      <span class="insight-label">Sections found</span>
+      <strong>{{ sections_found|length }}</strong>
+      <div class="insight-tag-list">
+        {% for section in sections_found[:4] %}
+          <span class="insight-tag">{{ section }}</span>
+        {% endfor %}
+        {% if sections_found|length > 4 %}
+          <span class="insight-tag more">+{{ sections_found|length - 4 }}</span>
+        {% endif %}
+      </div>
+    </div>
+    <div class="insight-card insight-pages">
+      <span class="insight-label">Page estimate</span>
+      <strong>{{ page_count }}</strong>
+      <span class="insight-note">{{ word_count }} words</span>
+    </div>
+    <div class="insight-card insight-time">
+      <span class="insight-label">Read time</span>
+      <strong>{{ reading_time }} mins</strong>
+      <span class="insight-note">based on 200 WPM</span>
+    </div>
+  </div>
+
+  <div class="profile-strength-block">
+    <div class="profile-strength-row">
+      <span class="insight-label">Profile strength</span>
+      <strong class="tier-text-{{ score_tier(profile_strength) }}">{{ profile_strength }}%</strong>
+    </div>
+    <div class="profile-strength-track">
+      <div class="profile-strength-fill tier-bg-{{ score_tier(profile_strength) }}" style="width: {{ profile_strength }}%;"></div>
+    </div>
+    <div class="profile-strength-checklist">
+      {% for item in profile_checklist %}
+        <span class="strength-check {{ 'passed' if item.passed else 'missing' }}">
+          <i class="bi {{ 'bi-check-circle-fill' if item.passed else 'bi-x-circle' }}"></i> {{ item.label }}
+        </span>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="card-meta">
+    <span><i class="bi bi-check-circle"></i> Completeness reflects key resume sections</span>
+  </div>
+</article>

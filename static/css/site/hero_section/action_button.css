@@ -1,0 +1,118 @@
+.hero-section__actions,
+.hero-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.9rem;
+	margin-top: 0.95rem;
+	flex-wrap: wrap;
+}
+
+.hero-section__primary-btn,
+.hero-section__secondary-btn,
+.hero-actions a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+	isolation: isolate;
+	gap: 0.55rem;
+	min-height: 3.2rem;
+	padding: 0.95rem 1.65rem;
+	border-radius: 999px;
+	font-size: 0.98rem;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+	text-decoration: none;
+	transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+}
+
+.hero-section__primary-btn::before,
+.hero-section__secondary-btn::before,
+.hero-actions a::before {
+	content: "";
+	position: absolute;
+	inset: -1px;
+	border-radius: inherit;
+	background: conic-gradient(from 0deg, rgba(147, 197, 253, 0.2), rgba(59, 130, 246, 0.9), rgba(96, 165, 250, 0.35), rgba(37, 99, 235, 0.9), rgba(147, 197, 253, 0.2));
+	opacity: 0;
+	z-index: -1;
+	transition: opacity 0.25s ease;
+}
+
+.hero-section__primary-btn,
+.hero-actions__primary {
+	background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+	color: #ffffff;
+	box-shadow: 0 14px 30px rgba(37, 99, 235, 0.3);
+	border: 1px solid transparent;
+}
+
+.hero-section__primary-btn:hover,
+.hero-actions__primary:hover {
+	transform: translateY(-2px);
+	color: #ffffff;
+	background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+	box-shadow: 0 18px 34px rgba(29, 78, 216, 0.35);
+}
+
+.hero-section__primary-btn:hover::before,
+.hero-section__secondary-btn:hover::before,
+.hero-actions a:hover::before {
+	opacity: 1;
+	animation: hero-btn-border-spin 2.4s linear infinite;
+}
+
+.hero-section__secondary-btn,
+.hero-actions__secondary {
+	background: rgba(255, 255, 255, 0.86);
+	color: #1e3a8a;
+	border: 1px solid rgba(37, 99, 235, 0.22);
+	box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
+}
+
+.hero-section__secondary-btn:hover,
+.hero-actions__secondary:hover {
+	transform: translateY(-2px);
+	color: #1d4ed8;
+	background: #eff6ff;
+	border-color: rgba(37, 99, 235, 0.3);
+	box-shadow: 0 14px 28px rgba(37, 99, 235, 0.18);
+}
+
+.hero-btn__icon,
+.hero-btn__arrow {
+	font-size: 0.96rem;
+	line-height: 1;
+	transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.hero-btn__label {
+	position: relative;
+	top: -0.5px;
+}
+
+.hero-btn__arrow {
+	opacity: 0.86;
+}
+
+.hero-section__primary-btn:hover .hero-btn__arrow,
+.hero-section__secondary-btn:hover .hero-btn__arrow,
+.hero-actions a:hover .hero-btn__arrow {
+	transform: translateX(2px);
+	opacity: 1;
+}
+
+.hero-section__secondary-btn .hero-btn__icon,
+.hero-section__secondary-btn .hero-btn__arrow {
+	color: #1d4ed8;
+}
+
+@keyframes hero-btn-border-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}

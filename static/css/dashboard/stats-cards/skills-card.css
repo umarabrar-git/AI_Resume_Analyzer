@@ -1,0 +1,110 @@
+.skills-detected-row{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.skills-detected-label{
+    font-size: 0.92rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.skills-detected-value{
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.03em;
+}
+
+.skill-track-caption{
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.78rem;
+    color: #64748b;
+    margin-top: 7px;
+}
+
+.skill-section{
+    margin-bottom: 14px;
+}
+
+.skill-section-title{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 9px;
+}
+
+.skill-section-title i{
+    font-size: 0.9rem;
+    color: #d97706;
+}
+
+.skill-chips{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-chip{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0f172a;
+    background: #f4f6fa;
+    border: 1px solid rgba(226,232,240,0.9);
+    padding: 7px 10px;
+    border-radius: 999px;
+}
+
+.skill-chip.more{
+    color: #c9861a;
+    background: rgba(242,177,52,0.15);
+    border-color: transparent;
+    font-weight: 700;
+}
+
+.skill-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(226,232,240,0.9);
+}
+
+.skill-updated{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    font-size: 0.82rem;
+}
+
+.skill-cta{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(242,177,52,0.15);
+    color: #c9861a;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.skill-cta:hover{
+    background: rgba(242,177,52,0.26);
+}

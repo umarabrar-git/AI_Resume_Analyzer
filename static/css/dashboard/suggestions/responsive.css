@@ -1,0 +1,44 @@
+@media (max-width: 1199px){
+    .career-assistant-zone{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px){
+    .assistant-head{
+        flex-direction: column;
+    }
+
+    .assistant-input-row{
+        grid-template-columns: 1fr;
+    }
+
+    .assistant-send {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    .action-chips {
+        gap: 0.6rem;
+    }
+
+    .action-chip {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .suite-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px){
+    .assistant-bubble {
+        padding: 0.9rem 0.95rem;
+        border-radius: 0.9rem;
+    }
+
+    .assistant-input {
+        font-size: 0.95rem;
+    }
+}

@@ -1,0 +1,52 @@
+<div class="home-navbar__left">
+    <a class="home-navbar__brand" href="{{ url_for('home.render_home') }}">
+        <span class="home-navbar__brand-mark">
+            <i class="bi bi-stars"></i>
+        </span>
+        <span>AI Resume Analyzer</span>
+    </a>
+
+    <nav class="home-navbar__menu" aria-label="Primary navigation" data-home-navbar-menu>
+        {#
+            HOME PAGE:
+            Open marketing pages in a shared named secondary tab.
+
+            MARKETING PAGES:
+            Navigate inside the current tab (no target).
+        #}
+
+        {% set open_in_marketing_tab = request.blueprint == 'home' %}
+
+        <a
+            class="home-navbar__link"
+            href="{{ url_for('features.render_features') }}"
+            {% if open_in_marketing_tab %}target="marketing-window"{% endif %}
+        >
+            Features
+        </a>
+
+        <a
+            class="home-navbar__link"
+            href="{{ url_for('how_it_works.render_how_it_works') }}"
+            {% if open_in_marketing_tab %}target="marketing-window"{% endif %}
+        >
+            How it Works
+        </a>
+
+        <a
+            class="home-navbar__link"
+            href="{{ url_for('pricing.render_pricing') }}"
+            {% if open_in_marketing_tab %}target="marketing-window"{% endif %}
+        >
+            Pricing
+        </a>
+
+        <a
+            class="home-navbar__link"
+            href="{{ url_for('about.render_about') }}"
+            {% if open_in_marketing_tab %}target="marketing-window"{% endif %}
+        >
+            About
+        </a>
+    </nav>
+</div>

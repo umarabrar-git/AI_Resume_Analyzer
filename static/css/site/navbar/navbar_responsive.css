@@ -1,0 +1,176 @@
+/* =========================================
+   DESKTOP / LARGE TABLET
+========================================= */
+
+.home-navbar__menu,
+.home-navbar__right {
+    display: flex;
+}
+
+.home-navbar__toggle {
+    display: none;
+}
+
+
+/* =========================================
+   MOBILE / TABLET
+========================================= */
+
+@media (max-width: 991.98px) {
+
+    .home-navbar {
+        top: 0.75rem;
+    }
+
+    .home-navbar__shell {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0.9rem;
+        border-radius: 1.2rem;
+    }
+
+
+    /* Brand area */
+
+    .home-navbar__left {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+
+    /* Hide menu and CTA by default */
+
+    .home-navbar__menu,
+    .home-navbar__right {
+        display: none;
+    }
+
+
+    /* Hamburger button */
+
+    .home-navbar__toggle {
+        display: inline-flex;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 5px;
+
+        width: 52px;
+        height: 52px;
+
+        flex-shrink: 0;
+
+        background: #ffffff;
+
+        border: 1px solid rgba(37, 99, 235, 0.2);
+        border-radius: 16px;
+
+        cursor: pointer;
+
+        z-index: 1001;
+    }
+
+
+    .home-navbar__toggle span {
+        display: block;
+
+        width: 24px;
+        height: 3px;
+
+        background: #1e3a8a;
+        border-radius: 999px;
+    }
+
+
+    /* =========================================
+       OPEN MOBILE MENU
+    ========================================= */
+
+    .home-navbar__shell.is-open {
+        flex-wrap: wrap;
+    }
+
+
+    .home-navbar__shell.is-open .home-navbar__menu {
+        display: flex;
+
+        width: 100%;
+
+        order: 3;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        margin-top: 1rem;
+        padding: 0.75rem;
+
+        border-radius: 1.25rem;
+    }
+
+
+    .home-navbar__shell.is-open .home-navbar__right {
+        display: flex;
+
+        width: 100%;
+
+        order: 4;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.55rem;
+
+        margin-top: 0.5rem;
+    }
+
+
+    /* Mobile navigation links */
+
+    .home-navbar__link {
+        width: 100%;
+
+        padding: 0.8rem 1rem;
+
+        text-align: center;
+    }
+
+
+    /* Get Started */
+
+    .home-navbar__cta {
+        width: 100%;
+        text-align: center;
+    }
+
+    .home-navbar__ghost {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 575.98px) {
+
+    .home-navbar__brand {
+        font-size: 0.98rem;
+    }
+
+    .home-navbar__brand-mark {
+        width: 2.45rem;
+        height: 2.45rem;
+    }
+
+    .home-navbar__toggle {
+        width: 48px;
+        height: 48px;
+    }
+}

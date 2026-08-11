@@ -1,0 +1,46 @@
+.career-assistant-zone{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.career-assistant-card,
+.career-suite-card{
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(226,232,240,0.95);
+    background: linear-gradient(170deg, #ffffff 0%, #f8fbff 100%);
+    box-shadow: 0 24px 60px -36px rgba(15,23,42,0.28);
+    padding: 24px;
+}
+
+.career-assistant-card::before,
+.career-suite-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(circle at 18% 14%, rgba(37,99,235,0.1), transparent 42%);
+}
+
+.career-assistant-card > *,
+.career-suite-card > *{
+    position: relative;
+    z-index: 1;
+}
+
+.assistant-title h3,
+.suite-head h3{
+    margin: 0;
+    font-size: 1.08rem;
+    color: #0f172a;
+}
+
+.assistant-title p,
+.suite-head p{
+    margin: 4px 0 0;
+    font-size: 0.86rem;
+    color: #64748b;
+}

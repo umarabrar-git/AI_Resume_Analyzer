@@ -1,0 +1,48 @@
+<article class="status-card card-ats">
+  <div class="card-head">
+    <div class="card-title-group">
+      <h3>ATS Score</h3>
+      <p>Resume quality snapshot</p>
+      <span class="profession-chip"><i class="bi bi-building"></i> {{ profession_field }}</span>
+    </div>
+    <span class="icon-chip"><i class="bi bi-speedometer2"></i></span>
+  </div>
+
+  <div class="ats-main">
+    <div class="gauge-wrap">
+      <svg class="gauge" viewBox="0 0 120 120">
+        <circle class="gauge-track" cx="60" cy="60" r="52"></circle>
+        <circle class="gauge-fill" cx="60" cy="60" r="52" data-value="{{ ats_score }}"></circle>
+      </svg>
+      <div class="gauge-center">
+        <span class="gauge-value" data-target="{{ ats_score }}">0%</span>
+      </div>
+    </div>
+
+    <div class="ats-status-stack">
+      <div class="ats-badge tier-{{ score_tier(ats_score) }}">
+        <i class="bi bi-check-circle-fill"></i>
+        <span>
+          {% if score_tier(ats_score) == 'green' %}Excellent Resume
+          {% elif score_tier(ats_score) == 'yellow' %}Good, Needs Polish
+          {% else %}Needs Improvement{% endif %}
+        </span>
+      </div>
+      <div class="ats-insight">
+        <div class="insight-row">
+          <span class="insight-label">Resume quality</span>
+          <strong>Top 8% ATS</strong>
+        </div>
+        <div class="insight-row">
+          <span class="insight-label">Score target</span>
+          <strong>{{ ats_score }} / 100</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-meta">
+    <span class="meta-pill"><i class="bi bi-clock-history"></i> Updated just now</span>
+    <span class="meta-pill meta-pill-muted"><i class="bi bi-calendar2-check"></i> Last scan · today</span>
+  </div>
+</article>

@@ -1,0 +1,36 @@
+.candidate-avatar{
+    width:120px;
+    height:120px;
+    margin:auto;
+    border-radius:50%;
+    background:rgba(255,255,255,.25);
+    backdrop-filter:blur(12px);
+    border:3px solid rgba(255,255,255,.55);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 10px 30px rgba(15,23,42,.15);
+    transition:.35s;
+}
+
+.candidate-avatar:hover{
+    transform:scale(1.06);
+}
+
+.candidate-avatar i{
+    font-size:58px;
+    color:#FFFFFF;
+}
+
+.candidate-name{
+    font-size:20px;
+    font-weight:700;
+    color:#FFFFFF;
+    margin-top:15px;
+    margin-bottom:4px;
+}
+
+.candidate-role{
+    font-size:14px;
+    color:#E2E8F0;
+}

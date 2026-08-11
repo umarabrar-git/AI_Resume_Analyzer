@@ -1,0 +1,49 @@
+<div class="dashboard-stats" data-stats>
+    <div class="stat-card stat-card--ats">
+        <div class="stat-card__header">
+            <span class="stat-card__icon" aria-hidden="true">
+                <i class="bi bi-graph-up-arrow"></i>
+            </span>
+            <span class="stat-card__label">ATS Score</span>
+        </div>
+        <div class="stat-card__content">
+            <div class="stat-card__value">{{ ats_score }}<span class="stat-card__percent">%</span></div>
+            <div class="stat-card__change stat-card__change--up">
+                <i class="bi bi-arrow-up-short"></i>
+                <span>{% if missing_skills %}{{ missing_skills|length }} keyword gaps to close{% else %}Resume is aligned with the target role{% endif %}</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stat-card stat-card--match">
+        <div class="stat-card__header">
+            <span class="stat-card__icon" aria-hidden="true">
+                <i class="bi bi-bullseye"></i>
+            </span>
+            <span class="stat-card__label">Job Match</span>
+        </div>
+        <div class="stat-card__content">
+            <div class="stat-card__value">{{ match_percentage }}<span class="stat-card__percent">%</span></div>
+            <div class="stat-card__change stat-card__change--up">
+                <i class="bi bi-arrow-up-short"></i>
+                <span>{{ matched_skills|length }} matched skills / {{ missing_skills|length }} missing</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stat-card stat-card--resumes">
+        <div class="stat-card__header">
+            <span class="stat-card__icon" aria-hidden="true">
+                <i class="bi bi-file-earmark-pdf"></i>
+            </span>
+            <span class="stat-card__label">Resume Insight</span>
+        </div>
+        <div class="stat-card__content">
+            <div class="stat-card__value">{{ skills|length }}</div>
+            <div class="stat-card__change stat-card__change--neutral">
+                <i class="bi bi-lightbulb"></i>
+                <span>{{ resume_status }}</span>
+            </div>
+        </div>
+    </div>
+</div>

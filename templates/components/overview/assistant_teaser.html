@@ -1,0 +1,31 @@
+<article class="overview-ai-card">
+    <div class="oai-left">
+        <span class="oai-bot-icon"><i class="bi bi-robot"></i></span>
+        <div class="oai-content">
+            <h4>AI Career Assistant</h4>
+            <p>
+                {% if ats_score >= 85 %}
+                    Your ATS score is <strong>{{ ats_score }}%</strong> — excellent!
+                    {% if missing_skills %}
+                        Adding <strong>{{ missing_skills[0] }}{% if missing_skills|length > 1 %} and {{ missing_skills[1] }}{% endif %}</strong> could push you into the top 5%.
+                    {% else %}
+                        No skill gaps detected for this role. Your resume is highly competitive.
+                    {% endif %}
+                {% elif ats_score >= 70 %}
+                    Your ATS score is <strong>{{ ats_score }}%</strong>.
+                    {% if missing_skills %}
+                        Adding <strong>{{ missing_skills[0] }}</strong>
+                        {% if missing_skills|length > 1 %}and {{ missing_skills[1] }}{% endif %}
+                        could increase your shortlisting chance.
+                    {% endif %}
+                {% else %}
+                    Your ATS score is <strong>{{ ats_score }}%</strong> — needs improvement.
+                    Focus on adding missing keywords and expanding your skills section.
+                {% endif %}
+            </p>
+        </div>
+    </div>
+    <a href="#" class="oai-open-btn">
+        Open Chat <i class="bi bi-arrow-right"></i>
+    </a>
+</article>

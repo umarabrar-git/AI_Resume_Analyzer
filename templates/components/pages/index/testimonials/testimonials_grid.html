@@ -1,0 +1,11 @@
+{% set testimonials_items = [
+    {"name": "Aarav Sharma", "role": "Product Analyst", "quote": "My ATS score moved from 61 to 89. The suggestions were practical and easy to apply."},
+    {"name": "Nisha Verma", "role": "Frontend Developer", "quote": "The resume builder saved me hours. I got 3 interview calls in one week."},
+    {"name": "Kabir Mehta", "role": "Data Engineer", "quote": "Job match insights helped me target better roles instead of applying blindly."}
+] %}
+
+<div class="testimonials-section__grid" data-testimonials-grid>
+    {% for item in testimonials_items %}
+    {% include "components/pages/index/testimonials/testimonial_card.html" %}
+    {% endfor %}
+</div>

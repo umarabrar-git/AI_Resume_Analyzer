@@ -1,0 +1,21 @@
+<div class="dashboard-header">
+    <div class="dashboard-header__content">
+        <div class="dashboard-header__greeting">
+            <h1 class="dashboard-header__title">Welcome back, {{ name or 'there' }}.</h1>
+            <p class="dashboard-header__subtitle">
+                ATS {{ ats_score }}% with {{ matched_skills|length }} matched skills and {{ missing_skills|length }} skill opportunities to review.
+            </p>
+        </div>
+        
+        <div class="dashboard-header__actions">
+            <button class="dashboard-header__btn dashboard-header__btn--primary" data-action="upload">
+                <span class="bi bi-cloud-arrow-up"></span>
+                Upload Resume
+            </button>
+            <button class="dashboard-header__btn dashboard-header__btn--secondary" data-action="create">
+                <span class="bi bi-plus-lg"></span>
+                Create New
+            </button>
+        </div>
+    </div>
+</div>

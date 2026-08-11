@@ -1,0 +1,40 @@
+@media (max-width: 991.98px) {
+    .trusted-section__shell {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .trusted-section__left {
+        text-align: center;
+    }
+
+    .trusted-section__logos {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .trusted-section {
+        padding-top: 0.85rem;
+    }
+
+    .trusted-section__shell {
+        padding: 0.95rem 0.9rem;
+        border-radius: 1.05rem;
+    }
+
+    .trusted-section__eyebrow {
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
+    }
+
+    .trusted-section__logos {
+        justify-content: center;
+        gap: 0.55rem;
+    }
+
+    .trusted-section__logo {
+        min-height: 2.5rem;
+        font-size: 0.84rem;
+    }
+}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Features | AI Resume Analyzer
+{% endblock %}
+
+
+{% block content %}
+
+<!-- =========================================
+     HOME NAVBAR
+========================================== -->
+
+{% include "components/pages/navbar/navbar.html" %}
+
+
+<!-- =========================================
+     FEATURES PAGE MAIN CONTENT
+========================================== -->
+
+<main class="features-page">
+
+    <!--
+        Main Features Grid
+
+        Contains:
+        - ATS Resume Analysis
+        - Resume Creation
+        - Job Matching
+        - AI Career Assistant
+        - Smart Reports
+        - Skill Gap Analysis
+    -->
+
+    {% include "components/pages/index/features_section/features_section.html" %}
+
+
+    <!--
+        Interactive Product Showcase
+
+        Default:
+        Hidden
+
+        Feature Card Click:
+        Opens and displays selected feature details.
+    -->
+
+    {% include "components/pages/index/ai_platform/ai_platform.html" %}
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================== -->
+
+{% include "components/pages/index/footer/footer_section.html" %}
+
+
+{% endblock %}

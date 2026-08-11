@@ -1,0 +1,161 @@
+.resumes-section {
+    background: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.resumes-section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.resumes-section__title {
+    margin: 0;
+    color: #0f172a;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.resumes-section__link {
+    color: #1d4ed8;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.resumes-section__link:hover {
+    color: #1e40af;
+}
+
+.resumes-table-wrapper {
+    overflow-x: auto;
+}
+
+.resumes-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.resumes-table__head {
+    background: #f8fafc;
+}
+
+.resumes-table__cell--header {
+    color: #64748b;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.resumes-table__cell {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #1e293b;
+}
+
+.resumes-table__row:hover {
+    background: #f8fafc;
+}
+
+.resumes-table__row:last-child .resumes-table__cell {
+    border-bottom: none;
+}
+
+.resume-name {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #0f172a;
+    font-weight: 500;
+}
+
+.resume-name i {
+    color: #e8534c;
+    font-size: 1.1rem;
+}
+
+.score-badge {
+    display: inline-block;
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.score-badge--high {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(74, 222, 128, 0.05) 100%);
+    color: #15803d;
+}
+
+.score-badge--medium {
+    background: linear-gradient(135deg, rgba(251, 146, 60, 0.1) 0%, rgba(253, 186, 116, 0.05) 100%);
+    color: #b45309;
+}
+
+.score-badge--low {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(248, 113, 113, 0.05) 100%);
+    color: #b91c1c;
+}
+
+.date {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-badge--success {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(74, 222, 128, 0.05) 100%);
+    color: #15803d;
+}
+
+.status-badge--pending {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(96, 165, 250, 0.05) 100%);
+    color: #1e40af;
+}
+
+.resume-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: #f1f5f9;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.action-btn:hover {
+    background: #e2e8f0;
+    color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+}

@@ -1,0 +1,277 @@
+/* Login Form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.login-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.login-form__label {
+    color: #1e293b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.login-form__input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.65rem;
+    font-size: 0.9rem;
+    background: #ffffff;
+    color: #0f172a;
+    transition: all 0.2s ease;
+}
+
+.login-form__input:focus {
+    outline: none;
+    border-color: #1d4ed8;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+    background: #f8fafc;
+}
+
+.login-form__input::placeholder {
+    color: #94a3b8;
+}
+
+.login-form__remember {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login-form__checkbox {
+    width: 1.1rem;
+    height: 1.1rem;
+    cursor: pointer;
+    accent-color: #1d4ed8;
+}
+
+.login-form__remember-label {
+    color: #64748b;
+    font-size: 0.85rem;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.login-form__submit {
+    padding: 0.9rem 1.5rem;
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 0.65rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(29, 78, 216, 0.3);
+}
+
+.login-form__submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.4);
+}
+
+.login-form__submit:active {
+    transform: translateY(0);
+}
+
+.login-form__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.login-form__text {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.85rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.login-form__link {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.login-form__link:hover {
+    color: #1e40af;
+    text-decoration: underline;
+}
+
+.login-form__forgot-link {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    transition: color 0.2s ease;
+}
+
+.login-form__forgot-link:hover {
+    color: #1e40af;
+    text-decoration: underline;
+}
+
+/* Register Form */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.register-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.register-form__label {
+    color: #1e293b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.register-form__input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.65rem;
+    font-size: 0.9rem;
+    background: #ffffff;
+    color: #0f172a;
+    transition: all 0.2s ease;
+}
+
+.register-form__input:focus {
+    outline: none;
+    border-color: #1d4ed8;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+    background: #f8fafc;
+}
+
+.register-form__input::placeholder {
+    color: #94a3b8;
+}
+
+/* Password Requirements */
+.register-form__requirements {
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.65rem;
+    margin-top: 0.5rem;
+}
+
+.register-form__requirement-text {
+    margin: 0 0 0.5rem 0;
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.register-form__requirements-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.register-form__requirement {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.register-form__requirement.met {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+.register-form__remember {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.register-form__checkbox {
+    width: 1.1rem;
+    height: 1.1rem;
+    cursor: pointer;
+    accent-color: #1d4ed8;
+}
+
+.register-form__remember-label {
+    color: #64748b;
+    font-size: 0.85rem;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.register-form__submit {
+    padding: 0.9rem 1.5rem;
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 0.65rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(29, 78, 216, 0.3);
+    margin-top: 0.5rem;
+}
+
+.register-form__submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.4);
+}
+
+.register-form__submit:active {
+    transform: translateY(0);
+}
+
+.register-form__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.register-form__text {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.85rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.register-form__link {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.register-form__link:hover {
+    color: #1e40af;
+    text-decoration: underline;
+}

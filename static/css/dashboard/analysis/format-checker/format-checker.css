@@ -1,0 +1,74 @@
+.format-checker-card .card-body{
+    padding: 24px;
+}
+
+.format-checker-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.format-checker-subtitle{
+    margin: 0;
+    color: #64748b;
+    font-size: 0.88rem;
+}
+
+.format-score-pill{
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.format-check-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.format-check-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(248,250,252,0.9);
+    border: 1px solid rgba(226,232,240,0.9);
+}
+
+.format-check-item.passed{
+    border-left: 4px solid #16a34a;
+}
+
+.format-check-item.failed{
+    border-left: 4px solid #dc2626;
+}
+
+.fc-icon{
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
+.format-check-item.passed .fc-icon{ color: #16a34a; }
+.format-check-item.failed .fc-icon{ color: #dc2626; }
+
+.fc-text{
+    display: grid;
+    gap: 2px;
+}
+
+.fc-text strong{
+    font-size: 0.92rem;
+    color: #0f172a;
+}
+
+.fc-text span{
+    font-size: 0.84rem;
+    color: #64748b;
+}

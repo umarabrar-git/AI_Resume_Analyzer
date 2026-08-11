@@ -1,0 +1,38 @@
+.floating-card {
+    position: absolute;
+    top: -38px;
+    right: 18px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 18px;
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    box-shadow: 0 24px 54px rgba(37, 99, 235, 0.18);
+    backdrop-filter: blur(12px);
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+.floating-card i {
+    color: #2563eb;
+    font-size: 1.2rem;
+}
+
+.floating-card span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #334155;
+}
+
+@keyframes floatCard {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

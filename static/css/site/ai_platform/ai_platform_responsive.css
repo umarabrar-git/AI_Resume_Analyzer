@@ -1,0 +1,33 @@
+@media (max-width: 991.98px) {
+    .ai-platform-section {
+        padding-top: 3rem;
+    }
+
+    .ai-platform-section__shell {
+        grid-template-columns: 1fr;
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .ai-platform-section {
+        padding-top: 2.35rem;
+    }
+
+    .ai-platform-section__shell {
+        padding: 1rem 0.88rem;
+        border-radius: 1.05rem;
+    }
+
+    .ai-platform-section__title {
+        font-size: 1.4rem;
+    }
+
+    .ai-platform-section__subtitle {
+        font-size: 0.93rem;
+    }
+
+    .ai-platform-section__grid {
+        grid-template-columns: 1fr;
+    }
+}

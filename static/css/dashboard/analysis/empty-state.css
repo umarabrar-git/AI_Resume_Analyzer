@@ -1,0 +1,72 @@
+/* ============================================================
+   Analysis Empty State — shown when no resume has been uploaded
+   ============================================================ */
+
+.analysis-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  min-height: 50vh;
+}
+
+.analysis-empty-state .empty-icon {
+  font-size: 4rem;
+  color: var(--color-primary, #6c63ff);
+  opacity: 0.6;
+  line-height: 1;
+}
+
+.analysis-empty-state h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #1a1a2e);
+  margin: 0;
+}
+
+.analysis-empty-state p {
+  font-size: 1rem;
+  color: var(--color-text-muted, #6b7280);
+  max-width: 420px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.btn-upload-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background: var(--color-primary, #6c63ff);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-upload-cta:hover {
+  background: var(--color-primary-dark, #574fd6);
+  transform: translateY(-1px);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Native <dialog> wrapper for the analysis upload modal */
+.analysis-upload-dialog {
+  border: none;
+  padding: 0;
+  background: transparent;
+  max-width: 100%;
+}
+
+.analysis-upload-dialog::backdrop {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(3px);
+}

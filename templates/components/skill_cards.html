@@ -1,0 +1,15 @@
+<!-- AI Skill Comparison Panel: shows strengths from resume vs suggested next skills -->
+<section class="ai-skill-panel">
+    <div class="ai-skill-panel-head">
+        <div>
+            <h3><i class="bi bi-diagram-3"></i> AI Skill Comparison Panel</h3>
+            <p>Resume skills vs role-aligned recommendations</p>
+        </div>
+        <span class="vs-pill">Detected Skills <strong>VS</strong> Skills to Improve</span>
+    </div>
+
+    <div class="skill-compare-grid">
+        {% include "components/skill_comparison/detected_card.html" %}
+        {% include "components/skill_comparison/recommended_card.html" %}
+    </div>
+</section>

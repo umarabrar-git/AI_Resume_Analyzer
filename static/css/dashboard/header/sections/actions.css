@@ -1,0 +1,27 @@
+.dashboard-header .btn{
+    width:100%;
+    border-radius:14px;
+    padding:13px 22px;
+    font-weight:600;
+    transition:.35s;
+}
+
+.dashboard-header .btn-primary{
+    background:#2563EB;
+    border:none;
+}
+
+.dashboard-header .btn-outline-primary{
+    border:2px solid rgba(255,255,255,.7);
+    color:#FFFFFF;
+}
+
+.dashboard-header .btn-outline-primary:hover{
+    background:#FFFFFF;
+    color:#2563EB;
+}
+
+.dashboard-header .btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(15,23,42,.15);
+}

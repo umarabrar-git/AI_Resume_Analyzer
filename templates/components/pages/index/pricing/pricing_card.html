@@ -1,0 +1,11 @@
+<article class="pricing-card{% if item.featured %} is-featured{% endif %}">
+    <h3 class="pricing-card__name">{{ item.name }}</h3>
+    <p class="pricing-card__price" data-monthly="{{ item.monthly }}" data-yearly="{{ item.yearly }}">{{ item.monthly }}</p>
+    <p class="pricing-card__desc">{{ item.desc }}</p>
+    <ul class="pricing-card__features">
+        {% for feature in item.features %}
+        <li>{{ feature }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('resume_creation.render_resume_creation') }}" class="pricing-card__cta">Choose {{ item.name }}</a>
+</article>

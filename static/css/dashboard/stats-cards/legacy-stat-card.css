@@ -1,0 +1,164 @@
+.analytics-board .stat-card{
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(226,232,240,0.9);
+    border-radius: 30px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px -35px rgba(15, 23, 42, 0.18);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.analytics-board .stat-card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(59,111,224,0.25);
+    box-shadow: 0 24px 55px -30px rgba(15, 23, 42, 0.2);
+}
+
+.analytics-board .stat-card[data-accent="blue"] .card-top .icon-chip,
+.analytics-board .stat-card[data-accent="blue"] .ring-track,
+.analytics-board .stat-card[data-accent="blue"] .ring-fill{
+    color: #2563eb;
+    stroke: #2563eb;
+}
+
+.analytics-board .stat-card[data-accent="green"] .card-top .icon-chip,
+.analytics-board .stat-card[data-accent="green"] .ring-track,
+.analytics-board .stat-card[data-accent="green"] .ring-fill{
+    color: #059669;
+    stroke: #059669;
+}
+
+.analytics-board .stat-card[data-accent="gold"] .card-top .icon-chip,
+.analytics-board .stat-card[data-accent="gold"] .ring-track,
+.analytics-board .stat-card[data-accent="gold"] .ring-fill{
+    color: #d97706;
+    stroke: #d97706;
+}
+
+.analytics-board .stat-card[data-accent="violet"] .card-top .icon-chip,
+.analytics-board .stat-card[data-accent="violet"] .ring-track,
+.analytics-board .stat-card[data-accent="violet"] .ring-fill{
+    color: #7c3aed;
+    stroke: #7c3aed;
+}
+
+.analytics-board .stat-card .card-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.analytics-board .stat-card .card-label{
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #334155;
+}
+
+.analytics-board .stat-card .icon-chip{
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: rgba(59,111,224,0.08);
+    color: #2563eb;
+}
+
+.analytics-board .stat-card .icon-chip i{
+    font-size: 1.25rem;
+}
+
+.analytics-board .ring-wrap{
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 18px;
+}
+
+.analytics-board .ring{
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.analytics-board .ring-track,
+.analytics-board .ring-fill{
+    fill: none;
+    stroke-width: 16;
+    cx: 60;
+    cy: 60;
+    r: 52;
+}
+
+.analytics-board .ring-track{
+    stroke: rgba(15, 23, 42, 0.08);
+}
+
+.analytics-board .ring-fill{
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-dasharray: 326.7;
+    stroke-dashoffset: 326.7;
+    transition: stroke-dashoffset 1.2s ease;
+    transform-origin: center;
+}
+
+.analytics-board .ring-center{
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.analytics-board .ring-value{
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #0f172a;
+    display: block;
+    line-height: 1;
+}
+
+.analytics-board .ring-caption{
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.analytics-board .card-footer{
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: center;
+    border-top: 1px solid rgba(226,232,240,0.85);
+    padding-top: 16px;
+    color: #64748b;
+    font-size: 0.92rem;
+    margin: 0;
+}
+
+.analytics-board .card-footer .trend{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.analytics-board .card-footer .trend.up i{
+    color: #16a34a;
+}
+
+.analytics-board .card-footer .updated{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.analytics-board .card-footer i{
+    font-size: 1rem;
+}

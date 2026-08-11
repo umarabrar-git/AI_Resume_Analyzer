@@ -1,0 +1,16 @@
+@media (max-width:992px){
+    .profile-info{
+        display:none;
+    }
+
+    .admin-profile{
+        min-width:auto;
+    }
+}
+
+@media (max-width:768px){
+    .admin-profile img{
+        width:48px;
+        height:48px;
+    }
+}

@@ -1,0 +1,66 @@
+<article class="status-card card-match">
+  <div class="card-head">
+    <div class="card-title-group">
+      <h3>Job Match</h3>
+      <p>Role fit snapshot</p>
+    </div>
+    <span class="icon-chip"><i class="bi bi-briefcase-fill"></i></span>
+  </div>
+
+  <div class="match-accuracy-row">
+    <span class="match-accuracy-label">Match accuracy</span>
+    <span class="match-accuracy-value tier-text-{{ score_tier(match_percentage) }}">{{ match_percentage }}%</span>
+  </div>
+
+  <div class="match-progress-track">
+    <div class="progress-fill" data-value="{{ match_percentage }}"></div>
+  </div>
+
+  <div class="match-field-note">
+    <span>Field focus</span>
+    <strong>{{ profession_field }}</strong>
+  </div>
+
+  <hr class="match-divider">
+
+  <div class="match-section">
+    <div class="match-section-title matched">
+      <i class="bi bi-person-check-fill"></i>
+      Matched Skills <span class="match-count">({{ matched_skills|length }})</span>
+    </div>
+    <div class="match-chips">
+      {% set visible_matched = matched_skills[:4] %}
+      {% for skill in visible_matched %}
+        {% set icon = get_skill_icon(skill, profession_field) %}
+        <span class="match-chip matched"><i class="bi {{ icon }}"></i> {{ skill }}</span>
+      {% endfor %}
+      {% if matched_skills|length > visible_matched|length %}
+        <span class="match-chip more"><i class="bi bi-plus-circle"></i> +{{ matched_skills|length - visible_matched|length }} more</span>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="match-section">
+    <div class="match-section-title missing">
+      <i class="bi bi-person-dash"></i>
+      Missing Skills <span class="match-count">({{ missing_skills|length }})</span>
+    </div>
+    <div class="match-chips">
+      {% set visible_missing = missing_skills[:4] %}
+      {% for skill in visible_missing %}
+        {% set icon = get_skill_icon(skill, profession_field) %}
+        <span class="match-chip missing"><i class="bi {{ icon }}"></i> {{ skill }}</span>
+      {% endfor %}
+      {% if missing_skills|length > visible_missing|length %}
+        <span class="match-chip more"><i class="bi bi-plus-circle"></i> +{{ missing_skills|length - visible_missing|length }} more</span>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="match-footer">
+    <span class="match-updated"><i class="bi bi-clock"></i> Updated just now</span>
+    <button class="match-cta" type="button">
+      View breakdown <i class="bi bi-arrow-right"></i>
+    </button>
+  </div>
+</article>

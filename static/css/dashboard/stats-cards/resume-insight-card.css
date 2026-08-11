@@ -1,0 +1,58 @@
+.resume-insights-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+.insight-card{
+    background: rgba(255,255,255,0.88);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 16px;
+    padding: 14px 16px;
+    display: grid;
+    gap: 6px;
+    backdrop-filter: blur(6px);
+}
+
+.insight-label{
+    display: block;
+    font-size: 0.82rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+}
+
+.insight-card strong{
+    font-size: 1.18rem;
+    color: #0f172a;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+}
+
+.insight-tag-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.insight-tag{
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(59, 111, 224, 0.08);
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.insight-tag.more{
+    background: rgba(37, 99, 235, 0.12);
+    color: #1e40af;
+}
+
+.insight-note{
+    font-size: 0.82rem;
+    color: #64748b;
+}

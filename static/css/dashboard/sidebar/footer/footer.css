@@ -1,0 +1,111 @@
+.sidebar-main{
+    display:flex;
+    flex-direction:column;
+    flex:1 1 auto;
+    min-height:0;
+    overflow-y:auto;
+    padding-right:2px;
+}
+.sidebar-main::-webkit-scrollbar{ width:0; height:0; }
+.sidebar-footer{
+    margin-top:auto;
+    padding-top:12px;
+    display:grid;
+    gap:10px;
+}
+.divider{ border:none; border-top:1px solid var(--line); margin:14px 4px; }
+.spacer{ display:none; }
+
+.user-card{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px;
+    border-radius:14px;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    margin-bottom:10px;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.avatar{
+    width:32px; height:32px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--signal), #1f4fb0);
+    color:var(--ink);
+    font-family:var(--font-mono);
+    font-weight:600;
+    font-size:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+.user-meta{ overflow:hidden; transition:opacity .2s ease; }
+.sidebar.collapsed .user-meta{ opacity:0; width:0; }
+.user-meta .name{ font-size:13px; font-weight:600; color:var(--paper); }
+.user-meta .role{
+    font-size:11px;
+    color:var(--fog);
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+.user-meta .role .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--teal);
+    display:inline-block;
+}
+
+.logout-form{
+    width:100%;
+    margin:0;
+    padding:0;
+    border:none;
+    background:none;
+}
+
+.logout{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 12px;
+    border-radius:12px;
+    font-size:14px;
+    font-weight:500;
+    color:var(--fog);
+    border:1px solid transparent;
+    white-space:nowrap;
+    overflow:hidden;
+    background:none;
+    cursor:pointer;
+    width:100%;
+    font-family:inherit;
+    transition:all .2s ease;
+}
+.logout i{ font-size:16px; width:18px; text-align:center; }
+.logout span{ transition:opacity .2s ease; }
+.sidebar.collapsed .logout span{ opacity:0; width:0; }
+.logout:hover{
+    color:#ff6b6b;
+    background:rgba(255,107,107,.08);
+    border-color:rgba(255,107,107,.2);
+}
+.logout:focus-visible{ outline:2px solid var(--signal); outline-offset:2px; }
+
+.sidebar.collapsed .logout,
+.sidebar.collapsed .user-card{
+    justify-content:center;
+}
+.sidebar.collapsed .logout{
+    padding:10px 0;
+    width:100%;
+    gap:0;
+}
+.sidebar.collapsed .logout i{
+    margin:0 auto;
+    width:auto;
+}
+.sidebar.collapsed .logout span{
+    display:none;
+}

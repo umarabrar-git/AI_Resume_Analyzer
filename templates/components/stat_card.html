@@ -1,0 +1,22 @@
+<div class="stat-card" data-accent="{{ accent }}">
+  <div class="card-top">
+    <span class="card-label">{{ title }}</span>
+    <span class="icon-chip"><i class="bi {{ icon }}"></i></span>
+  </div>
+
+  <div class="ring-wrap">
+    <svg class="ring" viewBox="0 0 120 120">
+      <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+      <circle class="ring-fill" cx="60" cy="60" r="52" data-value="{{ progress }}"></circle>
+    </svg>
+    <div class="ring-center">
+      <span class="ring-value">{{ value }}</span>
+      <span class="ring-caption">{{ status }}</span>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <span class="trend up"><i class="bi bi-arrow-up-short"></i>Just now</span>
+    <span class="updated"><i class="bi bi-clock"></i>updated</span>
+  </div>
+</div>

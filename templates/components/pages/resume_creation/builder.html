@@ -1,0 +1,198 @@
+<section class="resume-builder-page" data-resume-builder>
+    <header class="resume-builder-header">
+        <div>
+            <h1>AI Resume Builder</h1>
+            <p>Build, optimize, and tailor your resume with live preview and ATS evidence.</p>
+        </div>
+        <div class="builder-status-wrap">
+            <span class="save-status" id="saveStatus" aria-live="polite">Idle</span>
+            <button type="button" class="btn btn-primary" id="manualSaveBtn">Save</button>
+            <button type="button" class="btn btn-outline-dark" id="saveVersionBtn">Save Version</button>
+            <button type="button" class="btn btn-outline-secondary" id="downloadPdfBtn">Download PDF</button>
+            <button type="button" class="btn btn-outline-secondary" id="downloadDocxBtn">Download DOCX</button>
+        </div>
+    </header>
+
+    <div class="builder-grid">
+        <aside class="builder-controls" aria-label="Resume builder controls">
+            <section class="builder-card">
+                <h2>Resume Library</h2>
+                <label for="resumePicker" class="form-label">Select Resume</label>
+                <select id="resumePicker" class="form-select" aria-label="Select resume"></select>
+
+                <div class="builder-inline-actions">
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="createScratchBtn">New Scratch</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" id="createFromAnalysisBtn">From Analysis</button>
+                </div>
+
+                <div class="builder-inline-actions">
+                    <button type="button" class="btn btn-outline-dark btn-sm" id="duplicateResumeBtn">Duplicate</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm" id="deleteResumeBtn">Delete</button>
+                </div>
+            </section>
+
+            <section class="builder-card">
+                <h2>Resume Settings</h2>
+                <label for="resumeTitle" class="form-label">Resume Title</label>
+                <input type="text" id="resumeTitle" class="form-control" maxlength="150" placeholder="Software Engineer Resume">
+
+                <label for="targetRole" class="form-label mt-2">Target Role</label>
+                <input type="text" id="targetRole" class="form-control" maxlength="200" placeholder="Senior Backend Engineer">
+
+                <label for="templateSelect" class="form-label mt-2">Template</label>
+                <select id="templateSelect" class="form-select" aria-label="Template selection">
+                    <option value="classic">Classic (ATS-friendly)</option>
+                    <option value="modern">Modern</option>
+                    <option value="professional">Professional</option>
+                    <option value="minimal">Minimal</option>
+                    <option value="technical">Technical</option>
+                </select>
+            </section>
+
+            <section class="builder-card">
+                <h2>Section Order</h2>
+                <ul id="sectionOrderList" class="section-order-list" aria-label="Resume section order"></ul>
+            </section>
+
+            <section class="builder-card">
+                <h2>Personal Information</h2>
+                <div class="row g-2">
+                    <div class="col-12"><input type="text" id="piFullName" class="form-control" placeholder="Full Name"></div>
+                    <div class="col-12"><input type="text" id="piProfessionalTitle" class="form-control" placeholder="Professional Title"></div>
+                    <div class="col-md-6"><input type="email" id="piEmail" class="form-control" placeholder="Email"></div>
+                    <div class="col-md-6"><input type="text" id="piPhone" class="form-control" placeholder="Phone"></div>
+                    <div class="col-12"><input type="text" id="piLocation" class="form-control" placeholder="Location"></div>
+                    <div class="col-12"><input type="url" id="piLinkedin" class="form-control" placeholder="LinkedIn URL"></div>
+                    <div class="col-12"><input type="url" id="piGithub" class="form-control" placeholder="GitHub URL"></div>
+                    <div class="col-12"><input type="url" id="piPortfolio" class="form-control" placeholder="Portfolio URL"></div>
+                </div>
+            </section>
+
+            <section class="builder-card">
+                <div class="builder-card-head">
+                    <h2>Professional Summary</h2>
+                    <span id="summaryLengthHint">0 / 1200</span>
+                </div>
+                <textarea id="summaryInput" rows="5" class="form-control" maxlength="4000" placeholder="Write your professional summary..."></textarea>
+                <div class="builder-inline-actions mt-2">
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="aiGenerateSummaryBtn">AI Generate</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" id="aiRewriteSummaryBtn">AI Rewrite</button>
+                    <button type="button" class="btn btn-outline-dark btn-sm" id="aiConciseSummaryBtn">More Concise</button>
+                </div>
+            </section>
+
+            <section class="builder-card">
+                <div class="builder-card-head">
+                    <h2>Experience</h2>
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="addExperienceBtn">Add</button>
+                </div>
+                <div id="experienceList" class="entry-list"></div>
+            </section>
+
+            <section class="builder-card">
+                <div class="builder-card-head">
+                    <h2>Education</h2>
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="addEducationBtn">Add</button>
+                </div>
+                <div id="educationList" class="entry-list"></div>
+            </section>
+
+            <section class="builder-card">
+                <div class="builder-card-head">
+                    <h2>Skills</h2>
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="addSkillBtn">Add Skill</button>
+                </div>
+                <div class="skills-editor">
+                    <input type="text" id="skillInput" class="form-control" placeholder="Type a skill and click Add Skill">
+                    <div id="skillsList" class="chip-list" aria-label="Skills list"></div>
+                </div>
+            </section>
+
+            <section class="builder-card">
+                <div class="builder-card-head">
+                    <h2>Projects</h2>
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="addProjectBtn">Add</button>
+                </div>
+                <div id="projectList" class="entry-list"></div>
+            </section>
+
+            <section class="builder-card">
+                <div class="builder-card-head">
+                    <h2>Certifications</h2>
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="addCertificationBtn">Add</button>
+                </div>
+                <div id="certificationList" class="entry-list"></div>
+            </section>
+
+            <section class="builder-card">
+                <div class="builder-card-head">
+                    <h2>Languages</h2>
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="addLanguageBtn">Add</button>
+                </div>
+                <div id="languageList" class="entry-list"></div>
+            </section>
+
+            <section class="builder-card">
+                <div class="builder-card-head">
+                    <h2>Custom Sections</h2>
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="addCustomSectionBtn">Add</button>
+                </div>
+                <div id="customSectionList" class="entry-list"></div>
+            </section>
+        </aside>
+
+        <section class="builder-preview-column" aria-label="Resume preview and intelligence tools">
+            <article class="builder-card preview-card">
+                <div class="builder-card-head">
+                    <h2>Live Preview</h2>
+                    <span id="completenessBadge" class="completeness-badge">Completeness: 0%</span>
+                </div>
+                <div id="resumePreview" class="resume-preview" role="region" aria-live="polite"></div>
+            </article>
+
+            <article class="builder-card">
+                <div class="builder-card-head">
+                    <h2>Job Tailoring + ATS Analysis</h2>
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="analyzeResumeBtn">Analyze ATS</button>
+                </div>
+                <label for="jobDescriptionInput" class="form-label">Job Description (Optional)</label>
+                <textarea id="jobDescriptionInput" rows="5" class="form-control" placeholder="Paste a job description to evaluate matched and missing skills..."></textarea>
+                <div class="intelligence-metrics" id="intelligenceMetrics" aria-live="polite"></div>
+                <div id="atsOutput" class="analysis-output" aria-live="polite"></div>
+                <div id="skillSuggestionList" class="chip-list suggestion-list" aria-label="Suggested skills"></div>
+                <div class="intelligence-grid">
+                    <section>
+                        <h3 class="intelligence-title">Priority Recommendations</h3>
+                        <div id="recommendationList" class="recommendation-list"></div>
+                    </section>
+                    <section>
+                        <h3 class="intelligence-title">Keyword Gaps</h3>
+                        <div id="keywordGapList" class="chip-list"></div>
+                    </section>
+                </div>
+            </article>
+
+            <article class="builder-card">
+                <div class="builder-card-head">
+                    <h2>AI Writing Assistant</h2>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" id="applyAiOutputBtn" disabled>Apply Output</button>
+                </div>
+                <div class="builder-inline-actions mb-2">
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="aiImproveExperienceBtn">Improve Experience</button>
+                    <button type="button" class="btn btn-outline-dark btn-sm" id="aiTailorResumeBtn">Tailor to Job</button>
+                </div>
+                <label for="aiOutput" class="form-label">AI Output</label>
+                <textarea id="aiOutput" rows="8" class="form-control" placeholder="AI output will appear here..." readonly></textarea>
+                <small class="text-muted">AI outputs are grounded on your current resume draft. Verify every claim before finalizing.</small>
+            </article>
+
+            <article class="builder-card">
+                <div class="builder-card-head">
+                    <h2>Version History</h2>
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="refreshVersionsBtn">Refresh</button>
+                </div>
+                <div id="versionHistoryList" class="version-list"></div>
+            </article>
+        </section>
+    </div>
+</section>

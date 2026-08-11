@@ -1,0 +1,11 @@
+@media (max-width: 1199px) {
+    .skill-compare-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .ai-skill-panel-head{
+        flex-direction: column;
+    }
+}

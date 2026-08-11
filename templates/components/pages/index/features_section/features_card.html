@@ -1,0 +1,51 @@
+<article
+    class="features-card"
+    data-feature-card="{{ item.id }}"
+>
+    <div class="features-card__head">
+        <span class="features-card__icon" aria-hidden="true">
+            <i class="bi {{ item.icon }}"></i>
+        </span>
+
+        <h3 class="features-card__title">
+            {{ item.title }}
+        </h3>
+    </div>
+
+    <p class="features-card__desc">
+        {{ item.desc }}
+    </p>
+
+    {% if item.bullets %}
+    <ul class="features-card__bullets">
+        {% for bullet in item.bullets %}
+        <li class="features-card__bullet">
+            <span
+                class="features-card__bullet-check"
+                aria-hidden="true"
+            >
+                ✓
+            </span>
+
+            <span>{{ bullet }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <button
+        type="button"
+        class="features-card__cta"
+        data-feature-trigger="{{ item.id }}"
+        aria-expanded="false"
+    >
+        <span>Explore Feature</span>
+
+        <span
+            class="features-card__arrow"
+            aria-hidden="true"
+        >
+            →
+        </span>
+    </button>
+</article>

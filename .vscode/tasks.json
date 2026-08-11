@@ -1,0 +1,154 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "pytest resume creation api",
+			"type": "shell",
+			"command": ".\\venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pytest",
+				"tests/test_resume_creation_api.py",
+				"-q"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "smoke resume creation route",
+			"type": "shell",
+			"command": ".\\venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"from app import app; c=app.test_client(); s=c.session_transaction(); s.__enter__(); s['user_id']=1; s.__exit__(None,None,None); r=c.get('/resume-creation'); print('status', r.status_code); print('has_builder', b'data-resume-builder' in r.data)"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "smoke resume creation route",
+			"type": "shell",
+			"command": ".\\venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"from app import app; c=app.test_client(); tx=c.session_transaction(); tx.__enter__(); tx[\"user_id\"]=1; tx.__exit__(None,None,None); r=c.get(\"/resume-creation\"); print(\"status\", r.status_code); print(\"has_builder\", b\"data-resume-builder\" in r.data)"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "smoke resume creation route v2",
+			"type": "shell",
+			"command": ".\\venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"from app import app; c=app.test_client(); tx=c.session_transaction(); tx.__enter__(); tx[\"user_id\"]=1; tx.__exit__(None,None,None); r=c.get(\"/resume-creation\"); print(\"status\", r.status_code); print(\"has_builder\", b\"data-resume-builder\" in r.data)"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "pytest resume creation api v2",
+			"type": "shell",
+			"command": ".\\venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pytest",
+				"tests/test_resume_creation_api.py",
+				"-q"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "pytest resume creation api v3",
+			"type": "shell",
+			"command": ".\\venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pytest",
+				"tests/test_resume_creation_api.py",
+				"-q"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "check export deps",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"Get-Content -Path .\\requirements.txt -Encoding Unicode | Select-String -Pattern 'reportlab|weasyprint|xhtml2pdf|pdfkit|docx' -CaseSensitive:$false"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "check export deps v2",
+			"type": "shell",
+			"command": "Get-Content",
+			"args": [
+				".\\requirements.txt",
+				"-Encoding",
+				"Unicode"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "pytest resume creation full",
+			"type": "shell",
+			"command": ".\\venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pytest",
+				"tests/test_resume_creation_api.py",
+				"-q"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "pytest dashboard checks",
+			"type": "shell",
+			"command": ".\\venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pytest",
+				"tests/test_dashboard_context.py",
+				"tests/test_resume_analysis_fallback.py",
+				"-q"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "pytest resume intelligence and builder",
+			"type": "shell",
+			"command": ".\\venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pytest",
+				"tests/test_resume_creation_api.py",
+				"-q"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "pytest resume intelligence verify",
+			"type": "shell",
+			"command": ".\\venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pytest",
+				"tests/test_resume_creation_api.py",
+				"-q"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "pytest resume intelligence verify v2",
+			"type": "shell",
+			"command": ".\\venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pytest",
+				"tests/test_resume_creation_api.py",
+				"-v"
+			],
+			"problemMatcher": []
+		}
+	]
+}

@@ -1,0 +1,16 @@
+@media (max-width:768px){
+    .navbar-right{
+        gap:12px;
+    }
+
+    .notification-btn{
+        width:44px;
+        height:44px;
+        min-width:44px;
+        min-height:44px;
+    }
+
+    .notification-btn i{
+        font-size:18px;
+    }
+}

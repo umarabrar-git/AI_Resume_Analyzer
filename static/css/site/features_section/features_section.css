@@ -1,0 +1,46 @@
+.features-section {
+    padding: 3.75rem 0 0;
+}
+
+.features-section__shell {
+    padding: 1.5rem;
+    border-radius: 1.35rem;
+    border: 1px solid rgba(191, 219, 254, 0.65);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 250, 252, 0.94) 100%);
+    box-shadow: 0 18px 34px rgba(15, 23, 42, 0.07);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.features-section__shell.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.features-section__intro {
+    max-width: 680px;
+}
+
+.features-section__eyebrow {
+    margin: 0;
+    color: #0f3a74;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.features-section__title {
+    margin: 0.45rem 0 0;
+    color: #0f172a;
+    font-size: clamp(1.55rem, 1.2vw + 1.15rem, 2.15rem);
+    font-weight: 800;
+}
+
+.features-section__subtitle {
+    margin: 0.55rem 0 0;
+    color: #475569;
+    font-size: 1rem;
+    line-height: 1.65;
+}

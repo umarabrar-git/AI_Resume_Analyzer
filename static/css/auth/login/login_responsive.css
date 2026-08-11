@@ -1,0 +1,42 @@
+/* Login Form Responsive */
+
+@media (max-width: 767.98px) {
+    .login-form {
+        gap: 1rem;
+    }
+
+    .login-form__input {
+        padding: 0.65rem 0.9rem;
+        font-size: 0.85rem;
+    }
+
+    .login-form__submit {
+        padding: 0.8rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .login-form {
+        gap: 0.9rem;
+    }
+
+    .login-form__group {
+        gap: 0.4rem;
+    }
+
+    .login-form__label {
+        font-size: 0.8rem;
+    }
+
+    .login-form__input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+        border-radius: 0.5rem;
+    }
+
+    .login-form__submit {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+}

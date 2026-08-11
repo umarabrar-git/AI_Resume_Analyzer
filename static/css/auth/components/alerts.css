@@ -1,0 +1,46 @@
+/* Alert Messages */
+.auth-alert {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-alert--success {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(74, 222, 128, 0.05) 100%);
+    color: #15803d;
+    border-left: 4px solid #22c55e;
+}
+
+.auth-alert--error {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(248, 113, 113, 0.05) 100%);
+    color: #b91c1c;
+    border-left: 4px solid #ef4444;
+}
+
+.auth-alert--warning {
+    background: linear-gradient(135deg, rgba(251, 146, 60, 0.1) 0%, rgba(253, 186, 116, 0.05) 100%);
+    color: #b45309;
+    border-left: 4px solid #f97316;
+}
+
+.auth-alert i {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}

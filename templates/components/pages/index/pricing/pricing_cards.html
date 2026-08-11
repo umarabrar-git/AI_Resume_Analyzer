@@ -1,0 +1,32 @@
+{% set pricing_items = [
+    {
+        "name": "Starter",
+        "monthly": "$0",
+        "yearly": "$0",
+        "desc": "Essential tools for first-time optimization.",
+        "features": ["Basic ATS scan", "Limited AI suggestions", "1 report export"],
+        "featured": false
+    },
+    {
+        "name": "Pro",
+        "monthly": "$12",
+        "yearly": "$99",
+        "desc": "Best for active job seekers.",
+        "features": ["Advanced ATS insights", "Unlimited AI rewrites", "Priority support"],
+        "featured": true
+    },
+    {
+        "name": "Team",
+        "monthly": "$29",
+        "yearly": "$249",
+        "desc": "For mentors, coaches, and career teams.",
+        "features": ["Team dashboards", "Bulk resume reviews", "Shared report library"],
+        "featured": false
+    }
+] %}
+
+<div class="pricing-section__cards" data-pricing-cards>
+    {% for item in pricing_items %}
+    {% include "components/pages/index/pricing/pricing_card.html" %}
+    {% endfor %}
+</div>

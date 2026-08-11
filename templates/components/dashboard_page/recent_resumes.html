@@ -1,0 +1,35 @@
+<div class="resumes-section">
+    <div class="resumes-section__header">
+        <h2 class="resumes-section__title">Resume Intelligence Snapshot</h2>
+        <a href="/analysis" class="resumes-section__link">View Analysis</a>
+    </div>
+    
+    <div class="resumes-table-wrapper">
+        <table class="resumes-table">
+            <thead class="resumes-table__head">
+                <tr>
+                    <th class="resumes-table__cell resumes-table__cell--header">Metric</th>
+                    <th class="resumes-table__cell resumes-table__cell--header">Value</th>
+                    <th class="resumes-table__cell resumes-table__cell--header">Status</th>
+                </tr>
+            </thead>
+            <tbody class="resumes-table__body">
+                <tr class="resumes-table__row">
+                    <td class="resumes-table__cell"><span class="resume-name"><i class="bi bi-graph-up-arrow"></i> ATS Score</span></td>
+                    <td class="resumes-table__cell"><span class="score-badge score-badge--high">{{ ats_score }}%</span></td>
+                    <td class="resumes-table__cell"><span class="status-badge status-badge--success"><i class="bi bi-check-circle"></i> Active</span></td>
+                </tr>
+                <tr class="resumes-table__row">
+                    <td class="resumes-table__cell"><span class="resume-name"><i class="bi bi-bullseye"></i> Job Match</span></td>
+                    <td class="resumes-table__cell"><span class="score-badge score-badge--medium">{{ match_percentage }}%</span></td>
+                    <td class="resumes-table__cell"><span class="status-badge status-badge--success"><i class="bi bi-check-circle"></i> {{ matched_skills|length }} matched</span></td>
+                </tr>
+                <tr class="resumes-table__row">
+                    <td class="resumes-table__cell"><span class="resume-name"><i class="bi bi-tools"></i> Skills Gap</span></td>
+                    <td class="resumes-table__cell"><span class="score-badge score-badge--medium">{{ missing_skills|length }} missing</span></td>
+                    <td class="resumes-table__cell"><span class="status-badge status-badge--success"><i class="bi bi-lightbulb"></i> {{ resume_status }}</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

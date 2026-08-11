@@ -1,0 +1,35 @@
+@media (max-width:992px){
+    .search-box{
+        max-width:100%;
+        margin:15px 0;
+    }
+}
+
+@media (max-width:768px){
+    .search-input{
+        height:50px;
+        padding:0 50px 0 45px;
+        font-size:14px;
+    }
+
+    .search-icon{
+        left:15px;
+        font-size:16px;
+    }
+
+    .shortcut{
+        display:none;
+    }
+}
+
+@media (max-width:576px){
+    .search-input{
+        height:46px;
+        border-radius:12px;
+        padding:0 45px;
+    }
+
+    .search-icon{
+        left:14px;
+    }
+}

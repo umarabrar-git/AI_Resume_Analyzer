@@ -1,0 +1,12 @@
+{% set faq_items = [
+    {"q": "Is this platform free to start?", "a": "Yes. You can start with the free plan and upgrade when needed."},
+    {"q": "Can I upload both PDF and DOCX resumes?", "a": "Yes. The analyzer accepts common resume file formats including PDF and DOCX."},
+    {"q": "How does ATS scoring work?", "a": "The engine checks formatting, keyword relevance, and job-alignment signals."},
+    {"q": "Can I export reports?", "a": "Yes. You can download reports for sharing and progress tracking."}
+] %}
+
+<div class="faq-section__list" data-faq-list>
+    {% for item in faq_items %}
+    {% include "components/pages/index/faq/faq_item.html" %}
+    {% endfor %}
+</div>

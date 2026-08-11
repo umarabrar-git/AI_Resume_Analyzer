@@ -1,0 +1,58 @@
+.profile-strength-block{
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(226,232,240,0.85);
+}
+
+.profile-strength-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.profile-strength-row strong{
+    font-size: 1.05rem;
+    font-weight: 900;
+}
+
+.profile-strength-track{
+    width: 100%;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(15,23,42,0.08);
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.profile-strength-fill{
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.8s ease;
+}
+
+.profile-strength-checklist{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.strength-check{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.strength-check.passed{
+    background: rgba(22,163,74,0.1);
+    color: #16a34a;
+}
+
+.strength-check.missing{
+    background: rgba(100,116,139,0.1);
+    color: #64748b;
+}

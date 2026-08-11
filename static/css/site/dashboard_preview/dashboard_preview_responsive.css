@@ -1,0 +1,38 @@
+@media (max-width: 991.98px) {
+    .dashboard-preview-section {
+        padding-top: 3rem;
+    }
+
+    .dashboard-preview-section__shell {
+        grid-template-columns: 1fr;
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .dashboard-preview-section {
+        padding-top: 2.35rem;
+    }
+
+    .dashboard-preview-section__shell {
+        padding: 1rem 0.88rem;
+        border-radius: 1.05rem;
+    }
+
+    .dashboard-preview-section__title {
+        font-size: 1.42rem;
+    }
+
+    .dashboard-preview-section__subtitle {
+        font-size: 0.93rem;
+    }
+
+    .dashboard-preview-section__window-body {
+        grid-template-columns: 48px minmax(0, 1fr);
+        min-height: 200px;
+    }
+
+    .dashboard-preview-section__stats {
+        grid-template-columns: 1fr;
+    }
+}

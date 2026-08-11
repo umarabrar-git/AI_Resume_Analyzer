@@ -1,0 +1,34 @@
+@media (max-width:992px){
+    .dashboard-header{
+        padding:30px;
+        text-align:center;
+    }
+
+    .candidate-avatar{
+        margin-bottom:20px;
+    }
+
+    .dashboard-header .btn{
+        margin-top:12px;
+    }
+}
+
+@media (max-width:768px){
+    .dashboard-header{
+        padding:25px;
+        margin:15px;
+    }
+
+    .dashboard-header h2{
+        font-size:30px;
+    }
+
+    .candidate-avatar{
+        width:90px;
+        height:90px;
+    }
+
+    .candidate-avatar i{
+        font-size:42px;
+    }
+}

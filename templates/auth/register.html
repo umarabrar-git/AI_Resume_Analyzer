@@ -1,0 +1,81 @@
+<form method="POST" class="register-form" data-register>
+    <input type="hidden" name="next" value="{{ next or '' }}">
+
+    <div class="register-form__group">
+        <label for="full_name" class="register-form__label">Full Name</label>
+        <input 
+            type="text" 
+            id="full_name" 
+            name="full_name" 
+            class="register-form__input" 
+            placeholder="John Doe"
+            required
+        >
+    </div>
+
+    <div class="register-form__group">
+        <label for="email" class="register-form__label">Email Address</label>
+        <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="register-form__input" 
+            placeholder="you@example.com"
+            required
+        >
+    </div>
+
+    <div class="register-form__group">
+        <label for="password" class="register-form__label">Password</label>
+        <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            class="register-form__input" 
+            placeholder="Create a strong password"
+            required
+        >
+        <div class="register-form__requirements">
+            <p class="register-form__requirement-text">Password must contain:</p>
+            <ul class="register-form__requirements-list">
+                <li class="register-form__requirement" data-req="length">✓ At least 8 characters</li>
+                <li class="register-form__requirement" data-req="uppercase">✓ Uppercase letter</li>
+                <li class="register-form__requirement" data-req="lowercase">✓ Lowercase letter</li>
+                <li class="register-form__requirement" data-req="digit">✓ Number</li>
+                <li class="register-form__requirement" data-req="special">✓ Special character (!@#$%...)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="register-form__group">
+        <label for="confirm_password" class="register-form__label">Confirm Password</label>
+        <input 
+            type="password" 
+            id="confirm_password" 
+            name="confirm_password" 
+            class="register-form__input" 
+            placeholder="Confirm your password"
+            required
+        >
+    </div>
+
+    <div class="register-form__remember">
+        <input 
+            type="checkbox" 
+            id="remember_me" 
+            name="remember_me" 
+            class="register-form__checkbox"
+            checked
+        >
+        <label for="remember_me" class="register-form__remember-label">Remember me</label>
+    </div>
+
+    <button type="submit" class="register-form__submit">Create Account</button>
+
+    <div class="register-form__footer">
+        <p class="register-form__text">
+            Already have an account? 
+            <a href="{{ url_for('auth.login', next=next) }}" class="register-form__link">Sign in here</a>
+        </p>
+    </div>
+</form>

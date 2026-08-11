@@ -1,0 +1,13 @@
+<article class="insight-panel chart-panel match-panel">
+  <div class="panel-head">
+    <div>
+      <h3>Job Match Breakdown</h3>
+      <p>Matched vs missing skills</p>
+    </div>
+    <span class="panel-badge match-badge"><i class="bi bi-bullseye"></i> Match</span>
+  </div>
+  <canvas id="matchChart"></canvas>
+  <div class="panel-foot">
+    <span><i class="bi bi-lightbulb"></i> AI Insight {{ matched_skills|length }} matched skills, {{ missing_skills|length }} missing — job match is {{ match_percentage }}%.</span>
+  </div>
+</article>

@@ -1,0 +1,42 @@
+<article class="career-assistant-card">
+    <div class="assistant-head">
+        <div class="assistant-title">
+            <span class="bot-chip"><i class="bi bi-robot"></i></span>
+            <div>
+                <h3>AI Career Assistant</h3>
+                <p>Ask, improve, and build your complete career stack</p>
+            </div>
+        </div>
+        <span class="assistant-status">Online <span class="dot"></span></span>
+    </div>
+
+    <div class="assistant-bubbles">
+        <div class="assistant-bubble ai">
+            <strong>AI</strong>
+            <p>Your ATS score is {{ ats_score }}%. Adding {% if missing_skills %}{{ missing_skills[:2]|join(' and ') }}{% else %}targeted skills from the job description{% endif %} could increase your shortlisting chance.</p>
+        </div>
+
+        <div class="assistant-bubble user">
+            <strong>You</strong>
+            <p>How can I improve my resume for this role?</p>
+        </div>
+    </div>
+
+    <form class="assistant-input-row" action="#" method="get">
+        <label class="visually-hidden" for="assistantPrompt">Ask AI Career Assistant</label>
+        <input id="assistantPrompt" type="text" class="assistant-input" placeholder="Ask anything... Rewrite my summary, improve ATS, add missing skills" />
+        <button type="button" class="assistant-send"><i class="bi bi-send-fill"></i> Send</button>
+    </form>
+
+    <div class="assistant-actions">
+        <span class="action-label">Quick Actions</span>
+        <div class="action-chips">
+            <button type="button" class="action-chip">Improve ATS</button>
+            <button type="button" class="action-chip">Rewrite Summary</button>
+            <button type="button" class="action-chip">Add Skills</button>
+            <button type="button" class="action-chip">Create Resume</button>
+            <button type="button" class="action-chip">Generate Cover Letter</button>
+            <button type="button" class="action-chip">Interview Prep</button>
+        </div>
+    </div>
+</article>

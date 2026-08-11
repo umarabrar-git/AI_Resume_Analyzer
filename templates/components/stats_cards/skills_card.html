@@ -1,0 +1,52 @@
+<article class="status-card card-skills">
+  <div class="card-head">
+    <div class="card-title-group">
+      <h3>Total Skills</h3>
+      <p>Skill coverage overview</p>
+    </div>
+    <span class="icon-chip"><i class="bi bi-star-fill"></i></span>
+  </div>
+
+  <div class="skills-detected-row">
+    <span class="skills-detected-label">Detected skills</span>
+    <span class="skills-detected-value">{{ skills|length }}</span>
+  </div>
+
+  <div class="skill-bar">
+    <div class="skill-bar-fill" data-value="{{ (skills|length * 100 / 30)|round(0, 'floor') }}"></div>
+  </div>
+  <div class="skill-track-caption">{{ skills|length }} of 30 skills for this role</div>
+
+  <hr class="match-divider">
+
+  <div class="skill-section">
+    <div class="skill-section-title"><i class="bi bi-lightning-charge-fill"></i>Key strengths</div>
+    <div class="skill-chips">
+      {% set visible_languages = skills[:4] %}
+      {% for skill in visible_languages %}
+        {% set icon = get_skill_icon(skill, profession_field) %}
+        <span class="skill-chip"><i class="bi {{ icon }}"></i> {{ skill }}</span>
+      {% endfor %}
+      {% if skills|length > visible_languages|length %}
+        <span class="skill-chip more"><i class="bi bi-plus-circle"></i> +{{ skills|length - visible_languages|length }} more</span>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="skill-section">
+    <div class="skill-section-title"><i class="bi bi-stack"></i>Support skills</div>
+    <div class="skill-chips">
+      {% for skill in skills[4:8] %}
+        {% set icon = get_skill_icon(skill, profession_field) %}
+        <span class="skill-chip"><i class="bi {{ icon }}"></i> {{ skill }}</span>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="skill-footer">
+    <span class="skill-updated"><i class="bi bi-clock"></i> Updated just now</span>
+    <button class="skill-cta" type="button">
+      View all skills <i class="bi bi-arrow-right"></i>
+    </button>
+  </div>
+</article>

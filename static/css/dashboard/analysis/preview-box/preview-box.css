@@ -1,0 +1,16 @@
+.preview-box{
+    max-height:500px;
+    overflow-y:auto;
+    background:#F8FAFC;
+    padding:20px;
+    border-radius:12px;
+}
+.preview-box pre{
+    white-space:pre-wrap;
+    font-family:inherit;
+    font-size:15px;
+}
+
+.dashboard-card{
+    overflow:hidden;
+}

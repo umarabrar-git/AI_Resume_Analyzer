@@ -1,0 +1,35 @@
+.navbar-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-shrink:0;
+    min-width: 0;
+}
+
+.notification-btn{
+    width:46px;
+    height:46px;
+    min-width:46px;
+    min-height:46px;
+    border:none;
+    border-radius:50%;
+    background:#F8FAFC;
+    color:#0F172A;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:all .3s ease;
+    box-shadow:0 4px 12px rgba(15,23,42,.05);
+}
+
+.notification-btn i{
+    font-size:20px;
+}
+
+.notification-btn:hover{
+    background:#2563EB;
+    color:#FFFFFF;
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+}

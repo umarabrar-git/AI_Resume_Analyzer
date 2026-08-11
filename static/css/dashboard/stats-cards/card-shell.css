@@ -1,0 +1,113 @@
+.analytics-board{
+    display: grid;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.status-card{
+    position: relative;
+    overflow: hidden;
+    border-radius: 26px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: 1px solid transparent;
+    box-shadow: 0 20px 60px -36px rgba(15,23,42,0.22);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+.status-card > *{ position: relative; z-index: 1; }
+
+.status-card::after{
+    content: '';
+    position: absolute;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    top: -60px; right: -50px;
+    z-index: 0;
+    opacity: 0.28;
+    transition: transform 0.4s ease;
+}
+.status-card:hover::after{ transform: scale(1.18); }
+
+.status-card::before{
+    content: '';
+    position: absolute;
+    left: 0; top: 0; right: 0;
+    height: 4px;
+    border-radius: 26px 26px 0 0;
+    z-index: 2;
+}
+
+.status-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 30px 80px -38px rgba(15,23,42,0.26);
+}
+
+.card-ats{
+    background: linear-gradient(160deg, #f0f6ff 0%, #e8f0fe 100%);
+    border-color: rgba(37,99,235,0.18);
+}
+.card-ats::before{ background: linear-gradient(90deg, #2563eb, #60a5fa); }
+.card-ats::after{ background: radial-gradient(circle, #3b82f6, transparent 70%); }
+.card-ats .card-head .icon-chip{ background: rgba(37,99,235,0.14); color: #2563eb; }
+.card-ats .gauge-fill{ color: #2563eb; }
+
+.card-match{
+    background: linear-gradient(160deg, #f0fdf6 0%, #dcfce7 100%);
+    border-color: rgba(5,150,105,0.2);
+}
+.card-match::before{ background: linear-gradient(90deg, #059669, #34d399); }
+.card-match::after{ background: radial-gradient(circle, #10b981, transparent 70%); }
+.card-match .card-head .icon-chip{ background: rgba(5,150,105,0.14); color: #059669; }
+.card-match .progress-fill{ background: linear-gradient(90deg, #059669, #34d399); }
+
+.card-skills{
+    background: linear-gradient(160deg, #fffbeb 0%, #fef3c7 100%);
+    border-color: rgba(217,119,6,0.2);
+}
+.card-skills::before{ background: linear-gradient(90deg, #d97706, #fbbf24); }
+.card-skills::after{ background: radial-gradient(circle, #f59e0b, transparent 70%); }
+.card-skills .card-head .icon-chip{ background: rgba(217,119,6,0.14); color: #d97706; }
+.card-skills .skill-bar-fill{ background: linear-gradient(90deg, #d97706, #fbbf24); }
+
+.card-length{
+    background: linear-gradient(160deg, #faf5ff 0%, #ede9fe 100%);
+    border-color: rgba(124,58,237,0.2);
+}
+.card-length::before{ background: linear-gradient(90deg, #7c3aed, #a78bfa); }
+.card-length::after{ background: radial-gradient(circle, #8b5cf6, transparent 70%); }
+.card-length .card-head .icon-chip{ background: rgba(124,58,237,0.14); color: #7c3aed; }
+.card-length .sparkline-fill{ background: linear-gradient(90deg, #7c3aed, #a855f7); }
+
+.card-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.card-head h3{
+    margin: 0;
+    font-size: 1.04rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+}
+
+.card-head .icon-chip{
+    width: 44px;
+    height: 44px;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    background: rgba(59,111,224,0.08);
+    color: #2563eb;
+    transition: transform 0.25s ease;
+}
+
+.status-card:hover .card-head .icon-chip{ transform: rotate(8deg) scale(1.08); }
+
+.card-head .icon-chip i{
+    font-size: 1.22rem;
+}

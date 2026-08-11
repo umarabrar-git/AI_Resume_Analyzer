@@ -1,0 +1,63 @@
+<div class="home-navbar__right">
+
+    {% set is_logged_in =
+        session.get('user_id') or session.get('logged_in')
+    %}
+
+    {% if is_logged_in %}
+
+        <!-- LOGGED-IN USER -->
+
+        <a
+            class="home-navbar__ghost"
+            href="{{ url_for('dashboard.render_dashboard') }}"
+        >
+            <i class="bi bi-speedometer2 home-navbar__action-icon" aria-hidden="true"></i>
+            <span class="home-navbar__action-label">Dashboard</span>
+        </a>
+
+        <a
+            class="home-navbar__ghost"
+            href="{{ url_for('settings.render_settings') }}"
+        >
+            <i class="bi bi-person-circle home-navbar__action-icon" aria-hidden="true"></i>
+            <span class="home-navbar__action-label">My Account</span>
+        </a>
+
+        <form
+            action="{{ url_for('auth.logout') }}"
+            method="POST"
+            class="home-navbar__logout-form"
+        >
+            <button
+                type="submit"
+                class="home-navbar__cta"
+            >
+                <i class="bi bi-box-arrow-right home-navbar__action-icon" aria-hidden="true"></i>
+                <span class="home-navbar__action-label">Log Out</span>
+            </button>
+        </form>
+
+    {% else %}
+
+        <!-- GUEST USER -->
+
+        <a
+            class="home-navbar__ghost"
+            href="{{ url_for('auth.login') }}"
+        >
+            <i class="bi bi-box-arrow-in-right home-navbar__action-icon" aria-hidden="true"></i>
+            <span class="home-navbar__action-label">Log In</span>
+        </a>
+
+        <a
+            class="home-navbar__cta"
+            href="{{ url_for('auth.register') }}"
+        >
+            <i class="bi bi-stars home-navbar__action-icon" aria-hidden="true"></i>
+            <span class="home-navbar__action-label">Get Started</span>
+        </a>
+
+    {% endif %}
+
+</div>

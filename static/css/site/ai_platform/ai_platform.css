@@ -1,0 +1,97 @@
+.ai-platform-section {
+    padding: 3.8rem 0 0;
+}
+
+.ai-platform-section__shell {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 1.15rem;
+    align-items: start;
+    padding: 1.45rem;
+    border-radius: 1.35rem;
+    border: 1px solid rgba(191, 219, 254, 0.8);
+    background: linear-gradient(170deg, rgba(255, 255, 255, 0.96) 0%, rgba(239, 246, 255, 0.72) 100%);
+    box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.ai-platform-section__shell.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ai-platform-section__eyebrow {
+    margin: 0;
+    color: #0f3a74;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.ai-platform-section__title {
+    margin: 0.45rem 0 0;
+    color: #0f172a;
+    font-size: clamp(1.5rem, 1.1vw + 1.15rem, 2.05rem);
+    font-weight: 800;
+}
+
+.ai-platform-section__subtitle {
+    margin: 0.56rem 0 0;
+    color: #475569;
+    line-height: 1.66;
+    font-size: 0.97rem;
+}
+
+.ai-platform-section__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.72rem;
+}
+
+.ai-capability-card {
+    padding: 0.92rem 0.85rem;
+    border-radius: 0.95rem;
+    border: 1px solid rgba(203, 213, 225, 0.9);
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.ai-capability-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(59, 130, 246, 0.85);
+    box-shadow: 0 14px 24px rgba(37, 99, 235, 0.14);
+}
+
+.ai-capability-card__icon {
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.6rem;
+    background: rgba(37, 99, 235, 0.11);
+    color: #1d4ed8;
+    font-size: 1.03rem;
+}
+
+.ai-capability-card__title {
+    margin: 0.62rem 0 0;
+    color: #0f172a;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.ai-capability-card__desc {
+    margin: 0.38rem 0 0;
+    color: #475569;
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+.ai-capability-card.is-spotlight {
+    border-color: rgba(37, 99, 235, 0.78);
+    box-shadow: 0 12px 22px rgba(37, 99, 235, 0.14);
+}

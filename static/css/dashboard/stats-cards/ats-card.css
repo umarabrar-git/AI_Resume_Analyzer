@@ -1,0 +1,162 @@
+.gauge-wrap{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.gauge{
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.gauge-track,
+.gauge-fill{
+    fill: none;
+    stroke-width: 16;
+    cx: 60;
+    cy: 60;
+    r: 52;
+}
+
+.gauge-track{
+    stroke: rgba(15,23,42,0.08);
+}
+
+.gauge-fill{
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-dasharray: 326.7;
+    stroke-dashoffset: 326.7;
+    transition: stroke-dashoffset 1.2s ease;
+}
+
+.gauge-center{
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.gauge-value{
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.gauge-caption{
+    display: none;
+}
+
+.card-title-group{
+    display: grid;
+    gap: 3px;
+}
+
+.card-title-group p{
+    margin: 0;
+    color: #64748b;
+    font-size: 0.86rem;
+}
+
+.ats-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.ats-status-stack{
+    display: grid;
+    gap: 12px;
+    flex: 1 1 200px;
+}
+
+.ats-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(5, 150, 105, 0.12);
+    color: #059669;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.ats-badge i{
+    font-size: 0.95rem;
+}
+
+.ats-insight{
+    display: grid;
+    gap: 10px;
+    padding: 14px 15px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.80);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    backdrop-filter: blur(6px);
+}
+
+.insight-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.92rem;
+}
+
+.insight-label{
+    color: #64748b;
+}
+
+.insight-row strong{
+    color: #0f172a;
+}
+
+.card-meta{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.meta-pill{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    background: rgba(248, 250, 252, 0.96);
+    color: #334155;
+    font-weight: 600;
+}
+
+.meta-pill i{
+    color: #2563eb;
+    font-size: 0.95rem;
+}
+
+.meta-pill-muted{
+    color: #64748b;
+}
+
+.meta-pill-muted i{
+    color: #64748b;
+}
+
+.status-card:hover .gauge-wrap{
+    transform: scale(1.04);
+}
+
+.status-card:hover .card-head .icon-chip{
+    transform: rotate(6deg);
+}

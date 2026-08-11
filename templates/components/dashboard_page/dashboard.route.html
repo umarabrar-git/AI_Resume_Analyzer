@@ -1,0 +1,17 @@
+<div class="dashboard-page" data-dashboard>
+    {% include "components/dashboard_page/dashboard_header.html" %}
+    
+    <div class="dashboard-container">
+        {% include "components/dashboard_page/stats_cards.html" %}
+        
+        <div class="dashboard-main">
+            <div class="dashboard-left">
+                {% include "components/dashboard_page/recent_resumes.html" %}
+            </div>
+            
+            <div class="dashboard-right">
+                {% include "components/dashboard_page/quick_actions.html" %}
+            </div>
+        </div>
+    </div>
+</div>

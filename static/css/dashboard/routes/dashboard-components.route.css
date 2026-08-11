@@ -1,0 +1,11 @@
+@import url("../header/routes/header.route.css");
+@import url("../analysis/routes/analysis.route.css");
+@import url("../navbar/routes/navbar.route.css");
+@import url("../sidebar/routes/sidebar.route.css");
+@import url("../stats-cards/routes/stats-cards.route.css");
+@import url("../charts-panels/routes/charts-panels.route.css");
+@import url("../skill-comparison/routes/skill-comparison.route.css");
+@import url("../suggestions/routes/suggestions.route.css");
+@import url("../overview/routes/overview.route.css");
+@import url("../dashboard_content/dashboard.route.css");
+@import url("../resume_creation/resume_creation.route.css");

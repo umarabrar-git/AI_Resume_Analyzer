@@ -1,0 +1,37 @@
+@media (max-width: 991.98px) {
+    .workflow-section {
+        padding-top: 3rem;
+    }
+
+    .workflow-section__shell {
+        padding: 1.2rem;
+    }
+
+    .workflow-section__steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 575.98px) {
+    .workflow-section {
+        padding-top: 2.35rem;
+    }
+
+    .workflow-section__shell {
+        padding: 1rem 0.9rem;
+        border-radius: 1.05rem;
+    }
+
+    .workflow-section__title {
+        font-size: 1.4rem;
+    }
+
+    .workflow-section__subtitle {
+        font-size: 0.93rem;
+    }
+
+    .workflow-section__steps {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+}

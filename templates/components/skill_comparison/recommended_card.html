@@ -1,0 +1,23 @@
+<article class="skill-compare-card recommended">
+    <div class="skill-compare-title">
+        <h4><i class="bi bi-compass-fill"></i> Skills to Improve</h4>
+        <span class="skill-count">{{ missing_skills|length }}</span>
+    </div>
+    <p class="skill-compare-caption">Top recommendations based on gaps against the job description.</p>
+
+    <div class="skill-pill-list">
+        {% if missing_skills %}
+            {% for skill in missing_skills[:8] %}
+                <span class="skill-pill recommended">
+                    <i class="bi {{ get_skill_icon(skill, profession_field) }}"></i>
+                    {{ skill }}
+                </span>
+            {% endfor %}
+            {% if missing_skills|length > 8 %}
+                <span class="skill-pill more">+{{ missing_skills|length - 8 }} More</span>
+            {% endif %}
+        {% else %}
+            <span class="skill-empty success"><i class="bi bi-check-circle-fill"></i> Great job - no key skill gaps found.</span>
+        {% endif %}
+    </div>
+</article>

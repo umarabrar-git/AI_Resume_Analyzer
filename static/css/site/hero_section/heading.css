@@ -1,0 +1,13 @@
+.hero-heading h1 {
+	max-width: 700px;
+	font-size: clamp(3.4rem, 5.8vw, 5.25rem);
+	line-height: 1.02;
+	font-weight: 800;
+	color: #0f172a;
+	margin: 0;
+	letter-spacing: -0.05em;
+}
+
+.hero-heading span {
+	color: #2563eb;
+}

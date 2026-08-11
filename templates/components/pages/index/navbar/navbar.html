@@ -1,0 +1,19 @@
+<header class="home-navbar" id="home-navbar">
+    <div class="container">
+        <div class="home-navbar__shell" data-home-navbar-shell>
+            {% include "components/pages/index/navbar/navbar_left.html" %}
+
+            <button class="home-navbar__toggle"
+                    type="button"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    data-home-navbar-toggle>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            {% include "components/pages/index/navbar/navbar_right.html" %}
+        </div>
+    </div>
+</header>

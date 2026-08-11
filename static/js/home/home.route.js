@@ -1,0 +1,11 @@
+import "./navbar/navbar.route.js";
+import "./hero_section/hero.route.js";
+import "./trusted_section/trusted.route.js";
+import "./features_section/features.route.js";
+import "./workflow_section/workflow.route.js";
+import "./ai_platform/ai_platform.route.js";
+import "./testimonials/testimonials.route.js";
+import "./pricing/pricing.route.js";
+import "./faq/faq.route.js";
+import "./cta/cta.route.js";
+import "./footer/footer.route.js";

@@ -1,0 +1,4 @@
+@import url("components/alerts.css");
+@import url("auth_page/auth_page.route.css");
+@import url("login/login.route.css");
+@import url("register/register.route.css");

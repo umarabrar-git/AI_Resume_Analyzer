@@ -1,0 +1,107 @@
+<!-- =============================================
+     AI Career Assistant — Full Chat Interface
+     ============================================= -->
+<div class="assistant-shell">
+
+  <!-- Sidebar: context panel -->
+  <aside class="assistant-context-panel">
+    <div class="ctx-header">
+      <span class="ctx-icon"><i class="bi bi-robot"></i></span>
+      <div>
+        <h4>AI Career Assistant</h4>
+        <p>Powered by Resume Intelligence</p>
+      </div>
+    </div>
+
+    <div class="ctx-resume-status {% if has_analysis %}active{% endif %}">
+      {% if has_analysis %}
+        <i class="bi bi-file-earmark-check-fill"></i>
+        <div>
+          <strong>Resume Loaded</strong>
+          <span>{{ name }}</span>
+        </div>
+      {% else %}
+        <i class="bi bi-file-earmark-x"></i>
+        <div>
+          <strong>No Resume</strong>
+          <span>Upload to unlock insights</span>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if has_analysis %}
+    <div class="ctx-stats">
+      <div class="ctx-stat">
+        <span class="ctx-stat-label">ATS Score</span>
+        <span class="ctx-stat-value tier-text-{{ score_tier(ats_score) }}">{{ ats_score }}%</span>
+      </div>
+      <div class="ctx-stat">
+        <span class="ctx-stat-label">Skills</span>
+        <span class="ctx-stat-value">{{ skills|length }}</span>
+      </div>
+      <div class="ctx-stat">
+        <span class="ctx-stat-label">Match</span>
+        <span class="ctx-stat-value tier-text-{{ score_tier(match_percentage) }}">{{ match_percentage }}%</span>
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="ctx-prompts">
+      <p class="ctx-prompts-label">Quick prompts</p>
+      <button class="ctx-prompt-chip" data-prompt="What is my ATS score?"><i class="bi bi-speedometer2"></i> ATS Score</button>
+      <button class="ctx-prompt-chip" data-prompt="What skills am I missing?"><i class="bi bi-exclamation-triangle"></i> Missing Skills</button>
+      <button class="ctx-prompt-chip" data-prompt="Generate a professional summary for me"><i class="bi bi-file-text"></i> Pro Summary</button>
+      <button class="ctx-prompt-chip" data-prompt="Help me write a cover letter"><i class="bi bi-envelope-paper"></i> Cover Letter</button>
+      <button class="ctx-prompt-chip" data-prompt="Give me interview tips for my role"><i class="bi bi-mic"></i> Interview Tips</button>
+      <button class="ctx-prompt-chip" data-prompt="How can I improve my resume format?"><i class="bi bi-layout-text-window"></i> Format Tips</button>
+    </div>
+
+    {% if not has_analysis %}
+    <a href="/dashboard" class="ctx-upload-btn">
+      <i class="bi bi-cloud-upload"></i> Upload Resume
+    </a>
+    {% endif %}
+  </aside>
+
+  <!-- Main: chat panel -->
+  <div class="assistant-chat-panel">
+    <div class="chat-messages" id="chatMessages">
+      <!-- Welcome message -->
+      <div class="chat-bubble assistant-bubble">
+        <div class="bubble-avatar"><i class="bi bi-robot"></i></div>
+        <div class="bubble-body">
+          <div class="bubble-text">
+            {% if has_analysis %}
+              Hello! 👋 I've loaded your resume for <strong>{{ name }}</strong>.<br>
+              Your current ATS score is <strong>{{ ats_score }}/100</strong>. I detected <strong>{{ skills|length }}</strong> skills.<br><br>
+              Ask me anything about your resume, career growth, interview prep, or salary benchmarks!
+            {% else %}
+              Hello! 👋 I'm your <strong>AI Career Assistant</strong>.<br><br>
+              Upload your resume from the <a href="/dashboard">Dashboard</a> to unlock personalized insights, or ask me anything about resume writing, job search, and career growth!
+            {% endif %}
+          </div>
+          <span class="bubble-time">Just now</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input area -->
+    <div class="chat-input-bar">
+      <div class="chat-input-wrap">
+        <textarea
+          id="chatInput"
+          class="chat-input"
+          placeholder="Ask me anything about your resume, career, skills…"
+          rows="1"
+          maxlength="2000"
+        ></textarea>
+        <button class="chat-send-btn" id="chatSendBtn" title="Send">
+          <i class="bi bi-send-fill"></i>
+        </button>
+      </div>
+      <p class="chat-disclaimer">AI responses are for career guidance. Always verify advice with industry professionals.</p>
+    </div>
+  </div>
+
+</div>
+

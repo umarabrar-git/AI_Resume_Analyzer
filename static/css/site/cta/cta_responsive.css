@@ -1,0 +1,24 @@
+@media (max-width: 991.98px) {
+    .cta-section {
+        padding-top: 3rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .cta-section {
+        padding-top: 2.35rem;
+    }
+
+    .cta-section__shell {
+        padding: 1.1rem 0.95rem;
+        border-radius: 1rem;
+    }
+
+    .cta-section__actions {
+        flex-direction: column;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+}

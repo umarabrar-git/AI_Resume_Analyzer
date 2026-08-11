@@ -1,0 +1,93 @@
+.analytics-charts-grid{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 18px;
+    margin: 24px 0 10px;
+    align-items: stretch;
+}
+
+.analytics-charts-grid > .chart-panel{
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.insight-panel{
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,0.96);
+    border: 1px solid rgba(226,232,240,0.9);
+    border-radius: 22px;
+    padding: 32px;
+    box-shadow: 0 16px 40px -26px rgba(15, 23, 42, 0.28);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    height: 100%;
+}
+
+.insight-panel > *{
+    position: relative;
+    z-index: 1;
+}
+
+.insight-panel::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+.insight-panel::after{
+    content: "";
+    position: absolute;
+    right: -46px;
+    top: -46px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.35;
+}
+
+.ats-panel{
+    background: linear-gradient(160deg, #f8fbff 0%, #eef4ff 100%);
+}
+
+.ats-panel::before{
+    background:
+        radial-gradient(circle at 12% 20%, rgba(37,99,235,0.12), transparent 45%),
+        repeating-linear-gradient(135deg, rgba(37,99,235,0.05) 0 9px, transparent 9px 18px);
+}
+
+.ats-panel::after{
+    background: rgba(59,130,246,0.22);
+}
+
+.skills-panel{
+    background: linear-gradient(160deg, #fcfaff 0%, #f4efff 100%);
+}
+
+.skills-panel::before{
+    background:
+        radial-gradient(circle at 18% 14%, rgba(124,58,237,0.13), transparent 42%),
+        repeating-linear-gradient(45deg, rgba(139,92,246,0.06) 0 8px, transparent 8px 16px);
+}
+
+.skills-panel::after{
+    background: rgba(124,58,237,0.2);
+}
+
+.match-panel{
+    background: linear-gradient(160deg, #f7fcf8 0%, #edf9f1 100%);
+}
+
+.match-panel::before{
+    background:
+        radial-gradient(circle at 85% 78%, rgba(5,150,105,0.13), transparent 45%),
+        repeating-linear-gradient(120deg, rgba(16,185,129,0.06) 0 10px, transparent 10px 20px);
+}
+
+.match-panel::after{
+    background: rgba(5,150,105,0.2);
+}

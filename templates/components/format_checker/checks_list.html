@@ -1,0 +1,13 @@
+<ul class="format-check-list">
+    {% for check in format_checks %}
+        <li class="format-check-item {{ 'passed' if check.passed else 'failed' }}">
+            <span class="fc-icon">
+                <i class="bi {{ 'bi-check-circle-fill' if check.passed else 'bi-exclamation-triangle-fill' }}"></i>
+            </span>
+            <div class="fc-text">
+                <strong>{{ check.label }}</strong>
+                <span>{{ check.detail }}</span>
+            </div>
+        </li>
+    {% endfor %}
+</ul>

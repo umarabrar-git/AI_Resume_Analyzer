@@ -1,0 +1,115 @@
+.features-section__grid {
+    margin-top: 1.15rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.features-card {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(203, 213, 225, 0.9);
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.features-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(96, 165, 250, 0.85);
+    box-shadow: 0 16px 32px rgba(37, 99, 235, 0.12);
+}
+
+.features-card__head {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.features-card__icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.65rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(59, 130, 246, 0.08) 100%);
+    color: #1d4ed8;
+    font-size: 1.15rem;
+}
+
+.features-card__title {
+    margin: 0;
+    color: #0f172a;
+    font-size: 1.08rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.features-card__desc {
+    margin: 0.75rem 0 0;
+    color: #475569;
+    font-size: 0.93rem;
+    line-height: 1.6;
+}
+
+.features-card__bullets {
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.features-card__bullet {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #475569;
+    font-size: 0.91rem;
+    line-height: 1.5;
+}
+
+.features-card__bullet-check {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3rem;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.features-card__cta {
+    margin-top: auto;
+    padding-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1d4ed8;
+    font-size: 0.93rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.25s ease, color 0.25s ease;
+}
+
+.features-card__cta:hover {
+    gap: 0.75rem;
+    color: #1e40af;
+}
+
+.features-card__arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.features-card__cta:hover .features-card__arrow {
+    transform: translateX(3px);
+}

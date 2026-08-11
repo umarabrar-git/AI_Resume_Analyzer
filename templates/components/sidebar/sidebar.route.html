@@ -1,0 +1,20 @@
+<aside class="sidebar" id="sidebar">
+
+  <button class="collapse-btn" id="collapseBtn" aria-label="Collapse sidebar">
+    <i class="bi bi-chevron-left"></i>
+  </button>
+
+  {% include "components/sidebar/brand/brand.route.html" %}
+  {% include "components/sidebar/plan-chip/plan-chip.route.html" %}
+
+  <div class="sidebar-main">
+    {% include "components/sidebar/nav-workspace/nav-workspace.route.html" %}
+
+    <hr class="divider">
+
+    {% include "components/sidebar/nav-account/nav-account.route.html" %}
+  </div>
+
+  {% include "components/sidebar/footer/footer.route.html" %}
+
+</aside>

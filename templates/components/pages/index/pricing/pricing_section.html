@@ -1,0 +1,16 @@
+<section
+    class="pricing-section"
+    id="pricing"
+    {% if request.endpoint == 'home.render_home' %}
+    data-home-controlled-section
+    hidden
+    {% endif %}
+>
+    <div class="container">
+        <div class="pricing-section__shell" data-pricing-shell>
+            {% include "components/pages/index/pricing/pricing_intro.html" %}
+            {% include "components/pages/index/pricing/pricing_toggle.html" %}
+            {% include "components/pages/index/pricing/pricing_cards.html" %}
+        </div>
+    </div>
+</section>

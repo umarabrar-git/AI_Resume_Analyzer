@@ -1,0 +1,13 @@
+{% if request.path == '/auth/login' %}
+    <div class="auth-header">
+        <h2 class="auth-header__title">Welcome Back</h2>
+        <p class="auth-header__subtitle">Sign in to your account</p>
+    </div>
+    {% include "components/auth/login/login.route.html" %}
+{% else %}
+    <div class="auth-header">
+        <h2 class="auth-header__title">Create Your Account</h2>
+        <p class="auth-header__subtitle">Start your resume journey</p>
+    </div>
+    {% include "components/auth/register/register.route.html" %}
+{% endif %}

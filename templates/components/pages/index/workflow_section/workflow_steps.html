@@ -1,0 +1,13 @@
+{% set workflow_steps = [
+    {"index": "1", "icon": "bi-upload", "title": "Upload Resume", "desc": "Upload PDF or DOCX and start analysis instantly."},
+    {"index": "2", "icon": "bi-cpu", "title": "AI Analysis", "desc": "Engine scans structure, keywords, and role relevance."},
+    {"index": "3", "icon": "bi-bar-chart-line", "title": "ATS Score", "desc": "Get a clear ATS score with section-level insights."},
+    {"index": "4", "icon": "bi-lightbulb", "title": "Recommendations", "desc": "Receive practical improvements for better impact."},
+    {"index": "5", "icon": "bi-file-earmark-arrow-down", "title": "Download Report", "desc": "Export your final AI report and act on it quickly."}
+] %}
+
+<div class="workflow-section__steps" data-workflow-steps>
+    {% for step in workflow_steps %}
+        {% include "components/pages/index/workflow_section/workflow_step.html" %}
+    {% endfor %}
+</div>

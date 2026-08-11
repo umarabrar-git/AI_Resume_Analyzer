@@ -1,0 +1,8 @@
+.overview-row{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: stretch;
+    margin-top: 20px;
+    margin-bottom: 28px;
+}

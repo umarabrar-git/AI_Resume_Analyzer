@@ -1,0 +1,55 @@
+{% if has_analysis %}
+  {% include "components/stats_cards.html" %}
+  {% include "components/charts.html" %}
+  {% include "components/skill_cards.html" %}
+  {% include "components/format_checker.html" %}
+  {% include "components/suggestions.html" %}
+  {% include "components/pages/analysis/previews_row.html" %}
+{% else %}
+  <div class="analysis-empty-state">
+    <div class="empty-icon"><i class="bi bi-file-earmark-text"></i></div>
+    <h2>No Resume Analyzed Yet</h2>
+    <p>Upload your resume to get a full ATS score, job-match breakdown, skill gap report, and AI recommendations.</p>
+    <button class="btn-upload-cta" id="analysisUploadBtn" type="button">
+      <i class="bi bi-cloud-upload"></i> Upload Resume
+    </button>
+  </div>
+
+  <!-- Inline upload form (hidden, triggered by button above) -->
+  <dialog id="analysisUploadDialog" class="analysis-upload-dialog">
+    <div class="upload-modal__dialog">
+      <div class="upload-modal__header">
+        <h3><i class="bi bi-file-earmark-arrow-up"></i> Upload Your Resume</h3>
+        <button class="upload-modal__close" id="analysisUploadClose" type="button" aria-label="Close">&times;</button>
+      </div>
+      <form action="{{ url_for('upload.upload_resume') }}" method="POST" enctype="multipart/form-data" class="upload-modal__form">
+        <div class="upload-modal__field">
+          <label for="analysisResumeFile">Resume file <span style="color:#e11d48">*</span></label>
+          <input type="file" id="analysisResumeFile" name="resume" accept=".pdf,.docx" required>
+        </div>
+        <div class="upload-modal__field">
+          <label for="analysisJD">Job description <em style="font-weight:400;opacity:.7">(optional)</em></label>
+          <textarea id="analysisJD" name="job_description" placeholder="Paste the job description here to enable job-match scoring and skill gap analysis..." rows="4"></textarea>
+        </div>
+        <div class="upload-modal__actions">
+          <button type="button" class="upload-modal__cancel" id="analysisUploadCancel">Cancel</button>
+          <button type="submit" class="upload-modal__submit"><i class="bi bi-cpu"></i> Analyze Resume</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+  <script>
+    (function () {
+      var btn = document.getElementById('analysisUploadBtn');
+      var dialog = document.getElementById('analysisUploadDialog');
+      var close = document.getElementById('analysisUploadClose');
+      var cancel = document.getElementById('analysisUploadCancel');
+      if (btn && dialog) {
+        btn.addEventListener('click', function () { dialog.showModal(); });
+        close.addEventListener('click', function () { dialog.close(); });
+        cancel.addEventListener('click', function () { dialog.close(); });
+        dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+      }
+    })();
+  </script>
+{% endif %}

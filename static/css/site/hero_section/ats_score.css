@@ -1,0 +1,51 @@
+.ats-score-card {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    border-radius: 24px;
+    padding: 1.35rem 1.25rem 1.55rem;
+    border: 1px solid rgba(191, 219, 254, 0.7);
+    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.12);
+}
+
+.ats-score-card .card-title {
+    display: block;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.ats-score-card .card-title span {
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.76rem;
+    color: #475569;
+}
+
+.ats-score-card .card-title strong {
+    display: none;
+}
+
+.progress-circle {
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    margin: auto;
+    border: 10px solid rgba(191, 219, 254, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background:
+        radial-gradient(circle at center, #ffffff 58%, transparent 59%),
+        conic-gradient(#2563eb 0 92%, #dbeafe 92% 100%);
+    box-shadow: inset 0 0 0 10px #ffffff, 0 16px 30px rgba(37, 99, 235, 0.14);
+}
+
+.progress-circle::before {
+    content: "92%";
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    color: #1d4ed8;
+}

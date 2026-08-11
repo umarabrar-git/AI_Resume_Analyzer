@@ -1,0 +1,15 @@
+@media (max-width: 991.98px) {
+    .faq-section {
+        padding-top: 3rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .faq-section {
+        padding-top: 2.35rem;
+    }
+
+    .faq-section__shell {
+        padding: 1rem 0.9rem;
+    }
+}

@@ -1,0 +1,235 @@
+/* ==============================
+   Tablet Devices
+================================*/
+
+@media (max-width: 991.98px) {
+
+    .hero-section{
+
+        min-height:auto;
+
+        padding:84px 0 58px;
+
+    }
+
+    .hero-section .row{
+
+        min-height:auto;
+
+        row-gap:4rem;
+
+    }
+
+    .hero-left{
+
+        max-width:100%;
+
+        align-items:center;
+
+        text-align:center;
+
+        gap:1.25rem;
+
+    }
+
+    .hero-heading h1{
+
+        max-width:100%;
+
+        font-size:3rem;
+
+    }
+
+    .hero-description p{
+
+        max-width:100%;
+
+    }
+
+    .hero-features li{
+
+        justify-content:center;
+
+    }
+
+    .hero-section__actions,
+    .hero-actions{
+
+        justify-content:center;
+
+    }
+
+    .hero-trust{
+
+        justify-content:center;
+
+    }
+
+    .hero-right{
+
+        max-width:100%;
+
+        margin-top:1.25rem;
+
+        padding-top:1rem;
+
+        align-items:center;
+
+    }
+
+    .resume-preview-card,
+    .ats-score-card,
+    .job-match-card,
+    .suggestions-card{
+
+        width:100%;
+
+        max-width:34rem;
+
+        margin:0;
+
+        align-self:center;
+
+    }
+
+    .floating-card{
+
+        right:0;
+
+    }
+
+}
+
+
+/* ==============================
+   Mobile Devices
+================================*/
+
+@media (max-width:767.98px){
+
+    .hero-section{
+
+        padding:80px 0 60px;
+
+    }
+
+    .hero-heading h1{
+
+        font-size:2.5rem;
+
+        line-height:1.08;
+
+    }
+
+    .hero-description p{
+
+        font-size:1rem;
+
+    }
+
+    .hero-section__actions,
+    .hero-actions{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .hero-section__actions a,
+    .hero-actions a{
+
+        width:100%;
+
+        padding:16px 24px;
+
+    }
+
+    .hero-trust{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:1rem;
+
+    }
+
+    .resume-preview-card{
+
+        padding:1.3rem;
+
+    }
+
+    .progress-circle{
+
+        width:128px;
+
+        height:128px;
+
+    }
+
+    .progress-circle::before{
+
+        font-size:1.7rem;
+
+    }
+
+    .floating-card{
+
+        position:relative;
+
+        top:0;
+
+        right:auto;
+
+        margin-top:1rem;
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}
+
+
+/* ==============================
+   Small Phones
+================================*/
+
+@media (max-width:575.98px){
+
+    .hero-heading h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .hero-badge{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .hero-trust{
+
+        width:100%;
+
+    }
+
+    .hero-trust__item{
+
+        text-align:center;
+
+    }
+
+    .hero-trust__item h3{
+
+        font-size:2rem;
+
+    }
+
+}

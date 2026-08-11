@@ -1,0 +1,116 @@
+.workflow-section {
+    padding: 3.75rem 0 0;
+}
+
+.workflow-section[data-workflow-locked="true"] {
+    display: none;
+}
+
+.workflow-section__shell {
+    padding: 1.45rem;
+    border-radius: 1.35rem;
+    border: 1px solid rgba(203, 213, 225, 0.9);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.96) 0%, rgba(239, 246, 255, 0.7) 100%);
+    box-shadow: 0 18px 32px rgba(15, 23, 42, 0.07);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.workflow-section__shell.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.workflow-section__eyebrow {
+    margin: 0;
+    color: #0f3a74;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.workflow-section__title {
+    margin: 0.45rem 0 0;
+    color: #0f172a;
+    font-size: clamp(1.5rem, 1.15vw + 1.15rem, 2.05rem);
+    font-weight: 800;
+}
+
+.workflow-section__subtitle {
+    margin: 0.55rem 0 0;
+    color: #475569;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    max-width: 760px;
+}
+
+.workflow-section__steps {
+    margin-top: 1.2rem;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.7rem;
+}
+
+.workflow-step {
+    position: relative;
+    padding: 0.95rem 0.8rem;
+    border-radius: 0.95rem;
+    border: 1px solid rgba(191, 219, 254, 0.8);
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.workflow-step:hover {
+    transform: translateY(-3px);
+    border-color: rgba(59, 130, 246, 0.85);
+    box-shadow: 0 14px 24px rgba(37, 99, 235, 0.13);
+}
+
+.workflow-step__number {
+    position: absolute;
+    top: 0.55rem;
+    right: 0.55rem;
+    display: inline-flex;
+    width: 1.35rem;
+    height: 1.35rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.1);
+    color: #1d4ed8;
+    font-size: 0.76rem;
+    font-weight: 800;
+}
+
+.workflow-step__icon {
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.6rem;
+    background: rgba(37, 99, 235, 0.1);
+    color: #1d4ed8;
+    font-size: 1.05rem;
+}
+
+.workflow-step__title {
+    margin: 0.62rem 0 0;
+    color: #0f172a;
+    font-size: 0.96rem;
+    font-weight: 700;
+}
+
+.workflow-step__desc {
+    margin: 0.4rem 0 0;
+    color: #475569;
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+.workflow-step.is-active {
+    border-color: rgba(37, 99, 235, 0.8);
+    box-shadow: 0 12px 22px rgba(37, 99, 235, 0.14);
+}

@@ -1,0 +1,13 @@
+/* Site CSS index: split into feature-focused modules. */
+@import url("site/globals.css");
+@import url("site/navbar/navbar.route.css");
+@import url("site/home-hero.css");
+@import url("site/home-trusted.css");
+@import url("site/home-features.css");
+@import url("site/home-workflow.css");
+@import url("site/home-ai-platform.css");
+@import url("site/home-testimonials.css");
+@import url("site/home-pricing.css");
+@import url("site/home-faq.css");
+@import url("site/home-cta.css");
+@import url("site/home-footer.css");

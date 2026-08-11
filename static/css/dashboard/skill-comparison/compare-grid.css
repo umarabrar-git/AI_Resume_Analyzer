@@ -1,0 +1,96 @@
+.skill-compare-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.skill-compare-card{
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 18px;
+    padding: 18px;
+    background: rgba(248, 250, 252, 0.95);
+}
+
+.skill-compare-card.detected{
+    border-left: 4px solid #2563eb;
+}
+
+.skill-compare-card.recommended{
+    border-left: 4px solid #d97706;
+}
+
+.skill-compare-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.skill-compare-title h4{
+    margin: 0;
+    font-size: 1rem;
+    color: #0f172a;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skill-count{
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: rgba(15, 23, 42, 0.08);
+    color: #334155;
+}
+
+.skill-compare-caption{
+    margin: 0 0 12px;
+    color: #64748b;
+    font-size: 0.84rem;
+}
+
+.skill-pill-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-pill{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.skill-pill.detected{
+    background: rgba(37, 99, 235, 0.12);
+    color: #1d4ed8;
+}
+
+.skill-pill.recommended{
+    background: rgba(217, 119, 6, 0.13);
+    color: #b45309;
+}
+
+.skill-pill.more{
+    background: rgba(100, 116, 139, 0.14);
+    color: #475569;
+}
+
+.skill-empty{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.skill-empty.success{
+    color: #059669;
+}

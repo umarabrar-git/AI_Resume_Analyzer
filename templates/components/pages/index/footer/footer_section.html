@@ -1,0 +1,59 @@
+<footer class="site-footer" id="footer">
+    <div class="container">
+        <div class="site-footer__shell" data-footer-shell>
+            <div class="site-footer__main">
+                <div class="site-footer__brand">
+                    <a class="site-footer__logo" href="{{ url_for('home.render_home') }}">
+                        <span class="site-footer__logo-icon">
+                            <i class="bi bi-stars"></i>
+                        </span>
+                        <span>AI Resume Analyzer</span>
+                    </a>
+
+                    <p class="site-footer__description">
+                        Build stronger, ATS-ready resumes with AI-powered insights and smarter career tools.
+                    </p>
+                </div>
+
+                <div class="site-footer__column">
+                    <h3 class="site-footer__heading">Platform</h3>
+
+                    <nav class="site-footer__links" aria-label="Footer platform navigation">
+                        <a href="{{ url_for('features.render_features') }}">Features</a>
+                        <a href="{{ url_for('how_it_works.render_how_it_works') }}">How it Works</a>
+                        <a href="{{ url_for('pricing.render_pricing') }}">Pricing</a>
+                        <a href="{{ url_for('about.render_about') }}">About</a>
+                    </nav>
+                </div>
+
+                <div class="site-footer__column">
+                    <h3 class="site-footer__heading">Resources</h3>
+
+                    <nav class="site-footer__links" aria-label="Footer resources navigation">
+                        <a href="{{ url_for('dashboard.render_dashboard') }}">Dashboard</a>
+                        <a href="/analysis/">Resume Analysis</a>
+                        <a href="/reports/">Reports</a>
+                        <a href="{{ url_for('faq.render_faq') }}">FAQ</a>
+                    </nav>
+                </div>
+
+                <div class="site-footer__column">
+                    <h3 class="site-footer__heading">Legal & Privacy</h3>
+
+                    <nav class="site-footer__links" aria-label="Legal and privacy navigation">
+                        <a href="{{ url_for('legal.render_legal') }}">Legal & Privacy</a>
+                        <a href="{{ url_for('legal.render_legal') }}#privacy">Privacy Policy</a>
+                        <a href="{{ url_for('legal.render_legal') }}#terms">Terms of Service</a>
+                        <a href="{{ url_for('legal.render_legal') }}#cookies">Cookie Policy</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="site-footer__bottom">
+                <p class="site-footer__copyright">
+                    &copy; 2026 AI Resume Analyzer. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

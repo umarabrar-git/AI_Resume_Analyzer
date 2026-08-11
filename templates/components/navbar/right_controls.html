@@ -1,0 +1,13 @@
+<div class="navbar-right">
+    <button class="notification-btn" type="button" aria-label="Notifications">
+        <i class="bi bi-bell"></i>
+    </button>
+
+    <div class="admin-profile" aria-label="Current user profile">
+        <img src="https://i.pravatar.cc/100?u={{ (name or 'user')|lower }}" alt="Profile picture">
+        <div class="profile-info">
+            <h6>{{ name or 'User' }}</h6>
+            <span>Resume Workspace</span>
+        </div>
+    </div>
+</div>

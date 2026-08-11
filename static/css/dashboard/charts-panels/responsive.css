@@ -1,0 +1,19 @@
+@media (max-width: 1199px) {
+    .analytics-charts-grid{
+        flex-wrap: wrap;
+    }
+
+    .analytics-charts-grid > .chart-panel{
+        flex: 1 1 calc(50% - 9px);
+    }
+}
+
+@media (max-width: 767px) {
+    .analytics-charts-grid{
+        flex-direction: column;
+    }
+
+    .analytics-charts-grid > .chart-panel{
+        flex: 1 1 100%;
+    }
+}

@@ -1,0 +1,12 @@
+{% include "components/navbar.html" %}
+{% include "components/dashboard_header.html" %}
+
+<div class="dashboard-shell">
+    {% include "components/sidebar.html" %}
+
+    <main class="main-content">
+        {% include "components/pages/dashboard/main_content.html" %}
+    </main>
+</div>
+
+{% include "components/footer.html" %}

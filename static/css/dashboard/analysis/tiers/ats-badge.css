@@ -1,0 +1,9 @@
+.ats-badge.tier-yellow{
+    background: rgba(217,119,6,0.12);
+    color: #b45309;
+}
+
+.ats-badge.tier-red{
+    background: rgba(220,38,38,0.12);
+    color: #dc2626;
+}

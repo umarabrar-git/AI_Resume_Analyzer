@@ -1,0 +1,7 @@
+.hero-description p {
+	font-size: 1.12rem;
+	line-height: 1.85;
+	color: #64748b;
+	max-width: 620px;
+	margin: 0;
+}

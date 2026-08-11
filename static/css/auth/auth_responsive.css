@@ -1,0 +1,157 @@
+/* Responsive Design */
+
+@media (max-width: 991.98px) {
+    .auth-container {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-left {
+        display: none;
+    }
+
+    .auth-right {
+        padding: 2.5rem;
+    }
+
+    .auth-header__title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .auth-page {
+        padding: 1rem;
+    }
+
+    .auth-right {
+        padding: 1.5rem;
+    }
+
+    .auth-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .auth-header__title {
+        font-size: 1.25rem;
+    }
+
+    .auth-header__subtitle {
+        font-size: 0.85rem;
+    }
+
+    .login-form {
+        gap: 1rem;
+    }
+
+    .login-form__input {
+        padding: 0.65rem 0.9rem;
+        font-size: 0.85rem;
+    }
+
+    .login-form__submit {
+        padding: 0.8rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    .register-form {
+        gap: 1.25rem;
+    }
+
+    .register-form__input {
+        padding: 0.65rem 0.9rem;
+        font-size: 0.85rem;
+    }
+
+    .register-form__submit {
+        padding: 0.8rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .auth-page {
+        padding: 0.75rem;
+    }
+
+    .auth-container {
+        border-radius: 1rem;
+    }
+
+    .auth-right {
+        padding: 1.25rem;
+    }
+
+    .auth-header__title {
+        font-size: 1.1rem;
+    }
+
+    .auth-header__subtitle {
+        font-size: 0.8rem;
+    }
+
+    .auth-alert {
+        padding: 0.75rem;
+        font-size: 0.8rem;
+        gap: 0.5rem;
+    }
+
+    .login-form {
+        gap: 0.9rem;
+    }
+
+    .login-form__group {
+        gap: 0.4rem;
+    }
+
+    .login-form__label {
+        font-size: 0.8rem;
+    }
+
+    .login-form__input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+        border-radius: 0.5rem;
+    }
+
+    .login-form__submit {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .register-form {
+        gap: 1rem;
+    }
+
+    .register-form__group {
+        gap: 0.35rem;
+    }
+
+    .register-form__label {
+        font-size: 0.8rem;
+    }
+
+    .register-form__input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+        border-radius: 0.5rem;
+    }
+
+    .register-form__requirements {
+        padding: 0.6rem 0.8rem;
+        border-radius: 0.5rem;
+    }
+
+    .register-form__requirement-text {
+        font-size: 0.75rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .register-form__requirement {
+        font-size: 0.75rem;
+    }
+
+    .register-form__submit {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+}

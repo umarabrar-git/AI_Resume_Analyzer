@@ -1,0 +1,122 @@
+.quick-actions-panel {
+    background: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.quick-actions__title {
+    margin: 0;
+    color: #0f172a;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.quick-actions__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.quick-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: left;
+    width: 100%;
+}
+
+.quick-action-btn:hover {
+    border-color: #cbd5e1;
+    background: linear-gradient(180deg, #f8fbff 0%, #f5f8ff 100%);
+    transform: translateX(3px);
+    box-shadow: 0 6px 16px rgba(29, 78, 216, 0.08);
+}
+
+.quick-action-btn__icon {
+    display: inline-flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.65rem;
+    background: linear-gradient(135deg, rgba(29, 78, 216, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+    color: #1d4ed8;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.quick-action-btn__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    flex: 1;
+}
+
+.quick-action-btn__title {
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.quick-action-btn__desc {
+    color: #64748b;
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+.quick-action-btn__arrow {
+    color: #cbd5e1;
+    font-size: 1.2rem;
+    font-weight: 300;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.quick-action-btn:hover .quick-action-btn__arrow {
+    color: #1d4ed8;
+    transform: translateX(4px);
+}
+
+.quick-actions__footer {
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.quick-actions__subtitle {
+    margin: 0 0 0.5rem 0;
+    color: #0f172a;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.quick-actions__text {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.quick-actions__link {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.quick-actions__link:hover {
+    color: #1e40af;
+    text-decoration: underline;
+}

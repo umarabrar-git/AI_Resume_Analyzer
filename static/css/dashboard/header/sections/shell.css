@@ -1,0 +1,32 @@
+.dashboard-header{
+    background:linear-gradient(135deg,#75B7E3 0%,#77B6D8 50%,#52A9CE 100%);
+    border-radius:24px;
+    padding:40px;
+    margin:30px;
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.35);
+    box-shadow:0 15px 40px rgba(15,23,42,.12);
+}
+
+.dashboard-header::before{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+    top:-120px;
+    right:-90px;
+}
+
+.dashboard-header::after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(255,255,255,.10);
+    bottom:-80px;
+    left:-60px;
+}

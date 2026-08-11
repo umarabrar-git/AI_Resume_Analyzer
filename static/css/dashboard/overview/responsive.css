@@ -1,0 +1,24 @@
+@media (max-width: 1100px){
+    .overview-row{
+        grid-template-columns: 1fr;
+    }
+
+    .overview-quick-actions{
+        min-width: 0;
+    }
+
+    .qa-grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 640px){
+    .overview-ai-card{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .qa-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

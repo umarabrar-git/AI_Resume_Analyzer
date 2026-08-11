@@ -1,0 +1,23 @@
+<article class="skill-compare-card detected">
+    <div class="skill-compare-title">
+        <h4><i class="bi bi-patch-check-fill"></i> Detected Skills</h4>
+        <span class="skill-count">{{ skills|length }}</span>
+    </div>
+    <p class="skill-compare-caption">Extracted directly from your uploaded resume.</p>
+
+    <div class="skill-pill-list">
+        {% if skills %}
+            {% for skill in skills[:8] %}
+                <span class="skill-pill detected">
+                    <i class="bi {{ get_skill_icon(skill, profession_field) }}"></i>
+                    {{ skill }}
+                </span>
+            {% endfor %}
+            {% if skills|length > 8 %}
+                <span class="skill-pill more">+{{ skills|length - 8 }} More</span>
+            {% endif %}
+        {% else %}
+            <span class="skill-empty"><i class="bi bi-info-circle"></i> No skills detected yet.</span>
+        {% endif %}
+    </div>
+</article>

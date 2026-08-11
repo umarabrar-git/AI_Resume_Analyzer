@@ -1,0 +1,56 @@
+{% set features = [
+    {
+        "id": "resume-analysis",
+        "icon": "bi-graph-up-arrow",
+        "title": "ATS Resume Analysis",
+        "desc": "Analyze your resume using AI-powered ATS scoring.",
+        "bullets": ["Resume Parsing", "Keyword Analysis", "ATS Compatibility"],
+        "link": "#"
+    },
+    {
+        "id": "resume-creation",
+        "icon": "bi-magic",
+        "title": "Resume Creation",
+        "desc": "Build professional resumes with AI assistance.",
+        "bullets": ["AI Resume Builder", "Professional Templates", "Export PDF"],
+        "link": "#"
+    },
+    {
+        "id": "job-matching",
+        "icon": "bi-bullseye",
+        "title": "Job Matching",
+        "desc": "Compare resume against job descriptions instantly.",
+        "bullets": ["Resume vs Job Description", "Match Percentage", "Missing Skills"],
+        "link": "#"
+    },
+    {
+        "id": "career-assistant",
+        "icon": "bi-robot",
+        "title": "AI Career Assistant",
+        "desc": "Get intelligent guidance for career growth.",
+        "bullets": ["Chat with AI", "Career Guidance", "Resume Tips"],
+        "link": "#"
+    },
+    {
+        "id": "smart-reports",
+        "icon": "bi-file-earmark-pdf",
+        "title": "Smart Reports",
+        "desc": "Download detailed analysis and recommendations.",
+        "bullets": ["Download PDF", "Performance Report", "Recommendations"],
+        "link": "#"
+    },
+    {
+        "id": "skill-gap-analysis",
+        "icon": "bi-lightbulb",
+        "title": "Skill Gap Analysis",
+        "desc": "Identify missing skills and growth opportunities.",
+        "bullets": ["Missing Skills", "Learning Suggestions", "Career Growth"],
+        "link": "#"
+    }
+] %}
+
+<div class="features-section__grid" data-features-grid>
+    {% for item in features %}
+        {% include "components/pages/index/features_section/features_card.html" %}
+    {% endfor %}
+</div>

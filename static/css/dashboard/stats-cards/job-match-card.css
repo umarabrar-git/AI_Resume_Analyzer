@@ -1,0 +1,233 @@
+.metric-block{
+    display: grid;
+    gap: 12px;
+}
+
+.metric-labels{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.metric-labels .metric-title{
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+.metric-labels strong{
+    font-size: 1.2rem;
+    color: #0f172a;
+}
+
+.match-progress-track,
+.match-accuracy-row{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.match-accuracy-label{
+    font-size: 0.92rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.match-accuracy-value{
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.03em;
+}
+
+.match-progress-track,
+.skill-bar,
+.sparkline-track{
+    width: 100%;
+    height: 12px;
+    border-radius: 999px;
+    background: rgba(59,111,224,0.08);
+    overflow: hidden;
+}
+
+.progress-fill,
+.skill-bar-fill,
+.sparkline-fill{
+    width: 0;
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.8s ease;
+}
+
+.progress-fill{
+    background: linear-gradient(90deg, #059669 0%, #10b981 100%);
+}
+
+.skill-bar-fill{
+    background: #d97706;
+}
+
+.sparkline-fill{
+    background: linear-gradient(90deg, #7c3aed 0%, #8b5cf6 100%);
+}
+
+.match-divider{
+    border: 0;
+    border-top: 1px solid rgba(226, 232, 240, 0.9);
+    margin: 16px 0;
+}
+
+.match-section{
+    margin-bottom: 14px;
+}
+
+.match-section:last-of-type{
+    margin-bottom: 0;
+}
+
+.match-section-title{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+}
+
+.match-section-title.matched{
+    color: #16a34a;
+}
+
+.match-section-title.missing{
+    color: #64748b;
+}
+
+.match-count{
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+}
+
+.match-chips{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.match-chip{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.match-chip i,
+.skill-chip i{
+    font-size: 0.84rem;
+}
+
+.match-chip.matched{
+    background: rgba(5, 150, 105, 0.12);
+    color: #047857;
+}
+
+.match-chip.matched i{
+    font-size: 0.82rem;
+}
+
+.match-chip.missing{
+    background: #f4f6fa;
+    color: #64748b;
+    border: 1px dashed rgba(148, 163, 184, 0.4);
+}
+
+.match-chip.more{
+    color: #c9861a;
+    background: rgba(242,177,52,0.15);
+    border-color: transparent;
+    font-weight: 700;
+}
+
+.match-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.match-updated{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    font-size: 0.82rem;
+}
+
+.match-cta{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(59, 111, 224, 0.1);
+    color: #3b6fe0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.match-cta:hover{
+    background: rgba(59, 111, 224, 0.18);
+}
+
+.card-meta{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #64748b;
+    border-top: 1px solid rgba(226,232,240,0.85);
+    padding-top: 16px;
+    font-size: 0.92rem;
+}
+
+.card-meta i{
+    color: #2563eb;
+    font-size: 1rem;
+}
+
+.profession-chip{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #2563eb;
+    background: rgba(37,99,235,0.12);
+    margin-top: 8px;
+}
+
+.match-field-note{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 0;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+.match-field-note strong{
+    font-size: 0.95rem;
+    color: #0f172a;
+}

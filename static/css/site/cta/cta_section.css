@@ -1,0 +1,77 @@
+.cta-section {
+    padding: 3.8rem 0 0;
+}
+
+.cta-section__shell {
+    border-radius: 1.3rem;
+    padding: 1.7rem;
+    background: linear-gradient(130deg, #1d4ed8 0%, #0f3a74 100%);
+    color: #ffffff;
+    box-shadow: 0 18px 30px rgba(15, 58, 116, 0.32);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.cta-section__shell.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cta-section__shell.is-pulse {
+    box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.14), 0 18px 30px rgba(15, 58, 116, 0.32);
+}
+
+.cta-section__eyebrow {
+    margin: 0;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.cta-section__title {
+    margin: 0.55rem 0 0;
+    font-size: clamp(1.45rem, 1.25vw + 1.05rem, 2rem);
+    font-weight: 800;
+}
+
+.cta-section__subtitle {
+    margin: 0.6rem 0 0;
+    max-width: 640px;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.cta-section__actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    border-radius: 0.72rem;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+.cta-button--primary {
+    background: #ffffff;
+    color: #1d4ed8;
+}
+
+.cta-button--secondary {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}

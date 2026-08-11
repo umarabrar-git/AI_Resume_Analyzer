@@ -1,0 +1,41 @@
+{% set is_logged_in =
+    session.get('user_id') or session.get('logged_in')
+%}
+
+<div class="hero-section__actions">
+
+    <a
+        class="hero-section__primary-btn"
+        href="{{
+            url_for('analysis.render_analysis')
+            if is_logged_in
+            else url_for(
+                'auth.login',
+                next=url_for('analysis.render_analysis')
+            )
+        }}"
+    >
+        <i class="bi bi-bar-chart-line-fill hero-btn__icon" aria-hidden="true"></i>
+        <span class="hero-btn__label">Analyze My Resume</span>
+        <i class="bi bi-arrow-right hero-btn__arrow" aria-hidden="true"></i>
+    </a>
+
+    <a
+        class="hero-section__secondary-btn"
+        href="{{
+            url_for('resume_creation.render_resume_creation')
+            if is_logged_in
+            else url_for(
+                'auth.login',
+                next=url_for(
+                    'resume_creation.render_resume_creation'
+                )
+            )
+        }}"
+    >
+        <i class="bi bi-pencil-square hero-btn__icon" aria-hidden="true"></i>
+        <span class="hero-btn__label">Build My Resume</span>
+        <i class="bi bi-arrow-right hero-btn__arrow" aria-hidden="true"></i>
+    </a>
+
+</div>

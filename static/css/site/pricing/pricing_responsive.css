@@ -1,0 +1,23 @@
+@media (max-width: 991.98px) {
+    .pricing-section {
+        padding-top: 3rem;
+    }
+
+    .pricing-section__cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 575.98px) {
+    .pricing-section {
+        padding-top: 2.35rem;
+    }
+
+    .pricing-section__shell {
+        padding: 1rem 0.9rem;
+    }
+
+    .pricing-section__cards {
+        grid-template-columns: 1fr;
+    }
+}

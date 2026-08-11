@@ -1,0 +1,126 @@
+<div class="home-navbar__left">
+
+    <!-- =========================================
+         BRAND
+    ========================================== -->
+
+    <a
+        class="home-navbar__brand"
+        href="{{ url_for('home.render_home') }}"
+    >
+
+        <span class="home-navbar__brand-mark">
+            <i class="bi bi-stars"></i>
+        </span>
+
+        <span>
+            AI Resume Analyzer
+        </span>
+
+    </a>
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <nav
+        class="home-navbar__menu"
+        aria-label="Primary navigation"
+        data-home-navbar-menu
+    >
+
+        {% set is_logged_in =
+            session.get('user_id')
+            or session.get('logged_in')
+        %}
+
+
+        {#
+            NAVIGATION BEHAVIOR
+
+            Homepage:
+            Marketing links open in a shared named tab (marketing-window).
+            Subsequent clicks from that tab stay inside it.
+
+            Marketing pages:
+            Links navigate inside current tab (no target).
+        #}
+
+
+        {% set open_in_marketing_tab =
+            request.blueprint == 'home'
+        %}
+
+
+        <!-- =====================================
+             FEATURES
+        ====================================== -->
+
+        <a
+            class="home-navbar__link"
+            href="{{ url_for('features.render_features') }}"
+            {% if open_in_marketing_tab %}target="marketing-window"{% endif %}
+        >
+            Features
+        </a>
+
+
+        <!-- =====================================
+             HOW IT WORKS
+        ====================================== -->
+
+        <a
+            class="home-navbar__link"
+            href="{{ url_for('how_it_works.render_how_it_works') }}"
+            {% if open_in_marketing_tab %}target="marketing-window"{% endif %}
+        >
+            How it Works
+        </a>
+
+
+        <!-- =====================================
+             DASHBOARD
+        ====================================== -->
+
+        {% if is_logged_in %}
+
+            <a
+                class="home-navbar__link"
+                href="{{ url_for('dashboard.render_dashboard') }}"
+            >
+                Dashboard
+            </a>
+
+        {% endif %}
+
+
+        <!-- =====================================
+             PRICING
+        ====================================== -->
+
+        <a
+            class="home-navbar__link"
+            href="{{ url_for('pricing.render_pricing') }}"
+            {% if open_in_marketing_tab %}target="marketing-window"{% endif %}
+        >
+            Pricing
+        </a>
+
+
+        <!-- =====================================
+             ABOUT
+        ====================================== -->
+
+        <a
+            class="home-navbar__link"
+            href="{{ url_for('about.render_about') }}"
+            {% if open_in_marketing_tab %}target="marketing-window"{% endif %}
+        >
+            About
+        </a>
+
+
+    </nav>
+
+</div>
