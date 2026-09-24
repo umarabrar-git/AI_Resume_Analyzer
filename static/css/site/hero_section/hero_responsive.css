@@ -2,99 +2,100 @@
    Tablet Devices
 ================================*/
 
-@media (max-width: 991.98px) {
+@media (max-width: 991.98px) and (hover: none),
+(max-width: 991.98px) and (pointer: coarse) {
 
-    .hero-section{
+    .hero-section {
 
-        min-height:auto;
+        min-height: auto;
 
-        padding:84px 0 58px;
-
-    }
-
-    .hero-section .row{
-
-        min-height:auto;
-
-        row-gap:4rem;
+        padding: 84px 0 58px;
 
     }
 
-    .hero-left{
+    .hero-section .row {
 
-        max-width:100%;
+        min-height: auto;
 
-        align-items:center;
-
-        text-align:center;
-
-        gap:1.25rem;
+        row-gap: 4rem;
 
     }
 
-    .hero-heading h1{
+    .hero-left {
 
-        max-width:100%;
+        max-width: 100%;
 
-        font-size:3rem;
+        align-items: center;
 
-    }
+        text-align: center;
 
-    .hero-description p{
-
-        max-width:100%;
+        gap: 1.25rem;
 
     }
 
-    .hero-features li{
+    .hero-heading h1 {
 
-        justify-content:center;
+        max-width: 100%;
+
+        font-size: 3rem;
+
+    }
+
+    .hero-description p {
+
+        max-width: 100%;
+
+    }
+
+    .hero-features li {
+
+        justify-content: center;
 
     }
 
     .hero-section__actions,
-    .hero-actions{
+    .hero-actions {
 
-        justify-content:center;
-
-    }
-
-    .hero-trust{
-
-        justify-content:center;
+        justify-content: center;
 
     }
 
-    .hero-right{
+    .hero-trust {
 
-        max-width:100%;
+        justify-content: center;
 
-        margin-top:1.25rem;
+    }
 
-        padding-top:1rem;
+    .hero-right {
 
-        align-items:center;
+        max-width: 100%;
+
+        margin-top: 1.25rem;
+
+        padding-top: 1rem;
+
+        align-items: center;
 
     }
 
     .resume-preview-card,
     .ats-score-card,
     .job-match-card,
-    .suggestions-card{
+    .suggestions-card {
 
-        width:100%;
+        width: 100%;
 
-        max-width:34rem;
+        max-width: 34rem;
 
-        margin:0;
+        margin: 0;
 
-        align-self:center;
+        align-self: center;
 
     }
 
-    .floating-card{
+    .floating-card {
 
-        right:0;
+        right: 0;
 
     }
 
@@ -105,89 +106,89 @@
    Mobile Devices
 ================================*/
 
-@media (max-width:767.98px){
+@media (max-width:767.98px) {
 
-    .hero-section{
+    .hero-section {
 
-        padding:80px 0 60px;
-
-    }
-
-    .hero-heading h1{
-
-        font-size:2.5rem;
-
-        line-height:1.08;
+        padding: 80px 0 60px;
 
     }
 
-    .hero-description p{
+    .hero-heading h1 {
 
-        font-size:1rem;
+        font-size: 2.5rem;
+
+        line-height: 1.08;
+
+    }
+
+    .hero-description p {
+
+        font-size: 1rem;
 
     }
 
     .hero-section__actions,
-    .hero-actions{
+    .hero-actions {
 
-        flex-direction:column;
+        flex-direction: column;
 
-        width:100%;
+        width: 100%;
 
     }
 
     .hero-section__actions a,
-    .hero-actions a{
+    .hero-actions a {
 
-        width:100%;
+        width: 100%;
 
-        padding:16px 24px;
-
-    }
-
-    .hero-trust{
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:1rem;
+        padding: 16px 24px;
 
     }
 
-    .resume-preview-card{
+    .hero-trust {
 
-        padding:1.3rem;
+        flex-direction: column;
 
-    }
+        align-items: center;
 
-    .progress-circle{
-
-        width:128px;
-
-        height:128px;
+        gap: 1rem;
 
     }
 
-    .progress-circle::before{
+    .resume-preview-card {
 
-        font-size:1.7rem;
+        padding: 1.3rem;
 
     }
 
-    .floating-card{
+    .progress-circle {
 
-        position:relative;
+        width: 128px;
 
-        top:0;
+        height: 128px;
 
-        right:auto;
+    }
 
-        margin-top:1rem;
+    .progress-circle::before {
 
-        width:100%;
+        font-size: 1.7rem;
 
-        justify-content:center;
+    }
+
+    .floating-card {
+
+        position: relative;
+
+        top: 0;
+
+        right: auto;
+
+        margin-top: 1rem;
+
+        width: 100%;
+
+        justify-content: center;
 
     }
 
@@ -198,37 +199,37 @@
    Small Phones
 ================================*/
 
-@media (max-width:575.98px){
+@media (max-width:575.98px) {
 
-    .hero-heading h1{
+    .hero-heading h1 {
 
-        font-size:2.2rem;
-
-    }
-
-    .hero-badge{
-
-        width:100%;
-
-        justify-content:center;
+        font-size: 2.2rem;
 
     }
 
-    .hero-trust{
+    .hero-badge {
 
-        width:100%;
+        width: 100%;
 
-    }
-
-    .hero-trust__item{
-
-        text-align:center;
+        justify-content: center;
 
     }
 
-    .hero-trust__item h3{
+    .hero-trust {
 
-        font-size:2rem;
+        width: 100%;
+
+    }
+
+    .hero-trust__item {
+
+        text-align: center;
+
+    }
+
+    .hero-trust__item h3 {
+
+        font-size: 2rem;
 
     }
 
