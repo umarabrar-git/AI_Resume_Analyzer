@@ -1,17 +1,49 @@
-<article class="testimonial-card" data-testimonial-card>
-    <div class="testimonial-card__stars">
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
+<article
+    class="testimonial-card"
+    data-testimonial-card
+>
+
+    <div
+        class="testimonial-card__stars"
+        aria-label="5 out of 5 stars"
+    >
+
+        <span aria-hidden="true">★</span>
+        <span aria-hidden="true">★</span>
+        <span aria-hidden="true">★</span>
+        <span aria-hidden="true">★</span>
+        <span aria-hidden="true">★</span>
+
     </div>
-    <p class="testimonial-card__quote">"{{ item.quote }}"</p>
+
+
+    <p class="testimonial-card__quote">
+        "{{ item.quote }}"
+    </p>
+
+
     <div class="testimonial-card__meta">
-        <div class="testimonial-card__avatar">{{ item.name[0] }}</div>
-        <div class="testimonial-card__info">
-            <h3 class="testimonial-card__name">{{ item.name }}</h3>
-            <p class="testimonial-card__role">{{ item.role }}</p>
+
+        <div
+            class="testimonial-card__avatar"
+            aria-hidden="true"
+        >
+            {{ item.name[0] }}
         </div>
+
+
+        <div class="testimonial-card__info">
+
+            <p class="testimonial-card__name">
+                {{ item.name }}
+            </p>
+
+            <p class="testimonial-card__role">
+                {{ item.role }}
+            </p>
+
+        </div>
+
     </div>
+
 </article>
