@@ -1,72 +1,1013 @@
-/* ============================================================
-   Analysis Empty State — shown when no resume has been uploaded
-   ============================================================ */
+/* =========================================================
+   ANALYSIS EMPTY STATE
+   ========================================================= */
 
 .analysis-empty-state {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   gap: 1.2rem;
+
   padding: 4rem 2rem;
+
   text-align: center;
+
   min-height: 50vh;
 }
 
 .analysis-empty-state .empty-icon {
   font-size: 4rem;
+
   color: var(--color-primary, #6c63ff);
+
   opacity: 0.6;
+
   line-height: 1;
 }
 
 .analysis-empty-state h2 {
+  margin: 0;
+
   font-size: 1.6rem;
   font-weight: 700;
+
   color: var(--color-text-primary, #1a1a2e);
-  margin: 0;
 }
 
 .analysis-empty-state p {
-  font-size: 1rem;
-  color: var(--color-text-muted, #6b7280);
-  max-width: 420px;
   margin: 0;
+
+  max-width: 420px;
+
+  font-size: 1rem;
   line-height: 1.6;
+
+  color: var(--color-text-muted, #6b7280);
 }
+
+
+/* =========================================================
+   UPLOAD CTA
+   ========================================================= */
 
 .btn-upload-cta {
   display: inline-flex;
+
   align-items: center;
+  justify-content: center;
+
   gap: 0.5rem;
+
   padding: 0.75rem 2rem;
-  background: var(--color-primary, #6c63ff);
-  color: #fff;
+
+  border: none;
   border-radius: 999px;
+
+  background: var(--color-primary, #6c63ff);
+
+  color: #fff;
+
   font-size: 1rem;
   font-weight: 600;
+
   text-decoration: none;
-  transition: background 0.2s, transform 0.15s;
+
   cursor: pointer;
-  border: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
 }
 
 .btn-upload-cta:hover {
   background: var(--color-primary-dark, #574fd6);
+
   transform: translateY(-1px);
+
   color: #fff;
-  text-decoration: none;
 }
 
-/* Native <dialog> wrapper for the analysis upload modal */
+
+/* =========================================================
+   NATIVE DIALOG
+   ========================================================= */
+
 .analysis-upload-dialog {
-  border: none;
-  padding: 0;
-  background: transparent;
-  max-width: 100%;
+  width: min(820px, 88vw) !important;
+  max-width: min(820px, 88vw) !important;
+  height: min(640px, 88vh) !important;
+  max-height: 88vh !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: auto !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
 }
 
 .analysis-upload-dialog::backdrop {
-  background: rgba(15, 23, 42, 0.55);
-  backdrop-filter: blur(3px);
+  background: rgba(15, 23, 42, 0.58);
+
+  backdrop-filter: blur(4px);
+
+  -webkit-backdrop-filter: blur(4px);
+}
+
+
+/* =========================================================
+   MAIN MODAL
+   ========================================================= */
+
+.analysis-upload-modal {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+
+  grid-template-columns: 270px minmax(0, 1fr);
+  display: grid;
+
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  box-shadow:
+    0 28px 70px rgba(15, 23, 42, 0.2);
+}
+
+
+/* =========================================================
+   LEFT PANEL
+   ========================================================= */
+
+.analysis-upload-modal__side {
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+  padding: 1.35rem 1.35rem 1.2rem;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(180deg,
+      rgba(158, 181, 255, 0.28),
+      rgba(124, 157, 255, 0.12));
+}
+
+
+/* =========================================================
+   LEFT ILLUSTRATION
+   ========================================================= */
+
+.analysis-upload-modal__illustration {
+
+  position: relative;
+
+  width: 100%;
+
+  height: 145px;
+
+  margin-bottom: 1rem;
+
+  flex-shrink: 0;
+}
+
+.upload-blob {
+
+  position: absolute;
+
+  inset: 18px 18px 0;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(135deg,
+      rgba(123, 155, 255, 0.28),
+      rgba(160, 224, 255, 0.12));
+
+  transform: rotate(-8deg);
+}
+
+.upload-document {
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 150px;
+  height: 100px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(135deg,
+      #dfe9ff,
+      #edf4ff);
+
+  border: 1px solid rgba(99, 125, 207, 0.18);
+
+  box-shadow:
+    0 14px 28px rgba(86, 103, 167, 0.16);
+}
+
+.upload-document::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 12px 14px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  border-radius: 8px;
+}
+
+.upload-document__lines {
+
+  position: absolute;
+
+  left: 28px;
+  right: 28px;
+
+  top: 29px;
+
+  height: 42px;
+
+  background:
+    linear-gradient(#b4c6ff 0 0) 0 0 / 100% 5px no-repeat,
+
+    linear-gradient(#b4c6ff 0 0) 0 21px / 100% 5px no-repeat,
+
+    linear-gradient(#b4c6ff 0 0) 0 42px / 100% 5px no-repeat;
+
+  opacity: 0.55;
+}
+
+.upload-arrow {
+
+  position: absolute;
+
+  right: 8px;
+  bottom: 8px;
+
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(135deg,
+      #3b82f6,
+      #2563eb);
+
+  color: #fff;
+
+  font-size: 1.1rem;
+
+  box-shadow:
+    0 8px 16px rgba(37, 99, 235, 0.3);
+}
+
+
+/* =========================================================
+   LEFT TEXT
+   ========================================================= */
+
+.analysis-upload-modal__side h2 {
+
+  margin: 0 0 0.4rem;
+
+  font-size: 1.65rem;
+
+  line-height: 1.15;
+
+  font-weight: 800;
+
+  color: #171c2d;
+}
+
+.analysis-upload-modal__side p {
+
+  margin: 0;
+
+  font-size: 0.82rem;
+
+  line-height: 1.5;
+
+  color: rgba(17, 24, 39, 0.7);
+}
+
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.analysis-upload-modal__benefits {
+
+  display: grid;
+
+  gap: 0.65rem;
+
+  margin: 1.1rem 0 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.analysis-upload-modal__benefits li {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 0.6rem;
+
+  color: #1f2937;
+}
+
+.benefit-icon {
+
+  width: 32px;
+  height: 32px;
+
+  flex: 0 0 32px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 9px;
+
+  background: rgba(59, 130, 246, 0.12);
+
+  color: #2563eb;
+
+  font-size: 0.95rem;
+}
+
+.analysis-upload-modal__benefits strong {
+
+  display: block;
+
+  margin-bottom: 0.1rem;
+
+  font-size: 0.82rem;
+}
+
+.analysis-upload-modal__benefits small {
+
+  display: block;
+
+  font-size: 0.68rem;
+
+  line-height: 1.35;
+
+  color: rgba(17, 24, 39, 0.6);
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+   ========================================================= */
+
+.analysis-upload-modal__content {
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+
+  padding: 1.55rem 1.6rem 1.35rem;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+}
+
+
+/* =========================================================
+   CLOSE
+   ========================================================= */
+
+.analysis-upload-modal__close {
+
+  position: absolute;
+
+  top: 0.7rem;
+  right: 0.85rem;
+
+  z-index: 10;
+
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #4b5563;
+
+  font-size: 1.9rem;
+
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.analysis-upload-modal__form {
+
+  margin-top: 1.65rem;
+
+  min-width: 0;
+}
+
+.analysis-upload-modal__form h3 {
+
+  margin: 0;
+
+  font-size: 2rem;
+
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  color: #171c2d;
+}
+
+.analysis-upload-modal__lead {
+
+  max-width: 520px;
+
+  margin: 0.45rem 0 1rem;
+
+  font-size: 0.82rem;
+
+  line-height: 1.45;
+
+  color: rgba(17, 24, 39, 0.7);
+}
+
+
+/* =========================================================
+   FIELD
+   ========================================================= */
+
+.analysis-upload-modal__field {
+
+  margin-bottom: 0.75rem;
+}
+
+.analysis-upload-modal__label-row {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 0.75rem;
+
+  margin-bottom: 0.35rem;
+}
+
+.analysis-upload-modal__field label {
+
+  font-size: 0.86rem;
+
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.analysis-upload-modal__field label span,
+.analysis-upload-modal__field em {
+
+  color: #ef4444;
+
+  font-style: normal;
+
+  font-weight: 700;
+}
+
+.analysis-upload-modal__formats {
+
+  font-size: 0.72rem;
+
+  color: rgba(17, 24, 39, 0.58);
+}
+
+
+/* =========================================================
+   FILE DROPZONE
+   ========================================================= */
+
+.file-dropzone {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 0.8rem;
+
+  min-height: 105px;
+
+  padding: 0.8rem;
+
+  border:
+    2px dashed rgba(59, 130, 246, 0.5);
+
+  border-radius: 15px;
+
+  background:
+    rgba(231, 236, 255, 0.4);
+
+  box-sizing: border-box;
+}
+
+.file-dropzone__placeholder {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.65rem;
+
+  min-width: 0;
+
+  color: #1f2937;
+}
+
+.file-dropzone__icon {
+
+  width: 40px;
+  height: 40px;
+
+  flex: 0 0 40px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(135deg,
+      rgba(59, 130, 246, 0.18),
+      rgba(99, 102, 241, 0.24));
+
+  color: #2563eb;
+
+  font-size: 1.35rem;
+}
+
+.file-dropzone__placeholder strong {
+
+  display: block;
+
+  font-size: 0.88rem;
+
+  line-height: 1.3;
+}
+
+.file-dropzone__placeholder span {
+
+  display: block;
+
+  margin-top: 0.15rem;
+
+  font-size: 0.72rem;
+
+  color: rgba(17, 24, 39, 0.65);
+}
+
+.file-dropzone__button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0.65rem 0.95rem;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(135deg,
+      #4f8cff,
+      #3b5fe7);
+
+  color: #fff;
+
+  font-size: 0.78rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 15px rgba(59, 95, 231, 0.22);
+}
+
+.file-dropzone input {
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   JOB DESCRIPTION
+   ========================================================= */
+
+.analysis-upload-modal__field--job {
+
+  margin-top: 0.55rem;
+}
+
+.analysis-upload-modal__field--job textarea {
+
+  display: block;
+
+  width: 100%;
+
+  height: 78px;
+
+  min-height: 78px;
+
+  max-height: 100px;
+
+  resize: vertical;
+
+  box-sizing: border-box;
+
+  padding: 0.7rem 0.8rem;
+
+  border:
+    1px solid rgba(148, 163, 184, 0.85);
+
+  border-radius: 13px;
+
+  background:
+    rgba(248, 250, 252, 0.8);
+
+  color: #111827;
+
+  font: inherit;
+
+  font-size: 0.8rem;
+
+  line-height: 1.4;
+}
+
+.analysis-upload-modal__field--job textarea::placeholder {
+
+  color: rgba(55, 65, 81, 0.6);
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.analysis-upload-modal__actions {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 0.6rem;
+
+  margin-top: 0.8rem;
+}
+
+.analysis-upload-modal__cancel,
+.analysis-upload-modal__submit {
+
+  border: none;
+
+  border-radius: 11px;
+
+  padding: 0.65rem 1rem;
+
+  font-size: 0.82rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.analysis-upload-modal__cancel {
+
+  min-width: 95px;
+
+  background:
+    rgba(148, 163, 184, 0.18);
+
+  color: #1f2937;
+}
+
+.analysis-upload-modal__submit {
+
+  min-width: 175px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  background:
+    linear-gradient(135deg,
+      #1d4ed8,
+      #1e40af);
+
+  color: #fff;
+
+  box-shadow:
+    0 10px 18px rgba(29, 78, 216, 0.22);
+}
+
+.analysis-upload-modal__submit span {
+
+  font-size: 1.05rem;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .analysis-upload-dialog {
+    width: min(650px, 90vw) !important;
+    max-width: 90vw !important;
+    height: auto !important;
+    max-height: 92vh !important;
+    overflow: hidden !important;
+  }
+
+  .analysis-upload-modal {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none;
+    display: block;
+    overflow: hidden;
+  }
+
+  .analysis-upload-modal__side {
+
+    display: none;
+  }
+
+  .analysis-upload-modal__illustration {
+
+    height: 120px;
+
+    margin-bottom: 0.75rem;
+  }
+
+  .analysis-upload-modal__benefits {
+
+    display: none;
+  }
+
+  .analysis-upload-modal__content {
+
+    overflow: visible;
+
+    padding: 1.5rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+  .analysis-upload-dialog {
+    width: 94vw !important;
+    max-width: 94vw !important;
+    height: auto !important;
+    max-height: 92vh !important;
+  }
+
+  .analysis-upload-modal {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none;
+    border-radius: 18px;
+  }
+
+  .analysis-upload-modal__side,
+  .analysis-upload-modal__content {
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .analysis-upload-modal__side {
+
+    padding-top: 1.2rem;
+    padding-bottom: 1rem;
+  }
+
+  .analysis-upload-modal__illustration {
+
+    height: 110px;
+  }
+
+  .analysis-upload-modal__side h2 {
+
+    font-size: 1.55rem;
+  }
+
+  .analysis-upload-modal__form h3 {
+
+    font-size: 1.7rem;
+  }
+
+  .file-dropzone {
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    min-height: 130px;
+  }
+
+  .file-dropzone__button {
+
+    width: 100%;
+  }
+
+  .analysis-upload-modal__actions {
+
+    flex-direction: column;
+  }
+
+  .analysis-upload-modal__cancel,
+  .analysis-upload-modal__submit {
+
+    width: 100%;
+
+    min-width: 0;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .analysis-upload-dialog {
+    width: 96vw !important;
+    max-width: 96vw !important;
+  }
+
+  .analysis-upload-modal {
+    width: 100% !important;
+    border-radius: 16px;
+  }
+
+  .analysis-upload-modal__content {
+
+    padding: 1rem;
+
+    padding-top: 2.2rem;
+  }
+
+  .analysis-upload-modal__form h3 {
+
+    font-size: 1.5rem;
+  }
+
+  .analysis-upload-modal__lead {
+
+    font-size: 0.78rem;
+  }
+
+  .analysis-upload-modal__close {
+
+    top: 0.55rem;
+
+    right: 0.65rem;
+
+    font-size: 1.75rem;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .btn-upload-cta {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   SELECTED RESUME FILE
+   ========================================================= */
+
+.file-dropzone.has-file {
+  border-color: rgba(37, 99, 235, 0.7);
+  background: rgba(231, 236, 255, 0.6);
+}
+
+.file-dropzone__file-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.file-dropzone__file-info strong {
+  display: block;
+  max-width: 360px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #111827;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.file-dropzone__file-info span {
+  display: block;
+  color: rgba(17, 24, 39, 0.62);
+  font-size: 0.88rem;
+}
+
+.file-dropzone.has-file .file-dropzone__icon {
+  background: linear-gradient(135deg,
+      rgba(34, 197, 94, 0.18),
+      rgba(59, 130, 246, 0.18));
+
+  color: #16a34a;
 }

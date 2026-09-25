@@ -1,5 +1,6 @@
 from flask import (
     render_template,
+    request,
     session,
 )
 
@@ -43,6 +44,7 @@ def render_analysis():
     # If the adapter would just return zeros (no resume uploaded),
     # keep the session context values intact instead.
     has_analysis = bool(analysis_result) and bool(resume_text)
+    upload_requested = request.args.get("upload") == "1"
 
     if has_analysis:
         ui_context = ui_adapter.build(
@@ -56,7 +58,7 @@ def render_analysis():
             if value or value == 0:
                 context[key] = value
 
-    context["has_analysis"] = has_analysis
+    context["has_analysis"] = has_analysis and not upload_requested
 
     return render_template(
         "analysis.html",

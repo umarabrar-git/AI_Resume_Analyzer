@@ -1,55 +1,230 @@
-{% if has_analysis %}
-  {% include "components/stats_cards.html" %}
-  {% include "components/charts.html" %}
-  {% include "components/skill_cards.html" %}
-  {% include "components/format_checker.html" %}
-  {% include "components/suggestions.html" %}
-  {% include "components/pages/analysis/previews_row.html" %}
-{% else %}
-  <div class="analysis-empty-state">
-    <div class="empty-icon"><i class="bi bi-file-earmark-text"></i></div>
-    <h2>No Resume Analyzed Yet</h2>
-    <p>Upload your resume to get a full ATS score, job-match breakdown, skill gap report, and AI recommendations.</p>
-    <button class="btn-upload-cta" id="analysisUploadBtn" type="button">
-      <i class="bi bi-cloud-upload"></i> Upload Resume
-    </button>
-  </div>
+{% if has_analysis %} {% include "components/stats_cards.html" %} {% include
+"components/charts.html" %} {% include "components/skill_cards.html" %} {%
+include "components/format_checker.html" %} {% include
+"components/suggestions.html" %} {% include
+"components/pages/analysis/previews_row.html" %} {% else %}
+<div class="analysis-empty-state">
+  <div class="empty-icon"><i class="bi bi-file-earmark-text"></i></div>
+  <h2>No Resume Analyzed Yet</h2>
+  <p>
+    Upload your resume to get a full ATS score, job-match breakdown, skill gap
+    report, and AI recommendations.
+  </p>
+  <button class="btn-upload-cta" id="analysisUploadBtn" type="button">
+    <i class="bi bi-cloud-upload"></i> Upload Resume
+  </button>
+</div>
 
-  <!-- Inline upload form (hidden, triggered by button above) -->
-  <dialog id="analysisUploadDialog" class="analysis-upload-dialog">
-    <div class="upload-modal__dialog">
-      <div class="upload-modal__header">
-        <h3><i class="bi bi-file-earmark-arrow-up"></i> Upload Your Resume</h3>
-        <button class="upload-modal__close" id="analysisUploadClose" type="button" aria-label="Close">&times;</button>
+<!-- Inline upload form (hidden, triggered by button above) -->
+<dialog id="analysisUploadDialog" class="analysis-upload-dialog">
+  <div class="analysis-upload-modal">
+    <aside class="analysis-upload-modal__side">
+      <div class="analysis-upload-modal__illustration">
+        <div class="upload-blob"></div>
+        <div class="upload-document">
+          <div class="upload-document__lines"></div>
+          <div class="upload-arrow">↑</div>
+        </div>
       </div>
-      <form action="{{ url_for('upload.upload_resume') }}" method="POST" enctype="multipart/form-data" class="upload-modal__form">
-        <div class="upload-modal__field">
-          <label for="analysisResumeFile">Resume file <span style="color:#e11d48">*</span></label>
-          <input type="file" id="analysisResumeFile" name="resume" accept=".pdf,.docx" required>
+
+      <h2>Upload Your Resume</h2>
+      <p>
+        Get AI-powered analysis, job match score and skill gap insights to
+        improve your career opportunities.
+      </p>
+
+      <ul class="analysis-upload-modal__benefits">
+        <li>
+          <span class="benefit-icon"><i class="bi bi-bar-chart"></i></span>
+          <div>
+            <strong>ATS Score</strong>
+            <small>See how well your resume passes ATS systems</small>
+          </div>
+        </li>
+        <li>
+          <span class="benefit-icon"><i class="bi bi-bullseye"></i></span>
+          <div>
+            <strong>Job Match</strong>
+            <small>Find the best matching opportunities</small>
+          </div>
+        </li>
+        <li>
+          <span class="benefit-icon"><i class="bi bi-graph-up-arrow"></i></span>
+          <div>
+            <strong>Skill Gap Analysis</strong>
+            <small>Discover missing skills and get recommendations</small>
+          </div>
+        </li>
+        <li>
+          <span class="benefit-icon"><i class="bi bi-lightbulb"></i></span>
+          <div>
+            <strong>Actionable Insights</strong>
+            <small>Get personalized suggestions to improve your resume</small>
+          </div>
+        </li>
+      </ul>
+    </aside>
+
+    <div class="analysis-upload-modal__content">
+      <button
+        class="analysis-upload-modal__close"
+        id="analysisUploadClose"
+        type="button"
+        aria-label="Close"
+      >
+        &times;
+      </button>
+
+      <form
+        action="{{ url_for('upload.upload_resume') }}"
+        method="POST"
+        enctype="multipart/form-data"
+        class="analysis-upload-modal__form"
+      >
+        <h3>Upload Your Resume</h3>
+        <p class="analysis-upload-modal__lead">
+          Upload your resume and let our AI analyze it for job match, ATS score
+          and skill gap insights.
+        </p>
+
+        <div class="analysis-upload-modal__field">
+          <div class="analysis-upload-modal__label-row">
+            <label for="analysisResumeFile">Resume file <span>*</span></label>
+            <span class="analysis-upload-modal__formats"
+              >PDF or DOCX &middot; Max 5 MB</span
+            >
+          </div>
+
+          <div class="file-dropzone">
+            <div class="file-dropzone__placeholder">
+              <div class="file-dropzone__icon" id="analysisResumeFileIcon">
+                <i class="bi bi-cloud-arrow-up" aria-hidden="true"></i>
+              </div>
+              <div class="file-dropzone__file-info">
+                <strong id="analysisResumeFileName"
+                  >Drag &amp; drop your resume here</strong
+                >
+                <span id="analysisResumeFileStatus"
+                  >or click to browse files</span
+                >
+              </div>
+            </div>
+            <label class="file-dropzone__button" for="analysisResumeFile"
+              >Choose File</label
+            >
+            <input
+              type="file"
+              id="analysisResumeFile"
+              name="resume"
+              accept=".pdf,.docx"
+              required
+            />
+          </div>
         </div>
-        <div class="upload-modal__field">
-          <label for="analysisJD">Job description <em style="font-weight:400;opacity:.7">(optional)</em></label>
-          <textarea id="analysisJD" name="job_description" placeholder="Paste the job description here to enable job-match scoring and skill gap analysis..." rows="4"></textarea>
+
+        <div
+          class="analysis-upload-modal__field analysis-upload-modal__field--job"
+        >
+          <label for="analysisJD">Job description <em>(optional)</em></label>
+          <textarea
+            id="analysisJD"
+            name="job_description"
+            placeholder="Paste the job description here to enable job matching and skill gap analysis..."
+          ></textarea>
         </div>
-        <div class="upload-modal__actions">
-          <button type="button" class="upload-modal__cancel" id="analysisUploadCancel">Cancel</button>
-          <button type="submit" class="upload-modal__submit"><i class="bi bi-cpu"></i> Analyze Resume</button>
+
+        <div class="analysis-upload-modal__actions">
+          <button
+            type="button"
+            class="analysis-upload-modal__cancel"
+            id="analysisUploadCancel"
+          >
+            Cancel
+          </button>
+          <button type="submit" class="analysis-upload-modal__submit">
+            <i class="bi bi-cpu"></i> Analyze Resume <span>&rarr;</span>
+          </button>
         </div>
       </form>
     </div>
-  </dialog>
-  <script>
-    (function () {
-      var btn = document.getElementById('analysisUploadBtn');
-      var dialog = document.getElementById('analysisUploadDialog');
-      var close = document.getElementById('analysisUploadClose');
-      var cancel = document.getElementById('analysisUploadCancel');
-      if (btn && dialog) {
-        btn.addEventListener('click', function () { dialog.showModal(); });
-        close.addEventListener('click', function () { dialog.close(); });
-        cancel.addEventListener('click', function () { dialog.close(); });
-        dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+  </div>
+</dialog>
+<script>
+  (function () {
+    var btn = document.getElementById("analysisUploadBtn");
+    var dialog = document.getElementById("analysisUploadDialog");
+    var close = document.getElementById("analysisUploadClose");
+    var cancel = document.getElementById("analysisUploadCancel");
+    var fileInput = document.getElementById("analysisResumeFile");
+    var fileDropzone = dialog && dialog.querySelector(".file-dropzone");
+    var fileName = document.getElementById("analysisResumeFileName");
+    var fileStatus = document.getElementById("analysisResumeFileStatus");
+    var fileIcon = document.getElementById("analysisResumeFileIcon");
+    if (btn && dialog) {
+      btn.addEventListener("click", function () {
+        dialog.showModal();
+      });
+      close.addEventListener("click", function () {
+        dialog.close();
+      });
+      cancel.addEventListener("click", function () {
+        dialog.close();
+      });
+      dialog.addEventListener("click", function (e) {
+        if (e.target === dialog) dialog.close();
+      });
+      if (fileInput && fileName && fileStatus) {
+        fileInput.addEventListener("change", function () {
+          var file = fileInput.files && fileInput.files[0];
+          if (!file) return;
+
+          var extension = file.name.includes(".")
+            ? file.name.split(".").pop().toUpperCase()
+            : "FILE";
+
+          if (extension !== "PDF" && extension !== "DOCX") {
+            fileInput.value = "";
+            fileName.textContent = "No file selected";
+            fileStatus.textContent = "Unsupported format. Use PDF or DOCX.";
+            if (fileDropzone) fileDropzone.classList.remove("has-file");
+            if (fileIcon)
+              fileIcon.innerHTML =
+                '<i class="bi bi-cloud-arrow-up" aria-hidden="true"></i>';
+            return;
+          }
+
+          if (file.size > 5 * 1024 * 1024) {
+            fileInput.value = "";
+            fileName.textContent = "No file selected";
+            fileStatus.textContent = "File is too large. Maximum size is 5 MB.";
+            if (fileDropzone) fileDropzone.classList.remove("has-file");
+            if (fileIcon)
+              fileIcon.innerHTML =
+                '<i class="bi bi-cloud-arrow-up" aria-hidden="true"></i>';
+            return;
+          }
+
+          var fileSize =
+            file.size < 1024 * 1024
+              ? (file.size / 1024).toFixed(1) + " KB"
+              : (file.size / (1024 * 1024)).toFixed(1) + " MB";
+
+          fileName.textContent = file.name;
+          fileStatus.textContent = extension + " file selected · " + fileSize;
+          if (fileDropzone) fileDropzone.classList.add("has-file");
+          if (fileIcon) {
+            fileIcon.innerHTML =
+              extension === "PDF"
+                ? '<i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>'
+                : '<i class="bi bi-file-earmark-word" aria-hidden="true"></i>';
+          }
+        });
       }
-    })();
-  </script>
+
+      if (new URLSearchParams(window.location.search).get("upload") === "1") {
+        dialog.showModal();
+      }
+    }
+  })();
+</script>
 {% endif %}
