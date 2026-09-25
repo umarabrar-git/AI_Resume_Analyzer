@@ -1,49 +1,62 @@
-const sectionToggles = document.querySelectorAll(
-    "[data-home-section-toggle]"
-);
+const sectionToggles = document.querySelectorAll("[data-home-section-toggle]");
 
 const controlledSections = document.querySelectorAll(
-    "[data-home-controlled-section]"
+  "[data-home-controlled-section]",
 );
 
 sectionToggles.forEach((toggle) => {
-    toggle.addEventListener("click", (event) => {
-        event.preventDefault();
+  toggle.addEventListener("click", (event) => {
+    event.preventDefault();
 
-        const targetId = toggle.dataset.homeSectionToggle;
-        const targetSection = document.getElementById(targetId);
+    const targetId = toggle.dataset.homeSectionToggle;
 
-        if (!targetSection) {
-            return;
-        }
+    const targetSection = document.getElementById(targetId);
 
-        const isAlreadyOpen = !targetSection.hidden;
+    if (!targetSection) {
+      return;
+    }
 
-        // Close all controlled sections
-        controlledSections.forEach((section) => {
-            section.hidden = true;
-        });
+    const isAlreadyOpen = !targetSection.hidden;
 
-        // Reset all navbar buttons
-        sectionToggles.forEach((button) => {
-            button.classList.remove("is-active");
-            button.setAttribute("aria-expanded", "false");
-        });
+    /* =====================================
+           CLOSE ALL CONTROLLED SECTIONS
+        ===================================== */
 
-        // Same button clicked again -> keep everything closed
-        if (isAlreadyOpen) {
-            return;
-        }
-
-        // Open selected section
-        targetSection.hidden = false;
-
-        toggle.classList.add("is-active");
-        toggle.setAttribute("aria-expanded", "true");
-
-        targetSection.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+    controlledSections.forEach((section) => {
+      section.hidden = true;
     });
+
+    /* =====================================
+           RESET NAVBAR BUTTONS
+        ===================================== */
+
+    sectionToggles.forEach((button) => {
+      button.classList.remove("is-active");
+
+      button.setAttribute("aria-expanded", "false");
+    });
+
+    /* =====================================
+           SAME BUTTON → CLOSE
+        ===================================== */
+
+    if (isAlreadyOpen) {
+      return;
+    }
+
+    /* =====================================
+           OPEN SELECTED SECTION
+        ===================================== */
+
+    targetSection.hidden = false;
+
+    toggle.classList.add("is-active");
+
+    toggle.setAttribute("aria-expanded", "true");
+
+    targetSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
 });

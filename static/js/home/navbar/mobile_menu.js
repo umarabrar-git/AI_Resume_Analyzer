@@ -1,9 +1,11 @@
 const navbarShell = document.querySelector("[data-home-navbar-shell]");
+
 const navbarToggle = document.querySelector("[data-home-navbar-toggle]");
-const navbar = document.querySelector(".home-navbar");
+
+const MOBILE_BREAKPOINT = 900;
 
 const isMobileNavbar = () => {
-  return window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+  return window.innerWidth <= MOBILE_BREAKPOINT;
 };
 
 const closeMobileMenu = () => {
@@ -12,6 +14,7 @@ const closeMobileMenu = () => {
   }
 
   navbarShell.classList.remove("is-open");
+
   navbarToggle.setAttribute("aria-expanded", "false");
 };
 
@@ -22,37 +25,14 @@ if (navbarShell && navbarToggle) {
     }
 
     const isOpen = navbarShell.classList.toggle("is-open");
+
     navbarToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
+  /* Close menu when resizing to desktop */
   window.addEventListener("resize", () => {
     if (!isMobileNavbar()) {
       closeMobileMenu();
     }
-  });
-}
-
-// Scroll behavior - hide navbar menu on scroll down, show on scroll up
-let lastScrollPosition = 0;
-let isScrollingDown = false;
-
-if (navbar) {
-  window.addEventListener("scroll", () => {
-    const currentScrollPosition = window.scrollY;
-
-    if (currentScrollPosition > lastScrollPosition) {
-      if (!isScrollingDown) {
-        isScrollingDown = true;
-        navbar.classList.add("navbar-hidden");
-        closeMobileMenu();
-      }
-    } else {
-      if (isScrollingDown) {
-        isScrollingDown = false;
-        navbar.classList.remove("navbar-hidden");
-      }
-    }
-
-    lastScrollPosition = currentScrollPosition;
   });
 }
