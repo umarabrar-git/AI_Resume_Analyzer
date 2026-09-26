@@ -1,0 +1,998 @@
+/* =========================================================
+   1. DOWNLOAD MODAL
+   ========================================================= */
+
+.report-download-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.report-download-modal.is-open {
+    display: flex;
+}
+
+
+/* =========================================================
+   2. MODAL OVERLAY
+   ========================================================= */
+
+.report-download-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.62);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    animation: reportOverlayFade 0.2s ease;
+}
+
+
+/* =========================================================
+   3. MODAL DIALOG
+   ========================================================= */
+
+.report-download-dialog {
+    position: relative;
+    z-index: 2;
+
+    width: min(920px, 100%);
+    max-height: min(90vh, 900px);
+
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 22px;
+
+    box-shadow:
+        0 30px 80px rgba(15, 23, 42, 0.24),
+        0 8px 24px rgba(15, 23, 42, 0.10);
+
+    overflow: hidden;
+
+    animation: reportDialogEnter 0.25s ease;
+}
+
+
+/* =========================================================
+   4. MODAL HEADER
+   ========================================================= */
+
+.download-dialog-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+    padding: 26px 30px 22px;
+
+    border-bottom: 1px solid #eef2f7;
+    background: #ffffff;
+}
+
+.download-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 8px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #2563eb;
+}
+
+.download-eyebrow i {
+    font-size: 14px;
+}
+
+.download-dialog-header h2 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 750;
+}
+
+.download-dialog-header p {
+    margin: 7px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   5. CLOSE BUTTON
+   ========================================================= */
+
+.download-modal-close {
+    flex: 0 0 auto;
+
+    width: 38px;
+    height: 38px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    background: #f8fafc;
+    color: #64748b;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.download-modal-close:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+    border-color: #cbd5e1;
+    transform: rotate(3deg);
+}
+
+.download-modal-close:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.18);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   6. MODAL BODY / SECTIONS
+   ========================================================= */
+
+.download-option-section {
+    padding: 24px 30px 0;
+}
+
+.download-option-section:last-of-type {
+    padding-bottom: 24px;
+}
+
+.download-option-section h4 {
+    margin: 0 0 14px;
+
+    color: #0f172a;
+
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.template-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+    margin-bottom: 14px;
+}
+
+.template-heading h4 {
+    margin-bottom: 4px;
+}
+
+.template-heading span {
+    color: #64748b;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   7. FORMAT OPTIONS
+   ========================================================= */
+
+.format-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.format-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 82px;
+    gap: 14px;
+
+    padding: 16px 18px;
+
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.format-card:hover {
+    border-color: #93c5fd;
+    background: #f8fbff;
+    transform: translateY(-1px);
+}
+
+.format-card.active {
+    border-color: #2563eb;
+    background: #eff6ff;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.09);
+}
+
+.format-card input,
+.report-template-card input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.format-icon {
+    width: 46px;
+    height: 46px;
+
+    flex: 0 0 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #f1f5f9;
+    color: #475569;
+
+    font-size: 22px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.format-card.active .format-icon {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.format-card strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #0f172a;
+
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.format-card span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.format-check {
+    margin-left: auto;
+
+    color: #cbd5e1;
+
+    font-size: 19px;
+
+    transition: color 0.2s ease;
+}
+
+.format-card.active .format-check {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   8. REPORT TEMPLATE GRID
+   ========================================================= */
+
+.report-template-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.report-template-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.report-template-card:hover {
+    border-color: #93c5fd;
+
+    box-shadow:
+        0 8px 22px rgba(15, 23, 42, 0.08);
+
+    transform: translateY(-2px);
+}
+
+.report-template-card.active {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 2px rgba(37, 99, 235, 0.08),
+        0 8px 22px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================================
+   9. TEMPLATE PREVIEW
+   ========================================================= */
+
+.template-preview {
+    position: relative;
+
+    height: 145px;
+
+    padding: 17px;
+
+    overflow: hidden;
+
+    background: #f8fafc;
+    border-bottom: 1px solid #eef2f7;
+}
+
+
+/* ---------- Preview Lines ---------- */
+
+.preview-line {
+    width: 62%;
+    height: 6px;
+
+    margin-bottom: 8px;
+
+    border-radius: 4px;
+
+    background: #cbd5e1;
+}
+
+.preview-line.large {
+    width: 76%;
+    height: 10px;
+
+    margin-bottom: 11px;
+
+    background: #334155;
+}
+
+.preview-lines {
+    width: 100%;
+    height: 40px;
+
+    margin-top: 15px;
+
+    background:
+        linear-gradient(to bottom,
+            #cbd5e1 0,
+            #cbd5e1 4px,
+            transparent 4px,
+            transparent 11px,
+            #e2e8f0 11px,
+            #e2e8f0 15px,
+            transparent 15px,
+            transparent 22px,
+            #e2e8f0 22px,
+            #e2e8f0 26px,
+            transparent 26px,
+            transparent 33px,
+            #e2e8f0 33px,
+            #e2e8f0 37px);
+}
+
+
+/* ---------- Preview Score ---------- */
+
+.preview-score {
+    width: 45px;
+    height: 45px;
+
+    margin-top: 12px;
+
+    border: 5px solid #60a5fa;
+    border-right-color: #dbeafe;
+
+    border-radius: 50%;
+}
+
+
+/* ---------- Preview Cards ---------- */
+
+.preview-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+
+    margin-top: 14px;
+}
+
+.preview-cards::before,
+.preview-cards::after {
+    content: "";
+
+    height: 28px;
+
+    border-radius: 5px;
+
+    background: #dbeafe;
+}
+
+.preview-cards::before {
+    box-shadow: 35px 0 0 #e2e8f0;
+}
+
+.preview-cards::after {
+    opacity: 0;
+}
+
+
+/* =========================================================
+   10. TEMPLATE VARIATIONS
+   ========================================================= */
+
+
+/* ---------- Professional ---------- */
+
+.professional-preview {
+    background: #f8fafc;
+}
+
+.professional-preview .preview-line.large {
+    background: #1e3a8a;
+}
+
+.professional-preview .preview-score {
+    border-color: #2563eb;
+    border-right-color: #dbeafe;
+}
+
+
+/* ---------- Modern ---------- */
+
+.modern-preview {
+    background: #f8fafc;
+    padding-top: 18px;
+}
+
+.modern-preview .preview-line.large {
+    width: 58%;
+    background: #0f172a;
+}
+
+.modern-preview .preview-cards {
+    margin-top: 12px;
+}
+
+.modern-preview .preview-lines {
+    margin-top: 13px;
+}
+
+
+/* ---------- Minimal ---------- */
+
+.minimal-preview {
+    background: #ffffff;
+}
+
+.minimal-preview .preview-line.large {
+    width: 55%;
+    height: 7px;
+    background: #334155;
+}
+
+.minimal-preview .preview-lines {
+    margin-top: 18px;
+}
+
+
+/* ---------- Executive ---------- */
+
+.executive-preview {
+    background:
+        linear-gradient(135deg,
+            #f8fafc 0%,
+            #eef2ff 100%);
+}
+
+.executive-preview .preview-line.large {
+    background: #4338ca;
+}
+
+.executive-preview .preview-score {
+    border-color: #7c3aed;
+    border-right-color: #ddd6fe;
+}
+
+
+/* =========================================================
+   11. PREMIUM TEMPLATE
+   ========================================================= */
+
+.premium-template {
+    border-color: #e5d5a8;
+}
+
+.premium-template:hover {
+    border-color: #d4af37;
+
+    box-shadow:
+        0 8px 24px rgba(180, 140, 40, 0.13);
+}
+
+.premium-template.active {
+    border-color: #d4af37;
+
+    box-shadow:
+        0 0 0 2px rgba(212, 175, 55, 0.10),
+        0 8px 24px rgba(180, 140, 40, 0.12);
+}
+
+.premium-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    padding: 4px 7px;
+
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 6px;
+
+    background: rgba(255, 251, 235, 0.94);
+    color: #9a7211;
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.premium-label i {
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   12. TEMPLATE FOOTER
+   ========================================================= */
+
+.template-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+
+    padding: 12px 13px;
+}
+
+.template-card-footer strong {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #0f172a;
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.template-card-footer span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.template-card-footer>i {
+    flex: 0 0 auto;
+
+    color: #cbd5e1;
+
+    font-size: 17px;
+
+    transition: color 0.2s ease;
+}
+
+.report-template-card.active .template-card-footer>i {
+    color: #2563eb;
+}
+
+.premium-template .template-card-footer>i {
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   13. MODAL FOOTER
+   ========================================================= */
+
+.download-dialog-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 18px 30px;
+
+    border-top: 1px solid #eef2f7;
+
+    background: #fafbfc;
+}
+
+.download-dialog-footer .btn {
+    min-height: 42px;
+
+    padding: 9px 17px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.download-dialog-footer .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-width: 180px;
+}
+
+.download-dialog-footer .btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   14. GENERATING STATE
+   ========================================================= */
+
+#generateReportDownload.is-generating {
+    pointer-events: none;
+}
+
+#generateReportDownload.is-generating i {
+    animation: reportDownloadSpin 0.8s linear infinite;
+}
+
+
+/* =========================================================
+   15. BODY LOCK WHEN MODAL IS OPEN
+   ========================================================= */
+
+body.report-modal-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   16. EXPORT NOTIFICATIONS
+   ========================================================= */
+
+.report-export-notification {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+
+    z-index: 10050;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    min-width: 280px;
+    max-width: 390px;
+
+    padding: 13px 16px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    box-shadow:
+        0 14px 35px rgba(15, 23, 42, 0.15);
+
+    opacity: 0;
+    transform: translateY(-10px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.report-export-notification.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.report-export-notification.success {
+    border-color: #bbf7d0;
+}
+
+.report-export-notification.error {
+    border-color: #fecaca;
+}
+
+.report-export-notification i {
+    flex: 0 0 auto;
+
+    font-size: 18px;
+}
+
+.report-export-notification.success i {
+    color: #16a34a;
+}
+
+.report-export-notification.error i {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   17. ACCESSIBILITY
+   ========================================================= */
+
+.format-card:focus-within,
+.report-template-card:focus-within {
+    outline: 3px solid rgba(37, 99, 235, 0.16);
+    outline-offset: 2px;
+}
+
+.report-download-dialog button:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.18);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   18. RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .report-template-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .report-download-dialog {
+        max-height: 92vh;
+    }
+}
+
+
+/* =========================================================
+   19. RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+    .report-download-modal {
+        padding: 12px;
+        align-items: flex-end;
+    }
+
+    .report-download-dialog {
+        width: 100%;
+        max-height: 94vh;
+
+        border-radius: 20px 20px 16px 16px;
+    }
+
+    .download-dialog-header {
+        padding: 21px 20px 18px;
+    }
+
+    .download-dialog-header h2 {
+        font-size: 20px;
+    }
+
+    .download-dialog-header p {
+        font-size: 12px;
+    }
+
+    .download-option-section {
+        padding: 19px 20px 0;
+    }
+
+    .format-options {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .format-card {
+        min-height: 72px;
+        padding: 13px 14px;
+    }
+
+    .format-icon {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+        font-size: 19px;
+    }
+
+    .report-template-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .template-preview {
+        height: 115px;
+        padding: 12px;
+    }
+
+    .template-card-footer {
+        padding: 10px;
+    }
+
+    .template-card-footer strong {
+        font-size: 11px;
+    }
+
+    .template-card-footer span {
+        font-size: 9px;
+    }
+
+    .download-dialog-footer {
+        padding: 15px 20px;
+
+        flex-direction: column-reverse;
+    }
+
+    .download-dialog-footer .btn {
+        width: 100%;
+    }
+
+    .download-dialog-footer .btn-primary {
+        width: 100%;
+    }
+
+    .report-export-notification {
+        top: 14px;
+        right: 14px;
+        left: 14px;
+
+        min-width: auto;
+        max-width: none;
+    }
+}
+
+
+/* =========================================================
+   20. VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    .report-template-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .template-preview {
+        height: 125px;
+    }
+
+    .download-modal-close {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+
+/* =========================================================
+   21. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .report-download-dialog,
+    .report-download-overlay,
+    .format-card,
+    .report-template-card,
+    .download-modal-close,
+    .report-export-notification {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+/* =========================================================
+   22. ANIMATIONS
+   ========================================================= */
+
+@keyframes reportOverlayFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes reportDialogEnter {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes reportDownloadSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
