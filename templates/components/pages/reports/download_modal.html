@@ -1,0 +1,251 @@
+<div class="report-download-modal" id="reportDownloadModal" aria-hidden="true">
+  <div class="report-download-overlay"></div>
+
+  <div
+    class="report-download-dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="reportDownloadTitle"
+  >
+    <div class="download-dialog-header">
+      <div>
+        <span class="download-dialog-eyebrow"> Export Report </span>
+
+        <h2 id="reportDownloadTitle">Download Resume Report</h2>
+
+        <p>Choose a file format and report template.</p>
+      </div>
+
+      <button
+        type="button"
+        class="download-modal-close"
+        id="closeReportDownload"
+        aria-label="Close"
+      >
+        &times;
+      </button>
+    </div>
+
+    <div class="download-dialog-body">
+      <section class="download-option-section">
+        <div class="download-option-heading">
+          <h3>File Format</h3>
+          <span>Select one</span>
+        </div>
+
+        <div class="format-options">
+          <label class="format-card is-selected">
+            <input type="radio" name="report_format" value="pdf" checked />
+
+            <span class="format-icon">
+              <i class="bi bi-file-earmark-pdf"></i>
+            </span>
+
+            <span class="format-content">
+              <strong>PDF</strong>
+              <small> Ready for sharing and printing </small>
+            </span>
+
+            <span class="format-check">
+              <i class="bi bi-check"></i>
+            </span>
+          </label>
+
+          <label class="format-card">
+            <input type="radio" name="report_format" value="docx" />
+
+            <span class="format-icon">
+              <i class="bi bi-file-earmark-word"></i>
+            </span>
+
+            <span class="format-content">
+              <strong>DOCX</strong>
+              <small> Editable Microsoft Word document </small>
+            </span>
+
+            <span class="format-check">
+              <i class="bi bi-check"></i>
+            </span>
+          </label>
+        </div>
+      </section>
+
+      <section class="download-option-section">
+        <div class="download-option-heading">
+          <div>
+            <h3>Report Template</h3>
+            <span> Choose how your report is presented </span>
+          </div>
+        </div>
+
+        <div class="report-template-grid">
+          <label
+            class="report-template-card is-selected"
+            data-template="professional"
+          >
+            <input
+              type="radio"
+              name="report_template"
+              value="professional"
+              checked
+            />
+
+            <span class="template-preview template-preview-professional">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+
+            <span class="template-card-content">
+              <strong>Professional</strong>
+              <small> Clean and balanced </small>
+            </span>
+
+            <span class="template-check">
+              <i class="bi bi-check"></i>
+            </span>
+          </label>
+
+          <label class="report-template-card" data-template="modern">
+            <input type="radio" name="report_template" value="modern" />
+
+            <span class="template-preview template-preview-modern">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+
+            <span class="template-card-content">
+              <strong>Modern</strong>
+              <small> Contemporary layout </small>
+            </span>
+
+            <span class="template-check">
+              <i class="bi bi-check"></i>
+            </span>
+          </label>
+
+          <label class="report-template-card" data-template="minimal">
+            <input type="radio" name="report_template" value="minimal" />
+
+            <span class="template-preview template-preview-minimal">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+
+            <span class="template-card-content">
+              <strong>Minimal</strong>
+              <small> Simple and focused </small>
+            </span>
+
+            <span class="template-check">
+              <i class="bi bi-check"></i>
+            </span>
+          </label>
+
+          <label
+            class="report-template-card premium-template"
+            data-template="executive"
+          >
+            <input type="radio" name="report_template" value="executive" />
+
+            <span class="premium-label"> Premium </span>
+
+            <span class="template-preview template-preview-executive">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+
+            <span class="template-card-content">
+              <strong>Executive</strong>
+              <small> Executive-style presentation </small>
+            </span>
+
+            <span class="template-check">
+              <i class="bi bi-lock-fill"></i>
+            </span>
+          </label>
+
+          <label
+            class="report-template-card premium-template"
+            data-template="ai_insights"
+          >
+            <input type="radio" name="report_template" value="ai_insights" />
+
+            <span class="premium-label"> Premium </span>
+
+            <span class="template-preview template-preview-ai">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+
+            <span class="template-card-content">
+              <strong>AI Insights</strong>
+              <small> Analysis-focused layout </small>
+            </span>
+
+            <span class="template-check">
+              <i class="bi bi-lock-fill"></i>
+            </span>
+          </label>
+
+          <label
+            class="report-template-card premium-template"
+            data-template="career_analytics"
+          >
+            <input
+              type="radio"
+              name="report_template"
+              value="career_analytics"
+            />
+
+            <span class="premium-label"> Premium </span>
+
+            <span class="template-preview template-preview-career">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+
+            <span class="template-card-content">
+              <strong>Career Analytics</strong>
+              <small> Metrics-focused layout </small>
+            </span>
+
+            <span class="template-check">
+              <i class="bi bi-lock-fill"></i>
+            </span>
+          </label>
+        </div>
+      </section>
+    </div>
+
+    <div class="download-dialog-footer">
+      <button
+        type="button"
+        class="report-btn report-btn-outline"
+        id="cancelReportDownload"
+      >
+        Cancel
+      </button>
+
+      <button
+        type="button"
+        class="report-btn report-btn-primary"
+        id="generateReportDownload"
+      >
+        <i class="bi bi-download"></i>
+        <span class="generate-report-label"> Generate Report </span>
+      </button>
+    </div>
+  </div>
+</div>

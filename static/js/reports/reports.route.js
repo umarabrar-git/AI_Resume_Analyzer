@@ -5,7 +5,7 @@
  * - Report download modal
  * - PDF / DOCX selection
  * - Report template selection
- * - Premium template state
+ * - Premium template UI state
  * - Export request
  * - File download
  * - Loading / error states
@@ -27,6 +27,7 @@ const ReportsRoute = (() => {
     },
 
     defaultFormat: "pdf",
+
     defaultTemplate: "professional",
 
     premiumTemplates: ["executive", "ai_insights", "career_analytics"],
@@ -55,83 +56,113 @@ const ReportsRoute = (() => {
   function init() {
     cacheElements();
 
+    /*
+     * ReportsRoute is only initialized on pages
+     * where the download button exists.
+     */
     if (!elements.downloadButton) {
       return;
     }
 
     bindEvents();
     initializeSelections();
-    updateTemplateCards();
     updateFormatCards();
+    updateTemplateCards();
   }
 
   /* =====================================================
        DOM Cache
-       ===================================================== */
+    ===================================================== */
 
   function cacheElements() {
     elements = {
+      /* Main download button */
       downloadButton: document.getElementById("downloadReportBtn"),
 
+      /* Modal */
       modal: document.getElementById("reportDownloadModal"),
 
+      /* Modal overlay */
       overlay: document.querySelector(
         "#reportDownloadModal .report-download-overlay",
       ),
 
+      /* Modal controls */
       closeButton: document.getElementById("closeReportDownload"),
 
       cancelButton: document.getElementById("cancelReportDownload"),
 
       generateButton: document.getElementById("generateReportDownload"),
 
+      /* Format inputs */
       formatInputs: document.querySelectorAll('input[name="report_format"]'),
 
+      /* Template inputs */
       templateInputs: document.querySelectorAll(
         'input[name="report_template"]',
       ),
 
+      /* Format cards */
       formatCards: document.querySelectorAll(".format-card"),
 
+      /* Template cards */
       templateCards: document.querySelectorAll(".report-template-card"),
     };
   }
 
   /* =====================================================
        Event Binding
-       ===================================================== */
+    ===================================================== */
 
   function bindEvents() {
-    /* Open modal */
+    /* -----------------------------------------------
+       Open modal
+    ------------------------------------------------ */
+
     elements.downloadButton?.addEventListener("click", openModal);
 
-    /* Close modal */
+    /* -----------------------------------------------
+       Close modal
+    ------------------------------------------------ */
+
     elements.closeButton?.addEventListener("click", closeModal);
 
     elements.cancelButton?.addEventListener("click", closeModal);
 
     elements.overlay?.addEventListener("click", closeModal);
 
-    /* ESC key */
+    /* -----------------------------------------------
+       Keyboard
+    ------------------------------------------------ */
+
     document.addEventListener("keydown", handleKeyboard);
 
-    /* Format selection */
+    /* -----------------------------------------------
+       Format selection
+    ------------------------------------------------ */
+
     elements.formatInputs?.forEach((input) => {
       input.addEventListener("change", handleFormatChange);
     });
 
-    /* Template selection */
+    /* -----------------------------------------------
+       Template selection
+    ------------------------------------------------ */
+
     elements.templateInputs?.forEach((input) => {
       input.addEventListener("change", handleTemplateChange);
     });
 
-    /* Generate */
+    /* -----------------------------------------------
+       Generate report
+    ------------------------------------------------ */
+
     elements.generateButton?.addEventListener("click", handleGenerate);
   }
 
   /* =====================================================
        Initial Selection
-       ===================================================== */
+    ===================================================== */
 
   function initializeSelections() {
     const selectedFormat = document.querySelector(
@@ -142,24 +173,28 @@ const ReportsRoute = (() => {
       'input[name="report_template"]:checked',
     );
 
-    if (selectedFormat) {
+    if (selectedFormat && isValidFormat(selectedFormat.value)) {
       state.format = selectedFormat.value;
     }
 
-    if (selectedTemplate) {
+    if (selectedTemplate?.value) {
       state.template = selectedTemplate.value;
     }
   }
 
   /* =====================================================
        Modal
-       ===================================================== */
+    ===================================================== */
 
   function openModal() {
     if (!elements.modal) {
       return;
     }
 
+    /*
+     * Do not allow the modal to be reopened while
+     * an export request is running.
+     */
     if (state.isGenerating) {
       return;
     }
@@ -173,6 +208,9 @@ const ReportsRoute = (() => {
     updateFormatCards();
     updateTemplateCards();
 
+    /*
+     * Move focus to the close button for accessibility.
+     */
     requestAnimationFrame(() => {
       elements.closeButton?.focus();
     });
@@ -183,6 +221,10 @@ const ReportsRoute = (() => {
       return;
     }
 
+    /*
+     * Prevent closing while report generation
+     * is in progress.
+     */
     if (state.isGenerating) {
       return;
     }
@@ -208,7 +250,7 @@ const ReportsRoute = (() => {
 
   /* =====================================================
        Format Selection
-       ===================================================== */
+    ===================================================== */
 
   function handleFormatChange(event) {
     const value = event.target.value;
@@ -217,7 +259,7 @@ const ReportsRoute = (() => {
       return;
     }
 
-    if (!Object.prototype.hasOwnProperty.call(CONFIG.exportEndpoints, value)) {
+    if (!isValidFormat(value)) {
       return;
     }
 
@@ -240,7 +282,7 @@ const ReportsRoute = (() => {
 
   /* =====================================================
        Template Selection
-       ===================================================== */
+    ===================================================== */
 
   function handleTemplateChange(event) {
     const value = event.target.value;
@@ -262,13 +304,21 @@ const ReportsRoute = (() => {
         return;
       }
 
-      card.classList.toggle("active", input.value === state.template);
+      const isSelected = input.value === state.template;
+
+      card.classList.toggle("active", isSelected);
+
+      /*
+       * Keep aria-checked synchronized for
+       * custom template-card UIs.
+       */
+      card.setAttribute("aria-checked", String(isSelected));
     });
   }
 
   /* =====================================================
        Premium Template Helpers
-       ===================================================== */
+    ===================================================== */
 
   function isPremiumTemplate(template) {
     return CONFIG.premiumTemplates.includes(template);
@@ -276,47 +326,87 @@ const ReportsRoute = (() => {
 
   /* =====================================================
        Generate Report
-       ===================================================== */
+    ===================================================== */
 
   async function handleGenerate() {
     if (state.isGenerating) {
       return;
     }
 
+    /* -----------------------------------------------
+       Validate format
+    ------------------------------------------------ */
+
     if (!isValidFormat(state.format)) {
       showError("Please select a valid report format.");
+
       return;
     }
 
+    /* -----------------------------------------------
+       Validate template
+    ------------------------------------------------ */
+
     if (!state.template) {
       showError("Please select a report template.");
+
       return;
     }
 
     /*
-     * Premium templates are currently allowed through
-     * the frontend selection system.
+     * Premium information is only used by the UI.
      *
-     * Actual premium-access enforcement should happen
-     * on the backend when the subscription/entitlement
-     * system is implemented.
+     * IMPORTANT:
+     * The frontend does NOT send "premium=true"
+     * or "tier=premium".
+     *
+     * The backend must determine whether the
+     * authenticated user has access to the selected
+     * premium template.
      */
     const premium = isPremiumTemplate(state.template);
+
+    /*
+     * Prevent unused-variable warnings while keeping
+     * the helper available for UI logic.
+     *
+     * Backend authorization remains authoritative.
+     */
+    void premium;
 
     try {
       setGeneratingState(true);
 
       const endpoint = CONFIG.exportEndpoints[state.format];
 
-      const url = buildExportUrl(endpoint, state.template, premium);
+      /* ---------------------------------------------
+         Export request
+         --------------------------------------------- */
 
-      const response = await fetch(url, {
-        method: "GET",
+      const response = await fetch(endpoint, {
+        method: "POST",
+
         credentials: "same-origin",
+
         headers: {
           Accept: getAcceptHeader(state.format),
+
+          "Content-Type": "application/json",
         },
+
+        /*
+         * Only the selected template is sent.
+         *
+         * Premium authorization is handled by Flask.
+         */
+        body: JSON.stringify({
+          template: state.template,
+        }),
       });
+
+      /* ---------------------------------------------
+         HTTP error
+         --------------------------------------------- */
 
       if (!response.ok) {
         const message = await extractErrorMessage(response);
@@ -324,11 +414,19 @@ const ReportsRoute = (() => {
         throw new Error(message || "Unable to generate the report.");
       }
 
+      /* ---------------------------------------------
+         Convert response to Blob
+         --------------------------------------------- */
+
       const blob = await response.blob();
 
       if (!blob || blob.size === 0) {
         throw new Error("The generated report is empty.");
       }
+
+      /* ---------------------------------------------
+         Get filename
+         --------------------------------------------- */
 
       const filename = getFilenameFromResponse(
         response,
@@ -336,13 +434,21 @@ const ReportsRoute = (() => {
         state.template,
       );
 
+      /* ---------------------------------------------
+         Browser download
+         --------------------------------------------- */
+
       downloadBlob(blob, filename);
+
+      /* ---------------------------------------------
+         Success notification
+         --------------------------------------------- */
 
       showSuccess("Your report has been generated successfully.");
 
       /*
-       * Give the success state a moment before
-       * closing the modal.
+       * Close modal shortly after successful
+       * download.
        */
       window.setTimeout(() => {
         closeModal();
@@ -351,12 +457,12 @@ const ReportsRoute = (() => {
       console.error("Report generation failed:", error);
 
       showError(
-        error.message || "Something went wrong while generating the report.",
+        error?.message || "Something went wrong while generating the report.",
       );
     } finally {
       /*
-       * Do not immediately reset if the modal is
-       * scheduled to close after a successful download.
+       * Small delay allows the success/error state
+       * to remain visible before restoring the button.
        */
       window.setTimeout(() => {
         setGeneratingState(false);
@@ -365,29 +471,8 @@ const ReportsRoute = (() => {
   }
 
   /* =====================================================
-       Export URL
-       ===================================================== */
-
-  function buildExportUrl(endpoint, template, premium) {
-    const params = new URLSearchParams();
-
-    params.set("template", template);
-
-    /*
-     * This is informational for the backend.
-     * Backend must NOT trust this value for premium
-     * authorization.
-     */
-    if (premium) {
-      params.set("tier", "premium");
-    }
-
-    return `${endpoint}?${params.toString()}`;
-  }
-
-  /* =====================================================
        Validation
-       ===================================================== */
+    ===================================================== */
 
   function isValidFormat(format) {
     return Object.prototype.hasOwnProperty.call(CONFIG.exportEndpoints, format);
@@ -395,7 +480,7 @@ const ReportsRoute = (() => {
 
   /* =====================================================
        Loading State
-       ===================================================== */
+    ===================================================== */
 
   function setGeneratingState(isGenerating) {
     state.isGenerating = isGenerating;
@@ -407,17 +492,22 @@ const ReportsRoute = (() => {
     if (isGenerating) {
       elements.generateButton.disabled = true;
 
-      elements.generateButton.dataset.originalHtml =
-        elements.generateButton.innerHTML;
+      /*
+       * Save the original button HTML only once.
+       */
+      if (!elements.generateButton.dataset.originalHtml) {
+        elements.generateButton.dataset.originalHtml =
+          elements.generateButton.innerHTML;
+      }
 
       elements.generateButton.innerHTML = `
-                <span
-                    class="spinner-border spinner-border-sm me-2"
-                    role="status"
-                    aria-hidden="true">
-                </span>
-                Generating Report...
-            `;
+        <span
+          class="spinner-border spinner-border-sm me-2"
+          role="status"
+          aria-hidden="true">
+        </span>
+        Generating Report...
+      `;
 
       elements.modal?.classList.add("is-generating");
     } else {
@@ -437,7 +527,7 @@ const ReportsRoute = (() => {
 
   /* =====================================================
        Response Headers
-       ===================================================== */
+    ===================================================== */
 
   function getAcceptHeader(format) {
     if (format === "pdf") {
@@ -451,24 +541,36 @@ const ReportsRoute = (() => {
     return "*/*";
   }
 
+  /* =====================================================
+       Filename
+    ===================================================== */
+
   function getFilenameFromResponse(response, format, template) {
     const contentDisposition = response.headers.get("Content-Disposition");
 
     if (contentDisposition) {
       /*
-       * Supports:
-       * filename="example.pdf"
+       * RFC 5987 / RFC 6266 style:
+       *
        * filename*=UTF-8''example.pdf
        */
-
       const encodedMatch = contentDisposition.match(
         /filename\*=UTF-8''([^;]+)/i,
       );
 
       if (encodedMatch?.[1]) {
-        return decodeURIComponent(encodedMatch[1]);
+        try {
+          return decodeURIComponent(encodedMatch[1]);
+        } catch (error) {
+          console.warn("Could not decode filename:", error);
+        }
       }
 
+      /*
+       * Standard:
+       *
+       * filename="example.pdf"
+       */
       const normalMatch = contentDisposition.match(/filename="?([^"]+)"?/i);
 
       if (normalMatch?.[1]) {
@@ -484,14 +586,16 @@ const ReportsRoute = (() => {
 
     const safeTemplate = String(template || "report")
       .replace(/[^a-z0-9-_]/gi, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-|-$/g, "")
       .toLowerCase();
 
-    return `resume-analysis-${safeTemplate}.${extension}`;
+    return `resume-analysis-${safeTemplate || "report"}.${extension}`;
   }
 
   /* =====================================================
        File Download
-       ===================================================== */
+    ===================================================== */
 
   function downloadBlob(blob, filename) {
     const objectUrl = URL.createObjectURL(blob);
@@ -510,6 +614,10 @@ const ReportsRoute = (() => {
 
     anchor.remove();
 
+    /*
+     * Give the browser time to start the download
+     * before releasing the object URL.
+     */
     window.setTimeout(() => {
       URL.revokeObjectURL(objectUrl);
     }, 1000);
@@ -517,17 +625,25 @@ const ReportsRoute = (() => {
 
   /* =====================================================
        Error Handling
-       ===================================================== */
+    ===================================================== */
 
   async function extractErrorMessage(response) {
     const contentType = response.headers.get("Content-Type") || "";
 
     try {
+      /* ---------------------------------------------
+         JSON error
+         --------------------------------------------- */
+
       if (contentType.includes("application/json")) {
         const data = await response.json();
 
-        return data.message || data.error || data.detail || null;
+        return data?.message || data?.error || data?.detail || null;
       }
+
+      /* ---------------------------------------------
+         Plain text error
+         --------------------------------------------- */
 
       const text = await response.text();
 
@@ -541,7 +657,7 @@ const ReportsRoute = (() => {
 
   /* =====================================================
        UI Notifications
-       ===================================================== */
+    ===================================================== */
 
   function showError(message) {
     showNotification(message, "error");
@@ -553,7 +669,7 @@ const ReportsRoute = (() => {
 
   function showNotification(message, type) {
     /*
-     * Remove previous report notification.
+     * Remove previous report notifications.
      */
     document
       .querySelectorAll(".report-export-notification")
@@ -561,25 +677,54 @@ const ReportsRoute = (() => {
         notification.remove();
       });
 
+    /* -----------------------------------------------
+       Create notification
+       ----------------------------------------------- */
+
     const notification = document.createElement("div");
 
     notification.className = `report-export-notification ${type}`;
+
+    /* -----------------------------------------------
+       Icon
+       ----------------------------------------------- */
 
     const icon =
       type === "success"
         ? "bi-check-circle-fill"
         : "bi-exclamation-circle-fill";
 
+    /*
+     * Message is escaped before inserting it
+     * into innerHTML.
+     */
     notification.innerHTML = `
-            <i class="bi ${icon}"></i>
-            <span>${escapeHtml(message)}</span>
-        `;
+      <i
+        class="bi ${icon}"
+        aria-hidden="true">
+      </i>
+
+      <span>
+        ${escapeHtml(message)}
+      </span>
+    `;
+
+    /* -----------------------------------------------
+       Add to document
+       ----------------------------------------------- */
 
     document.body.appendChild(notification);
 
+    /*
+     * Trigger CSS transition.
+     */
     window.setTimeout(() => {
       notification.classList.add("is-visible");
     }, 10);
+
+    /* -----------------------------------------------
+       Remove notification
+       ----------------------------------------------- */
 
     window.setTimeout(
       () => {
@@ -595,7 +740,7 @@ const ReportsRoute = (() => {
 
   /* =====================================================
        HTML Safety
-       ===================================================== */
+    ===================================================== */
 
   function escapeHtml(value) {
     const div = document.createElement("div");
@@ -607,7 +752,7 @@ const ReportsRoute = (() => {
 
   /* =====================================================
        Public API
-       ===================================================== */
+    ===================================================== */
 
   return {
     init,
@@ -621,7 +766,9 @@ const ReportsRoute = (() => {
    ========================================================= */
 
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", () => ReportsRoute.init());
+  document.addEventListener("DOMContentLoaded", () => {
+    ReportsRoute.init();
+  });
 } else {
   ReportsRoute.init();
 }

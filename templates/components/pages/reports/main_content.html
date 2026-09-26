@@ -3,8 +3,13 @@
 <div class="analysis-empty-state">
   <div class="empty-icon"><i class="bi bi-clipboard-data"></i></div>
   <h2>No Report Available</h2>
-  <p>Upload and analyze your resume to generate a full report with ATS breakdown, skill gap analysis, and AI recommendations.</p>
-  <a href="/dashboard" class="btn-upload-cta"><i class="bi bi-cloud-upload"></i> Upload Resume</a>
+  <p>
+    Upload and analyze your resume to generate a full report with ATS breakdown,
+    skill gap analysis, and AI recommendations.
+  </p>
+  <a href="/dashboard" class="btn-upload-cta"
+    ><i class="bi bi-cloud-upload"></i> Upload Resume</a
+  >
 </div>
 {% else %}
 
@@ -12,12 +17,14 @@
      Reports Page — Full Analysis Report
      ============================================= -->
 <div class="reports-shell">
-
   <!-- Report Header -->
   <div class="report-header">
     <div class="report-header-left">
       <h1><i class="bi bi-clipboard-data-fill"></i> Resume Analysis Report</h1>
-      <p>Generated for <strong>{{ name }}</strong> · <span class="report-date" id="reportDate"></span></p>
+      <p>
+        Generated for <strong>{{ name }}</strong> ·
+        <span class="report-date" id="reportDate"></span>
+      </p>
     </div>
     <div class="report-header-actions">
       <button class="report-btn report-btn-outline" onclick="window.print()">
@@ -35,7 +42,9 @@
       <div class="rsc-icon"><i class="bi bi-speedometer2"></i></div>
       <div class="rsc-body">
         <span class="rsc-label">ATS Score</span>
-        <span class="rsc-value tier-text-{{ score_tier(ats_score) }}">{{ ats_score }}<small>/100</small></span>
+        <span class="rsc-value tier-text-{{ score_tier(ats_score) }}"
+          >{{ ats_score }}<small>/100</small></span
+        >
         <span class="rsc-sub">{{ resume_status }}</span>
       </div>
     </div>
@@ -43,7 +52,9 @@
       <div class="rsc-icon"><i class="bi bi-briefcase-fill"></i></div>
       <div class="rsc-body">
         <span class="rsc-label">Job Match</span>
-        <span class="rsc-value tier-text-{{ score_tier(match_percentage) }}">{{ match_percentage }}<small>%</small></span>
+        <span class="rsc-value tier-text-{{ score_tier(match_percentage) }}"
+          >{{ match_percentage }}<small>%</small></span
+        >
         <span class="rsc-sub">{{ profession_field }}</span>
       </div>
     </div>
@@ -59,7 +70,9 @@
       <div class="rsc-icon"><i class="bi bi-person-check-fill"></i></div>
       <div class="rsc-body">
         <span class="rsc-label">Profile Strength</span>
-        <span class="rsc-value tier-text-{{ score_tier(profile_strength) }}">{{ profile_strength }}<small>%</small></span>
+        <span class="rsc-value tier-text-{{ score_tier(profile_strength) }}"
+          >{{ profile_strength }}<small>%</small></span
+        >
         <span class="rsc-sub">{{ sections_found|length }} sections found</span>
       </div>
     </div>
@@ -67,28 +80,34 @@
 
   <!-- Main report grid -->
   <div class="report-grid">
-
     <!-- ATS Breakdown -->
     <section class="report-section report-ats-breakdown">
       <div class="rs-header">
         <h2><i class="bi bi-bar-chart-fill"></i> ATS Breakdown</h2>
-        <span class="rs-badge tier-bg-{{ score_tier(ats_score) }}">{{ ats_score }}/100</span>
+        <span class="rs-badge tier-bg-{{ score_tier(ats_score) }}"
+          >{{ ats_score }}/100</span
+        >
       </div>
       <div class="ats-breakdown-bars">
-        {% set breakdown_items = [
-          ("Structure",   ats_breakdown.structure if ats_breakdown else 0,   "bi-layout-text-window"),
-          ("Content",     ats_breakdown.content   if ats_breakdown else 0,   "bi-file-text"),
-          ("Keywords",    ats_breakdown.keywords  if ats_breakdown else 0,   "bi-key"),
-          ("Contact",     ats_breakdown.contact   if ats_breakdown else 0,   "bi-person-vcard"),
-          ("Readability", ats_breakdown.readability if ats_breakdown else 0, "bi-type"),
-        ] %}
-        {% for label, score, icon in breakdown_items %}
+        {% set breakdown_items = [ ("Structure", ats_breakdown.structure if
+        ats_breakdown else 0, "bi-layout-text-window"), ("Content",
+        ats_breakdown.content if ats_breakdown else 0, "bi-file-text"),
+        ("Keywords", ats_breakdown.keywords if ats_breakdown else 0, "bi-key"),
+        ("Contact", ats_breakdown.contact if ats_breakdown else 0,
+        "bi-person-vcard"), ("Readability", ats_breakdown.readability if
+        ats_breakdown else 0, "bi-type"), ] %} {% for label, score, icon in
+        breakdown_items %}
         <div class="abb-row">
           <div class="abb-label"><i class="bi {{ icon }}"></i> {{ label }}</div>
           <div class="abb-bar-track">
-            <div class="abb-bar-fill tier-bg-{{ score_tier(score) }}" style="width:{{ score }}%"></div>
+            <div
+              class="abb-bar-fill tier-bg-{{ score_tier(score) }}"
+              style="width:{{ score }}%"
+            ></div>
           </div>
-          <div class="abb-score tier-text-{{ score_tier(score) }}">{{ score }}%</div>
+          <div class="abb-score tier-text-{{ score_tier(score) }}">
+            {{ score }}%
+          </div>
         </div>
         {% endfor %}
       </div>
@@ -119,7 +138,9 @@
       </div>
       <div class="sections-tag-list">
         {% for section in sections_found %}
-          <span class="section-tag"><i class="bi bi-check-circle-fill"></i> {{ section }}</span>
+        <span class="section-tag"
+          ><i class="bi bi-check-circle-fill"></i> {{ section }}</span
+        >
         {% endfor %}
       </div>
     </section>
@@ -132,37 +153,45 @@
       </div>
       <div class="skills-two-col">
         <div>
-          <h4 class="col-label matched-label"><i class="bi bi-check-circle-fill"></i> Matched Skills ({{ matched_skills|length }})</h4>
+          <h4 class="col-label matched-label">
+            <i class="bi bi-check-circle-fill"></i> Matched Skills ({{
+            matched_skills|length }})
+          </h4>
           <div class="skill-tag-list">
-            {% if matched_skills %}
-              {% for skill in matched_skills %}
-                <span class="skill-tag skill-matched">{{ skill }}</span>
-              {% endfor %}
-            {% else %}
-              <span class="no-data-note">No job description provided for matching.</span>
+            {% if matched_skills %} {% for skill in matched_skills %}
+            <span class="skill-tag skill-matched">{{ skill }}</span>
+            {% endfor %} {% else %}
+            <span class="no-data-note"
+              >No job description provided for matching.</span
+            >
             {% endif %}
           </div>
         </div>
         <div>
-          <h4 class="col-label missing-label"><i class="bi bi-x-circle-fill"></i> Missing Skills ({{ missing_skills|length }})</h4>
+          <h4 class="col-label missing-label">
+            <i class="bi bi-x-circle-fill"></i> Missing Skills ({{
+            missing_skills|length }})
+          </h4>
           <div class="skill-tag-list">
-            {% if missing_skills %}
-              {% for skill in missing_skills %}
-                <span class="skill-tag skill-missing">{{ skill }}</span>
-              {% endfor %}
-            {% else %}
-              <span class="no-data-note">No gaps detected — great job!</span>
+            {% if missing_skills %} {% for skill in missing_skills %}
+            <span class="skill-tag skill-missing">{{ skill }}</span>
+            {% endfor %} {% else %}
+            <span class="no-data-note">No gaps detected — great job!</span>
             {% endif %}
           </div>
         </div>
       </div>
       {% if skills %}
-      <div style="margin-top:1.2rem">
-        <h4 class="col-label"><i class="bi bi-collection-fill"></i> All Detected Skills</h4>
+      <div style="margin-top: 1.2rem">
+        <h4 class="col-label">
+          <i class="bi bi-collection-fill"></i> All Detected Skills
+        </h4>
         <div class="skill-tag-list">
-          {% for skill in skills %}
-            {% set icon = get_skill_icon(skill, profession_field) %}
-            <span class="skill-tag skill-all"><i class="bi {{ icon }}"></i> {{ skill }}</span>
+          {% for skill in skills %} {% set icon = get_skill_icon(skill,
+          profession_field) %}
+          <span class="skill-tag skill-all"
+            ><i class="bi {{ icon }}"></i> {{ skill }}</span
+          >
           {% endfor %}
         </div>
       </div>
@@ -173,22 +202,28 @@
     <section class="report-section report-format">
       <div class="rs-header">
         <h2><i class="bi bi-check2-square"></i> Format Checker</h2>
-        <span class="rs-badge tier-bg-{{ score_tier(format_score) }}">{{ format_score }}/100</span>
+        <span class="rs-badge tier-bg-{{ score_tier(format_score) }}"
+          >{{ format_score }}/100</span
+        >
       </div>
       <div class="format-check-list">
-        {% if format_checks %}
-          {% for check in format_checks %}
-            {% set passed = check.passed if check is mapping else check.passed %}
-            <div class="fc-row {{ 'fc-pass' if passed else 'fc-fail' }}">
-              <i class="bi {{ 'bi-check-circle-fill' if passed else 'bi-x-circle-fill' }}"></i>
-              <div class="fc-text">
-                <strong>{{ check.label if check is mapping else check.label }}</strong>
-                <span>{{ check.detail if check is mapping else check.detail }}</span>
-              </div>
-            </div>
-          {% endfor %}
-        {% else %}
-          <p class="no-data-note">Upload a resume to see format analysis.</p>
+        {% if format_checks %} {% for check in format_checks %} {% set passed =
+        check.passed if check is mapping else check.passed %}
+        <div class="fc-row {{ 'fc-pass' if passed else 'fc-fail' }}">
+          <i
+            class="bi {{ 'bi-check-circle-fill' if passed else 'bi-x-circle-fill' }}"
+          ></i>
+          <div class="fc-text">
+            <strong
+              >{{ check.label if check is mapping else check.label }}</strong
+            >
+            <span
+              >{{ check.detail if check is mapping else check.detail }}</span
+            >
+          </div>
+        </div>
+        {% endfor %} {% else %}
+        <p class="no-data-note">Upload a resume to see format analysis.</p>
         {% endif %}
       </div>
     </section>
@@ -197,22 +232,29 @@
     <section class="report-section report-profile">
       <div class="rs-header">
         <h2><i class="bi bi-person-badge-fill"></i> Profile Completeness</h2>
-        <span class="rs-badge tier-bg-{{ score_tier(profile_strength) }}">{{ profile_strength }}%</span>
+        <span class="rs-badge tier-bg-{{ score_tier(profile_strength) }}"
+          >{{ profile_strength }}%</span
+        >
       </div>
-      <div class="profile-strength-track" style="margin-bottom:1rem">
-        <div class="profile-strength-fill tier-bg-{{ score_tier(profile_strength) }}" style="width:{{ profile_strength }}%"></div>
+      <div class="profile-strength-track" style="margin-bottom: 1rem">
+        <div
+          class="profile-strength-fill tier-bg-{{ score_tier(profile_strength) }}"
+          style="width:{{ profile_strength }}%"
+        ></div>
       </div>
       <div class="profile-checklist-report">
-        {% if profile_checklist %}
-          {% for item in profile_checklist %}
-            {% set passed = item.passed if item is mapping else item.passed %}
-            <div class="pcr-row {{ 'pcr-pass' if passed else 'pcr-fail' }}">
-              <i class="bi {{ 'bi-check-circle-fill' if passed else 'bi-circle' }}"></i>
-              <span>{{ item.label if item is mapping else item.label }}</span>
-            </div>
-          {% endfor %}
-        {% else %}
-          <p class="no-data-note">Upload a resume to see completeness analysis.</p>
+        {% if profile_checklist %} {% for item in profile_checklist %} {% set
+        passed = item.passed if item is mapping else item.passed %}
+        <div class="pcr-row {{ 'pcr-pass' if passed else 'pcr-fail' }}">
+          <i
+            class="bi {{ 'bi-check-circle-fill' if passed else 'bi-circle' }}"
+          ></i>
+          <span>{{ item.label if item is mapping else item.label }}</span>
+        </div>
+        {% endfor %} {% else %}
+        <p class="no-data-note">
+          Upload a resume to see completeness analysis.
+        </p>
         {% endif %}
       </div>
     </section>
@@ -223,60 +265,81 @@
         <h2><i class="bi bi-lightbulb-fill"></i> AI Recommendations</h2>
       </div>
       <div class="rec-list">
-        {% if recommendations %}
-          {% for rec in recommendations %}
-            {% set prio = rec.priority if rec is mapping else "medium" %}
-            <div class="rec-item prio-{{ prio }}">
-              <div class="rec-icon">
-                {% if prio == "high" %}<i class="bi bi-exclamation-triangle-fill"></i>
-                {% elif prio == "low" %}<i class="bi bi-info-circle-fill"></i>
-                {% else %}<i class="bi bi-arrow-up-circle-fill"></i>{% endif %}
-              </div>
-              <div class="rec-body">
-                <strong>{{ rec.title if rec is mapping else rec.title }}</strong>
-                <span>{{ rec.detail if rec is mapping else (rec.message if rec is mapping else "") }}</span>
-              </div>
-              <span class="rec-badge">{{ prio|title }}</span>
-            </div>
-          {% endfor %}
-        {% else %}
-          <div class="rec-item prio-medium">
-            <div class="rec-icon"><i class="bi bi-arrow-up-circle-fill"></i></div>
-            <div class="rec-body">
-              <strong>Add a Professional Summary</strong>
-              <span>A strong 2–3 sentence summary at the top of your resume helps recruiters immediately understand your value proposition.</span>
-            </div>
-            <span class="rec-badge">Medium</span>
+        {% if recommendations %} {% for rec in recommendations %} {% set prio =
+        rec.priority if rec is mapping else "medium" %}
+        <div class="rec-item prio-{{ prio }}">
+          <div class="rec-icon">
+            {% if prio == "high" %}<i
+              class="bi bi-exclamation-triangle-fill"
+            ></i>
+            {% elif prio == "low" %}<i class="bi bi-info-circle-fill"></i> {%
+            else %}<i class="bi bi-arrow-up-circle-fill"></i>{% endif %}
           </div>
-          <div class="rec-item prio-high">
-            <div class="rec-icon"><i class="bi bi-exclamation-triangle-fill"></i></div>
-            <div class="rec-body">
-              <strong>Quantify Your Achievements</strong>
-              <span>Replace generic descriptions with measurable results (e.g., "Improved performance by 40%") to stand out from other applicants.</span>
-            </div>
-            <span class="rec-badge">High</span>
+          <div class="rec-body">
+            <strong>{{ rec.title if rec is mapping else rec.title }}</strong>
+            <span
+              >{{ rec.detail if rec is mapping else (rec.message if rec is
+              mapping else "") }}</span
+            >
           </div>
-          <div class="rec-item prio-medium">
-            <div class="rec-icon"><i class="bi bi-arrow-up-circle-fill"></i></div>
-            <div class="rec-body">
-              <strong>Align Keywords with the Job Description</strong>
-              <span>Upload a job description alongside your resume to enable keyword matching and targeted skill gap analysis.</span>
-            </div>
-            <span class="rec-badge">Medium</span>
+          <span class="rec-badge">{{ prio|title }}</span>
+        </div>
+        {% endfor %} {% else %}
+        <div class="rec-item prio-medium">
+          <div class="rec-icon"><i class="bi bi-arrow-up-circle-fill"></i></div>
+          <div class="rec-body">
+            <strong>Add a Professional Summary</strong>
+            <span
+              >A strong 2–3 sentence summary at the top of your resume helps
+              recruiters immediately understand your value proposition.</span
+            >
           </div>
+          <span class="rec-badge">Medium</span>
+        </div>
+        <div class="rec-item prio-high">
+          <div class="rec-icon">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+          </div>
+          <div class="rec-body">
+            <strong>Quantify Your Achievements</strong>
+            <span
+              >Replace generic descriptions with measurable results (e.g.,
+              "Improved performance by 40%") to stand out from other
+              applicants.</span
+            >
+          </div>
+          <span class="rec-badge">High</span>
+        </div>
+        <div class="rec-item prio-medium">
+          <div class="rec-icon"><i class="bi bi-arrow-up-circle-fill"></i></div>
+          <div class="rec-body">
+            <strong>Align Keywords with the Job Description</strong>
+            <span
+              >Upload a job description alongside your resume to enable keyword
+              matching and targeted skill gap analysis.</span
+            >
+          </div>
+          <span class="rec-badge">Medium</span>
+        </div>
         {% endif %}
       </div>
     </section>
-
-  </div><!-- /.report-grid -->
-</div><!-- /.reports-shell -->
+  </div>
+  <!-- /.report-grid -->
+</div>
+<!-- /.reports-shell -->
 
 <script>
-  document.getElementById("reportDate").textContent = new Date().toLocaleDateString("en-GB", {
-    day: "numeric", month: "long", year: "numeric"
-  });
-  document.getElementById("downloadReportBtn").addEventListener("click", function() {
-    window.print();
-  });
+  document.getElementById("reportDate").textContent =
+    new Date().toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+  document
+    .getElementById("downloadReportBtn")
+    .addEventListener("click", function () {
+      window.print();
+    });
 </script>
 {% endif %}
