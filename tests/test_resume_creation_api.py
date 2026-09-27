@@ -501,3 +501,28 @@ def test_resume_export_pdf_and_docx(client):
     assert docx_response.status_code == 200
     assert "application/vnd.openxmlformats-officedocument.wordprocessingml.document" in (docx_response.content_type or "")
     assert len(docx_response.data) > 100
+
+
+def test_reports_export_pdf_and_docx(client):
+    with client.session_transaction() as session:
+        session["analysis_result"] = {}
+        session["resume_text"] = "A resume for a software engineer."
+        session["job_description"] = ""
+
+    pdf_response = client.post(
+        "/reports/export/pdf",
+        json={"template": "modern"},
+    )
+    assert pdf_response.status_code == 200
+    assert "application/pdf" in (pdf_response.content_type or "")
+    assert pdf_response.data.startswith(b"%PDF")
+    assert "modern.pdf" in pdf_response.headers["Content-Disposition"]
+
+    docx_response = client.post(
+        "/reports/export/docx",
+        json={"template": "minimal"},
+    )
+    assert docx_response.status_code == 200
+    assert "application/vnd.openxmlformats-officedocument.wordprocessingml.document" in (docx_response.content_type or "")
+    assert docx_response.data.startswith(b"PK")
+    assert "minimal.docx" in docx_response.headers["Content-Disposition"]
