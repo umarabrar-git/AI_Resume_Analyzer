@@ -43,6 +43,14 @@ ALL_TEMPLATES = (
 )
 
 
+def _selected_template():
+    payload = request.get_json(silent=True) or {}
+    return request.form.get("template") or payload.get(
+        "template",
+        "professional",
+    )
+
+
 def _get_report_context():
     """
     Uses the same session-backed analysis state as the existing
@@ -169,10 +177,7 @@ def _build_report():
 @bp.post("/pdf")
 def export_pdf():
     template, error, status = _validate_template(
-        request.form.get(
-            "template",
-            "professional",
-        )
+        _selected_template()
     )
 
     if error is not None:
@@ -241,10 +246,7 @@ def export_pdf():
 @bp.post("/docx")
 def export_docx():
     template, error, status = _validate_template(
-        request.form.get(
-            "template",
-            "professional",
-        )
+        _selected_template()
     )
 
     if error is not None:
