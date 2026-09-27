@@ -9,6 +9,7 @@ from .dashboard.route import bp as dashboard_bp
 from .home.route import bp as home_bp
 
 from .reports.route import bp as reports_bp
+from .reports.export import bp as reports_export_bp
 
 from .resume_creation.route import bp as resume_creation_bp
 
@@ -49,6 +50,7 @@ ALL_BLUEPRINTS = (
     assistant_bp,
     resume_creation_bp,
     reports_bp,
+    reports_export_bp,
     settings_bp,
     upload_bp,
     api_bp,
