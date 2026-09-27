@@ -31,7 +31,7 @@
         <i class="bi bi-printer"></i> Print
       </button>
       <button class="report-btn report-btn-primary" id="downloadReportBtn">
-        <i class="bi bi-download"></i> Download PDF
+        <i class="bi bi-download"></i> Download Report
       </button>
     </div>
   </div>
@@ -335,11 +335,6 @@
       day: "numeric",
       month: "long",
       year: "numeric",
-    });
-  document
-    .getElementById("downloadReportBtn")
-    .addEventListener("click", function () {
-      window.print();
     });
 </script>
 {% endif %}
