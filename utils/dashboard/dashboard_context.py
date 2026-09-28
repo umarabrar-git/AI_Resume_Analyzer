@@ -85,7 +85,12 @@ def apply_analysis_to_session(session_obj, payload, *, resume_text="", job_descr
 def build_session_context(session_obj):
     """Return template context from stored session data, or safe defaults."""
     return dict(
-        name=session_obj.get("name", "Guest"),
+        name=(
+            session_obj.get("user_name")
+            or session_obj.get("user_email")
+            or session_obj.get("name")
+            or "Guest"
+        ),
         email=session_obj.get("email", ""),
         phone=session_obj.get("phone", ""),
         skills=session_obj.get("skills", []),
