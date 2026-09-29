@@ -1,340 +1,714 @@
 {% if not has_analysis %}
-<!-- Empty state -->
-<div class="analysis-empty-state">
-  <div class="empty-icon"><i class="bi bi-clipboard-data"></i></div>
-  <h2>No Report Available</h2>
-  <p>
-    Upload and analyze your resume to generate a full report with ATS breakdown,
-    skill gap analysis, and AI recommendations.
-  </p>
-  <a href="/dashboard" class="btn-upload-cta"
-    ><i class="bi bi-cloud-upload"></i> Upload Resume</a
-  >
+
+<!-- =========================================================
+     EMPTY STATE
+     ========================================================= -->
+<div class="report-empty-state">
+  <div class="report-empty-icon">
+    <i class="bi bi-clipboard-data"></i>
+  </div>
+
+  <div class="report-empty-content">
+    <span class="report-eyebrow">RESUME INTELLIGENCE</span>
+
+    <h1>No Report Available</h1>
+
+    <p>
+      Upload and analyze your resume to generate your ATS score, skill analysis,
+      profile health and AI recommendations.
+    </p>
+
+    <a href="/dashboard" class="report-primary-btn">
+      <i class="bi bi-cloud-upload"></i>
+      Upload Resume
+    </a>
+  </div>
 </div>
+
 {% else %}
 
-<!-- =============================================
-     Reports Page — Full Analysis Report
-     ============================================= -->
+<!-- =========================================================
+     REPORT APPLICATION
+     ========================================================= -->
 <div class="reports-shell">
-  <!-- Report Header -->
-  <div class="report-header">
-    <div class="report-header-left">
-      <h1><i class="bi bi-clipboard-data-fill"></i> Resume Analysis Report</h1>
-      <p>
-        Generated for <strong>{{ name }}</strong> ·
-        <span class="report-date" id="reportDate"></span>
-      </p>
+  <!-- =====================================================
+         REPORT HEADER
+         ===================================================== -->
+  <header class="report-page-header">
+    <div class="report-heading">
+      <div class="report-heading-icon">
+        <i class="bi bi-clipboard-data-fill"></i>
+      </div>
+
+      <div>
+        <span class="report-eyebrow"> AI RESUME INTELLIGENCE </span>
+
+        <h1>Resume Analysis Report</h1>
+
+        <p>
+          Analysis generated for
+          <strong>{{ name }}</strong>
+          <span class="report-divider">•</span>
+          <span id="reportDate"></span>
+        </p>
+      </div>
     </div>
+
     <div class="report-header-actions">
-      <button class="report-btn report-btn-outline" onclick="window.print()">
-        <i class="bi bi-printer"></i> Print
+      <button
+        type="button"
+        class="report-action-btn report-action-secondary"
+        onclick="window.print()"
+      >
+        <i class="bi bi-printer"></i>
+        <span>Print</span>
       </button>
-      <button class="report-btn report-btn-primary" id="downloadReportBtn">
-        <i class="bi bi-download"></i> Download Report
+
+      <button
+        type="button"
+        class="report-action-btn report-action-primary"
+        id="downloadReportBtn"
+      >
+        <i class="bi bi-download"></i>
+        <span>Download Report</span>
       </button>
     </div>
-  </div>
+  </header>
 
-  <!-- Score Overview Row -->
-  <div class="report-score-row">
-    <div class="report-score-card score-ats">
-      <div class="rsc-icon"><i class="bi bi-speedometer2"></i></div>
-      <div class="rsc-body">
-        <span class="rsc-label">ATS Score</span>
-        <span class="rsc-value tier-text-{{ score_tier(ats_score) }}"
-          >{{ ats_score }}<small>/100</small></span
-        >
-        <span class="rsc-sub">{{ resume_status }}</span>
-      </div>
-    </div>
-    <div class="report-score-card score-match">
-      <div class="rsc-icon"><i class="bi bi-briefcase-fill"></i></div>
-      <div class="rsc-body">
-        <span class="rsc-label">Job Match</span>
-        <span class="rsc-value tier-text-{{ score_tier(match_percentage) }}"
-          >{{ match_percentage }}<small>%</small></span
-        >
-        <span class="rsc-sub">{{ profession_field }}</span>
-      </div>
-    </div>
-    <div class="report-score-card score-skills">
-      <div class="rsc-icon"><i class="bi bi-star-fill"></i></div>
-      <div class="rsc-body">
-        <span class="rsc-label">Skills Detected</span>
-        <span class="rsc-value">{{ skills|length }}</span>
-        <span class="rsc-sub">of 30 role skills</span>
-      </div>
-    </div>
-    <div class="report-score-card score-profile">
-      <div class="rsc-icon"><i class="bi bi-person-check-fill"></i></div>
-      <div class="rsc-body">
-        <span class="rsc-label">Profile Strength</span>
-        <span class="rsc-value tier-text-{{ score_tier(profile_strength) }}"
-          >{{ profile_strength }}<small>%</small></span
-        >
-        <span class="rsc-sub">{{ sections_found|length }} sections found</span>
-      </div>
-    </div>
-  </div>
+  <!-- =====================================================
+         EXECUTIVE SUMMARY / HERO
+         ===================================================== -->
+  <section class="report-health-hero">
+    <div class="health-hero-main">
+      <div class="health-score-ring" style="--score: {{ ats_score }};">
+        <div class="health-score-inner">
+          <span class="health-score-label"> ATS SCORE </span>
 
-  <!-- Main report grid -->
-  <div class="report-grid">
-    <!-- ATS Breakdown -->
-    <section class="report-section report-ats-breakdown">
-      <div class="rs-header">
-        <h2><i class="bi bi-bar-chart-fill"></i> ATS Breakdown</h2>
-        <span class="rs-badge tier-bg-{{ score_tier(ats_score) }}"
-          >{{ ats_score }}/100</span
-        >
+          <strong
+            class="health-score-value tier-text-{{ score_tier(ats_score) }}"
+          >
+            {{ ats_score }}
+          </strong>
+
+          <span class="health-score-total"> / 100 </span>
+        </div>
       </div>
-      <div class="ats-breakdown-bars">
+
+      <div class="health-summary">
+        <span class="section-eyebrow"> RESUME HEALTH </span>
+
+        <h2>Your resume analysis is ready</h2>
+
+        <p>
+          Your resume has been evaluated across structure, content, keywords,
+          contact information and readability.
+        </p>
+
+        <div class="health-status">
+          <span class="health-status-dot"></span>
+          {{ resume_status }}
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-summary-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-label"> Job Match </span>
+
+        <strong class="tier-text-{{ score_tier(match_percentage) }}">
+          {{ match_percentage }}%
+        </strong>
+
+        <small> {{ profession_field }} </small>
+      </div>
+
+      <div class="hero-stat">
+        <span class="hero-stat-label"> Profile Strength </span>
+
+        <strong class="tier-text-{{ score_tier(profile_strength) }}">
+          {{ profile_strength }}%
+        </strong>
+
+        <small> {{ sections_found|length }} sections </small>
+      </div>
+
+      <div class="hero-stat">
+        <span class="hero-stat-label"> Skills Detected </span>
+
+        <strong> {{ skills|length }} </strong>
+
+        <small> identified skills </small>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+         QUICK NAVIGATION
+         ===================================================== -->
+  <nav class="report-section-nav" aria-label="Report sections">
+    <a href="#ats-performance" class="active">
+      <i class="bi bi-speedometer2"></i>
+      ATS
+    </a>
+
+    <a href="#skills-intelligence">
+      <i class="bi bi-stars"></i>
+      Skills
+    </a>
+
+    <a href="#resume-metrics">
+      <i class="bi bi-bar-chart"></i>
+      Metrics
+    </a>
+
+    <a href="#resume-health">
+      <i class="bi bi-shield-check"></i>
+      Health
+    </a>
+
+    <a href="#ai-insights">
+      <i class="bi bi-lightbulb"></i>
+      AI Insights
+    </a>
+  </nav>
+
+  <!-- =====================================================
+         ATS PERFORMANCE
+         ===================================================== -->
+  <section class="report-section-block" id="ats-performance">
+    <div class="section-heading-row">
+      <div>
+        <span class="section-eyebrow"> PERFORMANCE </span>
+
+        <h2>ATS Performance</h2>
+
+        <p>Breakdown of the factors contributing to your ATS score.</p>
+      </div>
+
+      <div class="section-score-badge tier-bg-{{ score_tier(ats_score) }}">
+        {{ ats_score }}/100
+      </div>
+    </div>
+
+    <div class="ats-performance-layout">
+      <!-- Main ATS bars -->
+      <div class="ats-bars-panel">
         {% set breakdown_items = [ ("Structure", ats_breakdown.structure if
         ats_breakdown else 0, "bi-layout-text-window"), ("Content",
         ats_breakdown.content if ats_breakdown else 0, "bi-file-text"),
         ("Keywords", ats_breakdown.keywords if ats_breakdown else 0, "bi-key"),
         ("Contact", ats_breakdown.contact if ats_breakdown else 0,
         "bi-person-vcard"), ("Readability", ats_breakdown.readability if
-        ats_breakdown else 0, "bi-type"), ] %} {% for label, score, icon in
+        ats_breakdown else 0, "bi-type") ] %} {% for label, score, icon in
         breakdown_items %}
-        <div class="abb-row">
-          <div class="abb-label"><i class="bi {{ icon }}"></i> {{ label }}</div>
-          <div class="abb-bar-track">
+
+        <div class="ats-metric-row">
+          <div class="ats-metric-title">
+            <span class="ats-metric-icon">
+              <i class="bi {{ icon }}"></i>
+            </span>
+
+            <span> {{ label }} </span>
+          </div>
+
+          <div class="ats-progress">
+            <div class="ats-progress-track">
+              <div
+                class="ats-progress-fill tier-bg-{{ score_tier(score) }}"
+                style="--score: {{ score }}%;"
+              ></div>
+            </div>
+          </div>
+
+          <strong class="ats-metric-score tier-text-{{ score_tier(score) }}">
+            {{ score }}%
+          </strong>
+        </div>
+
+        {% endfor %}
+      </div>
+
+      <!-- ATS summary -->
+      <aside class="ats-insight-panel">
+        <div class="insight-icon">
+          <i class="bi bi-graph-up-arrow"></i>
+        </div>
+
+        <span class="insight-label"> ATS OVERVIEW </span>
+
+        <strong> {{ ats_score }}/100 </strong>
+
+        <p>
+          Your overall ATS compatibility score based on the available resume
+          analysis signals.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- =====================================================
+         SKILLS INTELLIGENCE
+         ===================================================== -->
+  <section class="report-section-block" id="skills-intelligence">
+    <div class="section-heading-row">
+      <div>
+        <span class="section-eyebrow"> SKILL GAP ANALYSIS </span>
+
+        <h2>Skills Intelligence</h2>
+
+        <p>
+          Understand which skills are already aligned and where gaps may exist.
+        </p>
+      </div>
+
+      <div class="section-count-badge">{{ skills|length }} detected</div>
+    </div>
+
+    <div class="skills-intelligence-grid">
+      <!-- Matched -->
+      <div class="skills-panel skills-panel-matched">
+        <div class="skills-panel-header">
+          <div class="skills-panel-title">
+            <span class="skills-panel-icon">
+              <i class="bi bi-check-lg"></i>
+            </span>
+
+            <div>
+              <h3>Matched Skills</h3>
+              <span>{{ matched_skills|length }} matched</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-tag-list">
+          {% if matched_skills %} {% for skill in matched_skills %}
+
+          <span class="skill-chip skill-chip-matched">
+            <i class="bi bi-check-circle-fill"></i>
+            {{ skill }}
+          </span>
+
+          {% endfor %} {% else %}
+
+          <div class="skills-empty">
+            <i class="bi bi-info-circle"></i>
+            <span> No job description provided for matching. </span>
+          </div>
+
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Missing -->
+      <div class="skills-panel skills-panel-missing">
+        <div class="skills-panel-header">
+          <div class="skills-panel-title">
+            <span class="skills-panel-icon">
+              <i class="bi bi-plus-lg"></i>
+            </span>
+
+            <div>
+              <h3>Missing Skills</h3>
+              <span>{{ missing_skills|length }} identified</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-tag-list">
+          {% if missing_skills %} {% for skill in missing_skills %}
+
+          <span class="skill-chip skill-chip-missing">
+            <i class="bi bi-plus-circle"></i>
+            {{ skill }}
+          </span>
+
+          {% endfor %} {% else %}
+
+          <div class="skills-empty">
+            <i class="bi bi-check-circle"></i>
+            <span> No gaps detected. </span>
+          </div>
+
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- All detected skills -->
+    {% if skills %}
+
+    <div class="all-skills-panel">
+      <div class="all-skills-header">
+        <div>
+          <span class="section-eyebrow"> RESUME INVENTORY </span>
+
+          <h3>All Detected Skills</h3>
+        </div>
+
+        <span class="section-count-badge"> {{ skills|length }} </span>
+      </div>
+
+      <div class="skill-tag-list">
+        {% for skill in skills %} {% set icon = get_skill_icon(skill,
+        profession_field) %}
+
+        <span class="skill-chip skill-chip-neutral">
+          <i class="bi {{ icon }}"></i>
+          {{ skill }}
+        </span>
+
+        {% endfor %}
+      </div>
+    </div>
+
+    {% endif %}
+  </section>
+
+  <!-- =====================================================
+         RESUME METRICS
+         ===================================================== -->
+  <section class="report-section-block" id="resume-metrics">
+    <div class="section-heading-row">
+      <div>
+        <span class="section-eyebrow"> RESUME SNAPSHOT </span>
+
+        <h2>Resume Metrics</h2>
+
+        <p>A quick overview of the document structure and reading profile.</p>
+      </div>
+    </div>
+
+    <div class="metrics-modern-grid">
+      <div class="metric-modern-card">
+        <span class="metric-modern-icon">
+          <i class="bi bi-file-text"></i>
+        </span>
+
+        <div>
+          <span>Word Count</span>
+          <strong>{{ word_count }}</strong>
+        </div>
+      </div>
+
+      <div class="metric-modern-card">
+        <span class="metric-modern-icon">
+          <i class="bi bi-file-earmark"></i>
+        </span>
+
+        <div>
+          <span>Page Estimate</span>
+          <strong>{{ page_count }}</strong>
+        </div>
+      </div>
+
+      <div class="metric-modern-card">
+        <span class="metric-modern-icon">
+          <i class="bi bi-clock"></i>
+        </span>
+
+        <div>
+          <span>Read Time</span>
+          <strong>{{ reading_time }} min</strong>
+        </div>
+      </div>
+
+      <div class="metric-modern-card">
+        <span class="metric-modern-icon">
+          <i class="bi bi-grid"></i>
+        </span>
+
+        <div>
+          <span>Sections Found</span>
+          <strong>{{ sections_found|length }}</strong>
+        </div>
+      </div>
+    </div>
+
+    {% if sections_found %}
+
+    <div class="sections-found-panel">
+      <span class="sections-found-label"> DETECTED SECTIONS </span>
+
+      <div class="section-chip-list">
+        {% for section in sections_found %}
+
+        <span class="section-found-chip">
+          <i class="bi bi-check-circle-fill"></i>
+          {{ section }}
+        </span>
+
+        {% endfor %}
+      </div>
+    </div>
+
+    {% endif %}
+  </section>
+
+  <!-- =====================================================
+         RESUME HEALTH
+         ===================================================== -->
+  <section class="report-section-block" id="resume-health">
+    <div class="section-heading-row">
+      <div>
+        <span class="section-eyebrow"> QUALITY CHECK </span>
+
+        <h2>Resume Health</h2>
+
+        <p>Check formatting quality and profile completeness.</p>
+      </div>
+    </div>
+
+    <div class="resume-health-grid">
+      <!-- Format -->
+      <div class="health-panel">
+        <div class="health-panel-header">
+          <div>
+            <span class="section-eyebrow"> FORMAT </span>
+
+            <h3>Format Checker</h3>
+          </div>
+
+          <span
+            class="health-score-badge tier-bg-{{ score_tier(format_score) }}"
+          >
+            {{ format_score }}/100
+          </span>
+        </div>
+
+        <div class="format-check-list">
+          {% if format_checks %} {% for check in format_checks %} {% set passed
+          = check.passed if check is mapping else check.passed %}
+
+          <div
+            class="format-check-row {{ 'format-check-pass' if passed else 'format-check-fail' }}"
+          >
+            <span class="format-check-icon">
+              <i class="bi {{ 'bi-check-lg' if passed else 'bi-x-lg' }}"></i>
+            </span>
+
+            <div>
+              <strong>
+                {{ check.label if check is mapping else check.label }}
+              </strong>
+
+              <span>
+                {{ check.detail if check is mapping else check.detail }}
+              </span>
+            </div>
+          </div>
+
+          {% endfor %} {% else %}
+
+          <div class="health-empty">
+            <i class="bi bi-info-circle"></i>
+            Upload a resume to see format analysis.
+          </div>
+
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Profile -->
+      <div class="health-panel">
+        <div class="health-panel-header">
+          <div>
+            <span class="section-eyebrow"> PROFILE </span>
+
+            <h3>Profile Completeness</h3>
+          </div>
+
+          <span
+            class="health-score-badge tier-bg-{{ score_tier(profile_strength) }}"
+          >
+            {{ profile_strength }}%
+          </span>
+        </div>
+
+        <div class="profile-progress">
+          <div class="profile-progress-track">
             <div
-              class="abb-bar-fill tier-bg-{{ score_tier(score) }}"
-              style="width:{{ score }}%"
+              class="profile-progress-fill tier-bg-{{ score_tier(profile_strength) }}"
+              style="--score: {{ profile_strength }}%;"
             ></div>
           </div>
-          <div class="abb-score tier-text-{{ score_tier(score) }}">
-            {{ score }}%
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
 
-    <!-- Resume Metrics -->
-    <section class="report-section report-metrics">
-      <div class="rs-header">
-        <h2><i class="bi bi-info-circle-fill"></i> Resume Metrics</h2>
-      </div>
-      <div class="metrics-grid">
-        <div class="metric-item">
-          <span class="mi-label">Word Count</span>
-          <strong class="mi-value">{{ word_count }}</strong>
+          <span> {{ profile_strength }}% complete </span>
         </div>
-        <div class="metric-item">
-          <span class="mi-label">Page Estimate</span>
-          <strong class="mi-value">{{ page_count }}</strong>
-        </div>
-        <div class="metric-item">
-          <span class="mi-label">Read Time</span>
-          <strong class="mi-value">{{ reading_time }} min</strong>
-        </div>
-        <div class="metric-item">
-          <span class="mi-label">Sections Found</span>
-          <strong class="mi-value">{{ sections_found|length }}</strong>
-        </div>
-      </div>
-      <div class="sections-tag-list">
-        {% for section in sections_found %}
-        <span class="section-tag"
-          ><i class="bi bi-check-circle-fill"></i> {{ section }}</span
-        >
-        {% endfor %}
-      </div>
-    </section>
 
-    <!-- Skills Analysis -->
-    <section class="report-section report-skills">
-      <div class="rs-header">
-        <h2><i class="bi bi-star-fill"></i> Skills Analysis</h2>
-        <span class="rs-badge">{{ skills|length }} detected</span>
-      </div>
-      <div class="skills-two-col">
-        <div>
-          <h4 class="col-label matched-label">
-            <i class="bi bi-check-circle-fill"></i> Matched Skills ({{
-            matched_skills|length }})
-          </h4>
-          <div class="skill-tag-list">
-            {% if matched_skills %} {% for skill in matched_skills %}
-            <span class="skill-tag skill-matched">{{ skill }}</span>
-            {% endfor %} {% else %}
-            <span class="no-data-note"
-              >No job description provided for matching.</span
-            >
-            {% endif %}
-          </div>
-        </div>
-        <div>
-          <h4 class="col-label missing-label">
-            <i class="bi bi-x-circle-fill"></i> Missing Skills ({{
-            missing_skills|length }})
-          </h4>
-          <div class="skill-tag-list">
-            {% if missing_skills %} {% for skill in missing_skills %}
-            <span class="skill-tag skill-missing">{{ skill }}</span>
-            {% endfor %} {% else %}
-            <span class="no-data-note">No gaps detected — great job!</span>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-      {% if skills %}
-      <div style="margin-top: 1.2rem">
-        <h4 class="col-label">
-          <i class="bi bi-collection-fill"></i> All Detected Skills
-        </h4>
-        <div class="skill-tag-list">
-          {% for skill in skills %} {% set icon = get_skill_icon(skill,
-          profession_field) %}
-          <span class="skill-tag skill-all"
-            ><i class="bi {{ icon }}"></i> {{ skill }}</span
+        <div class="profile-checklist">
+          {% if profile_checklist %} {% for item in profile_checklist %} {% set
+          passed = item.passed if item is mapping else item.passed %}
+
+          <div
+            class="profile-check-row {{ 'profile-check-pass' if passed else 'profile-check-fail' }}"
           >
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
-    </section>
-
-    <!-- Format Checker -->
-    <section class="report-section report-format">
-      <div class="rs-header">
-        <h2><i class="bi bi-check2-square"></i> Format Checker</h2>
-        <span class="rs-badge tier-bg-{{ score_tier(format_score) }}"
-          >{{ format_score }}/100</span
-        >
-      </div>
-      <div class="format-check-list">
-        {% if format_checks %} {% for check in format_checks %} {% set passed =
-        check.passed if check is mapping else check.passed %}
-        <div class="fc-row {{ 'fc-pass' if passed else 'fc-fail' }}">
-          <i
-            class="bi {{ 'bi-check-circle-fill' if passed else 'bi-x-circle-fill' }}"
-          ></i>
-          <div class="fc-text">
-            <strong
-              >{{ check.label if check is mapping else check.label }}</strong
-            >
-            <span
-              >{{ check.detail if check is mapping else check.detail }}</span
-            >
-          </div>
-        </div>
-        {% endfor %} {% else %}
-        <p class="no-data-note">Upload a resume to see format analysis.</p>
-        {% endif %}
-      </div>
-    </section>
-
-    <!-- Profile Completeness -->
-    <section class="report-section report-profile">
-      <div class="rs-header">
-        <h2><i class="bi bi-person-badge-fill"></i> Profile Completeness</h2>
-        <span class="rs-badge tier-bg-{{ score_tier(profile_strength) }}"
-          >{{ profile_strength }}%</span
-        >
-      </div>
-      <div class="profile-strength-track" style="margin-bottom: 1rem">
-        <div
-          class="profile-strength-fill tier-bg-{{ score_tier(profile_strength) }}"
-          style="width:{{ profile_strength }}%"
-        ></div>
-      </div>
-      <div class="profile-checklist-report">
-        {% if profile_checklist %} {% for item in profile_checklist %} {% set
-        passed = item.passed if item is mapping else item.passed %}
-        <div class="pcr-row {{ 'pcr-pass' if passed else 'pcr-fail' }}">
-          <i
-            class="bi {{ 'bi-check-circle-fill' if passed else 'bi-circle' }}"
-          ></i>
-          <span>{{ item.label if item is mapping else item.label }}</span>
-        </div>
-        {% endfor %} {% else %}
-        <p class="no-data-note">
-          Upload a resume to see completeness analysis.
-        </p>
-        {% endif %}
-      </div>
-    </section>
-
-    <!-- AI Recommendations -->
-    <section class="report-section report-recommendations">
-      <div class="rs-header">
-        <h2><i class="bi bi-lightbulb-fill"></i> AI Recommendations</h2>
-      </div>
-      <div class="rec-list">
-        {% if recommendations %} {% for rec in recommendations %} {% set prio =
-        rec.priority if rec is mapping else "medium" %}
-        <div class="rec-item prio-{{ prio }}">
-          <div class="rec-icon">
-            {% if prio == "high" %}<i
-              class="bi bi-exclamation-triangle-fill"
+            <i
+              class="bi {{ 'bi-check-circle-fill' if passed else 'bi-circle' }}"
             ></i>
-            {% elif prio == "low" %}<i class="bi bi-info-circle-fill"></i> {%
-            else %}<i class="bi bi-arrow-up-circle-fill"></i>{% endif %}
-          </div>
-          <div class="rec-body">
-            <strong>{{ rec.title if rec is mapping else rec.title }}</strong>
-            <span
-              >{{ rec.detail if rec is mapping else (rec.message if rec is
-              mapping else "") }}</span
-            >
-          </div>
-          <span class="rec-badge">{{ prio|title }}</span>
-        </div>
-        {% endfor %} {% else %}
-        <div class="rec-item prio-medium">
-          <div class="rec-icon"><i class="bi bi-arrow-up-circle-fill"></i></div>
-          <div class="rec-body">
-            <strong>Add a Professional Summary</strong>
-            <span
-              >A strong 2–3 sentence summary at the top of your resume helps
-              recruiters immediately understand your value proposition.</span
-            >
-          </div>
-          <span class="rec-badge">Medium</span>
-        </div>
-        <div class="rec-item prio-high">
-          <div class="rec-icon">
-            <i class="bi bi-exclamation-triangle-fill"></i>
-          </div>
-          <div class="rec-body">
-            <strong>Quantify Your Achievements</strong>
-            <span
-              >Replace generic descriptions with measurable results (e.g.,
-              "Improved performance by 40%") to stand out from other
-              applicants.</span
-            >
-          </div>
-          <span class="rec-badge">High</span>
-        </div>
-        <div class="rec-item prio-medium">
-          <div class="rec-icon"><i class="bi bi-arrow-up-circle-fill"></i></div>
-          <div class="rec-body">
-            <strong>Align Keywords with the Job Description</strong>
-            <span
-              >Upload a job description alongside your resume to enable keyword
-              matching and targeted skill gap analysis.</span
-            >
-          </div>
-          <span class="rec-badge">Medium</span>
-        </div>
-        {% endif %}
-      </div>
-    </section>
-  </div>
-  <!-- /.report-grid -->
-</div>
-<!-- /.reports-shell -->
 
+            <span> {{ item.label if item is mapping else item.label }} </span>
+          </div>
+
+          {% endfor %} {% else %}
+
+          <div class="health-empty">
+            <i class="bi bi-info-circle"></i>
+            Upload a resume to see completeness analysis.
+          </div>
+
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+         AI INSIGHTS
+         ===================================================== -->
+  <section class="report-section-block ai-insights-section" id="ai-insights">
+    <div class="ai-insights-header">
+      <div>
+        <span class="section-eyebrow"> AI-POWERED GUIDANCE </span>
+
+        <h2>AI Recommendations</h2>
+
+        <p>Actionable suggestions generated from your resume analysis.</p>
+      </div>
+
+      <div class="ai-insights-icon">
+        <i class="bi bi-stars"></i>
+      </div>
+    </div>
+
+    <div class="recommendations-list">
+      {% if recommendations %} {% for rec in recommendations %} {% set prio =
+      rec.priority if rec is mapping else "medium" %}
+
+      <article class="recommendation-item prio-{{ prio }}">
+        <div class="recommendation-icon">
+          {% if prio == "high" %}
+          <i class="bi bi-exclamation-triangle-fill"></i>
+          {% elif prio == "low" %}
+          <i class="bi bi-info-circle-fill"></i>
+          {% else %}
+          <i class="bi bi-arrow-up-circle-fill"></i>
+          {% endif %}
+        </div>
+
+        <div class="recommendation-content">
+          <div class="recommendation-top">
+            <strong> {{ rec.title if rec is mapping else rec.title }} </strong>
+
+            <span class="recommendation-priority"> {{ prio|title }} </span>
+          </div>
+
+          <p>
+            {{ rec.detail if rec is mapping else (rec.message if rec is mapping
+            else "") }}
+          </p>
+        </div>
+      </article>
+
+      {% endfor %} {% else %}
+
+      <article class="recommendation-item prio-medium">
+        <div class="recommendation-icon">
+          <i class="bi bi-arrow-up-circle-fill"></i>
+        </div>
+
+        <div class="recommendation-content">
+          <div class="recommendation-top">
+            <strong> Add a Professional Summary </strong>
+
+            <span class="recommendation-priority"> Medium </span>
+          </div>
+
+          <p>
+            A strong 2–3 sentence summary at the top of your resume helps
+            recruiters immediately understand your value proposition.
+          </p>
+        </div>
+      </article>
+
+      <article class="recommendation-item prio-high">
+        <div class="recommendation-icon">
+          <i class="bi bi-exclamation-triangle-fill"></i>
+        </div>
+
+        <div class="recommendation-content">
+          <div class="recommendation-top">
+            <strong> Quantify Your Achievements </strong>
+
+            <span class="recommendation-priority"> High </span>
+          </div>
+
+          <p>
+            Replace generic descriptions with measurable results to make
+            achievements easier to understand.
+          </p>
+        </div>
+      </article>
+
+      <article class="recommendation-item prio-medium">
+        <div class="recommendation-icon">
+          <i class="bi bi-arrow-up-circle-fill"></i>
+        </div>
+
+        <div class="recommendation-content">
+          <div class="recommendation-top">
+            <strong> Align Keywords with the Job Description </strong>
+
+            <span class="recommendation-priority"> Medium </span>
+          </div>
+
+          <p>
+            Upload a job description alongside your resume to enable keyword
+            matching and targeted skill gap analysis.
+          </p>
+        </div>
+      </article>
+
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- =====================================================
+         REPORT FOOTER
+         ===================================================== -->
+  <footer class="report-footer">
+    <div>
+      <strong> Resume Intelligence Report </strong>
+
+      <span> Generated from your current resume analysis. </span>
+    </div>
+
+    <div class="report-footer-brand">
+      <i class="bi bi-robot"></i>
+      AI Resume Analyzer
+    </div>
+  </footer>
+</div>
+
+<!-- =========================================================
+     EXISTING DOWNLOAD MODAL
+     ========================================================= -->
+{% include "components/pages/reports/download_modal.html" %}
+
+<!-- =========================================================
+     REPORT DATE
+     ========================================================= -->
 <script>
-  document.getElementById("reportDate").textContent =
-    new Date().toLocaleDateString("en-GB", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    });
+  (function () {
+    const reportDate = document.getElementById("reportDate");
+
+    if (reportDate) {
+      reportDate.textContent = new Date().toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+    }
+  })();
 </script>
+
 {% endif %}
