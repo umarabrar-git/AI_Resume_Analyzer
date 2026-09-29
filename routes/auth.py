@@ -44,6 +44,7 @@ def register():
             session['user_id'] = user.id
             session['user_email'] = user.email
             session['user_name'] = user.full_name
+            session['profile_picture'] = user.profile_picture
             session.permanent = request.form.get('remember_me') == 'on'
             
             flash(message, 'success')
@@ -72,6 +73,7 @@ def login():
             session['user_id'] = user.id
             session['user_email'] = user.email
             session['user_name'] = user.full_name
+            session['profile_picture'] = user.profile_picture
             session.permanent = remember_me
             
             flash(message, 'success')
