@@ -20,12 +20,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.45rem;
-    height: 2.45rem;
-    border-radius: 0.82rem;
-    background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
-    color: #ffffff;
-    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.28);
+    color: #0d6efd;
+    font-size: 1.25rem;
+    line-height: 1;
 }
 
 .home-navbar__menu {

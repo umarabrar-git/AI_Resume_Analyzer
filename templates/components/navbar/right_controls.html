@@ -1,13 +1,24 @@
-<div class="navbar-right">
-    <button class="notification-btn" type="button" aria-label="Notifications">
-        <i class="bi bi-bell"></i>
-    </button>
+{% set account_name = session.get('user_name') %} {% if not account_name or
+account_name|lower == 'guest' %} {% set account_name = session.get('user_email')
+or 'Guest' %} {% endif %} {% set account_email = session.get('user_email', '')
+%} {% set account_picture = session.get('profile_picture') %}
 
-    <div class="admin-profile" aria-label="Current user profile">
-        <img src="https://i.pravatar.cc/100?u={{ (name or 'user')|lower }}" alt="Profile picture">
-        <div class="profile-info">
-            <h6>{{ name or 'User' }}</h6>
-            <span>Resume Workspace</span>
-        </div>
+<div class="navbar-right">
+  <button class="notification-btn" type="button" aria-label="Notifications">
+    <i class="bi bi-bell"></i>
+  </button>
+
+  <div class="admin-profile" aria-label="Current user: {{ account_name }}">
+    {% if account_picture %}
+    <img src="{{ account_picture }}" alt="{{ account_name }} profile picture" />
+    {% else %}
+    <span class="admin-profile__avatar-fallback" aria-hidden="true">
+      {{ account_name[0]|upper }}
+    </span>
+    {% endif %}
+    <div class="profile-info">
+      <h6>{{ account_name }}</h6>
+      <span>{{ account_email or 'Resume Workspace' }}</span>
     </div>
+  </div>
 </div>
