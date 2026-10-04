@@ -377,3 +377,175 @@
         align-items: stretch;
     }
 }
+
+/* Resume template picker */
+.template-picker {
+    margin-top: 0.15rem;
+}
+
+.template-picker-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.template-picker-head .form-label {
+    margin-top: 0.6rem;
+}
+
+.template-picker-value {
+    margin-top: 0.45rem;
+    color: #66748a;
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.template-select-native {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.template-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin-top: 0.6rem;
+}
+
+.template-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.12rem;
+    min-width: 0;
+    padding: 0.45rem;
+    border: 1px solid #dfe6ef;
+    border-radius: 12px;
+    background: #fff;
+    color: #2b3a4d;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color .16s ease, box-shadow .16s ease, transform .16s ease;
+}
+
+.template-card:hover {
+    border-color: #9db9ea;
+    box-shadow: 0 5px 14px rgba(31, 74, 130, .08);
+    transform: translateY(-1px);
+}
+
+.template-card.is-selected {
+    border-color: #2468f4;
+    box-shadow: 0 0 0 2px rgba(36, 104, 244, .14);
+}
+
+.template-card strong {
+    margin-top: 0.2rem;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.template-card small {
+    color: #7a8798;
+    font-size: 0.75rem;
+}
+
+.template-preview {
+    position: relative;
+    display: block;
+    height: 78px;
+    overflow: hidden;
+    border: 1px solid #e1e6ed;
+    border-radius: 7px;
+    background: #fff;
+}
+
+.template-preview i,
+.template-preview b,
+.template-preview em {
+    position: absolute;
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    background: #d6dde6;
+}
+
+.template-preview i {
+    top: 15px;
+    left: 15px;
+    width: 48%;
+    background: #3270c8;
+}
+
+.template-preview b {
+    top: 28px;
+    left: 15px;
+    right: 15px;
+    box-shadow: 0 7px 0 #d6dde6, 0 14px 0 #d6dde6, 0 21px 0 #d6dde6, 0 28px 0 #d6dde6;
+}
+
+.template-preview em {
+    top: 43px;
+    left: 15px;
+    width: 38%;
+}
+
+.template-preview--modern::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 24%;
+    background: #244b5c;
+}
+
+.template-preview--modern i,
+.template-preview--modern b,
+.template-preview--modern em {
+    left: 31%;
+}
+
+.template-preview--professional {
+    background: #f1f8f7;
+}
+
+.template-preview--professional i {
+    background: #258a7f;
+}
+
+.template-preview--minimal {
+    background: #fcfbf7;
+}
+
+.template-preview--minimal i {
+    background: #956055;
+}
+
+.template-preview--technical {
+    background: #effafa;
+}
+
+.template-preview--technical i {
+    background: #20a99f;
+}
+
+.template-preview--executive {
+    background: #fbfaf5;
+}
+
+.template-preview--executive i {
+    background: #a98a3d;
+}
+
+@media (max-width: 767px) {
+    .template-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
