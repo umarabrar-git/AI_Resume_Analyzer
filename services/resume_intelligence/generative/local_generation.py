@@ -7,7 +7,6 @@ templates + NLP signals extracted from the uploaded resume.
 """
 from __future__ import annotations
 
-import random
 import re
 import textwrap
 from typing import Any, Dict, List, Optional
@@ -47,16 +46,9 @@ def _build_summary(
         if len(top_skills) > 1
         else top_skills[0] if top_skills else "relevant technologies"
     )
-    has_exp = any(s.lower() in ("experience", "work experience") for s in sections_found)
-    has_edu = any(s.lower() == "education" for s in sections_found)
-
     parts = [
         f"Results-driven {role} with a strong background in {skill_str}.",
     ]
-    if has_exp:
-        parts.append("Proven track record of delivering high-quality solutions in fast-paced environments.")
-    if has_edu:
-        parts.append("Backed by a solid educational foundation and a commitment to continuous learning.")
     if job_description:
         jd_words = set(re.findall(r"\b[a-zA-Z]{4,}\b", job_description.lower()))
         jd_skills = [s for s in skills if s.lower() in jd_words][:3]
@@ -87,24 +79,18 @@ def _build_bullets(
 ) -> str:
     sentences = re.split(r"[.\n]+", source_text)
     bullets = []
-    used_starters: set = set()
-
     for sentence in sentences:
         s = _clean(sentence)
         if len(s) < 20:
             continue
-        starter = random.choice([st for st in _BULLET_STARTERS if st not in used_starters] or _BULLET_STARTERS)
-        used_starters.add(starter)
-        # Remove leading verbs if already present
         s = re.sub(r"^(i |we |they |the team )", "", s, flags=re.IGNORECASE)
         s = _cap(s)
-        bullets.append(f"• {starter} {s}")
+        bullets.append(f"• {s.rstrip('.')}.")
         if len(bullets) >= 4:
             break
 
     if not bullets:
-        for skill in skills[:3]:
-            bullets.append(f"• Worked with {skill} to deliver high-quality results.")
+        return ""
 
     return "\n".join(bullets)
 
@@ -121,21 +107,11 @@ def _rewrite_experience(
     instructions: Optional[str] = None,
 ) -> str:
     lines = [_clean(ln) for ln in source_text.split("\n") if _clean(ln)]
-    action_verbs = ["Led", "Built", "Developed", "Optimized", "Delivered", "Improved", "Architected", "Engineered"]
     output_lines = []
 
-    for i, line in enumerate(lines[:6]):
-        if len(line) < 15:
-            output_lines.append(line)
-            continue
-        verb = action_verbs[i % len(action_verbs)]
-        # Strip leading pronouns/articles
-        cleaned = re.sub(r"^(I |We |They |The |A |An )", "", line)
-        cleaned = _cap(cleaned)
-        # Add quantifier hint if no number present
-        if not re.search(r"\d", cleaned):
-            cleaned += " — resulting in measurable improvements."
-        output_lines.append(f"{verb} {cleaned}")
+    for line in lines[:6]:
+        cleaned = re.sub(r"^(I |We |They )", "", line, flags=re.IGNORECASE)
+        output_lines.append(_cap(cleaned))
 
     return "\n".join(output_lines) if output_lines else source_text
 
@@ -170,7 +146,7 @@ def _rewrite_resume(
         # Strengthen weak passive language
         strengthened = re.sub(r"\bwas responsible for\b", "managed", stripped, flags=re.IGNORECASE)
         strengthened = re.sub(r"\bhelped (with|to)\b", "contributed to", strengthened, flags=re.IGNORECASE)
-        strengthened = re.sub(r"\bworked on\b", "developed", strengthened, flags=re.IGNORECASE)
+        strengthened = re.sub(r"\bworked on\b", "contributed to", strengthened, flags=re.IGNORECASE)
         output.append(strengthened)
 
     if recommendations:

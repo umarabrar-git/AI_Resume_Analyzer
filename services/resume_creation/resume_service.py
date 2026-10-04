@@ -11,8 +11,9 @@ from urllib.parse import urlparse
 from database import db
 from models.resume import Resume
 from models.resume_version import ResumeVersion
+from .template_registry import TEMPLATE_REGISTRY
 
-ALLOWED_TEMPLATES = {"classic", "modern", "professional", "minimal", "technical"}
+ALLOWED_TEMPLATES = set(TEMPLATE_REGISTRY)
 DEFAULT_TEMPLATE = "classic"
 
 MAX_TITLE_LENGTH = 150
@@ -26,6 +27,7 @@ MAX_CUSTOM_ITEMS = 30
 DEFAULT_SECTION_ORDER = [
     "personal_information",
     "summary",
+    "career_objective",
     "experience",
     "education",
     "skills",
@@ -38,7 +40,7 @@ SECTION_KEYS = set(DEFAULT_SECTION_ORDER) | {"custom_sections"}
 
 PERSONAL_INFO_FIELDS = [
     "full_name", "professional_title", "email", "phone",
-    "location", "linkedin", "github", "portfolio",
+    "location", "linkedin", "github", "portfolio", "profile_photo",
 ]
 
 LANGUAGE_PROFICIENCY_VALUES = {
@@ -51,9 +53,12 @@ def empty_content() -> Dict[str, Any]:
     return {
         "personal_information": {field: "" for field in PERSONAL_INFO_FIELDS},
         "summary": "",
+        "career_objective": "",
         "experience": [],
         "education": [],
         "skills": [],
+        "skills_by_category": {},
+        "hidden_sections": [],
         "projects": [],
         "certifications": [],
         "languages": [],
@@ -81,7 +86,8 @@ def _safe_url(value: Any) -> str:
 def _sanitize_personal_information(raw: Any) -> Dict[str, str]:
     raw = raw if isinstance(raw, dict) else {}
     return {
-        field: _clamp_text(raw.get(field), MAX_SHORT_FIELD_LENGTH)
+        field: _safe_url(raw.get(field)) if field == "profile_photo"
+        else _clamp_text(raw.get(field), MAX_SHORT_FIELD_LENGTH)
         for field in PERSONAL_INFO_FIELDS
     }
 
@@ -101,6 +107,17 @@ def _sanitize_experience_entry(raw: Any) -> Optional[Dict[str, Any]]:
     else:
         bullets = []
 
+    achievements = raw.get("achievements")
+    if isinstance(achievements, str):
+        achievements = [line.strip() for line in achievements.splitlines() if line.strip()]
+    if isinstance(achievements, list):
+        achievements = [
+            _clamp_text(item, MAX_TEXT_FIELD_LENGTH)
+            for item in achievements if str(item).strip()
+        ][:20]
+    else:
+        achievements = []
+
     return {
         "title": _clamp_text(raw.get("title"), MAX_SHORT_FIELD_LENGTH),
         "company": _clamp_text(raw.get("company"), MAX_SHORT_FIELD_LENGTH),
@@ -109,6 +126,7 @@ def _sanitize_experience_entry(raw: Any) -> Optional[Dict[str, Any]]:
         "end_date": _clamp_text(raw.get("end_date"), 40),
         "current": bool(raw.get("current")),
         "bullets": bullets,
+        "achievements": achievements,
     }
 
 
@@ -125,6 +143,8 @@ def _sanitize_education_entry(raw: Any) -> Optional[Dict[str, Any]]:
         "end_date": _clamp_text(raw.get("end_date"), 40),
         "grade": _clamp_text(raw.get("grade"), 40),
         "description": _clamp_text(raw.get("description"), MAX_TEXT_FIELD_LENGTH),
+        "coursework": _clamp_text(raw.get("coursework"), MAX_TEXT_FIELD_LENGTH),
+        "academic_achievements": _clamp_text(raw.get("academic_achievements"), MAX_TEXT_FIELD_LENGTH),
     }
 
 
@@ -144,6 +164,17 @@ def _sanitize_project_entry(raw: Any) -> Optional[Dict[str, Any]]:
     else:
         technologies = []
 
+    achievements = raw.get("achievements")
+    if isinstance(achievements, str):
+        achievements = [line.strip() for line in achievements.splitlines() if line.strip()]
+    if isinstance(achievements, list):
+        achievements = [
+            _clamp_text(item, MAX_TEXT_FIELD_LENGTH)
+            for item in achievements if str(item).strip()
+        ][:20]
+    else:
+        achievements = []
+
     return {
         "name": _clamp_text(raw.get("name"), MAX_SHORT_FIELD_LENGTH),
         "role": _clamp_text(raw.get("role"), MAX_SHORT_FIELD_LENGTH),
@@ -153,6 +184,7 @@ def _sanitize_project_entry(raw: Any) -> Optional[Dict[str, Any]]:
         "github_url": _safe_url(raw.get("github_url")),
         "start_date": _clamp_text(raw.get("start_date"), 40),
         "end_date": _clamp_text(raw.get("end_date"), 40),
+        "achievements": achievements,
     }
 
 
@@ -262,6 +294,7 @@ def sanitize_content(raw: Any) -> Dict[str, Any]:
 
     content["personal_information"] = _sanitize_personal_information(raw.get("personal_information"))
     content["summary"] = _clamp_text(raw.get("summary"), MAX_TEXT_FIELD_LENGTH)
+    content["career_objective"] = _clamp_text(raw.get("career_objective"), MAX_TEXT_FIELD_LENGTH)
 
     experience = raw.get("experience")
     if isinstance(experience, list):
@@ -279,17 +312,32 @@ def sanitize_content(raw: Any) -> Dict[str, Any]:
             ) if entry
         ]
 
-    skills = raw.get("skills")
-    if isinstance(skills, list):
-        seen = set()
-        clean_skills: List[str] = []
-        for skill in skills[:MAX_SKILLS]:
-            name = _clamp_text(skill, 60)
-            key = name.casefold()
-            if name and key not in seen:
-                seen.add(key)
-                clean_skills.append(name)
-        content["skills"] = clean_skills
+    raw_skills = raw.get("skills") if isinstance(raw.get("skills"), list) else []
+    raw_groups = raw.get("skills_by_category")
+    skill_groups: Dict[str, List[str]] = {}
+    seen_skills = set()
+    if isinstance(raw_groups, dict):
+        for raw_category, items in raw_groups.items():
+            category = _clamp_text(raw_category, 60)
+            if not category or not isinstance(items, list):
+                continue
+            clean_items = []
+            for skill in items[:MAX_SKILLS]:
+                name = _clamp_text(skill, 60)
+                key = name.casefold()
+                if name and key not in seen_skills:
+                    seen_skills.add(key)
+                    clean_items.append(name)
+            if clean_items:
+                skill_groups[category] = clean_items
+    for skill in raw_skills[:MAX_SKILLS]:
+        name = _clamp_text(skill, 60)
+        key = name.casefold()
+        if name and key not in seen_skills:
+            seen_skills.add(key)
+            skill_groups.setdefault("Other", []).append(name)
+    content["skills_by_category"] = skill_groups
+    content["skills"] = [skill for items in skill_groups.values() for skill in items]
 
     projects = raw.get("projects")
     if isinstance(projects, list):
@@ -328,6 +376,15 @@ def sanitize_content(raw: Any) -> Dict[str, Any]:
         section_order,
         content["custom_sections"],
     )
+    hidden_sections = raw.get("hidden_sections")
+    valid_section_keys = set(SECTION_KEYS) | {
+        f"custom:{section['id']}" for section in content["custom_sections"]
+    }
+    if isinstance(hidden_sections, list):
+        content["hidden_sections"] = list(dict.fromkeys(
+            key for key in hidden_sections
+            if isinstance(key, str) and key in valid_section_keys
+        ))
 
     return content
 

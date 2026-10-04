@@ -1,4 +1,8 @@
-<section class="resume-builder-page" data-resume-builder>
+<section
+  class="resume-builder-page"
+  data-resume-builder
+  data-csrf-token="{{ resume_csrf_token }}"
+>
   <header class="resume-builder-header">
     <div>
       <h1>AI Resume Builder</h1>
@@ -144,60 +148,138 @@
           maxlength="200"
           placeholder="Senior Backend Engineer"
         />
-        <div class="template-picker" aria-labelledby="templatePickerTitle">
-          <div class="template-picker-head">
-            <label id="templatePickerTitle" class="form-label mt-2">Template</label>
-            <span class="template-picker-value" id="templatePickerValue">Classic</span>
-          </div>
-          <select
-            id="templateSelect"
-            class="template-select-native"
-            aria-label="Template selection"
+        <label for="templateSelect" class="form-label mt-2">Template</label>
+        <select
+          id="templateSelect"
+          class="form-select"
+          aria-label="Template selection"
+        >
+          <option value="classic">Classic (ATS-friendly)</option>
+          <option value="modern">Modern</option>
+          <option value="professional">Professional</option>
+          <option value="minimal">Minimal</option>
+          <option value="technical">Technical</option>
+          <option value="executive">Executive</option>
+          <option value="ai_insights">AI Insights</option>
+          <option value="career_analytics">Career Analytics</option>
+        </select>
+        <div
+          class="template-gallery"
+          role="group"
+          aria-label="Choose a resume template"
+        >
+          <button
+            type="button"
+            class="template-choice"
+            data-template-choice="classic"
+            aria-pressed="false"
           >
-            <option value="classic">Classic</option>
-            <option value="modern">Modern</option>
-            <option value="professional">Professional</option>
-            <option value="minimal">Minimal</option>
-            <option value="technical">Technical</option>
-            <option value="executive">Executive</option>
-          </select>
-          <div class="template-card-grid" role="radiogroup" aria-label="Resume templates">
-            <button type="button" class="template-card is-selected" data-template-card="classic" role="radio" aria-checked="true">
-              <span class="template-preview template-preview--classic"><i></i><b></b><em></em></span>
-              <strong>Classic</strong><small>ATS-friendly</small>
-            </button>
-            <button type="button" class="template-card" data-template-card="modern" role="radio" aria-checked="false">
-              <span class="template-preview template-preview--modern"><i></i><b></b><em></em></span>
-              <strong>Modern</strong><small>sidebar</small>
-            </button>
-            <button type="button" class="template-card" data-template-card="professional" role="radio" aria-checked="false">
-              <span class="template-preview template-preview--professional"><i></i><b></b><em></em></span>
-              <strong>Professional</strong><small>clean</small>
-            </button>
-            <button type="button" class="template-card" data-template-card="minimal" role="radio" aria-checked="false">
-              <span class="template-preview template-preview--minimal"><i></i><b></b><em></em></span>
-              <strong>Minimal</strong><small>editorial</small>
-            </button>
-            <button type="button" class="template-card" data-template-card="technical" role="radio" aria-checked="false">
-              <span class="template-preview template-preview--technical"><i></i><b></b><em></em></span>
-              <strong>Technical</strong><small>developer</small>
-            </button>
-            <button type="button" class="template-card" data-template-card="executive" role="radio" aria-checked="false">
-              <span class="template-preview template-preview--executive"><i></i><b></b><em></em></span>
-              <strong>Executive</strong><small>leadership</small>
-            </button>
-          </div>
+            <span
+              class="template-sample template-sample--classic"
+              aria-hidden="true"
+            ></span>
+            <span><strong>Classic</strong><small>ATS-ready</small></span>
+          </button>
+          <button
+            type="button"
+            class="template-choice"
+            data-template-choice="modern"
+            aria-pressed="false"
+          >
+            <span
+              class="template-sample template-sample--modern"
+              aria-hidden="true"
+            ></span>
+            <span><strong>Modern</strong><small>Sidebar</small></span>
+          </button>
+          <button
+            type="button"
+            class="template-choice"
+            data-template-choice="professional"
+            aria-pressed="false"
+          >
+            <span
+              class="template-sample template-sample--professional"
+              aria-hidden="true"
+            ></span>
+            <span><strong>Professional</strong><small>Teal accent</small></span>
+          </button>
+          <button
+            type="button"
+            class="template-choice"
+            data-template-choice="minimal"
+            aria-pressed="false"
+          >
+            <span
+              class="template-sample template-sample--minimal"
+              aria-hidden="true"
+            ></span>
+            <span><strong>Minimal</strong><small>Editorial</small></span>
+          </button>
+          <button
+            type="button"
+            class="template-choice"
+            data-template-choice="technical"
+            aria-pressed="false"
+          >
+            <span
+              class="template-sample template-sample--technical"
+              aria-hidden="true"
+            ></span>
+            <span><strong>Technical</strong><small>Skill-forward</small></span>
+          </button>
+          <button
+            type="button"
+            class="template-choice"
+            data-template-choice="executive"
+            aria-pressed="false"
+          >
+            <span
+              class="template-sample template-sample--executive"
+              aria-hidden="true"
+            ></span>
+            <span><strong>Executive</strong><small>Gold detail</small></span>
+          </button>
+          <button
+            type="button"
+            class="template-choice"
+            data-template-choice="ai_insights"
+            aria-pressed="false"
+          >
+            <span
+              class="template-sample template-sample--ai-insights"
+              aria-hidden="true"
+            ></span>
+            <span
+              ><strong>AI Insights</strong><small>Insight accents</small></span
+            >
+          </button>
+          <button
+            type="button"
+            class="template-choice"
+            data-template-choice="career_analytics"
+            aria-pressed="false"
+          >
+            <span
+              class="template-sample template-sample--career-analytics"
+              aria-hidden="true"
+            ></span>
+            <span
+              ><strong>Career Analytics</strong
+              ><small>Metric detail</small></span
+            >
+          </button>
         </div>
       </section>
 
-      <section class="builder-card">
-        <h2>Section Order</h2>
+      <details class="builder-card section-order-panel">
+        <summary>Section Order</summary>
         <ul
           id="sectionOrderList"
           class="section-order-list"
           aria-label="Resume section order"
         ></ul>
-      </section>
+      </details>
 
       <section class="builder-card" id="personalInformationSection">
         <h2>Personal Information</h2>
@@ -314,6 +396,29 @@
         </div>
       </section>
 
+      <section class="builder-card" id="careerObjectiveSection">
+        <div class="builder-card-head">
+          <h2>Career Objective</h2>
+          <span class="section-optional">Optional</span>
+        </div>
+        <textarea
+          id="careerObjectiveInput"
+          rows="3"
+          class="form-control"
+          maxlength="4000"
+          placeholder="Describe the role or direction you are pursuing..."
+        ></textarea>
+        <div class="builder-inline-actions summary-ai-actions">
+          <button
+            type="button"
+            class="btn btn-outline-primary btn-sm"
+            id="aiGenerateObjectiveBtn"
+          >
+            Generate Objective
+          </button>
+        </div>
+      </section>
+
       <section class="builder-card" id="experienceSection">
         <div class="builder-card-head">
           <h2>Experience</h2>
@@ -354,6 +459,20 @@
           </button>
         </div>
         <div class="skills-editor">
+          <label class="form-label" for="skillCategorySelect">Category</label>
+          <select id="skillCategorySelect" class="form-select">
+            <option>Programming Languages</option>
+            <option>Frameworks</option>
+            <option>Libraries</option>
+            <option>Databases</option>
+            <option>Cloud</option>
+            <option>Tools</option>
+            <option>Data Science</option>
+            <option>Machine Learning</option>
+            <option>Soft Skills</option>
+            <option>Languages</option>
+            <option>Other</option>
+          </select>
           <input
             type="text"
             id="skillInput"
@@ -414,6 +533,7 @@
         <div class="builder-inline-actions custom-section-add">
           <select id="customSectionType" class="form-select">
             <option value="custom">Custom section</option>
+            <option>Achievements</option>
             <option>Publications</option>
             <option>Research</option>
             <option>Volunteer Experience</option>
@@ -504,7 +624,7 @@
 
       <article class="builder-card">
         <div class="builder-card-head">
-          <h2>AI Writing Assistant</h2>
+          <h2>AI Resume Assistant</h2>
           <button
             type="button"
             class="btn btn-outline-secondary btn-sm"
@@ -513,8 +633,38 @@
           >
             Apply Output
           </button>
+          <button
+            type="button"
+            class="btn btn-outline-danger btn-sm"
+            id="rejectAiOutputBtn"
+          >
+            Reject
+          </button>
         </div>
+        <label for="assistantPrompt" class="form-label"
+          >Ask about this resume</label
+        >
+        <textarea
+          id="assistantPrompt"
+          rows="2"
+          class="form-control"
+          placeholder="Improve my resume for the target role..."
+        ></textarea>
+        <button
+          type="button"
+          class="btn btn-outline-primary btn-sm mt-2"
+          id="askAssistantBtn"
+        >
+          Ask Resume Agent
+        </button>
         <div class="builder-inline-actions mb-2">
+          <button
+            type="button"
+            class="btn btn-outline-primary btn-sm"
+            id="aiGenerateExperienceBulletsBtn"
+          >
+            Generate Bullets
+          </button>
           <button
             type="button"
             class="btn btn-outline-primary btn-sm"
@@ -523,10 +673,16 @@
             Improve Experience</button
           ><button
             type="button"
+            class="btn btn-outline-secondary btn-sm"
+            id="aiImproveProjectBtn"
+          >
+            Improve Project</button
+          ><button
+            type="button"
             class="btn btn-outline-dark btn-sm"
             id="aiTailorResumeBtn"
           >
-            Tailor to Job
+            Tailor Summary to Job
           </button>
         </div>
         <label for="aiOutput" class="form-label">AI Output</label>
