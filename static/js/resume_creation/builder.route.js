@@ -33,6 +33,7 @@ if (!root) {
     resumeTitle: document.getElementById("resumeTitle"),
     targetRole: document.getElementById("targetRole"),
     templateSelect: document.getElementById("templateSelect"),
+    templatePickerValue: document.getElementById("templatePickerValue"),
     sectionOrderList: document.getElementById("sectionOrderList"),
 
     piFullName: document.getElementById("piFullName"),
@@ -167,6 +168,19 @@ if (!root) {
     state.latestIntelligence = null;
     renderBuilder();
     queueAutosave();
+  }
+
+  function syncTemplateCards(template) {
+    const selected = String(template || "classic");
+    root.querySelectorAll("[data-template-card]").forEach((card) => {
+      const active = card.dataset.templateCard === selected;
+      card.classList.toggle("is-selected", active);
+      card.setAttribute("aria-checked", active ? "true" : "false");
+    });
+    if (elements.templatePickerValue) {
+      const option = elements.templateSelect?.querySelector(`option[value="${selected}"]`);
+      elements.templatePickerValue.textContent = option?.textContent || selected;
+    }
   }
 
   function setSaveStatus(text, className = "") {
@@ -718,6 +732,29 @@ if (!root) {
       });
     });
 
+    elements.templateSelect.addEventListener("change", () => {
+      const resume = getActiveResume();
+      if (!resume || state.isHydrating) return;
+      resume.template = elements.templateSelect.value;
+      syncTemplateCards(resume.template);
+      renderPreview(ensureContent(resume.content || {}), resume.template);
+      queueAutosave();
+    });
+
+    root.querySelectorAll("[data-template-card]").forEach((card) => {
+      card.addEventListener("click", () => {
+        const resume = getActiveResume();
+        if (!resume) return;
+        const template = card.dataset.templateCard;
+        if (!template) return;
+        elements.templateSelect.value = template;
+        resume.template = template;
+        syncTemplateCards(template);
+        renderPreview(ensureContent(resume.content || {}), template);
+        queueAutosave();
+      });
+    });
+
     elements.refreshVersionsBtn.addEventListener("click", () => {
       loadVersions().catch((error) => {
         setSaveStatus("Version refresh failed", "is-error");
@@ -756,13 +793,6 @@ if (!root) {
           content.summary = elements.summaryInput.value;
         });
 
-        elements.templateSelect.addEventListener("change", () => {
-          const resume = getActiveResume();
-          if (!resume) return;
-          resume.template = elements.templateSelect.value;
-          renderPreview(ensureContent(resume.content || {}), resume.template);
-          queueAutosave();
-        });
       });
     });
 
@@ -1451,6 +1481,7 @@ if (!root) {
     elements.resumeTitle.value = resume.title || "";
     elements.targetRole.value = resume.target_role || "";
     elements.templateSelect.value = resume.template || "classic";
+    syncTemplateCards(elements.templateSelect.value);
 
     elements.piFullName.value = content.personal_information.full_name || "";
     elements.piProfessionalTitle.value =
