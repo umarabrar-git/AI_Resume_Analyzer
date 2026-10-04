@@ -144,19 +144,50 @@
           maxlength="200"
           placeholder="Senior Backend Engineer"
         />
-        <label for="templateSelect" class="form-label mt-2">Template</label>
-        <select
-          id="templateSelect"
-          class="form-select"
-          aria-label="Template selection"
-        >
-          <option value="classic">Classic (ATS-friendly)</option>
-          <option value="modern">Modern</option>
-          <option value="professional">Professional</option>
-          <option value="minimal">Minimal</option>
-          <option value="technical">Technical</option>
-          <option value="executive">Executive</option>
-        </select>
+        <div class="template-picker" aria-labelledby="templatePickerTitle">
+          <div class="template-picker-head">
+            <label id="templatePickerTitle" class="form-label mt-2">Template</label>
+            <span class="template-picker-value" id="templatePickerValue">Classic</span>
+          </div>
+          <select
+            id="templateSelect"
+            class="template-select-native"
+            aria-label="Template selection"
+          >
+            <option value="classic">Classic</option>
+            <option value="modern">Modern</option>
+            <option value="professional">Professional</option>
+            <option value="minimal">Minimal</option>
+            <option value="technical">Technical</option>
+            <option value="executive">Executive</option>
+          </select>
+          <div class="template-card-grid" role="radiogroup" aria-label="Resume templates">
+            <button type="button" class="template-card is-selected" data-template-card="classic" role="radio" aria-checked="true">
+              <span class="template-preview template-preview--classic"><i></i><b></b><em></em></span>
+              <strong>Classic</strong><small>ATS-friendly</small>
+            </button>
+            <button type="button" class="template-card" data-template-card="modern" role="radio" aria-checked="false">
+              <span class="template-preview template-preview--modern"><i></i><b></b><em></em></span>
+              <strong>Modern</strong><small>sidebar</small>
+            </button>
+            <button type="button" class="template-card" data-template-card="professional" role="radio" aria-checked="false">
+              <span class="template-preview template-preview--professional"><i></i><b></b><em></em></span>
+              <strong>Professional</strong><small>clean</small>
+            </button>
+            <button type="button" class="template-card" data-template-card="minimal" role="radio" aria-checked="false">
+              <span class="template-preview template-preview--minimal"><i></i><b></b><em></em></span>
+              <strong>Minimal</strong><small>editorial</small>
+            </button>
+            <button type="button" class="template-card" data-template-card="technical" role="radio" aria-checked="false">
+              <span class="template-preview template-preview--technical"><i></i><b></b><em></em></span>
+              <strong>Technical</strong><small>developer</small>
+            </button>
+            <button type="button" class="template-card" data-template-card="executive" role="radio" aria-checked="false">
+              <span class="template-preview template-preview--executive"><i></i><b></b><em></em></span>
+              <strong>Executive</strong><small>leadership</small>
+            </button>
+          </div>
+        </div>
       </section>
 
       <section class="builder-card">
