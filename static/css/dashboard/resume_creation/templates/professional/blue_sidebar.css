@@ -1,0 +1,427 @@
+/* Template: Professional / Blue Sidebar */
+.resume-preview.template-blue_sidebar {
+  padding: 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+.resume-template-blue-sidebar {
+  --blue: #123b70;
+  --blue-medium: #2f80d0;
+  --blue-soft: #eaf3fb;
+  --text: #172b4d;
+  --muted: #53657d;
+  --border: #d7e3ef;
+
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  width: 100%;
+  min-height: 1050px;
+  color: var(--text);
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.45;
+  box-sizing: border-box;
+}
+
+.resume-template-blue-sidebar * {
+  box-sizing: border-box;
+}
+
+.resume-template-blue-sidebar .blue-sidebar {
+  padding: 28px 18px;
+  background: linear-gradient(180deg, #edf6ff 0%, #e7f1fa 55%, #f5f9fd 100%);
+  border-right: 1px solid var(--border);
+}
+
+.resume-template-blue-sidebar .blue-sidebar-profile {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.resume-template-blue-sidebar .blue-sidebar-photo {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #dcecff;
+  box-shadow: 0 3px 10px rgba(18, 59, 112, .12);
+  color: var(--blue);
+  font-size: 30px;
+}
+
+.resume-template-blue-sidebar .blue-sidebar-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resume-template-blue-sidebar .blue-sidebar-profile h1 {
+  margin: 0;
+  color: var(--blue);
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.resume-template-blue-sidebar .blue-sidebar-profile p {
+  margin: 5px 0 0;
+  color: var(--blue-medium);
+  font-size: 9px;
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.resume-template-blue-sidebar .blue-sidebar-section {
+  margin-top: 20px;
+}
+
+.resume-template-blue-sidebar .blue-sidebar-section.is-hidden {
+  display: none;
+}
+
+.resume-template-blue-sidebar .blue-sidebar-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #79aee0;
+  color: var(--blue);
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+.resume-template-blue-sidebar .blue-sidebar-section h2 span {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 20px;
+  border-radius: 5px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 8px;
+}
+
+.resume-template-blue-sidebar .blue-contact-list {
+  display: grid;
+  gap: 7px;
+}
+
+.resume-template-blue-sidebar .blue-contact-item {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  gap: 6px;
+  color: var(--text);
+  font-size: 8px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.resume-template-blue-sidebar .blue-contact-icon {
+  color: var(--blue-medium);
+  font-weight: 800;
+  text-align: center;
+}
+
+.resume-template-blue-sidebar .blue-skill-group {
+  margin-bottom: 12px;
+}
+
+.resume-template-blue-sidebar .blue-skill-group h3 {
+  margin: 0 0 6px;
+  color: var(--blue-medium);
+  font-size: 8.5px;
+  font-weight: 800;
+}
+
+.resume-template-blue-sidebar .blue-skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.resume-template-blue-sidebar .blue-skill-tag {
+  display: inline-block;
+  padding: 3px 6px;
+  border: 1px solid #cfdeec;
+  border-radius: 4px;
+  background: #dce9f6;
+  color: #25466c;
+  font-size: 7.5px;
+  line-height: 1.1;
+}
+
+.resume-template-blue-sidebar .blue-language-list {
+  display: grid;
+  gap: 6px;
+}
+
+.resume-template-blue-sidebar .blue-language-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 5px;
+  font-size: 8px;
+  line-height: 1.3;
+}
+
+.resume-template-blue-sidebar .blue-language-item strong {
+  font-weight: 700;
+}
+
+.resume-template-blue-sidebar .blue-language-item span {
+  color: var(--muted);
+}
+
+.resume-template-blue-sidebar .blue-interest-list {
+  display: grid;
+  gap: 6px;
+}
+
+.resume-template-blue-sidebar .blue-interest-item {
+  position: relative;
+  padding-left: 11px;
+  font-size: 8px;
+  line-height: 1.35;
+}
+
+.resume-template-blue-sidebar .blue-interest-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--blue-medium);
+}
+
+.resume-template-blue-sidebar .blue-main {
+  min-width: 0;
+  padding: 30px 34px 38px;
+}
+
+.resume-template-blue-sidebar .blue-main-header {
+  margin-bottom: 20px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--border);
+}
+
+.resume-template-blue-sidebar .blue-main-header h1 {
+  margin: 0;
+  color: var(--blue);
+  font-size: 25px;
+  line-height: 1.05;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.resume-template-blue-sidebar .blue-main-header > p {
+  margin: 6px 0 11px;
+  color: var(--blue-medium);
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.resume-template-blue-sidebar .blue-header-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 13px;
+  color: var(--muted);
+  font-size: 7.5px;
+  line-height: 1.35;
+}
+
+.resume-template-blue-sidebar .blue-header-links a {
+  color: var(--blue-medium);
+  text-decoration: none;
+}
+
+.resume-template-blue-sidebar .blue-main-section {
+  margin-bottom: 19px;
+}
+
+.resume-template-blue-sidebar .blue-main-section.is-hidden {
+  display: none;
+}
+
+.resume-template-blue-sidebar .blue-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.resume-template-blue-sidebar .blue-section-heading > span {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 24px;
+  border-radius: 5px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 9px;
+}
+
+.resume-template-blue-sidebar .blue-section-heading h2 {
+  flex: 1;
+  margin: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #79aee0;
+  color: var(--blue);
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+}
+
+.resume-template-blue-sidebar .blue-summary,
+.resume-template-blue-sidebar .blue-objective {
+  margin: 0;
+  font-size: 8.5px;
+  line-height: 1.5;
+}
+
+.resume-template-blue-sidebar .blue-entry {
+  margin-bottom: 12px;
+}
+
+.resume-template-blue-sidebar .blue-entry:last-child {
+  margin-bottom: 0;
+}
+
+.resume-template-blue-sidebar .blue-entry-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.resume-template-blue-sidebar .blue-entry-title {
+  margin: 0;
+  color: #152b4b;
+  font-size: 9px;
+  line-height: 1.35;
+  font-weight: 800;
+}
+
+.resume-template-blue-sidebar .blue-entry-date {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 7px;
+  white-space: nowrap;
+}
+
+.resume-template-blue-sidebar .blue-entry-subtitle {
+  margin: 2px 0 4px;
+  color: var(--blue-medium);
+  font-size: 8px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.resume-template-blue-sidebar .blue-entry-description {
+  margin: 0 0 4px;
+  color: var(--text);
+  font-size: 7.8px;
+  line-height: 1.45;
+}
+
+.resume-template-blue-sidebar .blue-entry-bullets {
+  margin: 4px 0 0;
+  padding-left: 14px;
+}
+
+.resume-template-blue-sidebar .blue-entry-bullets li {
+  margin-bottom: 2px;
+  color: var(--text);
+  font-size: 7.8px;
+  line-height: 1.4;
+}
+
+.resume-template-blue-sidebar .blue-tech {
+  margin: 2px 0 4px;
+  color: var(--blue-medium);
+  font-size: 7.5px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.resume-template-blue-sidebar .blue-certification {
+  position: relative;
+  margin-bottom: 6px;
+  padding-left: 12px;
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+.resume-template-blue-sidebar .blue-certification::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--blue-medium);
+}
+
+.resume-template-blue-sidebar .blue-custom-section {
+  margin-bottom: 19px;
+}
+
+.resume-template-blue-sidebar .blue-custom-section h2 {
+  margin: 0 0 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #79aee0;
+  color: var(--blue);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.resume-template-blue-sidebar .blue-custom-item {
+  margin-bottom: 10px;
+}
+
+@media print {
+  .resume-preview.template-blue_sidebar {
+    padding: 0;
+    box-shadow: none;
+    border: 0;
+    max-height: none;
+  }
+
+  .resume-template-blue-sidebar {
+    width: 210mm;
+    min-height: 297mm;
+    page-break-after: always;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .resume-template-blue-sidebar .blue-entry,
+  .resume-template-blue-sidebar .blue-main-section,
+  .resume-template-blue-sidebar .blue-sidebar-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
