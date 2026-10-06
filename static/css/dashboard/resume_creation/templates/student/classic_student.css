@@ -1,0 +1,123 @@
+.resume-template-classic-student {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 42px 48px;
+  background: #fff;
+  color: #1f2937;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+}
+
+.resume-template-classic-student .student-header {
+  padding-bottom: 22px;
+  border-bottom: 2px solid #2563eb;
+}
+
+.resume-template-classic-student .student-identity h1 {
+  margin: 0;
+  color: #1e3a8a;
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.resume-template-classic-student .student-title {
+  margin: 7px 0 10px;
+  color: #2563eb;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.resume-template-classic-student .student-contact,
+.resume-template-classic-student .student-links {
+  color: #4b5563;
+  font-size: 12px;
+}
+
+.resume-template-classic-student .student-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.resume-template-classic-student .student-links a {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.resume-template-classic-student .student-body {
+  padding-top: 24px;
+}
+
+.resume-template-classic-student section {
+  margin-bottom: 24px;
+}
+
+.resume-template-classic-student section h2 {
+  margin: 0 0 9px;
+  padding-bottom: 5px;
+  color: #1e3a8a;
+  border-bottom: 1px solid #dbeafe;
+  font-size: 15px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.resume-template-classic-student section p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.resume-template-classic-student .resume-item {
+  margin-bottom: 14px;
+}
+
+.resume-template-classic-student .resume-item:last-child {
+  margin-bottom: 0;
+}
+
+.resume-template-classic-student .resume-item-title {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.resume-template-classic-student .resume-item-meta {
+  color: #2563eb;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.resume-template-classic-student .resume-item-description {
+  margin-top: 5px;
+  font-size: 12.5px;
+}
+
+.resume-template-classic-student ul {
+  margin: 6px 0 0;
+  padding-left: 19px;
+  font-size: 12.5px;
+}
+
+.resume-template-classic-student .skill-group {
+  margin-bottom: 7px;
+  font-size: 12.5px;
+}
+
+.resume-template-classic-student .skill-group strong {
+  color: #1e3a8a;
+}
+
+@media print {
+  .resume-template-classic-student {
+    max-width: none;
+    margin: 0;
+    padding: 24px 30px;
+    box-shadow: none;
+  }
+
+  .resume-template-classic-student section {
+    break-inside: avoid;
+  }
+}
