@@ -1,0 +1,32 @@
+/* Template: Professional / Executive Classic */
+.resume-preview.template-executive_classic{padding:0;background:#fff}
+.resume-template-executive-classic{--navy:#263746;--gold:#a67c32;--ink:#20272e;--muted:#64707a;--line:#d8d5cf;width:100%;min-height:1050px;padding:46px 54px;color:var(--ink);background:#fff;font-family:Georgia,"Times New Roman",serif;line-height:1.45;box-sizing:border-box}
+.resume-template-executive-classic *{box-sizing:border-box}
+.executive-header{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:28px;align-items:end}
+.executive-name-block h1{margin:0;color:var(--navy);font-size:31px;line-height:1.05;font-weight:700;letter-spacing:.3px}
+.executive-name-block p{margin:7px 0 0;color:var(--gold);font-family:Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase}
+.executive-contact{text-align:right;color:var(--muted);font-family:Arial,Helvetica,sans-serif;font-size:7.8px;line-height:1.7}
+.executive-contact a{color:inherit;text-decoration:none}
+.executive-rule{height:3px;margin:18px 0 25px;background:var(--navy);border-top:1px solid var(--gold)}
+.resume-template-executive-classic section{margin-bottom:21px}
+.resume-template-executive-classic section.is-hidden{display:none}
+.resume-template-executive-classic h2{margin:0 0 10px;color:var(--navy);font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:1.2;letter-spacing:1.1px;text-transform:uppercase}
+.resume-template-executive-classic h2::after{content:"";display:block;width:42px;height:2px;margin-top:5px;background:var(--gold)}
+.executive-profile,.executive-objective{font-size:8.6px;line-height:1.55}
+.executive-entry{margin-bottom:14px}
+.executive-entry:last-child{margin-bottom:0}
+.executive-entry-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:baseline}
+.executive-entry-title{margin:0;color:var(--navy);font-size:9.5px;line-height:1.35;font-weight:700}
+.executive-entry-date{color:var(--muted);font-family:Arial,Helvetica,sans-serif;font-size:7.2px;white-space:nowrap}
+.executive-entry-subtitle{margin:2px 0 4px;color:var(--gold);font-family:Arial,Helvetica,sans-serif;font-size:7.8px;font-weight:700}
+.executive-entry p{margin:0 0 4px;font-size:7.8px}
+.executive-entry ul{margin:4px 0 0;padding-left:16px}
+.executive-entry li{margin-bottom:2px;font-size:7.8px}
+.executive-skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 28px}
+.executive-skill{font-size:7.8px}
+.executive-skill strong{color:var(--navy);font-family:Arial,Helvetica,sans-serif;font-size:7.7px}
+.executive-languages{display:flex;flex-wrap:wrap;gap:5px 20px;font-family:Arial,Helvetica,sans-serif;font-size:7.8px}
+.executive-cert{font-size:8px;margin-bottom:6px}
+.executive-custom{margin-bottom:21px}
+.executive-custom-item{margin-bottom:10px}
+@media print{.resume-preview.template-executive_classic{padding:0;box-shadow:none;border:0}.resume-template-executive-classic{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.executive-entry,.resume-template-executive-classic section{break-inside:avoid;page-break-inside:avoid}}
