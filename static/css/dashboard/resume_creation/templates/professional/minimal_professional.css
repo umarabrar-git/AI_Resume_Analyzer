@@ -1,0 +1,31 @@
+/* Template: Professional / Minimal Professional */
+.resume-preview.template-minimal_professional{padding:0;background:#fff}
+.resume-template-minimal-professional{--ink:#20252b;--muted:#66717c;--line:#d9dee3;--accent:#2d3338;width:100%;min-height:1050px;padding:44px 52px;background:#fff;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.45;box-sizing:border-box}
+.resume-template-minimal-professional *{box-sizing:border-box}
+.minimal-header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end;padding-bottom:18px;border-bottom:2px solid var(--accent);margin-bottom:24px}
+.minimal-header h1{margin:0;font-size:29px;line-height:1.05;font-weight:800;letter-spacing:.4px}
+.minimal-header p{margin:7px 0 0;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.minimal-contact{max-width:270px;text-align:right;color:var(--muted);font-size:7.8px;line-height:1.7}
+.minimal-contact a{color:inherit;text-decoration:none}
+.resume-template-minimal-professional section{margin-bottom:21px}
+.resume-template-minimal-professional section.is-hidden{display:none}
+.resume-template-minimal-professional h2{margin:0 0 9px;padding-bottom:5px;border-bottom:1px solid var(--line);color:var(--accent);font-size:10px;line-height:1.2;letter-spacing:1.1px;text-transform:uppercase}
+.minimal-summary,.minimal-objective,.minimal-description{font-size:8.5px;line-height:1.55}
+.minimal-entry{margin-bottom:13px}
+.minimal-entry:last-child{margin-bottom:0}
+.minimal-entry-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.minimal-entry-title{margin:0;font-size:9px;line-height:1.35;font-weight:800}
+.minimal-entry-date{color:var(--muted);font-size:7.2px;white-space:nowrap}
+.minimal-entry-subtitle{margin:2px 0 4px;color:#4d5964;font-size:8px;font-weight:600}
+.minimal-entry p{margin:0 0 4px;font-size:7.8px}
+.minimal-entry ul{margin:4px 0 0;padding-left:15px}
+.minimal-entry li{margin-bottom:2px;font-size:7.8px}
+.minimal-skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 24px}
+.minimal-skill-group{font-size:7.8px}
+.minimal-skill-group strong{display:block;margin-bottom:2px;font-size:8px}
+.minimal-skill-list{color:#4d5964}
+.minimal-language-list{display:flex;flex-wrap:wrap;gap:5px 18px;font-size:8px}
+.minimal-cert{font-size:8px;margin-bottom:6px}
+.minimal-custom{margin-bottom:21px}
+.minimal-custom-item{margin-bottom:10px}
+@media print{.resume-preview.template-minimal_professional{padding:0;box-shadow:none;border:0}.resume-template-minimal-professional{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.minimal-entry,.resume-template-minimal-professional section{break-inside:avoid;page-break-inside:avoid}}
