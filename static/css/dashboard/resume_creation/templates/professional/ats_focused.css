@@ -1,0 +1,31 @@
+/* Template: Professional / ATS Focused */
+.resume-preview.template-ats_focused{padding:0;background:#fff}
+.resume-template-ats-focused{--ink:#20242a;--muted:#5f6872;--line:#bfc5cc;--accent:#1f2933;width:100%;min-height:1050px;padding:43px 55px;background:#fff;color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:9px;line-height:1.45;box-sizing:border-box}
+.resume-template-ats-focused *{box-sizing:border-box}
+.ats-header{text-align:center;padding-bottom:17px;border-bottom:2px solid var(--accent);margin-bottom:22px}
+.ats-header h1{margin:0;font-size:25px;line-height:1.1;font-weight:800;letter-spacing:.3px;text-transform:uppercase}
+.ats-header p{margin:6px 0 9px;color:#424a53;font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase}
+.ats-header>div{display:flex;justify-content:center;flex-wrap:wrap;gap:5px 13px;color:var(--muted);font-size:7.5px}
+.ats-header a{color:inherit;text-decoration:none}
+.resume-template-ats-focused section{margin-bottom:19px}
+.resume-template-ats-focused section.is-hidden{display:none}
+.resume-template-ats-focused h2{margin:0 0 8px;padding-bottom:4px;border-bottom:1px solid var(--line);font-size:10px;line-height:1.2;font-weight:800;letter-spacing:.7px;text-transform:uppercase}
+.ats-summary,.ats-objective{font-size:8.3px;line-height:1.55}
+.ats-skill-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 25px}
+.ats-skill-group{font-size:7.8px;line-height:1.45}
+.ats-skill-group strong{font-size:7.9px}
+.ats-entry{margin-bottom:12px}
+.ats-entry:last-child{margin-bottom:0}
+.ats-entry-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.ats-entry-title{margin:0;font-size:9px;line-height:1.35;font-weight:800}
+.ats-entry-date{color:var(--muted);font-size:7px;white-space:nowrap}
+.ats-entry-subtitle{margin:2px 0 4px;color:#4b545e;font-size:8px;font-weight:700}
+.ats-entry p{margin:0 0 4px;font-size:7.7px}
+.ats-entry ul{margin:4px 0 0;padding-left:15px}
+.ats-entry li{margin-bottom:2px;font-size:7.7px;line-height:1.4}
+.ats-tech{margin:2px 0 4px;color:#505a64;font-size:7.5px}
+.ats-cert{margin-bottom:5px;font-size:8px}
+.ats-languages{display:flex;flex-wrap:wrap;gap:5px 18px;font-size:8px}
+.ats-custom{margin-bottom:19px}
+.ats-custom-item{margin-bottom:9px}
+@media print{.resume-preview.template-ats_focused{padding:0;box-shadow:none;border:0}.resume-template-ats-focused{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.ats-entry,.resume-template-ats-focused section{break-inside:avoid;page-break-inside:avoid}}
