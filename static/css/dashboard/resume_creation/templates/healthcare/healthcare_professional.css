@@ -1,0 +1,33 @@
+/* Template: Healthcare / Healthcare Professional */
+.resume-preview.template-healthcare_professional{padding:0;background:#fff}
+.resume-template-healthcare-professional{--hp-ink:#20343b;--hp-muted:#5a7075;--hp-accent:#087f78;--hp-soft:#eaf6f4;--hp-line:#d6e5e3;width:100%;min-height:1050px;padding:38px 46px;color:var(--hp-ink);background:#fff;font-family:Arial,Helvetica,sans-serif;line-height:1.45;box-sizing:border-box}
+.resume-template-healthcare-professional *{box-sizing:border-box}
+.hp-header{display:flex;align-items:center;gap:16px;padding:0 0 19px;border-bottom:2px solid var(--hp-accent);margin-bottom:22px}
+.hp-header-mark{display:flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;height:44px;border-radius:12px;background:var(--hp-soft);color:var(--hp-accent);font-size:29px;font-weight:400;line-height:1}
+.hp-header-main{min-width:0;flex:1}
+.hp-header h1{margin:0;font-size:25px;line-height:1.15;font-weight:800;overflow-wrap:anywhere}
+.hp-header-main>p{margin:5px 0 9px;color:var(--hp-accent);font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.hp-header-main>div{display:flex;flex-wrap:wrap;gap:5px 12px;color:var(--hp-muted);font-size:7.8px;overflow-wrap:anywhere}
+.hp-header a,.resume-template-healthcare-professional a{color:var(--hp-accent);text-decoration:none;overflow-wrap:anywhere}
+.resume-template-healthcare-professional section{margin-bottom:19px}
+.resume-template-healthcare-professional section.is-hidden{display:none}
+.resume-template-healthcare-professional h2{margin:0 0 8px;padding:0 0 5px;border-bottom:1px solid var(--hp-line);color:var(--hp-accent);font-size:10px;line-height:1.2;font-weight:800;letter-spacing:.55px;text-transform:uppercase}
+.hp-summary,.hp-objective{margin:0;font-size:8.4px;line-height:1.55;overflow-wrap:anywhere}
+.hp-skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 20px}
+.hp-skill-group{font-size:7.9px;line-height:1.5;overflow-wrap:anywhere}
+.hp-skill-group strong{display:block;margin-bottom:2px;color:var(--hp-accent);font-size:8px}
+.hp-entry{margin-bottom:13px;break-inside:avoid;page-break-inside:avoid}
+.hp-entry:last-child{margin-bottom:0}
+.hp-entry-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.hp-entry-title{margin:0;font-size:9px;line-height:1.35;font-weight:800;overflow-wrap:anywhere}
+.hp-entry-date{color:var(--hp-muted);font-size:7px;white-space:nowrap}
+.hp-entry-subtitle{margin:2px 0 4px;color:var(--hp-accent);font-size:7.9px;font-weight:700;overflow-wrap:anywhere}
+.hp-entry p{margin:0 0 4px;font-size:7.8px;line-height:1.45;overflow-wrap:anywhere}
+.hp-entry ul{margin:4px 0 0;padding-left:15px}
+.hp-entry li{margin-bottom:2px;font-size:7.8px;line-height:1.4;overflow-wrap:anywhere}
+.hp-tech{margin:3px 0 4px;color:var(--hp-muted);font-size:7.5px;overflow-wrap:anywhere}
+.hp-cert{margin-bottom:7px;font-size:8px;overflow-wrap:anywhere}
+.hp-languages{display:flex;flex-wrap:wrap;gap:5px 18px;font-size:8px}
+.hp-custom{margin-bottom:19px}
+@media(max-width:600px){.resume-template-healthcare-professional{padding:25px 23px}.hp-header{align-items:flex-start;gap:11px}.hp-header-mark{flex-basis:34px;width:34px;height:34px;font-size:23px}.hp-skills{grid-template-columns:1fr}.hp-entry-head{gap:7px}.hp-entry-date{white-space:normal;text-align:right}}
+@media print{.resume-preview.template-healthcare_professional{padding:0;box-shadow:none;border:0}.resume-template-healthcare-professional{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.resume-template-healthcare-professional section{break-inside:avoid;page-break-inside:avoid}}
