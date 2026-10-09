@@ -1,0 +1,31 @@
+/* Template: Professional / Global Professional */
+.resume-preview.template-global_professional{padding:0;background:#fff}
+.resume-template-global-professional{--gp-ink:#202b38;--gp-muted:#586575;--gp-accent:#235b75;--gp-line:#d9e1e7;width:100%;min-height:1050px;padding:40px 48px;color:var(--gp-ink);background:#fff;font-family:Arial,Helvetica,sans-serif;line-height:1.45;box-sizing:border-box}
+.resume-template-global-professional *{box-sizing:border-box}
+.gp-header{padding:0 0 17px;border-bottom:2px solid var(--gp-accent);margin-bottom:22px}
+.gp-header h1{margin:0;font-size:26px;line-height:1.12;font-weight:800;letter-spacing:.15px;overflow-wrap:anywhere}
+.gp-header>p{margin:6px 0 10px;color:var(--gp-accent);font-size:9px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase}
+.gp-header>div{display:flex;flex-wrap:wrap;gap:5px 13px;color:var(--gp-muted);font-size:7.8px;overflow-wrap:anywhere}
+.gp-header a,.resume-template-global-professional a{color:var(--gp-accent);text-decoration:none;overflow-wrap:anywhere}
+.resume-template-global-professional section{margin-bottom:19px}
+.resume-template-global-professional section.is-hidden{display:none}
+.resume-template-global-professional h2{margin:0 0 8px;padding-bottom:5px;border-bottom:1px solid var(--gp-line);color:var(--gp-accent);font-size:10px;line-height:1.2;font-weight:800;letter-spacing:.75px;text-transform:uppercase}
+.gp-summary,.gp-objective{margin:0;font-size:8.5px;line-height:1.55;overflow-wrap:anywhere}
+.gp-skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 22px}
+.gp-skill-group{font-size:7.9px;line-height:1.5;overflow-wrap:anywhere}
+.gp-skill-group strong{display:block;margin-bottom:2px;color:var(--gp-accent);font-size:8px}
+.gp-entry{margin-bottom:13px;break-inside:avoid;page-break-inside:avoid}
+.gp-entry:last-child{margin-bottom:0}
+.gp-entry-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.gp-entry-title{margin:0;font-size:9px;line-height:1.35;font-weight:800;overflow-wrap:anywhere}
+.gp-entry-date{color:var(--gp-muted);font-size:7px;white-space:nowrap}
+.gp-entry-subtitle{margin:2px 0 4px;color:var(--gp-accent);font-size:7.9px;font-weight:700;overflow-wrap:anywhere}
+.gp-entry p{margin:0 0 4px;font-size:7.9px;line-height:1.45;overflow-wrap:anywhere}
+.gp-entry ul{margin:4px 0 0;padding-left:15px}
+.gp-entry li{margin-bottom:2px;font-size:7.8px;line-height:1.4;overflow-wrap:anywhere}
+.gp-tech{margin:3px 0 4px;color:var(--gp-muted);font-size:7.5px}
+.gp-cert{margin-bottom:6px;font-size:8px;overflow-wrap:anywhere}
+.gp-languages{display:flex;flex-wrap:wrap;gap:5px 18px;font-size:8px}
+.gp-custom{margin-bottom:19px}
+@media(max-width:600px){.resume-template-global-professional{padding:26px 24px}.gp-skills{grid-template-columns:1fr}.gp-entry-head{gap:7px}.gp-entry-date{white-space:normal;text-align:right}}
+@media print{.resume-preview.template-global_professional{padding:0;box-shadow:none;border:0}.resume-template-global-professional{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.resume-template-global-professional section{break-inside:avoid;page-break-inside:avoid}}
