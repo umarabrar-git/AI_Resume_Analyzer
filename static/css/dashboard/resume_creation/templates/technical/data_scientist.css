@@ -1,0 +1,30 @@
+/* Template: Technical / Data Scientist */
+.resume-preview.template-data_scientist{padding:0;background:#fff}
+.resume-template-data-scientist{--ink:#182b3a;--muted:#526575;--accent:#087f8c;--line:#d5e1e5;width:100%;min-height:1050px;padding:40px 48px;color:var(--ink);background:#fff;font-family:Arial,Helvetica,sans-serif;line-height:1.45;box-sizing:border-box}
+.resume-template-data-scientist *{box-sizing:border-box}
+.ds-header{padding:0 0 17px;border-bottom:3px solid var(--accent);margin-bottom:22px}
+.ds-header h1{margin:0;font-size:26px;line-height:1.1;font-weight:800;letter-spacing:.2px}
+.ds-header>p{margin:6px 0 10px;color:var(--accent);font-size:9px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
+.ds-header>div{display:flex;flex-wrap:wrap;gap:5px 13px;color:var(--muted);font-size:7.7px;overflow-wrap:anywhere}
+.ds-header a{color:var(--accent);text-decoration:none}
+.resume-template-data-scientist section{margin-bottom:20px}
+.resume-template-data-scientist section.is-hidden{display:none}
+.resume-template-data-scientist h2{margin:0 0 9px;padding-bottom:5px;border-bottom:1px solid var(--line);color:var(--accent);font-size:10px;line-height:1.2;font-weight:800;letter-spacing:.8px;text-transform:uppercase}
+.ds-summary,.ds-objective{font-size:8.4px;line-height:1.55}
+.ds-skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 22px}
+.ds-skill-group{font-size:7.8px;line-height:1.5}
+.ds-skill-group strong{display:block;margin-bottom:2px;color:var(--accent);font-size:8px}
+.ds-entry{margin-bottom:13px}
+.ds-entry:last-child{margin-bottom:0}
+.ds-entry-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.ds-entry-title{margin:0;font-size:9px;line-height:1.35;font-weight:800}
+.ds-entry-date{color:var(--muted);font-size:7px;white-space:nowrap}
+.ds-entry-subtitle{margin:2px 0 4px;color:var(--accent);font-size:7.9px;font-weight:700}
+.ds-entry p{margin:0 0 4px;font-size:7.8px;line-height:1.45}
+.ds-entry ul{margin:4px 0 0;padding-left:15px}
+.ds-entry li{margin-bottom:2px;font-size:7.8px;line-height:1.4}
+.ds-tech{margin:3px 0 4px;color:#425866;font-size:7.5px}
+.ds-cert{margin-bottom:6px;font-size:8px}
+.ds-languages{display:flex;flex-wrap:wrap;gap:5px 18px;font-size:8px}
+.ds-custom{margin-bottom:20px}
+@media print{.resume-preview.template-data_scientist{padding:0;box-shadow:none;border:0}.resume-template-data-scientist{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.ds-entry,.resume-template-data-scientist section{break-inside:avoid;page-break-inside:avoid}}
