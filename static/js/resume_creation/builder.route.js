@@ -1,3 +1,4 @@
+import { renderModernEditorialTemplate } from "./templates/professional/modern_editorial.js";
 const root = document.querySelector("[data-resume-builder]");
 
 if (!root) {
@@ -1724,6 +1725,10 @@ if (!root) {
     });
 
     elements.resumePreview.className = `resume-preview template-${escapeHtml(template || "classic")}`;
+    if (template === "modern_editorial") {
+      elements.resumePreview.innerHTML = renderModernEditorialTemplate(content, escapeHtml);
+      return;
+    }
     if (template === "modern") {
       const contactItems = [
         personal.email ? `<p>${escapeHtml(personal.email)}</p>` : "",
