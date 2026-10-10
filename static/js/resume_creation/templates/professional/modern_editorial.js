@@ -85,8 +85,8 @@ export function renderModernEditorialTemplate(content, escapeHtml) {
     (item.proficiency ? " (" + e(item.proficiency) + ")" : "") + "</span>"
   ).join("");
 
-  const customSections = (data.custom_sections || []).filter((item) => item.items && item.items.length).map((item) =>
-    '<section class="me-custom"><h2><span>+</span>' + e(item.title || "Additional Information") + "</h2>" +
+  const customSections = (data.custom_sections || []).filter((item) => item.items && item.items.length && !hidden.has(`custom:${item.id}`)).map((item) =>
+    '<section class="me-custom" data-section="custom:' + e(item.id || "") + '"><h2><span>+</span>' + e(item.title || "Additional Information") + "</h2>" +
     item.items.map((entry) =>
       '<article class="me-custom-item"><div class="me-entry-head"><h3 class="me-entry-title">' +
       e(entry.title || "") + (entry.subtitle ? " · " + e(entry.subtitle) : "") +
@@ -121,6 +121,16 @@ export function renderModernEditorialTemplate(content, escapeHtml) {
       node.classList.add("is-hidden");
     }
   });
+
+  const main = root.querySelector("main");
+  const order = Array.isArray(data.section_order) ? data.section_order : [];
+  if (main && order.length) {
+    const children = Array.from(main.children);
+    order.forEach((key) => {
+      const sectionNode = children.find((node) => node.dataset.section === key);
+      if (sectionNode) main.appendChild(sectionNode);
+    });
+  }
 
   return root.firstElementChild.outerHTML;
 }
