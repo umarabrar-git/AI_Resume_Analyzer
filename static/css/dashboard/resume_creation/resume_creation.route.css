@@ -1,3 +1,5 @@
+@import url("./templates/professional/modern_editorial.css");
+
 [data-resume-builder] {
     --rb-bg-soft: #edf3fd;
     --rb-card-bg: #ffffff;
