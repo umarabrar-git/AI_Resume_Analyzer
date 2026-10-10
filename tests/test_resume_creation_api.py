@@ -253,6 +253,30 @@ def test_duplicate_resume_creates_new_owned_copy(client):
     assert "Copy" in payload["resume"]["title"]
 
 
+def test_modern_editorial_template_is_available_and_selectable(client):
+    user = _make_user("modern-editorial")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    modern_editorial = next(
+        item for item in catalog if item["id"] == "modern_editorial"
+    )
+    assert modern_editorial["available"] is True
+    assert modern_editorial["label"] == "Modern Editorial"
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Editorial Resume",
+            "template": "modern_editorial",
+        },
+    )
+
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "modern_editorial"
+
+
 def test_invalid_template_rejected(client):
     user = _make_user("invalid-template")
     _auth_session(client, user.id)
@@ -327,6 +351,8 @@ def test_resume_creation_page_renders_builder_workspace(client):
     assert response.data.count(b'id="templateSection"') == 1
     assert b"createFromProfileBtn" in response.data
     assert b"importResumeBtn" in response.data
+    assert b'data-template-choice="modern_editorial"' in response.data
+    assert b'value="modern_editorial"' in response.data
 
 
 def test_profile_creation_prefills_saved_contact_details(client):
