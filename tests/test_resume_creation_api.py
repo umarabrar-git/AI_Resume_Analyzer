@@ -836,3 +836,26 @@ def test_reports_export_pdf_and_docx(client):
     assert "application/vnd.openxmlformats-officedocument.wordprocessingml.document" in (docx_response.content_type or "")
     assert docx_response.data.startswith(b"PK")
     assert "minimal.docx" in docx_response.headers["Content-Disposition"]
+
+def test_academic_research_template_is_available_and_selectable(client):
+    user = _make_user("academic-research")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    academic_research = next(
+        item for item in catalog if item["id"] == "academic_research"
+    )
+    assert academic_research["available"] is True
+    assert academic_research["label"] == "Academic Research"
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Academic CV",
+            "template": "academic_research",
+        },
+    )
+
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "academic_research"
