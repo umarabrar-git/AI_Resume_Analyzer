@@ -1,4 +1,5 @@
 import { renderModernEditorialTemplate } from "./templates/professional/modern_editorial.js";
+import { renderAcademicResearchTemplate } from "./templates/academic/academic_research.js";
 const root = document.querySelector("[data-resume-builder]");
 
 if (!root) {
@@ -1727,6 +1728,10 @@ if (!root) {
     elements.resumePreview.className = `resume-preview template-${escapeHtml(template || "classic")}`;
     if (template === "modern_editorial") {
       elements.resumePreview.innerHTML = renderModernEditorialTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "academic_research") {
+      elements.resumePreview.innerHTML = renderAcademicResearchTemplate(content, escapeHtml);
       return;
     }
     if (template === "modern") {

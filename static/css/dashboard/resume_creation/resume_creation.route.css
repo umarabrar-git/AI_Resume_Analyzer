@@ -1,4 +1,5 @@
 @import url("./templates/professional/modern_editorial.css");
+@import url("./templates/academic/academic_research.css");
 
 [data-resume-builder] {
     --rb-bg-soft: #edf3fd;
