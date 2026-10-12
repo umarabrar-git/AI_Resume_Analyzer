@@ -859,3 +859,30 @@ def test_academic_research_template_is_available_and_selectable(client):
 
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "academic_research"
+
+
+def test_executive_leadership_template_is_available_to_pro_user(client):
+    user = _make_user("executive-leadership")
+    _auth_session(client, user.id)
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    executive = next(item for item in catalog if item["id"] == "executive")
+    assert executive["available"] is True
+    assert executive["label"] == "Executive"
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Executive Leadership Resume",
+            "template": "executive",
+        },
+    )
+
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "executive"
