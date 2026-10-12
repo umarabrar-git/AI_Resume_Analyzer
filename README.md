@@ -97,6 +97,25 @@ pip install -r requirements.txt
 
 ### 4. Run the application
 
+#### Windows PowerShell (automated setup)
+
+The repository includes `setup_windows.ps1`. It creates `.venv` if needed, installs packages from `requirements.txt` into that environment, verifies Flask, and starts the app.
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\setup_windows.ps1
+```
+
+You can also install dependencies manually:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe app.py
+```
+
+If you see `ModuleNotFoundError: No module named 'flask'`, Flask is not installed in the Python interpreter that ran `app.py`. Install requirements using the same interpreter that starts the app; do not rely on a different global Python or virtual environment.
+
+
 ```bash
 python app.py
 ```
