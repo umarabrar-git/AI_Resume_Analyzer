@@ -1,5 +1,6 @@
 import { renderModernEditorialTemplate } from "./templates/professional/modern_editorial.js";
 import { renderAcademicResearchTemplate } from "./templates/academic/academic_research.js";
+import { renderExecutiveLeadershipTemplate } from "./templates/executive/executive_leadership.js";
 const root = document.querySelector("[data-resume-builder]");
 
 if (!root) {
@@ -1732,6 +1733,10 @@ if (!root) {
     }
     if (template === "academic_research") {
       elements.resumePreview.innerHTML = renderAcademicResearchTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "executive") {
+      elements.resumePreview.innerHTML = renderExecutiveLeadershipTemplate(content, escapeHtml);
       return;
     }
     if (template === "modern") {
