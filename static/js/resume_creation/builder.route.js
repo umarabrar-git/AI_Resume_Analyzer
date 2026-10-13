@@ -3,6 +3,7 @@ import { renderAcademicResearchTemplate } from "./templates/academic/academic_re
 import { renderExecutiveLeadershipTemplate } from "./templates/executive/executive_leadership.js";
 import { renderCareerAnalyticsTemplate } from "./templates/analytics/career_analytics.js";
 import { renderAIInsightsTemplate } from "./templates/ai/ai_insights.js";
+import { renderCreativePortfolioTemplate } from "./templates/creative/creative_portfolio.js";
 const root = document.querySelector("[data-resume-builder]");
 
 if (!root) {
@@ -1747,6 +1748,10 @@ if (!root) {
     }
     if (template === "ai_insights") {
       elements.resumePreview.innerHTML = renderAIInsightsTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "creative_portfolio") {
+      elements.resumePreview.innerHTML = renderCreativePortfolioTemplate(content, escapeHtml);
       return;
     }
     if (template === "modern") {
