@@ -1,0 +1,171 @@
+.resume-preview.template-career_analytics {
+  padding: 0;
+  background: #f4f7fb;
+  color: #1c2d42;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.resume-preview.template-career_analytics .resume-template-career-analytics {
+  --ca-ink: #1c2d42;
+  --ca-muted: #617287;
+  --ca-line: #dbe4ee;
+  --ca-accent: #26766e;
+  --ca-accent-dark: #17534e;
+  width: 100%;
+  min-height: 1050px;
+  box-sizing: border-box;
+  padding: clamp(1.2rem, 4vw, 2.8rem);
+  background: #fff;
+  color: var(--ca-ink);
+  font-size: 9.5px;
+  line-height: 1.55;
+}
+.resume-template-career-analytics * { box-sizing: border-box; }
+.resume-template-career-analytics .ca-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid var(--ca-ink);
+}
+.resume-template-career-analytics .ca-kicker {
+  margin: 0 0 .45rem;
+  color: var(--ca-accent);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.resume-template-career-analytics h1 {
+  margin: 0;
+  font-size: clamp(1.65rem, 4vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -.035em;
+  overflow-wrap: anywhere;
+}
+.resume-template-career-analytics .ca-title {
+  margin: .5rem 0 .55rem;
+  color: #43566c;
+  font-size: .9rem;
+  font-weight: 600;
+}
+.resume-template-career-analytics .ca-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .55rem;
+  color: var(--ca-muted);
+  font-size: .72rem;
+  overflow-wrap: anywhere;
+}
+.resume-template-career-analytics a { color: var(--ca-accent-dark); text-decoration: none; }
+.resume-template-career-analytics a:hover { text-decoration: underline; }
+.resume-template-career-analytics .ca-header-mark {
+  display: grid;
+  flex: 0 0 3.2rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  place-items: center;
+  border-radius: .7rem;
+  background: var(--ca-accent);
+  color: #fff;
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+}
+.resume-template-career-analytics .ca-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .55rem;
+  margin: 1rem 0 1.2rem;
+}
+.resume-template-career-analytics .ca-metric {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  min-width: 0;
+  padding: .65rem .75rem;
+  border: 1px solid var(--ca-line);
+  border-top: 3px solid var(--ca-accent);
+  border-radius: .35rem;
+  background: #f8fafc;
+}
+.resume-template-career-analytics .ca-metric span {
+  color: var(--ca-muted);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.resume-template-career-analytics .ca-metric strong { font-size: 1.25rem; line-height: 1; }
+.resume-template-career-analytics main > section { margin-top: 1.15rem; }
+.resume-template-career-analytics main > section.is-hidden { display: none; }
+.resume-template-career-analytics h2 {
+  margin: 0 0 .6rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid var(--ca-line);
+  color: var(--ca-accent-dark);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.resume-template-career-analytics h3 { margin: 0; font-size: .92rem; }
+.resume-template-career-analytics p { margin: .3rem 0 .55rem; }
+.resume-template-career-analytics .ca-entry { margin: 0 0 .9rem; break-inside: avoid; }
+.resume-template-career-analytics .ca-entry-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .25rem .8rem;
+}
+.resume-template-career-analytics .ca-subtitle {
+  margin: .15rem 0 .25rem;
+  color: var(--ca-muted);
+  font-size: .76rem;
+}
+.resume-template-career-analytics .ca-date { color: var(--ca-muted); font-size: .7rem; white-space: nowrap; }
+.resume-template-career-analytics ul { margin: .3rem 0 .2rem; padding-left: 1.1rem; }
+.resume-template-career-analytics li { margin: .13rem 0; }
+.resume-template-career-analytics .ca-impact {
+  margin-top: .4rem;
+  padding: .45rem .65rem;
+  border-left: 3px solid var(--ca-accent);
+  background: #f1f8f7;
+}
+.resume-template-career-analytics .ca-impact > strong {
+  color: var(--ca-accent-dark);
+  font-size: .64rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.resume-template-career-analytics .ca-skill-group { margin: .45rem 0; }
+.resume-template-career-analytics .ca-skill-group h3 { margin-bottom: .3rem; color: #40536a; font-size: .75rem; }
+.resume-template-career-analytics .ca-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
+.resume-template-career-analytics .ca-tag {
+  padding: .22rem .45rem;
+  border: 1px solid #d4e4e1;
+  border-radius: 999px;
+  background: #f5faf9;
+  color: #244b48;
+  font-size: .7rem;
+}
+.resume-template-career-analytics .ca-cert,
+.resume-template-career-analytics .ca-language { margin: .25rem 0; }
+.resume-template-career-analytics .ca-cert span,
+.resume-template-career-analytics .ca-language span { color: var(--ca-muted); }
+@media (max-width: 520px) {
+  .resume-preview.template-career_analytics .resume-template-career-analytics { padding: 1rem; }
+  .resume-template-career-analytics .ca-header-mark { display: none; }
+  .resume-template-career-analytics .ca-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .resume-template-career-analytics .ca-entry-head { flex-wrap: wrap; }
+}
+@media print {
+  .resume-preview.template-career_analytics .resume-template-career-analytics {
+    max-width: none;
+    min-height: 0;
+    padding: 0;
+    background: #fff;
+  }
+  .resume-template-career-analytics .ca-entry,
+  .resume-template-career-analytics main > section { break-inside: avoid; }
+}
