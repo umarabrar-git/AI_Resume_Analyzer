@@ -3,6 +3,7 @@
 @import url("./templates/executive/executive_leadership.css");
 @import url("./templates/analytics/career_analytics.css");
 @import url("./templates/ai/ai_insights.css");
+@import url("./templates/creative/creative_portfolio.css");
 
 [data-resume-builder] {
     --rb-bg-soft: #edf3fd;
