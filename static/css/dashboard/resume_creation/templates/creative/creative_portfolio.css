@@ -1,0 +1,177 @@
+.resume-preview.template-creative_portfolio {
+  padding: 0;
+  background: #f7f5f2;
+  color: #28232c;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.resume-preview.template-creative_portfolio .resume-template-creative-portfolio {
+  --cp-ink: #28232c;
+  --cp-muted: #716874;
+  --cp-line: #e8dfe5;
+  --cp-accent: #d65f8d;
+  --cp-accent-dark: #8e3157;
+  width: 100%;
+  min-height: 1050px;
+  box-sizing: border-box;
+  padding: clamp(1.25rem, 4vw, 2.8rem);
+  background: #fffdfb;
+  color: var(--cp-ink);
+  font-size: 9.5px;
+  line-height: 1.55;
+}
+.resume-template-creative-portfolio * { box-sizing: border-box; }
+.resume-template-creative-portfolio .cp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 0 1.25rem;
+  border-bottom: 1px solid var(--cp-line);
+}
+.resume-template-creative-portfolio .cp-kicker {
+  margin: 0 0 .45rem;
+  color: var(--cp-accent-dark);
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.resume-template-creative-portfolio h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4.5vw, 2.7rem);
+  line-height: 1.08;
+  letter-spacing: -.045em;
+  overflow-wrap: anywhere;
+}
+.resume-template-creative-portfolio .cp-title {
+  margin: .45rem 0 .6rem;
+  color: #544955;
+  font-size: .92rem;
+  font-weight: 600;
+}
+.resume-template-creative-portfolio .cp-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .55rem;
+  color: var(--cp-muted);
+  font-size: .72rem;
+  overflow-wrap: anywhere;
+}
+.resume-template-creative-portfolio a { color: var(--cp-accent-dark); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.resume-template-creative-portfolio .cp-monogram {
+  display: grid;
+  flex: 0 0 3.4rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  place-items: center;
+  border-radius: 50% 50% 50% .7rem;
+  background: var(--cp-accent);
+  color: white;
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.resume-template-creative-portfolio .cp-intro {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: .8rem;
+  margin: 1.15rem 0 1.35rem;
+  padding: .9rem 1rem;
+  border-left: 3px solid var(--cp-accent);
+  background: #fbf2f6;
+}
+.resume-template-creative-portfolio .cp-intro-label {
+  color: var(--cp-accent-dark);
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.resume-template-creative-portfolio .cp-intro p { margin: 0; }
+.resume-template-creative-portfolio main > section { margin-top: 1.25rem; }
+.resume-template-creative-portfolio main > section.is-hidden { display: none; }
+.resume-template-creative-portfolio h2 {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  margin: 0 0 .7rem;
+  color: var(--cp-accent-dark);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.resume-template-creative-portfolio h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--cp-line);
+}
+.resume-template-creative-portfolio h3 { margin: 0; font-size: .92rem; }
+.resume-template-creative-portfolio p { margin: .3rem 0 .55rem; }
+.resume-template-creative-portfolio .cp-entry { margin: 0 0 .9rem; break-inside: avoid; }
+.resume-template-creative-portfolio .cp-entry-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .25rem .8rem;
+}
+.resume-template-creative-portfolio .cp-subtitle { margin: .15rem 0 .25rem; color: var(--cp-muted); font-size: .75rem; }
+.resume-template-creative-portfolio .cp-date { color: var(--cp-muted); font-size: .68rem; white-space: nowrap; }
+.resume-template-creative-portfolio ul { margin: .3rem 0 .2rem; padding-left: 1.1rem; }
+.resume-template-creative-portfolio li { margin: .13rem 0; }
+.resume-template-creative-portfolio .cp-outcomes { margin-top: .4rem; padding: .45rem .65rem; background: #fbf2f6; border-radius: .2rem; }
+.resume-template-creative-portfolio .cp-outcomes > span {
+  color: var(--cp-accent-dark);
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.resume-template-creative-portfolio .cp-project {
+  margin: 0 0 .8rem;
+  padding: .8rem .9rem;
+  border: 1px solid var(--cp-line);
+  border-radius: .45rem;
+  background: #fff;
+  break-inside: avoid;
+}
+.resume-template-creative-portfolio .cp-project-top { display: flex; align-items: baseline; gap: .55rem; }
+.resume-template-creative-portfolio .cp-project-index {
+  color: var(--cp-accent);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+}
+.resume-template-creative-portfolio .cp-role { color: var(--cp-muted); font-weight: 400; }
+.resume-template-creative-portfolio .cp-skill-group { margin: .45rem 0; }
+.resume-template-creative-portfolio .cp-skill-group h3 { margin-bottom: .3rem; color: #514650; font-size: .74rem; }
+.resume-template-creative-portfolio .cp-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
+.resume-template-creative-portfolio .cp-tag {
+  padding: .22rem .48rem;
+  border: 1px solid #eed1de;
+  border-radius: 999px;
+  background: #fff7fa;
+  color: #7d2d4d;
+  font-size: .69rem;
+}
+.resume-template-creative-portfolio .cp-cert,
+.resume-template-creative-portfolio .cp-language { margin: .25rem 0; }
+.resume-template-creative-portfolio .cp-cert span,
+.resume-template-creative-portfolio .cp-language span { color: var(--cp-muted); }
+@media (max-width: 520px) {
+  .resume-preview.template-creative_portfolio .resume-template-creative-portfolio { padding: 1rem; }
+  .resume-template-creative-portfolio .cp-monogram { display: none; }
+  .resume-template-creative-portfolio .cp-intro { grid-template-columns: 1fr; gap: .3rem; }
+  .resume-template-creative-portfolio .cp-entry-head { flex-wrap: wrap; }
+}
+@media print {
+  .resume-preview.template-creative_portfolio .resume-template-creative-portfolio {
+    max-width: none;
+    min-height: 0;
+    padding: 0;
+    background: #fff;
+  }
+  .resume-template-creative-portfolio .cp-project,
+  .resume-template-creative-portfolio .cp-entry { break-inside: avoid; }
+}
