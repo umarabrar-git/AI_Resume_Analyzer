@@ -886,3 +886,39 @@ def test_executive_leadership_template_is_available_to_pro_user(client):
 
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "executive"
+
+
+
+def test_career_analytics_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("career-analytics")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    career_analytics = next(
+        item for item in catalog if item["id"] == "career_analytics"
+    )
+    assert career_analytics["available"] is False
+    assert career_analytics["label"] == "Career Analytics"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    career_analytics = next(
+        item for item in catalog if item["id"] == "career_analytics"
+    )
+    assert career_analytics["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Career Analytics Resume",
+            "template": "career_analytics",
+        },
+    )
+
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "career_analytics"
