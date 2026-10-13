@@ -922,3 +922,35 @@ def test_career_analytics_template_is_premium_and_selectable_by_pro_user(client)
 
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "career_analytics"
+
+
+
+def test_ai_insights_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("ai-insights")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    ai_insights = next(item for item in catalog if item["id"] == "ai_insights")
+    assert ai_insights["available"] is False
+    assert ai_insights["label"] == "AI Insights"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    ai_insights = next(item for item in catalog if item["id"] == "ai_insights")
+    assert ai_insights["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "AI Insights Resume",
+            "template": "ai_insights",
+        },
+    )
+
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "ai_insights"
