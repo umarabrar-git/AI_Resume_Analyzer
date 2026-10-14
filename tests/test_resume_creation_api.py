@@ -990,3 +990,39 @@ def test_creative_portfolio_template_is_premium_and_selectable_by_pro_user(clien
 
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "creative_portfolio"
+
+
+
+def test_ats_professional_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("ats-professional")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    ats_professional = next(
+        item for item in catalog if item["id"] == "ats_professional"
+    )
+    assert ats_professional["available"] is False
+    assert ats_professional["label"] == "ATS Professional"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    ats_professional = next(
+        item for item in catalog if item["id"] == "ats_professional"
+    )
+    assert ats_professional["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "ATS Professional Resume",
+            "template": "ats_professional",
+        },
+    )
+
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "ats_professional"
