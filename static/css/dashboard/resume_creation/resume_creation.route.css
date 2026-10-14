@@ -4,6 +4,7 @@
 @import url("./templates/analytics/career_analytics.css");
 @import url("./templates/ai/ai_insights.css");
 @import url("./templates/creative/creative_portfolio.css");
+@import url("./templates/professional/ats_professional.css");
 
 [data-resume-builder] {
     --rb-bg-soft: #edf3fd;
