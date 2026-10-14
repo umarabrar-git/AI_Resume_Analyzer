@@ -1,0 +1,138 @@
+.resume-preview.template-ats_professional {
+  padding: 0;
+  background: #edf1f5;
+  color: #202b36;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.resume-preview.template-ats_professional .resume-template-ats-professional {
+  --ap-ink: #202b36;
+  --ap-muted: #526171;
+  --ap-rule: #cbd5df;
+  --ap-accent: #21496e;
+  width: 100%;
+  min-height: 1050px;
+  box-sizing: border-box;
+  padding: clamp(1.25rem, 4vw, 2.65rem);
+  background: #fff;
+  color: var(--ap-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  line-height: 1.48;
+}
+.resume-template-ats-professional *,
+.resume-template-ats-professional *::before,
+.resume-template-ats-professional *::after { box-sizing: border-box; }
+.resume-template-ats-professional .ap-header {
+  padding: 0 0 1rem;
+  border-bottom: 2px solid var(--ap-accent);
+  text-align: left;
+}
+.resume-template-ats-professional h1 {
+  margin: 0;
+  color: var(--ap-ink);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
+}
+.resume-template-ats-professional .ap-title {
+  margin: .3rem 0 .55rem;
+  color: var(--ap-accent);
+  font-size: 1rem;
+  font-weight: 700;
+}
+.resume-template-ats-professional .ap-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem .48rem;
+  color: var(--ap-muted);
+  font-size: .74rem;
+  overflow-wrap: anywhere;
+}
+.resume-template-ats-professional .ap-contact span { color: #8b98a5; }
+.resume-template-ats-professional a {
+  color: var(--ap-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+.resume-template-ats-professional main > section { margin-top: 1rem; }
+.resume-template-ats-professional main > section.is-hidden { display: none; }
+.resume-template-ats-professional h2 {
+  margin: 0 0 .45rem;
+  padding: 0 0 .24rem;
+  border-bottom: 1px solid var(--ap-rule);
+  color: var(--ap-accent);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .075em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+.resume-template-ats-professional h3 {
+  margin: 0;
+  color: var(--ap-ink);
+  font-size: .92rem;
+  font-weight: 700;
+}
+.resume-template-ats-professional p { margin: .2rem 0 .35rem; }
+.resume-template-ats-professional .ap-entry {
+  margin: 0 0 .7rem;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.resume-template-ats-professional .ap-entry-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .25rem .7rem;
+}
+.resume-template-ats-professional .ap-subtitle {
+  margin: .12rem 0 .2rem;
+  color: var(--ap-muted);
+  font-size: .76rem;
+}
+.resume-template-ats-professional .ap-date {
+  flex: 0 0 auto;
+  margin: 0;
+  color: var(--ap-muted);
+  font-size: .72rem;
+  text-align: right;
+  white-space: nowrap;
+}
+.resume-template-ats-professional ul {
+  margin: .22rem 0 .3rem;
+  padding-left: 1.12rem;
+}
+.resume-template-ats-professional li { margin: .12rem 0; padding-left: .08rem; }
+.resume-template-ats-professional .ap-highlight { color: #35475a; font-size: .76rem; }
+.resume-template-ats-professional .ap-role { color: var(--ap-muted); font-weight: 400; }
+.resume-template-ats-professional .ap-skill-list { margin: 0; }
+.resume-template-ats-professional .ap-skill-list > div {
+  display: grid;
+  grid-template-columns: minmax(7.2rem, 22%) minmax(0, 1fr);
+  gap: .35rem .7rem;
+  margin: .23rem 0;
+}
+.resume-template-ats-professional .ap-skill-list dt { font-weight: 700; }
+.resume-template-ats-professional .ap-skill-list dd { margin: 0; overflow-wrap: anywhere; }
+.resume-template-ats-professional .ap-inline-list { overflow-wrap: anywhere; }
+.resume-template-ats-professional .ap-compact { margin: .18rem 0; }
+@media (max-width: 520px) {
+  .resume-preview.template-ats_professional .resume-template-ats-professional { padding: 1rem; }
+  .resume-template-ats-professional .ap-entry-heading { flex-wrap: wrap; }
+  .resume-template-ats-professional .ap-date { text-align: left; white-space: normal; }
+  .resume-template-ats-professional .ap-skill-list > div { grid-template-columns: 1fr; gap: .08rem; }
+}
+@media print {
+  .resume-preview.template-ats_professional .resume-template-ats-professional {
+    min-height: 0;
+    max-width: none;
+    padding: 0;
+    background: #fff;
+    font-size: 9.5px;
+  }
+  .resume-template-ats-professional .ap-entry { break-inside: avoid; page-break-inside: avoid; }
+  .resume-template-ats-professional main > section { break-inside: auto; }
+}
