@@ -5,6 +5,7 @@ import { renderCareerAnalyticsTemplate } from "./templates/analytics/career_anal
 import { renderAIInsightsTemplate } from "./templates/ai/ai_insights.js";
 import { renderCreativePortfolioTemplate } from "./templates/creative/creative_portfolio.js";
 import { renderATSProfessionalTemplate } from "./templates/professional/ats_professional.js";
+import { renderProductManagerTemplate } from "./templates/product/product_manager.js";
 const root = document.querySelector("[data-resume-builder]");
 
 if (!root) {
@@ -1757,6 +1758,10 @@ if (!root) {
     }
     if (template === "ats_professional") {
       elements.resumePreview.innerHTML = renderATSProfessionalTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "product_manager") {
+      elements.resumePreview.innerHTML = renderProductManagerTemplate(content, escapeHtml);
       return;
     }
     if (template === "modern") {
