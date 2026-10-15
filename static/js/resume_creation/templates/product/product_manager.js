@@ -105,7 +105,7 @@ export function renderProductManagerTemplate(content, escapeHtml) {
     '<div class="resume-template-product-manager"><header class="pm-header"><div class="pm-header-main">' +
     '<p class="pm-eyebrow">PRODUCT LEADERSHIP</p><h1>' + e(personal.full_name || "Your Name") + '</h1>' +
     '<p class="pm-title">' + e(personal.professional_title || "") + '</p></div>' +
-    '<div class="pm-contact">' + contact.join("") .replace(/(?<=\S)(?=<a|[^<])/g, " <span aria-hidden=\"true\">·</span> ") +
+    '<div class="pm-contact">' + contact.join(' <span aria-hidden="true">·</span> ') +
     "</div></header><main>" +
     section("summary", "Product Profile", data.summary ? "<p>" + e(data.summary) + "</p>" : "") +
     section("skills", "Product & Leadership Skills", skills) +
