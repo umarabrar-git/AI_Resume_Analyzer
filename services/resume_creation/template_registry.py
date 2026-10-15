@@ -90,6 +90,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#21496e",
         "font": "Helvetica",
     },
+    "product_manager": {
+        "label": "Product Manager",
+        "tier": "premium",
+        "layout": "product",
+        "accent": "#276678",
+        "font": "Helvetica",
+    },
 }
 
 PREMIUM_PLANS = {"pro", "enterprise"}
