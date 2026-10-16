@@ -6,6 +6,35 @@
 @import url("./templates/creative/creative_portfolio.css");
 @import url("./templates/professional/ats_professional.css");
 @import url("./templates/product/product_manager.css");
+@import url("./templates/technical/data_scientist.css");
+
+.template-sample--data-scientist {
+    position: relative;
+    overflow: hidden;
+    border-left: 3px solid #147d78;
+    background: linear-gradient(90deg, #e8f4f2 0 31%, #ffffff 31% 100%);
+}
+.template-sample--data-scientist::before {
+    content: "";
+    position: absolute;
+    top: 18%;
+    right: 9%;
+    width: 53%;
+    height: 64%;
+    background: repeating-linear-gradient(to bottom, #b8cdca 0 2px, transparent 2px 7px);
+    opacity: .9;
+}
+.template-sample--data-scientist::after {
+    content: "";
+    position: absolute;
+    top: 18%;
+    left: 8%;
+    width: 16%;
+    height: 64%;
+    background: repeating-linear-gradient(to bottom, #147d78 0 3px, transparent 3px 8px);
+    opacity: .8;
+}
+
 
 [data-resume-builder] {
     --rb-bg-soft: #edf3fd;
