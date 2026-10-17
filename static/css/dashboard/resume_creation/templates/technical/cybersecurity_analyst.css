@@ -1,0 +1,137 @@
+.resume-preview.template-cybersecurity_analyst {
+  padding: 0;
+  background: #e8ecef;
+  color: #172329;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.resume-preview.template-cybersecurity_analyst .resume-template-cybersecurity {
+  --cs-ink: #172329;
+  --cs-muted: #52636b;
+  --cs-line: #d6dfe2;
+  --cs-dark: #172b33;
+  --cs-deep: #102027;
+  --cs-accent: #a3d65c;
+  width: 100%;
+  min-height: 1050px;
+  background: #fff;
+  color: var(--cs-ink);
+  font-size: 10px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+.resume-template-cybersecurity *,
+.resume-template-cybersecurity *::before,
+.resume-template-cybersecurity *::after { box-sizing: border-box; }
+.resume-template-cybersecurity .cs-header {
+  padding: 1.65rem 2rem 1.4rem;
+  color: #f4f8f9;
+  background: linear-gradient(120deg, var(--cs-deep), var(--cs-dark));
+  border-bottom: 5px solid var(--cs-accent);
+}
+.resume-template-cybersecurity .cs-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-bottom: 1.15rem;
+  color: #d2e3e7;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+.resume-template-cybersecurity .cs-header-top p { margin: 0; }
+.resume-template-cybersecurity .cs-mark {
+  display: inline-block;
+  padding: .25rem .42rem;
+  border: 1px solid rgba(163, 214, 92, .7);
+  color: var(--cs-accent);
+  font-size: .65rem;
+  letter-spacing: .08em;
+}
+.resume-template-cybersecurity h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.9rem, 4.3vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -.035em;
+  overflow-wrap: anywhere;
+}
+.resume-template-cybersecurity .cs-role {
+  margin: .45rem 0 .9rem;
+  color: var(--cs-accent);
+  font-size: 1rem;
+  font-weight: 700;
+}
+.resume-template-cybersecurity .cs-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .8rem;
+  color: #d7e1e4;
+  font-size: .72rem;
+  overflow-wrap: anywhere;
+}
+.resume-template-cybersecurity .cs-contact a { color: var(--cs-accent); text-decoration: underline; text-underline-offset: 2px; }
+.resume-template-cybersecurity .cs-layout {
+  display: grid;
+  grid-template-columns: minmax(8rem, 30%) minmax(0, 1fr);
+  gap: 1.35rem;
+  padding: 1.35rem 1.6rem 1.7rem;
+}
+.resume-template-cybersecurity .cs-sidebar {
+  align-self: start;
+  padding: .9rem;
+  color: #eff5f6;
+  background: var(--cs-dark);
+  border-top: 3px solid var(--cs-accent);
+}
+.resume-template-cybersecurity .cs-sidebar h2 { color: var(--cs-accent); border-color: rgba(255,255,255,.17); }
+.resume-template-cybersecurity .cs-sidebar .cs-skill-tags li {
+  border-color: rgba(163,214,92,.45);
+  background: rgba(255,255,255,.05);
+  color: #eff5f6;
+}
+.resume-template-cybersecurity .cs-sidebar .cs-compact { color: #e0e9eb; }
+.resume-template-cybersecurity .cs-main { min-width: 0; }
+.resume-template-cybersecurity section { margin: 0 0 1.05rem; }
+.resume-template-cybersecurity section.is-hidden { display: none; }
+.resume-template-cybersecurity h2 {
+  margin: 0 0 .48rem;
+  padding-bottom: .3rem;
+  border-bottom: 1px solid var(--cs-line);
+  color: #2b4a53;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.resume-template-cybersecurity h3 { margin: 0; font-size: .9rem; line-height: 1.35; }
+.resume-template-cybersecurity p { margin: .2rem 0 .35rem; }
+.resume-template-cybersecurity a { overflow-wrap: anywhere; }
+.resume-template-cybersecurity .cs-entry { margin-bottom: .82rem; break-inside: avoid; page-break-inside: avoid; }
+.resume-template-cybersecurity .cs-entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: .25rem .65rem; }
+.resume-template-cybersecurity .cs-meta { color: var(--cs-muted); font-size: .73rem; }
+.resume-template-cybersecurity .cs-date { flex: 0 0 auto; margin: 0; color: var(--cs-muted); font-size: .68rem; text-align: right; }
+.resume-template-cybersecurity ul { margin: .28rem 0; padding-left: 1rem; }
+.resume-template-cybersecurity li { margin: .12rem 0; padding-left: .08rem; }
+.resume-template-cybersecurity .cs-skill-group { margin-bottom: .55rem; }
+.resume-template-cybersecurity .cs-skill-group strong { display: block; margin-bottom: .22rem; color: var(--cs-accent); font-size: .7rem; }
+.resume-template-cybersecurity .cs-skill-tags { display: flex; flex-wrap: wrap; gap: .24rem; margin: 0; padding: 0; list-style: none; }
+.resume-template-cybersecurity .cs-skill-tags li { margin: 0; padding: .16rem .35rem; border: 1px solid #d6e1e3; border-radius: 3px; background: #f7fafb; color: #2b4a53; font-size: .68rem; overflow-wrap: anywhere; }
+.resume-template-cybersecurity .cs-compact { margin: .22rem 0; font-size: .75rem; }
+.resume-template-cybersecurity .cs-custom-section { margin-bottom: 1rem; }
+@media (max-width: 560px) {
+  .resume-preview.template-cybersecurity_analyst .resume-template-cybersecurity { font-size: 10px; }
+  .resume-template-cybersecurity .cs-header { padding: 1.2rem 1rem; }
+  .resume-template-cybersecurity .cs-header-top { align-items: flex-start; flex-direction: column; }
+  .resume-template-cybersecurity .cs-layout { grid-template-columns: 1fr; padding: 1rem; gap: 1rem; }
+  .resume-template-cybersecurity .cs-sidebar { order: 2; }
+  .resume-template-cybersecurity .cs-entry-head { flex-wrap: wrap; }
+  .resume-template-cybersecurity .cs-date { text-align: left; }
+}
+@media print {
+  .resume-preview.template-cybersecurity_analyst .resume-template-cybersecurity { min-height: 0; font-size: 9.5px; }
+  .resume-template-cybersecurity .cs-header { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .resume-template-cybersecurity .cs-sidebar { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .resume-template-cybersecurity .cs-entry { break-inside: avoid; page-break-inside: avoid; }
+}
