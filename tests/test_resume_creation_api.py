@@ -1098,3 +1098,38 @@ def test_data_scientist_template_is_premium_and_selectable_by_pro_user(client):
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "data_scientist"
 
+
+def test_cybersecurity_analyst_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("cybersecurity-analyst")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    cybersecurity = next(
+        item for item in catalog if item["id"] == "cybersecurity_analyst"
+    )
+    assert cybersecurity["available"] is False
+    assert cybersecurity["label"] == "Cybersecurity Analyst"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    cybersecurity = next(
+        item for item in catalog if item["id"] == "cybersecurity_analyst"
+    )
+    assert cybersecurity["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Cybersecurity Analyst Resume",
+            "template": "cybersecurity_analyst",
+        },
+    )
+
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "cybersecurity_analyst"
+
