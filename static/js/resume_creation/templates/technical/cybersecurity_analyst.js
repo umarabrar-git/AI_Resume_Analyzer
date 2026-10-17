@@ -103,7 +103,7 @@ export function renderCybersecurityAnalystTemplate(content, escapeHtml) {
     '<div class="resume-template-cybersecurity"><header class="cs-header"><div class="cs-header-top">' +
     '<span class="cs-mark" aria-hidden="true">SEC / 01</span><p>CYBERSECURITY · RISK · DEFENSE</p></div><h1>' +
     e(personal.full_name || "Your Name") + '</h1><p class="cs-role">' + e(personal.professional_title || "") +
-    '</p><div class="cs-contact">' + contact.join("") + '</div></header><div class="cs-layout">' +
+    '</p><div class="cs-contact">' + contact.join(' <span aria-hidden="true">·</span> ') + '</div></header><div class="cs-layout">' +
     '<aside class="cs-sidebar">' + section("skills", "Security Toolkit", skillsMarkup) +
     section("certifications", "Certifications", certifications) +
     section("languages", "Languages", languages) +
