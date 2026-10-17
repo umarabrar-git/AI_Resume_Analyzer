@@ -7,6 +7,7 @@ import { renderCreativePortfolioTemplate } from "./templates/creative/creative_p
 import { renderATSProfessionalTemplate } from "./templates/professional/ats_professional.js";
 import { renderProductManagerTemplate } from "./templates/product/product_manager.js";
 import { renderDataScientistTemplate } from "./templates/technical/data_scientist.js";
+import { renderCybersecurityAnalystTemplate } from "./templates/technical/cybersecurity_analyst.js";
 const root = document.querySelector("[data-resume-builder]");
 
 if (!root) {
@@ -1767,6 +1768,10 @@ if (!root) {
     }
     if (template === "data_scientist") {
       elements.resumePreview.innerHTML = renderDataScientistTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "cybersecurity_analyst") {
+      elements.resumePreview.innerHTML = renderCybersecurityAnalystTemplate(content, escapeHtml);
       return;
     }
     if (template === "modern") {
