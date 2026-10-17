@@ -62,6 +62,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#147d78",
         "font": "Helvetica",
     },
+    "cybersecurity_analyst": {
+        "label": "Cybersecurity Analyst",
+        "tier": "premium",
+        "layout": "cybersecurity",
+        "accent": "#a3d65c",
+        "font": "Helvetica",
+    },
     "executive": {
         "label": "Executive",
         "tier": "premium",
