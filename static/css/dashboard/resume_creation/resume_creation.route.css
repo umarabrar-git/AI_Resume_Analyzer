@@ -6,8 +6,37 @@
 @import url("./templates/creative/creative_portfolio.css");
 @import url("./templates/professional/ats_professional.css");
 @import url("./templates/product/product_manager.css");
+@import url("./templates/product/product_impact.css");
 @import url("./templates/technical/data_scientist.css");
 @import url("./templates/technical/cybersecurity_analyst.css");
+
+
+.template-sample--product-impact {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, #252b33 0 42%, #fff7ef 42% 100%);
+    border-top: 3px solid #cf6749;
+}
+.template-sample--product-impact::before {
+    content: "";
+    position: absolute;
+    top: 18%;
+    left: 8%;
+    width: 36%;
+    height: 7%;
+    background: #f0a18a;
+    box-shadow: 0 9px 0 rgba(255,255,255,.82), 0 18px 0 rgba(255,255,255,.62);
+}
+.template-sample--product-impact::after {
+    content: "";
+    position: absolute;
+    right: 8%;
+    bottom: 12%;
+    width: 38%;
+    height: 32%;
+    border-left: 2px solid #cf6749;
+    border-top: 2px solid #cf6749;
+}
 
 .template-sample--cybersecurity-analyst {
     position: relative;
