@@ -1,0 +1,229 @@
+.resume-preview.template-product_impact {
+  padding: 0;
+  background: #f3eee8;
+  color: #282d35;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.resume-preview.template-product_impact .resume-template-product-impact {
+  --pi-ink: #252b33;
+  --pi-muted: #72717a;
+  --pi-line: #e2d9d0;
+  --pi-paper: #fffdf9;
+  --pi-accent: #cf6749;
+  width: 100%;
+  min-height: 1050px;
+  background: var(--pi-paper);
+  color: var(--pi-ink);
+  font-size: 10px;
+  line-height: 1.52;
+  box-sizing: border-box;
+}
+.resume-template-product-impact *,
+.resume-template-product-impact *::before,
+.resume-template-product-impact *::after { box-sizing: border-box; }
+.resume-template-product-impact .pi-header {
+  padding: 1.7rem 2rem 1.25rem;
+  color: #fffaf5;
+  background: #252b33;
+  border-top: 7px solid var(--pi-accent);
+}
+.resume-template-product-impact .pi-header-top {
+  display: flex;
+  justify-content: space-between;
+  gap: .7rem;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  color: #d6d1ca;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+.resume-template-product-impact .pi-kicker { color: #f0a18a; }
+.resume-template-product-impact .pi-header-index { white-space: nowrap; }
+.resume-template-product-impact .pi-header-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(8rem, .8fr);
+  gap: 1rem 1.4rem;
+  align-items: end;
+}
+.resume-template-product-impact h1 {
+  margin: 0;
+  color: #fffaf5;
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  line-height: 1.02;
+  letter-spacing: -.04em;
+  overflow-wrap: anywhere;
+}
+.resume-template-product-impact .pi-title {
+  margin: .45rem 0 0;
+  color: #f0a18a;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.resume-template-product-impact .pi-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .26rem;
+  min-width: 0;
+  color: #e5dfd8;
+  font-size: .72rem;
+  overflow-wrap: anywhere;
+}
+.resume-template-product-impact .pi-contact a {
+  color: #f0a18a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.resume-template-product-impact .pi-ribbon {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  margin-top: 1.3rem;
+  padding-top: .75rem;
+  border-top: 1px solid #555860;
+  color: #f4d4c9;
+  font-size: .58rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+.resume-template-product-impact .pi-ribbon i {
+  display: block;
+  flex: 1;
+  height: 1px;
+  background: #7e7773;
+}
+.resume-template-product-impact .pi-layout {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 29%) minmax(0, 1fr);
+  gap: 1.4rem;
+  padding: 1.45rem 1.7rem 1.8rem;
+}
+.resume-template-product-impact .pi-sidebar {
+  align-self: start;
+  padding: .9rem .85rem;
+  background: #f4ece3;
+  border-top: 3px solid var(--pi-accent);
+}
+.resume-template-product-impact .pi-sidebar-label {
+  margin: 0 0 .85rem;
+  color: var(--pi-accent);
+  font-size: .61rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+.resume-template-product-impact .pi-main { min-width: 0; }
+.resume-template-product-impact section { margin: 0 0 1.1rem; }
+.resume-template-product-impact section.is-hidden { display: none; }
+.resume-template-product-impact h2 {
+  margin: 0 0 .5rem;
+  padding-bottom: .32rem;
+  border-bottom: 1px solid var(--pi-line);
+  color: #343b44;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.resume-template-product-impact .pi-sidebar h2 {
+  color: #8f4b39;
+  border-color: #d8c6b8;
+}
+.resume-template-product-impact h3 {
+  margin: 0;
+  font-size: .91rem;
+  line-height: 1.35;
+}
+.resume-template-product-impact p { margin: .22rem 0 .36rem; }
+.resume-template-product-impact a { color: #9d4b35; overflow-wrap: anywhere; }
+.resume-template-product-impact .pi-entry {
+  margin-bottom: .86rem;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.resume-template-product-impact .pi-entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .3rem .65rem;
+}
+.resume-template-product-impact .pi-meta {
+  color: var(--pi-muted);
+  font-size: .73rem;
+}
+.resume-template-product-impact .pi-date {
+  flex: 0 0 auto;
+  margin: 0;
+  color: var(--pi-muted);
+  font-size: .68rem;
+  text-align: right;
+}
+.resume-template-product-impact .pi-entry-summary {
+  color: #494950;
+  font-weight: 600;
+}
+.resume-template-product-impact ul { margin: .28rem 0; padding-left: 1rem; }
+.resume-template-product-impact li { margin: .13rem 0; padding-left: .08rem; }
+.resume-template-product-impact .pi-outcome {
+  margin-top: .35rem;
+  padding: .48rem .55rem;
+  border-left: 3px solid var(--pi-accent);
+  background: #fbf0e9;
+}
+.resume-template-product-impact .pi-outcome strong {
+  color: #934a36;
+  font-size: .61rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.resume-template-product-impact .pi-outcome p { margin: .12rem 0 0; }
+.resume-template-product-impact .pi-skill-group { margin-bottom: .6rem; }
+.resume-template-product-impact .pi-skill-group h3 {
+  margin: 0 0 .28rem;
+  color: #6b5349;
+  font-size: .69rem;
+}
+.resume-template-product-impact .pi-skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.resume-template-product-impact .pi-skill-tags li {
+  margin: 0;
+  padding: .18rem .34rem;
+  border: 1px solid #dfc9bc;
+  background: #fffbf6;
+  color: #654b41;
+  font-size: .67rem;
+  overflow-wrap: anywhere;
+}
+.resume-template-product-impact .pi-compact { margin: .22rem 0; font-size: .73rem; }
+.resume-template-product-impact .pi-custom-section { margin-bottom: 1rem; }
+@media (max-width: 560px) {
+  .resume-preview.template-product_impact .resume-template-product-impact { font-size: 10px; }
+  .resume-template-product-impact .pi-header { padding: 1.2rem 1rem 1rem; }
+  .resume-template-product-impact .pi-header-top { align-items: flex-start; flex-direction: column; }
+  .resume-template-product-impact .pi-header-grid { grid-template-columns: 1fr; }
+  .resume-template-product-impact .pi-ribbon { flex-wrap: wrap; gap: .4rem; }
+  .resume-template-product-impact .pi-layout { grid-template-columns: 1fr; padding: 1rem; gap: 1rem; }
+  .resume-template-product-impact .pi-sidebar { order: 2; }
+  .resume-template-product-impact .pi-entry-head { flex-wrap: wrap; }
+  .resume-template-product-impact .pi-date { text-align: left; }
+}
+@media print {
+  .resume-preview.template-product_impact .resume-template-product-impact {
+    min-height: 0;
+    font-size: 9.5px;
+    background: #fff;
+  }
+  .resume-template-product-impact .pi-header,
+  .resume-template-product-impact .pi-sidebar,
+  .resume-template-product-impact .pi-outcome {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .resume-template-product-impact .pi-entry { break-inside: avoid; page-break-inside: avoid; }
+}
