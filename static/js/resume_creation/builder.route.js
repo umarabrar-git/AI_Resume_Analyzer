@@ -6,6 +6,7 @@ import { renderAIInsightsTemplate } from "./templates/ai/ai_insights.js";
 import { renderCreativePortfolioTemplate } from "./templates/creative/creative_portfolio.js";
 import { renderATSProfessionalTemplate } from "./templates/professional/ats_professional.js";
 import { renderProductManagerTemplate } from "./templates/product/product_manager.js";
+import { renderProductImpactTemplate } from "./templates/product/product_impact.js";
 import { renderDataScientistTemplate } from "./templates/technical/data_scientist.js";
 import { renderCybersecurityAnalystTemplate } from "./templates/technical/cybersecurity_analyst.js";
 const root = document.querySelector("[data-resume-builder]");
@@ -1764,6 +1765,10 @@ if (!root) {
     }
     if (template === "product_manager") {
       elements.resumePreview.innerHTML = renderProductManagerTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "product_impact") {
+      elements.resumePreview.innerHTML = renderProductImpactTemplate(content, escapeHtml);
       return;
     }
     if (template === "data_scientist") {
