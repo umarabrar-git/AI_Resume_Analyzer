@@ -1167,3 +1167,37 @@ def test_product_impact_template_is_premium_and_selectable_by_pro_user(client):
 
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "product_impact"
+
+def test_technical_blueprint_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("technical-blueprint")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    technical_blueprint = next(
+        item for item in catalog if item["id"] == "technical_blueprint"
+    )
+    assert technical_blueprint["available"] is False
+    assert technical_blueprint["label"] == "Technical Blueprint"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    technical_blueprint = next(
+        item for item in catalog if item["id"] == "technical_blueprint"
+    )
+    assert technical_blueprint["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Technical Blueprint Resume",
+            "template": "technical_blueprint",
+        },
+    )
+
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "technical_blueprint"
