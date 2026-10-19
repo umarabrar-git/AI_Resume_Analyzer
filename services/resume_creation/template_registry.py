@@ -69,6 +69,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#a3d65c",
         "font": "Helvetica",
     },
+    "technical_blueprint": {
+        "label": "Technical Blueprint",
+        "tier": "premium",
+        "layout": "technical-blueprint",
+        "accent": "#2d6cdf",
+        "font": "Helvetica",
+    },
     "executive": {
         "label": "Executive",
         "tier": "premium",
