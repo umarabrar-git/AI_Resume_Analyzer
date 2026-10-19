@@ -9,6 +9,7 @@
 @import url("./templates/product/product_impact.css");
 @import url("./templates/technical/data_scientist.css");
 @import url("./templates/technical/cybersecurity_analyst.css");
+@import url("./templates/technical/technical_blueprint.css");
 
 
 .template-sample--product-impact {
@@ -66,6 +67,34 @@
     opacity: .95;
 }
 
+
+
+.template-sample--technical-blueprint {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #18243a 0 35%, #ffffff 35% 100%);
+    border-bottom: 3px solid #2d6cdf;
+}
+.template-sample--technical-blueprint::before {
+    content: "";
+    position: absolute;
+    top: 14%;
+    left: 9%;
+    width: 48%;
+    height: 3%;
+    background: #75a5ff;
+    box-shadow: 0 7px 0 rgba(255,255,255,.9), 0 14px 0 rgba(255,255,255,.62);
+}
+.template-sample--technical-blueprint::after {
+    content: "";
+    position: absolute;
+    right: 8%;
+    bottom: 11%;
+    width: 25%;
+    height: 48%;
+    border: 2px solid #2d6cdf;
+    background: repeating-linear-gradient(to bottom, #d7e5fb 0 3px, transparent 3px 8px);
+}
 
 .template-sample--data-scientist {
     position: relative;
