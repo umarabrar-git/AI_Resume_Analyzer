@@ -1,0 +1,213 @@
+.resume-preview.template-technical_blueprint {
+  padding: 0;
+  background: #e7ebf2;
+  color: #19253a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.resume-preview.template-technical_blueprint .resume-template-technical-blueprint {
+  --tb-ink: #18243a;
+  --tb-muted: #66738a;
+  --tb-line: #d8e0eb;
+  --tb-blue: #2d6cdf;
+  width: 100%;
+  min-height: 1050px;
+  background: #fff;
+  color: var(--tb-ink);
+  font-size: 10px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+.resume-template-technical-blueprint *,
+.resume-template-technical-blueprint *::before,
+.resume-template-technical-blueprint *::after { box-sizing: border-box; }
+.resume-template-technical-blueprint .tb-header {
+  padding: 1.6rem 1.8rem 1.1rem;
+  color: #f6f8fc;
+  background: #18243a;
+  border-bottom: 5px solid var(--tb-blue);
+}
+.resume-template-technical-blueprint .tb-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: .75rem;
+  color: #a9bbd7;
+  font-size: .61rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+.resume-template-technical-blueprint .tb-code {
+  padding: .15rem .35rem;
+  color: #d9e6ff;
+  border: 1px solid #51627d;
+  font-family: Consolas, "Courier New", monospace;
+  white-space: nowrap;
+}
+.resume-template-technical-blueprint .tb-identity {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(8rem, .8fr);
+  align-items: end;
+  gap: 1rem;
+  margin-top: 1.15rem;
+}
+.resume-template-technical-blueprint h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  line-height: 1.05;
+  letter-spacing: -.04em;
+  overflow-wrap: anywhere;
+}
+.resume-template-technical-blueprint .tb-role {
+  margin: .42rem 0 0;
+  color: #75a5ff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.resume-template-technical-blueprint .tb-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .22rem;
+  color: #d6dfed;
+  font-size: .7rem;
+  overflow-wrap: anywhere;
+}
+.resume-template-technical-blueprint .tb-contact a {
+  color: #9dc0ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.resume-template-technical-blueprint .tb-header-rule {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-top: 1.2rem;
+}
+.resume-template-technical-blueprint .tb-header-rule span {
+  width: 2rem;
+  height: 3px;
+  background: #75a5ff;
+}
+.resume-template-technical-blueprint .tb-header-rule small {
+  color: #a9bbd7;
+  font-size: .58rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+.resume-template-technical-blueprint .tb-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(8rem, 31%);
+  gap: 1.25rem;
+  padding: 1.45rem 1.6rem 1.7rem;
+}
+.resume-template-technical-blueprint .tb-main { min-width: 0; }
+.resume-template-technical-blueprint .tb-sidebar {
+  align-self: start;
+  padding: .9rem;
+  background: #f0f4fa;
+  border-top: 3px solid var(--tb-blue);
+}
+.resume-template-technical-blueprint section { margin: 0 0 1.05rem; }
+.resume-template-technical-blueprint section.is-hidden { display: none; }
+.resume-template-technical-blueprint h2 {
+  display: flex;
+  align-items: baseline;
+  gap: .35rem;
+  margin: 0 0 .5rem;
+  padding-bottom: .32rem;
+  border-bottom: 1px solid var(--tb-line);
+  color: #243a5b;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+}
+.resume-template-technical-blueprint .tb-marker {
+  color: var(--tb-blue);
+  font-family: Consolas, "Courier New", monospace;
+}
+.resume-template-technical-blueprint h3 { margin: 0; font-size: .91rem; line-height: 1.35; }
+.resume-template-technical-blueprint p { margin: .22rem 0 .35rem; }
+.resume-template-technical-blueprint a { color: #245fc6; overflow-wrap: anywhere; }
+.resume-template-technical-blueprint .tb-entry {
+  margin-bottom: .85rem;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.resume-template-technical-blueprint .tb-entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .3rem .6rem;
+}
+.resume-template-technical-blueprint .tb-meta { color: var(--tb-muted); font-size: .72rem; }
+.resume-template-technical-blueprint .tb-date {
+  flex: 0 0 auto;
+  margin: 0;
+  color: var(--tb-muted);
+  font-size: .67rem;
+  text-align: right;
+}
+.resume-template-technical-blueprint ul { margin: .28rem 0; padding-left: 1rem; }
+.resume-template-technical-blueprint li { margin: .12rem 0; padding-left: .08rem; }
+.resume-template-technical-blueprint .tb-result {
+  padding: .38rem .5rem;
+  border-left: 2px solid var(--tb-blue);
+  background: #f2f6ff;
+}
+.resume-template-technical-blueprint .tb-skill-group { margin-bottom: .62rem; }
+.resume-template-technical-blueprint .tb-skill-group h3 {
+  margin: 0 0 .25rem;
+  color: #4c5e7a;
+  font-size: .68rem;
+}
+.resume-template-technical-blueprint .tb-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.resume-template-technical-blueprint .tb-tags li {
+  margin: 0;
+  padding: .16rem .32rem;
+  border: 1px solid #c9d8ef;
+  background: #fff;
+  color: #2e4e7c;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: .64rem;
+  overflow-wrap: anywhere;
+}
+.resume-template-technical-blueprint .tb-compact { margin: .22rem 0; font-size: .72rem; }
+.resume-template-technical-blueprint .tb-sidebar-note {
+  margin-top: 1.2rem;
+  padding: .6rem;
+  border: 1px solid #d5dfef;
+  font-family: Consolas, "Courier New", monospace;
+}
+.resume-template-technical-blueprint .tb-sidebar-note span {
+  display: block;
+  margin-bottom: .25rem;
+  color: var(--tb-muted);
+  font-size: .58rem;
+}
+.resume-template-technical-blueprint .tb-sidebar-note strong { color: #245fc6; font-size: .65rem; }
+@media (max-width: 560px) {
+  .resume-template-technical-blueprint .tb-header { padding: 1.2rem 1rem 1rem; }
+  .resume-template-technical-blueprint .tb-identity { grid-template-columns: 1fr; }
+  .resume-template-technical-blueprint .tb-content { grid-template-columns: 1fr; padding: 1rem; }
+  .resume-template-technical-blueprint .tb-sidebar { order: 2; }
+  .resume-template-technical-blueprint .tb-entry-head { flex-wrap: wrap; }
+  .resume-template-technical-blueprint .tb-date { text-align: left; }
+}
+@media print {
+  .resume-preview.template-technical_blueprint .resume-template-technical-blueprint { min-height: 0; }
+  .resume-template-technical-blueprint .tb-header,
+  .resume-template-technical-blueprint .tb-sidebar,
+  .resume-template-technical-blueprint .tb-result {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .resume-template-technical-blueprint .tb-entry { break-inside: avoid; page-break-inside: avoid; }
+}
