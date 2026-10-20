@@ -4,6 +4,7 @@ import { renderExecutiveLeadershipTemplate } from "./templates/executive/executi
 import { renderCareerAnalyticsTemplate } from "./templates/analytics/career_analytics.js";
 import { renderAIInsightsTemplate } from "./templates/ai/ai_insights.js";
 import { renderCreativePortfolioTemplate } from "./templates/creative/creative_portfolio.js";
+import { renderCreativeStudioTemplate } from "./templates/creative/creative_studio.js";
 import { renderATSProfessionalTemplate } from "./templates/professional/ats_professional.js";
 import { renderProductManagerTemplate } from "./templates/product/product_manager.js";
 import { renderProductImpactTemplate } from "./templates/product/product_impact.js";
@@ -1758,6 +1759,10 @@ if (!root) {
     }
     if (template === "creative_portfolio") {
       elements.resumePreview.innerHTML = renderCreativePortfolioTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "creative_studio") {
+      elements.resumePreview.innerHTML = renderCreativeStudioTemplate(content, escapeHtml);
       return;
     }
     if (template === "ats_professional") {
