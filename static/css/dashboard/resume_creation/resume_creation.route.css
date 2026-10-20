@@ -4,6 +4,7 @@
 @import url("./templates/analytics/career_analytics.css");
 @import url("./templates/ai/ai_insights.css");
 @import url("./templates/creative/creative_portfolio.css");
+@import url("./templates/creative/creative_studio.css");
 @import url("./templates/professional/ats_professional.css");
 @import url("./templates/product/product_manager.css");
 @import url("./templates/product/product_impact.css");
@@ -68,6 +69,33 @@
 }
 
 
+
+.template-sample--creative-studio {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #20212b 0 34%, #f8f7f2 34% 100%);
+    border-bottom: 3px solid #5667f2;
+}
+.template-sample--creative-studio::before {
+    content: "";
+    position: absolute;
+    top: 16%;
+    left: 43%;
+    width: 42%;
+    height: 5%;
+    background: #20212b;
+    box-shadow: 0 9px 0 #aeb4c7, 0 18px 0 #d8dbe4;
+}
+.template-sample--creative-studio::after {
+    content: "";
+    position: absolute;
+    left: 8%;
+    bottom: 12%;
+    width: 18%;
+    height: 38%;
+    background: #5667f2;
+    box-shadow: 0 0 0 5px rgba(255,255,255,.14);
+}
 
 .template-sample--technical-blueprint {
     position: relative;
