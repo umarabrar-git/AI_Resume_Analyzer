@@ -48,6 +48,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#315f58",
         "font": "Times-Roman",
     },
+    "research_dossier": {
+        "label": "Research Dossier",
+        "tier": "premium",
+        "layout": "research-dossier",
+        "accent": "#28766f",
+        "font": "Helvetica",
+    },
     "technical": {
         "label": "Technical",
         "tier": "free",
