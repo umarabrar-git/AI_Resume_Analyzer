@@ -1,5 +1,6 @@
 import { renderModernEditorialTemplate } from "./templates/professional/modern_editorial.js";
 import { renderAcademicResearchTemplate } from "./templates/academic/academic_research.js";
+import { renderResearchDossierTemplate } from "./templates/academic/research_dossier.js";
 import { renderExecutiveLeadershipTemplate } from "./templates/executive/executive_leadership.js";
 import { renderCareerAnalyticsTemplate } from "./templates/analytics/career_analytics.js";
 import { renderAIInsightsTemplate } from "./templates/ai/ai_insights.js";
@@ -1743,6 +1744,10 @@ if (!root) {
     }
     if (template === "academic_research") {
       elements.resumePreview.innerHTML = renderAcademicResearchTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "research_dossier") {
+      elements.resumePreview.innerHTML = renderResearchDossierTemplate(content, escapeHtml);
       return;
     }
     if (template === "executive") {
