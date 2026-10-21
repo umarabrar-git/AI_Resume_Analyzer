@@ -1,5 +1,6 @@
 @import url("./templates/professional/modern_editorial.css");
 @import url("./templates/academic/academic_research.css");
+@import url("./templates/academic/research_dossier.css");
 @import url("./templates/executive/executive_leadership.css");
 @import url("./templates/analytics/career_analytics.css");
 @import url("./templates/ai/ai_insights.css");
@@ -12,6 +13,33 @@
 @import url("./templates/technical/cybersecurity_analyst.css");
 @import url("./templates/technical/technical_blueprint.css");
 
+
+.template-sample--research-dossier {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #182c3e 0 43%, #ffffff 43% 100%);
+    border-bottom: 3px solid #28766f;
+}
+.template-sample--research-dossier::before {
+    content: "";
+    position: absolute;
+    top: 13%;
+    left: 8%;
+    width: 42%;
+    height: 4%;
+    background: #9fd4cd;
+    box-shadow: 0 8px 0 rgba(255,255,255,.9), 0 16px 0 rgba(255,255,255,.6);
+}
+.template-sample--research-dossier::after {
+    content: "";
+    position: absolute;
+    right: 8%;
+    bottom: 11%;
+    width: 28%;
+    height: 35%;
+    border-left: 2px solid #28766f;
+    background: repeating-linear-gradient(to bottom, #d9e8e6 0 3px, transparent 3px 8px);
+}
 
 .template-sample--product-impact {
     position: relative;
