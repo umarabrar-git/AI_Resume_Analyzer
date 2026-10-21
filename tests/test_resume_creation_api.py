@@ -1237,3 +1237,38 @@ def test_creative_studio_template_is_premium_and_selectable_by_pro_user(client):
 
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "creative_studio"
+
+
+def test_research_dossier_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("research-dossier")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    research_dossier = next(
+        item for item in catalog if item["id"] == "research_dossier"
+    )
+    assert research_dossier["available"] is False
+    assert research_dossier["label"] == "Research Dossier"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    research_dossier = next(
+        item for item in catalog if item["id"] == "research_dossier"
+    )
+    assert research_dossier["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Research Dossier Resume",
+            "template": "research_dossier",
+        },
+    )
+
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "research_dossier"
