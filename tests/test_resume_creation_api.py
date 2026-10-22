@@ -1272,3 +1272,34 @@ def test_research_dossier_template_is_premium_and_selectable_by_pro_user(client)
 
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "research_dossier"
+
+def test_campus_launch_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("campus-launch")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    campus_launch = next(item for item in catalog if item["id"] == "campus_launch")
+    assert campus_launch["available"] is False
+    assert campus_launch["label"] == "Campus Launch"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    campus_launch = next(item for item in catalog if item["id"] == "campus_launch")
+    assert campus_launch["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Campus Launch Resume",
+            "template": "campus_launch",
+        },
+    )
+
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "campus_launch"
+
