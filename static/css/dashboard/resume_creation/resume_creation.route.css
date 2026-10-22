@@ -1,6 +1,36 @@
 @import url("./templates/professional/modern_editorial.css");
 @import url("./templates/academic/academic_research.css");
 @import url("./templates/academic/research_dossier.css");
+
+@import url("./templates/student/campus_launch.css");
+
+.template-sample--campus-launch {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #303b70 0 43%, #f4f6fb 43% 100%);
+  border-bottom: 3px solid #f0b35a;
+}
+.template-sample--campus-launch::before {
+  content: "";
+  position: absolute;
+  top: 13%;
+  left: 9%;
+  width: 45%;
+  height: 4%;
+  background: #f4d69a;
+  box-shadow: 0 8px 0 rgba(255,255,255,.9), 0 16px 0 rgba(255,255,255,.55);
+}
+.template-sample--campus-launch::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  bottom: 10%;
+  width: 28%;
+  height: 38%;
+  border-left: 2px solid #394779;
+  background: repeating-linear-gradient(to bottom, #cdd4e7 0 3px, transparent 3px 8px);
+}
+
 @import url("./templates/executive/executive_leadership.css");
 @import url("./templates/analytics/career_analytics.css");
 @import url("./templates/ai/ai_insights.css");
