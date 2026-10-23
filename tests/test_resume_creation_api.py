@@ -1303,3 +1303,38 @@ def test_campus_launch_template_is_premium_and_selectable_by_pro_user(client):
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "campus_launch"
 
+
+
+def test_operations_atlas_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("operations-atlas")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    operations_atlas = next(
+        item for item in catalog if item["id"] == "operations_atlas"
+    )
+    assert operations_atlas["available"] is False
+    assert operations_atlas["label"] == "Operations Atlas"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    operations_atlas = next(
+        item for item in catalog if item["id"] == "operations_atlas"
+    )
+    assert operations_atlas["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Operations Atlas Resume",
+            "template": "operations_atlas",
+        },
+    )
+
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "operations_atlas"
