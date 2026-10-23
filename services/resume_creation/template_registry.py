@@ -97,6 +97,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#9b742d",
         "font": "Times-Roman",
     },
+    "operations_atlas": {
+        "label": "Operations Atlas",
+        "tier": "premium",
+        "layout": "operations-atlas",
+        "accent": "#246b55",
+        "font": "Helvetica",
+    },
     "ai_insights": {
         "label": "AI Insights",
         "tier": "premium",
