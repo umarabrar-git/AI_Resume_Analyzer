@@ -32,6 +32,7 @@
 }
 
 @import url("./templates/executive/executive_leadership.css");
+@import url("./templates/executive/operations_atlas.css");
 @import url("./templates/analytics/career_analytics.css");
 @import url("./templates/ai/ai_insights.css");
 @import url("./templates/creative/creative_portfolio.css");
@@ -760,4 +761,35 @@
     .template-card-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+}
+
+
+.template-sample--operations-atlas {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, #203b32 0 39%, #eef1e9 39% 100%);
+  border: 1px solid #d5ddd3;
+}
+.template-sample--operations-atlas::before {
+  content: "OA";
+  position: absolute;
+  top: 9%;
+  left: 9%;
+  display: grid;
+  width: 18%;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid #c37b50;
+  color: #f1c9a9;
+  font: 700 7px Georgia, serif;
+}
+.template-sample--operations-atlas::after {
+  content: "";
+  position: absolute;
+  top: 17%;
+  right: 12%;
+  width: 48%;
+  height: 5%;
+  background: #d8c5a5;
+  box-shadow: 0 9px 0 -1px #e8be8e, 0 28px 0 -1px #8ea59a, -43px 57px 0 -1px #246b55, 0 70px 0 -1px #c9d4c9;
 }
