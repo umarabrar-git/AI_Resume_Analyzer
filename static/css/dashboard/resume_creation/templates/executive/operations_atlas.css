@@ -1,0 +1,201 @@
+.resume-preview.template-operations_atlas {
+  --oa-ink: #202f2b;
+  --oa-muted: #62736c;
+  --oa-green: #246b55;
+  --oa-copper: #c37b50;
+  background: #f3f4ef;
+  color: var(--oa-ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.resume-preview.template-operations_atlas .resume-template-operations-atlas {
+  max-width: 920px;
+  margin: 0 auto;
+  background: #fffefb;
+  line-height: 1.55;
+  box-shadow: 0 10px 34px rgba(25, 45, 37, .09);
+}
+.resume-template-operations-atlas .oa-header {
+  position: relative;
+  padding: 2.25rem 2.7rem 1.9rem;
+  color: #f8f8f2;
+  background: #203b32;
+  overflow: hidden;
+}
+.resume-template-operations-atlas .oa-header::after {
+  content: "";
+  position: absolute;
+  right: -2.8rem;
+  top: -4.5rem;
+  width: 13rem;
+  height: 13rem;
+  border: 1px solid rgba(232, 190, 142, .35);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1.5rem rgba(232, 190, 142, .05), 0 0 0 3rem rgba(232, 190, 142, .04);
+  pointer-events: none;
+}
+.resume-template-operations-atlas .oa-brand {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  margin-bottom: 1.25rem;
+  color: #d8c5a5;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+.resume-template-operations-atlas .oa-mark {
+  display: inline-grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid #c37b50;
+  color: #f1c9a9;
+  font-family: Georgia, serif;
+  font-size: .8rem;
+  letter-spacing: 0;
+}
+.resume-template-operations-atlas .oa-header h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: 75%;
+  color: #fffefb;
+  font: 700 clamp(1.8rem, 4vw, 2.7rem)/1.08 Georgia, "Times New Roman", serif;
+  overflow-wrap: anywhere;
+}
+.resume-template-operations-atlas .oa-title {
+  margin: .55rem 0 .7rem;
+  color: #e8be8e;
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.resume-template-operations-atlas .oa-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .55rem;
+  color: #dce5df;
+  font-size: .72rem;
+  overflow-wrap: anywhere;
+}
+.resume-template-operations-atlas .oa-contact a {
+  color: #f1c9a9;
+  text-decoration: none;
+}
+.resume-template-operations-atlas .oa-header-rule {
+  width: 5rem;
+  height: 3px;
+  margin-top: 1.4rem;
+  background: var(--oa-copper);
+}
+.resume-template-operations-atlas .oa-layout {
+  display: grid;
+  grid-template-columns: minmax(205px, .72fr) minmax(0, 1.7fr);
+}
+.resume-template-operations-atlas .oa-rail {
+  padding: 1.8rem 1.45rem 2.1rem;
+  background: #eef1e9;
+  border-right: 1px solid #dce2d8;
+}
+.resume-template-operations-atlas .oa-main {
+  padding: 1.8rem 2.3rem 2.2rem;
+}
+.resume-template-operations-atlas section {
+  margin: 0 0 1.55rem;
+  break-inside: avoid;
+}
+.resume-template-operations-atlas section:last-child { margin-bottom: 0; }
+.resume-template-operations-atlas h2 {
+  margin: 0 0 .75rem;
+  padding-bottom: .45rem;
+  border-bottom: 1px solid #d8c6ad;
+  color: var(--oa-green);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.resume-template-operations-atlas h3 {
+  margin: 0;
+  color: #263c33;
+  font-size: .88rem;
+  line-height: 1.4;
+}
+.resume-template-operations-atlas p { margin: .35rem 0 .6rem; }
+.resume-template-operations-atlas .oa-entry {
+  margin: 0 0 1rem;
+  break-inside: avoid;
+}
+.resume-template-operations-atlas .oa-entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .2rem .7rem;
+}
+.resume-template-operations-atlas .oa-date,
+.resume-template-operations-atlas .oa-meta {
+  color: var(--oa-muted);
+  font-size: .72rem;
+  overflow-wrap: anywhere;
+}
+.resume-template-operations-atlas .oa-meta { margin-top: .2rem; }
+.resume-template-operations-atlas ul {
+  margin: .45rem 0 0;
+  padding-left: 1.1rem;
+  font-size: .81rem;
+}
+.resume-template-operations-atlas li { margin: .18rem 0; }
+.resume-template-operations-atlas .oa-skill-group { margin-bottom: .8rem; }
+.resume-template-operations-atlas .oa-skill-group h3 {
+  margin-bottom: .4rem;
+  color: #5a6b61;
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.resume-template-operations-atlas .oa-skill-cloud,
+.resume-template-operations-atlas .oa-skill-group > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+.resume-template-operations-atlas .oa-skill {
+  display: inline-block;
+  padding: .22rem .4rem;
+  border: 1px solid #ccd8ce;
+  border-radius: 2px;
+  color: #344d40;
+  font-size: .68rem;
+  overflow-wrap: anywhere;
+}
+.resume-template-operations-atlas .oa-language {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .3rem;
+  font-size: .78rem;
+}
+.resume-template-operations-atlas .oa-language span { color: var(--oa-muted); }
+@media (max-width: 640px) {
+  .resume-preview.template-operations_atlas .resume-template-operations-atlas { box-shadow: none; }
+  .resume-template-operations-atlas .oa-header { padding: 1.6rem 1.35rem; }
+  .resume-template-operations-atlas .oa-header h1 { max-width: 100%; }
+  .resume-template-operations-atlas .oa-layout { grid-template-columns: 1fr; }
+  .resume-template-operations-atlas .oa-rail { order: 2; border-right: 0; border-top: 1px solid #dce2d8; }
+  .resume-template-operations-atlas .oa-main { order: 1; padding: 1.5rem 1.35rem; }
+}
+@media print {
+  .resume-preview.template-operations_atlas .resume-template-operations-atlas {
+    max-width: none;
+    box-shadow: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .resume-template-operations-atlas .oa-header { padding: 1.5rem 2rem; }
+  .resume-template-operations-atlas .oa-layout { grid-template-columns: minmax(175px, .72fr) minmax(0, 1.7fr); }
+  .resume-template-operations-atlas .oa-rail { padding: 1.3rem 1rem; }
+  .resume-template-operations-atlas .oa-main { padding: 1.3rem 1.6rem; }
+  .resume-template-operations-atlas section,
+  .resume-template-operations-atlas .oa-entry { break-inside: avoid; }
+}
