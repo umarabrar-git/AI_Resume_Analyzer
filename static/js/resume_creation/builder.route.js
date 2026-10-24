@@ -14,6 +14,7 @@ import { renderProductImpactTemplate } from "./templates/product/product_impact.
 import { renderDataScientistTemplate } from "./templates/technical/data_scientist.js";
 import { renderCybersecurityAnalystTemplate } from "./templates/technical/cybersecurity_analyst.js";
 import { renderTechnicalBlueprintTemplate } from "./templates/technical/technical_blueprint.js";
+import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_compass.js";
 const root = document.querySelector("[data-resume-builder]");
 
 if (!root) {
@@ -1762,6 +1763,10 @@ if (!root) {
     }
     if (template === "operations_atlas") {
       elements.resumePreview.innerHTML = renderOperationsAtlasTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "clinical_compass") {
+      elements.resumePreview.innerHTML = renderClinicalCompassTemplate(content, escapeHtml);
       return;
     }
     if (template === "career_analytics") {
