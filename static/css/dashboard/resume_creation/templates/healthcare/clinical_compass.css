@@ -1,0 +1,38 @@
+/* Template: Healthcare / Clinical Compass */
+.resume-preview.template-clinical_compass{padding:0;background:#fff}
+.resume-template-clinical-compass{--cc-ink:#193b3c;--cc-muted:#5c7471;--cc-accent:#0c766e;--cc-copper:#c17b52;--cc-paper:#f6f4ed;--cc-line:#d9e4dc;display:block;width:100%;min-height:1050px;background:#fff;color:var(--cc-ink);font-family:Arial,Helvetica,sans-serif;line-height:1.45;box-sizing:border-box}
+.resume-template-clinical-compass *{box-sizing:border-box}
+.cc-header{padding:34px 38px 25px;background:var(--cc-ink);color:#fff;border-bottom:5px solid var(--cc-copper)}
+.cc-kicker{margin-bottom:12px;color:#c9ded7;font-size:7px;font-weight:800;letter-spacing:1.6px}
+.cc-header h1{margin:0;font-size:25px;line-height:1.12;font-weight:800;overflow-wrap:anywhere}
+.cc-header>p{margin:7px 0 12px;color:#e2b18e;font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
+.cc-contact{display:flex;flex-wrap:wrap;gap:5px 10px;color:#e0eae5;font-size:7.5px;overflow-wrap:anywhere}
+.cc-contact a{color:#e8c6ac;text-decoration:none}
+.cc-layout{display:grid;grid-template-columns:minmax(0, .72fr) minmax(0, 1.55fr);min-height:850px}
+.cc-rail{padding:27px 20px 30px;background:var(--cc-paper);border-right:1px solid var(--cc-line)}
+.cc-main{padding:27px 29px 34px;min-width:0}
+.resume-template-clinical-compass section{margin:0 0 20px;min-width:0}
+.resume-template-clinical-compass section.is-hidden{display:none}
+.resume-template-clinical-compass h2{margin:0 0 9px;padding-bottom:6px;border-bottom:1px solid var(--cc-line);color:var(--cc-accent);font-size:9px;line-height:1.25;font-weight:800;letter-spacing:.7px;text-transform:uppercase}
+.cc-rail h2{border-bottom-color:#cbd9d1}
+.cc-summary,.cc-main>section>p{margin:0;font-size:8.3px;line-height:1.65;overflow-wrap:anywhere}
+.cc-skill-group{margin-bottom:10px;font-size:7.5px;line-height:1.5;overflow-wrap:anywhere}
+.cc-skill-group strong{display:block;margin-bottom:3px;color:var(--cc-accent);font-size:7.8px}
+.cc-skill-group span{display:block;color:#415c58}
+.cc-entry{margin-bottom:13px;break-inside:avoid;page-break-inside:avoid}
+.cc-entry:last-child{margin-bottom:0}
+.cc-entry-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.cc-entry h3{margin:0;font-size:8.8px;line-height:1.4;font-weight:800;overflow-wrap:anywhere}
+.cc-date{flex:0 0 auto;color:var(--cc-muted);font-size:6.8px;white-space:nowrap}
+.cc-subtitle{margin:3px 0 4px;color:var(--cc-accent);font-size:7.7px;font-weight:700;overflow-wrap:anywhere}
+.cc-entry p{margin:4px 0;font-size:7.7px;line-height:1.5;overflow-wrap:anywhere}
+.cc-entry ul{margin:5px 0 0;padding-left:14px}
+.cc-entry li{margin-bottom:3px;font-size:7.6px;line-height:1.45;overflow-wrap:anywhere}
+.cc-cert{display:grid;gap:2px;margin-bottom:10px;font-size:7.5px;overflow-wrap:anywhere}
+.cc-cert strong{color:var(--cc-ink)}
+.cc-cert span,.cc-cert small{color:var(--cc-muted)}
+.cc-language{display:flex;flex-direction:column;gap:2px;margin-bottom:8px;font-size:7.5px}
+.cc-language span{color:var(--cc-muted)}
+.cc-methods{color:var(--cc-muted)}
+@media(max-width:600px){.cc-header{padding:25px 22px 20px}.cc-layout{grid-template-columns:1fr}.cc-rail{padding:22px;border-right:0;border-bottom:1px solid var(--cc-line)}.cc-main{padding:22px}.cc-rail section{margin-bottom:15px}.cc-entry-head{gap:6px}.cc-date{white-space:normal;text-align:right}}
+@media print{.resume-preview.template-clinical_compass{padding:0;box-shadow:none;border:0}.resume-template-clinical-compass{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.cc-layout{min-height:0}.resume-template-clinical-compass section{break-inside:avoid;page-break-inside:avoid}}
