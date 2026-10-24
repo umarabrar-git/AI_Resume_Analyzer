@@ -1338,3 +1338,40 @@ def test_operations_atlas_template_is_premium_and_selectable_by_pro_user(client)
 
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "operations_atlas"
+
+
+
+def test_clinical_compass_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("clinical-compass")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    clinical_compass = next(
+        item for item in catalog if item["id"] == "clinical_compass"
+    )
+    assert clinical_compass["available"] is False
+    assert clinical_compass["label"] == "Clinical Compass"
+    assert clinical_compass["layout"] == "clinical-compass"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    clinical_compass = next(
+        item for item in catalog if item["id"] == "clinical_compass"
+    )
+    assert clinical_compass["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Clinical Compass Resume",
+            "template": "clinical_compass",
+        },
+    )
+
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "clinical_compass"
