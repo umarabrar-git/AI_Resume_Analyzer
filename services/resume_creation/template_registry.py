@@ -104,6 +104,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#246b55",
         "font": "Helvetica",
     },
+    "finance_ledger": {
+        "label": "Finance Ledger",
+        "tier": "premium",
+        "layout": "finance-ledger",
+        "accent": "#1f765d",
+        "font": "Helvetica",
+    },
     "clinical_compass": {
         "label": "Clinical Compass",
         "tier": "premium",
