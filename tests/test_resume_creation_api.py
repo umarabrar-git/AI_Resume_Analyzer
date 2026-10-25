@@ -1375,3 +1375,35 @@ def test_clinical_compass_template_is_premium_and_selectable_by_pro_user(client)
 
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "clinical_compass"
+
+
+
+def test_finance_ledger_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("finance-ledger")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    finance_ledger = next(item for item in catalog if item["id"] == "finance_ledger")
+    assert finance_ledger["available"] is False
+    assert finance_ledger["label"] == "Finance Ledger"
+    assert finance_ledger["layout"] == "finance-ledger"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    finance_ledger = next(item for item in catalog if item["id"] == "finance_ledger")
+    assert finance_ledger["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Finance Ledger Resume",
+            "template": "finance_ledger",
+        },
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "finance_ledger"
