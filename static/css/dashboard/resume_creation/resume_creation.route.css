@@ -3,6 +3,7 @@
 @import url("./templates/academic/research_dossier.css");
 @import url("./templates/executive/operations_atlas.css");
 @import url("./templates/healthcare/clinical_compass.css");
+@import url("./templates/finance/finance_ledger.css");
 
 @import url("./templates/student/campus_launch.css");
 
@@ -821,4 +822,26 @@
   height: 36%;
   background: #0c766e;
   box-shadow: 30px 0 0 -8px #b8cfc4, 58px 0 0 -8px #d4e0d8;
+}
+
+
+.template-sample--finance-ledger {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #163b31 0 38%, #fbfaf5 38% 100%);
+  border-bottom: 3px solid #c5a15a;
+}
+.template-sample--finance-ledger::before {
+  content: "";
+  position: absolute;
+  top: 14%; left: 8%; width: 44%; height: 4%;
+  background: #e6d6a7;
+  box-shadow: 0 8px 0 rgba(255,255,255,.9), 0 16px 0 rgba(255,255,255,.6);
+}
+.template-sample--finance-ledger::after {
+  content: "";
+  position: absolute;
+  right: 9%; bottom: 13%; width: 30%; height: 33%;
+  border-left: 2px solid #1f765d;
+  background: repeating-linear-gradient(to bottom, #d9e8df 0 3px, transparent 3px 8px);
 }
