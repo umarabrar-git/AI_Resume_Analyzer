@@ -2,6 +2,7 @@ import { renderModernEditorialTemplate } from "./templates/professional/modern_e
 import { renderAcademicResearchTemplate } from "./templates/academic/academic_research.js";
 import { renderResearchDossierTemplate } from "./templates/academic/research_dossier.js";
 import { renderCampusLaunchTemplate } from "./templates/student/campus_launch.js";
+import { renderFirstMileTemplate } from "./templates/student/first_mile.js";
 import { renderExecutiveLeadershipTemplate } from "./templates/executive/executive_leadership.js";
 import { renderOperationsAtlasTemplate } from "./templates/executive/operations_atlas.js";
 import { renderCareerAnalyticsTemplate } from "./templates/analytics/career_analytics.js";
@@ -1756,6 +1757,10 @@ if (!root) {
     }
     if (template === "campus_launch") {
       elements.resumePreview.innerHTML = renderCampusLaunchTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "first_mile") {
+      elements.resumePreview.innerHTML = renderFirstMileTemplate(content, escapeHtml);
       return;
     }
     if (template === "executive") {
