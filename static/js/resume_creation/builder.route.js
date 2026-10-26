@@ -19,6 +19,7 @@ import { renderCybersecurityAnalystTemplate } from "./templates/technical/cybers
 import { renderTechnicalBlueprintTemplate } from "./templates/technical/technical_blueprint.js";
 import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_compass.js";
 import { renderFinanceLedgerTemplate } from "./templates/finance/finance_ledger.js";
+import { renderCapitalBriefTemplate } from "./templates/finance/capital_brief.js";
 const root = document.querySelector("[data-resume-builder]");
 
 if (!root) {
@@ -1779,6 +1780,10 @@ if (!root) {
     }
     if (template === "operations_atlas") {
       elements.resumePreview.innerHTML = renderOperationsAtlasTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "capital_brief") {
+      elements.resumePreview.innerHTML = renderCapitalBriefTemplate(content, escapeHtml);
       return;
     }
     if (template === "finance_ledger") {
