@@ -62,6 +62,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#f0b35a",
         "font": "Helvetica",
     },
+    "first_mile": {
+        "label": "First Mile",
+        "tier": "premium",
+        "layout": "student-first-mile",
+        "accent": "#b6533c",
+        "font": "Helvetica",
+    },
     "technical": {
         "label": "Technical",
         "tier": "free",
