@@ -7,6 +7,7 @@
 
 @import url("./templates/student/campus_launch.css");
 @import url("./templates/student/first_mile.css");
+@import url("./templates/student/launchpad.css");
 
 .template-sample--campus-launch {
   position: relative;
@@ -874,4 +875,33 @@
   height: 30%;
   border-top: 2px solid #b6533c;
   background: repeating-linear-gradient(to bottom, #d9c9b8 0 3px, transparent 3px 8px);
+}
+
+
+/* Launchpad student template picker miniature */
+.template-sample--launchpad {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #182943 0 39%, #fbf8f1 39% 100%);
+  border-bottom: 3px solid #e2a84b;
+}
+.template-sample--launchpad::before {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 9%;
+  width: 42%;
+  height: 4%;
+  background: #f2c876;
+  box-shadow: 0 8px 0 rgba(255,255,255,.92), 0 16px 0 rgba(255,255,255,.62);
+}
+.template-sample--launchpad::after {
+  content: "";
+  position: absolute;
+  right: 9%;
+  bottom: 12%;
+  width: 31%;
+  height: 37%;
+  border-left: 2px solid #315b96;
+  background: repeating-linear-gradient(to bottom, #d8e1ef 0 3px, transparent 3px 8px);
 }
