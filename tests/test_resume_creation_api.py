@@ -1439,3 +1439,36 @@ def test_first_mile_template_is_premium_and_selectable_by_pro_user(client):
     )
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "first_mile"
+
+
+
+def test_launchpad_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("launchpad-student")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    launchpad = next(item for item in catalog if item["id"] == "launchpad")
+    assert launchpad["available"] is False
+    assert launchpad["label"] == "Launchpad"
+    assert launchpad["layout"] == "student-launchpad"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    launchpad = next(item for item in catalog if item["id"] == "launchpad")
+    assert launchpad["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Launchpad Student Resume",
+            "template": "launchpad",
+        },
+    )
+
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "launchpad"
