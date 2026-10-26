@@ -69,6 +69,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#b6533c",
         "font": "Helvetica",
     },
+    "launchpad": {
+        "label": "Launchpad",
+        "tier": "premium",
+        "layout": "student-launchpad",
+        "accent": "#315b96",
+        "font": "Helvetica",
+    },
     "technical": {
         "label": "Technical",
         "tier": "free",
