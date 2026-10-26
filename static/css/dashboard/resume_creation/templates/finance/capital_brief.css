@@ -1,0 +1,42 @@
+/* Template: Finance / Capital Brief */
+.resume-preview.template-capital_brief{padding:0;background:#fff}
+.resume-template-capital-brief{--cb-ink:#172b4d;--cb-muted:#5d6b82;--cb-teal:#0b8b87;--cb-pale:#edf5f6;--cb-line:#dbe4ec;display:block;width:100%;min-height:1050px;background:#fff;color:var(--cb-ink);font-family:Arial,Helvetica,sans-serif;line-height:1.48;box-sizing:border-box}
+.resume-template-capital-brief *{box-sizing:border-box}
+.cb-header{padding:30px 36px 25px;background:#f7fafc;border-top:7px solid var(--cb-ink);border-bottom:1px solid var(--cb-line)}
+.cb-topline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--cb-teal);font-size:7px;font-weight:800;letter-spacing:1.4px;margin-bottom:23px}
+.cb-header h1{margin:0;color:var(--cb-ink);font-size:28px;line-height:1.12;font-weight:800;overflow-wrap:anywhere}
+.cb-title{margin:8px 0 0;color:var(--cb-muted);font-size:12px;font-weight:600}
+.cb-contact{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;color:var(--cb-muted);font-size:8px}
+.cb-contact span{color:var(--cb-teal)}
+.cb-contact a{color:var(--cb-teal);text-decoration:none}
+.cb-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:17px 36px;border-bottom:1px solid var(--cb-line)}
+.cb-metrics div{display:flex;align-items:center;gap:10px;min-width:0}
+.cb-metrics strong{color:var(--cb-teal);font-size:20px;line-height:1;font-weight:800}
+.cb-metrics span{font-size:7px;letter-spacing:1px;font-weight:800;color:var(--cb-muted)}
+.cb-layout{display:grid;grid-template-columns:minmax(150px,31%) minmax(0,1fr)}
+.cb-rail{padding:27px 22px 32px;background:var(--cb-pale);border-right:1px solid var(--cb-line)}
+.cb-main{padding:27px 30px 35px;min-width:0}
+.resume-template-capital-brief section{margin:0 0 25px;break-inside:avoid;page-break-inside:avoid}
+.resume-template-capital-brief section h2{margin:0 0 12px;padding-bottom:7px;border-bottom:2px solid var(--cb-teal);font-size:10px;line-height:1.3;text-transform:uppercase;letter-spacing:1.1px;color:var(--cb-ink)}
+.resume-template-capital-brief p{margin:6px 0;font-size:9px;line-height:1.55;color:#35445c;overflow-wrap:anywhere}
+.cb-entry{margin:0 0 18px}
+.cb-entry-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.cb-entry h3,.cb-project h3{margin:0;font-size:10px;line-height:1.35;color:var(--cb-ink);overflow-wrap:anywhere}
+.cb-entry-head p{margin:4px 0;color:var(--cb-teal);font-weight:700;font-size:8px}
+.cb-entry time,.cb-credential time{flex:0 0 auto;color:var(--cb-muted);font-size:7px;text-align:right}
+.cb-entry ul,.cb-project ul{padding-left:15px;margin:7px 0 0}
+.cb-entry li,.cb-project li{margin:3px 0;color:#35445c;font-size:8px;line-height:1.5}
+.cb-skill{margin:0 0 13px}
+.cb-skill strong,.cb-skill span{display:block;font-size:8px;line-height:1.5;overflow-wrap:anywhere}
+.cb-skill strong{margin-bottom:3px;color:var(--cb-teal)}
+.cb-skill span{color:#35445c}
+.cb-credential{display:grid;gap:3px;margin:0 0 12px}
+.cb-credential strong,.cb-language strong{font-size:8px;overflow-wrap:anywhere}
+.cb-credential span,.cb-language span{color:var(--cb-muted);font-size:8px}
+.cb-credential time{text-align:left}
+.cb-language{display:flex;justify-content:space-between;gap:8px;margin:0 0 9px}
+.cb-language span{text-align:right}
+.cb-project{padding:0 0 13px;margin:0 0 15px;border-bottom:1px solid var(--cb-line)}
+.cb-tools{color:var(--cb-teal)!important;font-size:7px!important;font-weight:700;letter-spacing:.4px}
+@media(max-width:600px){.cb-header{padding:25px 21px 20px}.cb-topline{margin-bottom:17px}.cb-header h1{font-size:24px}.cb-metrics{padding:14px 21px;gap:5px}.cb-metrics strong{font-size:17px}.cb-metrics span{font-size:6px}.cb-layout{grid-template-columns:1fr}.cb-rail{padding:22px;border-right:0;border-bottom:1px solid var(--cb-line)}.cb-main{padding:22px}.cb-entry-head{gap:6px}.cb-entry time{white-space:normal}}
+@media print{.resume-preview.template-capital_brief{padding:0;box-shadow:none;border:0}.resume-template-capital-brief{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.cb-layout{min-height:0}}
