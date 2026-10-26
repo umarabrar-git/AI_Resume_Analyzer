@@ -118,6 +118,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#1f765d",
         "font": "Helvetica",
     },
+    "capital_brief": {
+        "label": "Capital Brief",
+        "tier": "premium",
+        "layout": "capital-brief",
+        "accent": "#0b8b87",
+        "font": "Helvetica",
+    },
     "clinical_compass": {
         "label": "Clinical Compass",
         "tier": "premium",
