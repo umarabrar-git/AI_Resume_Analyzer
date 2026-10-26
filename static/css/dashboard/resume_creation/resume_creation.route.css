@@ -6,6 +6,7 @@
 @import url("./templates/finance/finance_ledger.css");
 
 @import url("./templates/student/campus_launch.css");
+@import url("./templates/student/first_mile.css");
 
 .template-sample--campus-launch {
   position: relative;
@@ -844,4 +845,33 @@
   right: 9%; bottom: 13%; width: 30%; height: 33%;
   border-left: 2px solid #1f765d;
   background: repeating-linear-gradient(to bottom, #d9e8df 0 3px, transparent 3px 8px);
+}
+
+
+/* First Mile student resume preview */
+.template-sample--first-mile {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f7f0e7 0 65%, #b6533c 65% 100%);
+  border-top: 3px solid #263d4a;
+}
+.template-sample--first-mile::before {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 9%;
+  width: 44%;
+  height: 5%;
+  background: #263d4a;
+  box-shadow: 0 9px 0 #b6533c, 0 18px 0 #d7c8b7;
+}
+.template-sample--first-mile::after {
+  content: "";
+  position: absolute;
+  left: 9%;
+  bottom: 12%;
+  width: 55%;
+  height: 30%;
+  border-top: 2px solid #b6533c;
+  background: repeating-linear-gradient(to bottom, #d9c9b8 0 3px, transparent 3px 8px);
 }
