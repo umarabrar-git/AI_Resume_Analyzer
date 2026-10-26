@@ -5,6 +5,7 @@
 @import url("./templates/executive/operations_atlas.css");
 @import url("./templates/healthcare/clinical_compass.css");
 @import url("./templates/finance/finance_ledger.css");
+@import url("./templates/finance/capital_brief.css");
 
 @import url("./templates/student/campus_launch.css");
 @import url("./templates/student/first_mile.css");
@@ -827,6 +828,27 @@
   box-shadow: 30px 0 0 -8px #b8cfc4, 58px 0 0 -8px #d4e0d8;
 }
 
+
+.template-sample--capital-brief {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #172b4d 0 33%, #f7fafc 33% 100%);
+  border-top: 3px solid #0b8b87;
+}
+.template-sample--capital-brief::before {
+  content: "";
+  position: absolute;
+  top: 12%; left: 8%; width: 48%; height: 4%;
+  background: #8ad2cd;
+  box-shadow: 0 8px 0 rgba(255,255,255,.95), 0 16px 0 rgba(255,255,255,.65);
+}
+.template-sample--capital-brief::after {
+  content: "";
+  position: absolute;
+  left: 8%; right: 8%; bottom: 12%; height: 25%;
+  border-top: 2px solid #0b8b87;
+  background: repeating-linear-gradient(to bottom, #dbe6ef 0 3px, transparent 3px 8px);
+}
 
 .template-sample--finance-ledger {
   position: relative;
