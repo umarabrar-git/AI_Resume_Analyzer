@@ -1,6 +1,7 @@
 @import url("./templates/professional/modern_editorial.css");
 @import url("./templates/academic/academic_research.css");
 @import url("./templates/academic/research_dossier.css");
+@import url("./templates/academic/scholars_folio.css");
 @import url("./templates/executive/operations_atlas.css");
 @import url("./templates/healthcare/clinical_compass.css");
 @import url("./templates/finance/finance_ledger.css");
@@ -905,3 +906,9 @@
   border-left: 2px solid #315b96;
   background: repeating-linear-gradient(to bottom, #d8e1ef 0 3px, transparent 3px 8px);
 }
+
+
+/* Scholar's Folio academic template picker miniature */
+.template-sample--scholars-folio{position:relative;overflow:hidden;background:linear-gradient(90deg,#f5efe5 0 30%,#fffdf8 30% 100%);border-top:3px solid #702f43}
+.template-sample--scholars-folio::before{content:"";position:absolute;top:13%;left:38%;width:46%;height:4%;background:#702f43;box-shadow:0 8px 0 #c6a6a0,0 16px 0 #e3d6ca}
+.template-sample--scholars-folio::after{content:"";position:absolute;left:8%;bottom:12%;width:20%;height:38%;border-top:2px solid #b28a57;background:repeating-linear-gradient(to bottom,#d8c6b9 0 3px,transparent 3px 8px)}
