@@ -1,6 +1,7 @@
 import { renderModernEditorialTemplate } from "./templates/professional/modern_editorial.js";
 import { renderAcademicResearchTemplate } from "./templates/academic/academic_research.js";
 import { renderResearchDossierTemplate } from "./templates/academic/research_dossier.js";
+import { renderScholarsFolioTemplate } from "./templates/academic/scholars_folio.js";
 import { renderCampusLaunchTemplate } from "./templates/student/campus_launch.js";
 import { renderFirstMileTemplate } from "./templates/student/first_mile.js";
 import { renderLaunchpadTemplate } from "./templates/student/launchpad.js";
@@ -1754,6 +1755,10 @@ if (!root) {
     }
     if (template === "research_dossier") {
       elements.resumePreview.innerHTML = renderResearchDossierTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "scholars_folio") {
+      elements.resumePreview.innerHTML = renderScholarsFolioTemplate(content, escapeHtml);
       return;
     }
     if (template === "campus_launch") {
