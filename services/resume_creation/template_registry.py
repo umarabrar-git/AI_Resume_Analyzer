@@ -181,6 +181,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#21496e",
         "font": "Helvetica",
     },
+    "career_compass": {
+        "label": "Career Compass",
+        "tier": "premium",
+        "layout": "career-compass",
+        "accent": "#2f7561",
+        "font": "Helvetica",
+    },
     "product_manager": {
         "label": "Product Manager",
         "tier": "premium",
