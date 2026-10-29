@@ -1,0 +1,189 @@
+/* Career Compass: professional timeline with a strategic sidebar. */
+.resume-preview.template-career-compass { padding: 0; background: #fbfaf6; }
+.resume-template-career-compass {
+  --cc-ink: #193b35;
+  --cc-green: #2f7561;
+  --cc-gold: #c28d45;
+  --cc-paper: #fbfaf6;
+  --cc-muted: #65746f;
+  color: #24332f;
+  background: var(--cc-paper);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.resume-template-career-compass * { box-sizing: border-box; }
+.resume-template-career-compass .cc-header {
+  padding: 34px 38px 26px;
+  color: #f9f7ef;
+  background: var(--cc-ink);
+  border-bottom: 5px solid var(--cc-gold);
+}
+.resume-template-career-compass .cc-overline,
+.resume-template-career-compass .cc-identity,
+.resume-template-career-compass .cc-contact,
+.resume-template-career-compass .cc-entry-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+.resume-template-career-compass .cc-overline {
+  color: #e5c995;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.resume-template-career-compass .cc-identity { align-items: center; margin: 24px 0 18px; }
+.resume-template-career-compass h1 {
+  margin: 0;
+  font-size: clamp(30px, 5vw, 43px);
+  font-weight: 750;
+  letter-spacing: -.045em;
+  line-height: 1.08;
+}
+.resume-template-career-compass .cc-title { margin: 9px 0 0; color: #d8e4dc; font-size: 15px; }
+.resume-template-career-compass .cc-emblem {
+  position: relative;
+  display: grid;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  place-items: center;
+  border: 1px solid rgba(226, 196, 139, .75);
+  border-radius: 50%;
+  color: #e7c78c;
+  font-family: Georgia, serif;
+  font-size: 18px;
+}
+.resume-template-career-compass .cc-emblem span {
+  position: absolute;
+  width: 1px;
+  height: 54px;
+  background: rgba(226, 196, 139, .65);
+}
+.resume-template-career-compass .cc-emblem span:nth-child(2) { transform: rotate(45deg); }
+.resume-template-career-compass .cc-emblem span:nth-child(3) { transform: rotate(-45deg); }
+.resume-template-career-compass .cc-emblem b { z-index: 1; padding: 0 4px; background: var(--cc-ink); }
+.resume-template-career-compass .cc-contact {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px 12px;
+  color: #e0e8e1;
+  font-size: 10px;
+}
+.resume-template-career-compass .cc-contact a { color: #f0d8a8; text-decoration: none; }
+.resume-template-career-compass .cc-contact a:hover { text-decoration: underline; }
+.resume-template-career-compass .cc-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(170px, .8fr);
+  gap: 28px;
+  padding: 30px 38px 38px;
+}
+.resume-template-career-compass .cc-section { margin: 0 0 25px; break-inside: avoid; }
+.resume-template-career-compass .cc-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  color: var(--cc-ink);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.resume-template-career-compass .cc-section-heading i {
+  display: block;
+  height: 1px;
+  flex: 1;
+  background: #d9d8ca;
+}
+.resume-template-career-compass .cc-summary { margin: 0; font-size: 12px; }
+.resume-template-career-compass .cc-meta {
+  margin: 3px 0 0;
+  color: var(--cc-muted);
+  font-size: 10px;
+}
+.resume-template-career-compass .cc-entry-top { align-items: flex-start; }
+.resume-template-career-compass h3 {
+  margin: 0;
+  color: #213b34;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+.resume-template-career-compass time { color: var(--cc-muted); font-size: 9px; text-align: right; white-space: nowrap; }
+.resume-template-career-compass .cc-timeline-item,
+.resume-template-career-compass .cc-entry { position: relative; margin: 0 0 17px; }
+.resume-template-career-compass .cc-timeline-item { padding: 0 0 2px 17px; border-left: 1px solid #cbd8cf; }
+.resume-template-career-compass .cc-timeline-dot {
+  position: absolute;
+  top: 4px;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--cc-paper);
+  border-radius: 50%;
+  background: var(--cc-green);
+  box-shadow: 0 0 0 1px var(--cc-green);
+}
+.resume-template-career-compass article p { margin: 7px 0 0; font-size: 10.5px; }
+.resume-template-career-compass ul { margin: 7px 0 0; padding-left: 16px; }
+.resume-template-career-compass li { margin: 3px 0; font-size: 10px; }
+.resume-template-career-compass .cc-detail { color: #43544e; }
+.resume-template-career-compass .cc-project { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 9px; margin: 0 0 15px; }
+.resume-template-career-compass .cc-project-index {
+  color: var(--cc-gold);
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.resume-template-career-compass .cc-tools { color: var(--cc-green); font-size: 9px; font-weight: 700; }
+.resume-template-career-compass .cc-sidebar {
+  padding-left: 20px;
+  border-left: 1px solid #e0dfd4;
+}
+.resume-template-career-compass .cc-focus {
+  margin: 0;
+  padding: 12px;
+  border-left: 3px solid var(--cc-gold);
+  background: #f0efe5;
+  color: #334a42;
+  font-size: 11px;
+}
+.resume-template-career-compass .cc-skill { margin: 0 0 12px; }
+.resume-template-career-compass .cc-skill strong,
+.resume-template-career-compass .cc-credential strong,
+.resume-template-career-compass .cc-language strong {
+  display: block;
+  color: var(--cc-ink);
+  font-size: 10px;
+}
+.resume-template-career-compass .cc-skill span,
+.resume-template-career-compass .cc-credential span,
+.resume-template-career-compass .cc-language span {
+  display: block;
+  margin-top: 3px;
+  color: var(--cc-muted);
+  font-size: 10px;
+}
+.resume-template-career-compass .cc-skill-flat { margin: 0; font-size: 10px; }
+.resume-template-career-compass .cc-credential,
+.resume-template-career-compass .cc-language { margin: 0 0 11px; }
+.resume-template-career-compass .cc-credential time { display: block; margin-top: 3px; text-align: left; }
+@media (max-width: 640px) {
+  .resume-template-career-compass .cc-header { padding: 26px 22px 22px; }
+  .resume-template-career-compass .cc-overline { gap: 10px; font-size: 8px; }
+  .resume-template-career-compass .cc-body { grid-template-columns: 1fr; padding: 24px 22px; gap: 0; }
+  .resume-template-career-compass .cc-sidebar { padding: 22px 0 0; border-left: 0; border-top: 1px solid #e0dfd4; }
+  .resume-template-career-compass .cc-entry-top { gap: 8px; }
+}
+@media print {
+  .resume-preview.template-career-compass { padding: 0; }
+  .resume-template-career-compass { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .resume-template-career-compass .cc-header { padding: 26px 30px 20px; }
+  .resume-template-career-compass .cc-body { padding: 24px 30px 30px; gap: 22px; }
+  .resume-template-career-compass .cc-section,
+  .resume-template-career-compass article { break-inside: avoid; }
+}
