@@ -12,6 +12,7 @@ import { renderAIInsightsTemplate } from "./templates/ai/ai_insights.js";
 import { renderCreativePortfolioTemplate } from "./templates/creative/creative_portfolio.js";
 import { renderCreativeStudioTemplate } from "./templates/creative/creative_studio.js";
 import { renderATSProfessionalTemplate } from "./templates/professional/ats_professional.js";
+import { renderCareerCompassTemplate } from "./templates/professional/career_compass.js";
 import { renderProductManagerTemplate } from "./templates/product/product_manager.js";
 import { renderProductImpactTemplate } from "./templates/product/product_impact.js";
 import { renderDataScientistTemplate } from "./templates/technical/data_scientist.js";
@@ -1812,6 +1813,10 @@ if (!root) {
     }
     if (template === "ats_professional") {
       elements.resumePreview.innerHTML = renderATSProfessionalTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "career_compass") {
+      elements.resumePreview.innerHTML = renderCareerCompassTemplate(content, escapeHtml);
       return;
     }
     if (template === "product_manager") {
