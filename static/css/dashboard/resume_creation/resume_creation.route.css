@@ -1,4 +1,5 @@
 @import url("./templates/professional/modern_editorial.css");
+@import url("./templates/professional/career_compass.css");
 @import url("./templates/academic/academic_research.css");
 @import url("./templates/academic/research_dossier.css");
 @import url("./templates/academic/scholars_folio.css");
@@ -934,3 +935,32 @@
 .template-sample--scholars-folio{position:relative;overflow:hidden;background:linear-gradient(90deg,#f5efe5 0 30%,#fffdf8 30% 100%);border-top:3px solid #702f43}
 .template-sample--scholars-folio::before{content:"";position:absolute;top:13%;left:38%;width:46%;height:4%;background:#702f43;box-shadow:0 8px 0 #c6a6a0,0 16px 0 #e3d6ca}
 .template-sample--scholars-folio::after{content:"";position:absolute;left:8%;bottom:12%;width:20%;height:38%;border-top:2px solid #b28a57;background:repeating-linear-gradient(to bottom,#d8c6b9 0 3px,transparent 3px 8px)}
+
+
+/* Career Compass professional template picker miniature */
+.template-sample--career-compass {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #193b35 0 37%, #fbfaf6 37% 100%);
+  border-bottom: 3px solid #c28d45;
+}
+.template-sample--career-compass::before {
+  content: "";
+  position: absolute;
+  top: 14%;
+  left: 9%;
+  width: 44%;
+  height: 4%;
+  background: #e8d2a7;
+  box-shadow: 0 8px 0 rgba(255,255,255,.88), 0 16px 0 rgba(255,255,255,.58);
+}
+.template-sample--career-compass::after {
+  content: "";
+  position: absolute;
+  right: 9%;
+  bottom: 12%;
+  width: 28%;
+  height: 38%;
+  border-left: 2px solid #2f7561;
+  background: repeating-linear-gradient(to bottom, #d5e1d8 0 3px, transparent 3px 8px);
+}
