@@ -146,6 +146,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#0c766e",
         "font": "Helvetica",
     },
+    "carepath": {
+        "label": "CarePath",
+        "tier": "premium",
+        "layout": "healthcare-carepath",
+        "accent": "#287c91",
+        "font": "Helvetica",
+    },
     "ai_insights": {
         "label": "AI Insights",
         "tier": "premium",

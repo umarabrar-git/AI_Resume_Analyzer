@@ -5,6 +5,7 @@
 @import url("./templates/academic/scholars_folio.css");
 @import url("./templates/executive/operations_atlas.css");
 @import url("./templates/healthcare/clinical_compass.css");
+@import url("./templates/healthcare/carepath.css");
 @import url("./templates/finance/finance_ledger.css");
 @import url("./templates/finance/capital_brief.css");
 
@@ -964,3 +965,9 @@
   border-left: 2px solid #2f7561;
   background: repeating-linear-gradient(to bottom, #d5e1d8 0 3px, transparent 3px 8px);
 }
+
+
+/* CarePath healthcare template picker miniature */
+.template-sample--carepath{position:relative;overflow:hidden;background:linear-gradient(90deg,#e9f3f5 0 29%,#fff 29% 100%);border-top:3px solid #183b4a}
+.template-sample--carepath::before{content:"";position:absolute;top:14%;left:37%;width:48%;height:4%;background:#287c91;box-shadow:0 8px 0 #b7d0d7,0 16px 0 #dce8eb}
+.template-sample--carepath::after{content:"";position:absolute;left:8%;bottom:12%;width:20%;height:37%;border-radius:3px;background:repeating-linear-gradient(to bottom,#a8c9d1 0 3px,transparent 3px 8px);border-top:2px solid #287c91}
