@@ -19,6 +19,7 @@ import { renderDataScientistTemplate } from "./templates/technical/data_scientis
 import { renderCybersecurityAnalystTemplate } from "./templates/technical/cybersecurity_analyst.js";
 import { renderTechnicalBlueprintTemplate } from "./templates/technical/technical_blueprint.js";
 import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_compass.js";
+import { renderCarePathTemplate } from "./templates/healthcare/carepath.js";
 import { renderFinanceLedgerTemplate } from "./templates/finance/finance_ledger.js";
 import { renderCapitalBriefTemplate } from "./templates/finance/capital_brief.js";
 const root = document.querySelector("[data-resume-builder]");
@@ -1793,6 +1794,10 @@ if (!root) {
     }
     if (template === "clinical_compass") {
       elements.resumePreview.innerHTML = renderClinicalCompassTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "carepath") {
+      elements.resumePreview.innerHTML = renderCarePathTemplate(content, escapeHtml);
       return;
     }
     if (template === "career_analytics") {
