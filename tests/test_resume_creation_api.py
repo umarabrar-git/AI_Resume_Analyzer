@@ -1597,3 +1597,34 @@ def test_carepath_healthcare_template_is_premium_and_selectable_by_pro_user(clie
     )
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "carepath"
+
+
+def test_market_signal_template_is_available_and_selectable(client):
+    user = _make_user("market-signal")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    market_signal = next(item for item in catalog if item["id"] == "market_signal")
+    assert market_signal["available"] is False
+    assert market_signal["label"] == "Market Signal"
+    assert market_signal["layout"] == "market-signal"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    market_signal = next(item for item in catalog if item["id"] == "market_signal")
+    assert market_signal["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Market Research Resume",
+            "template": "market_signal",
+        },
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "market_signal"
