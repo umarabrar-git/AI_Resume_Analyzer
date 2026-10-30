@@ -1,0 +1,41 @@
+/* Template: Finance / Market Signal */
+.resume-preview.template-market_signal{padding:0;background:#fff}
+.resume-template-market-signal{--ms-ink:#14251f;--ms-muted:#62736b;--ms-green:#24a879;--ms-pale:#edf5f0;--ms-line:#d8e4dc;display:block;width:100%;min-height:1050px;background:#fff;color:var(--ms-ink);font-family:Arial,Helvetica,sans-serif;line-height:1.48;box-sizing:border-box}
+.resume-template-market-signal *{box-sizing:border-box}
+.ms-header{padding:31px 36px 26px;background:#14251f;color:#fff;border-bottom:5px solid var(--ms-green)}
+.ms-topline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#8ed8b6;font-size:7px;font-weight:800;letter-spacing:1.35px;margin-bottom:24px}
+.ms-header h1{margin:0;color:#fff;font-size:29px;line-height:1.12;font-weight:800;overflow-wrap:anywhere}
+.ms-title{margin:8px 0 0;color:#c5d5cc;font-size:12px;font-weight:600}
+.ms-contact{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;color:#d8e7df;font-size:8px}
+.ms-contact span{color:#8ed8b6}
+.ms-contact a{color:#8ed8b6;text-decoration:none}
+.ms-thesis{display:grid;gap:7px;padding:18px 36px;background:#e6f2eb;border-bottom:1px solid var(--ms-line)}
+.ms-thesis span{color:#27865f;font-size:7px;font-weight:800;letter-spacing:1.4px}
+.ms-thesis strong{font-size:10px;letter-spacing:.65px;color:#193d2d}
+.ms-layout{display:grid;grid-template-columns:minmax(150px,31%) minmax(0,1fr)}
+.ms-rail{padding:27px 22px 32px;background:var(--ms-pale);border-right:1px solid var(--ms-line)}
+.ms-main{padding:28px 30px 36px;min-width:0}
+.resume-template-market-signal section{margin:0 0 25px;break-inside:avoid;page-break-inside:avoid}
+.resume-template-market-signal section h2{margin:0 0 12px;padding-bottom:7px;border-bottom:2px solid var(--ms-green);font-size:10px;line-height:1.3;text-transform:uppercase;letter-spacing:1px;color:var(--ms-ink)}
+.resume-template-market-signal p{margin:6px 0;font-size:9px;line-height:1.58;color:#394b42;overflow-wrap:anywhere}
+.ms-entry{margin:0 0 18px}
+.ms-entry-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.ms-entry h3,.ms-project h3{margin:0;font-size:10px;line-height:1.35;color:var(--ms-ink);overflow-wrap:anywhere}
+.ms-entry-head p{margin:4px 0;color:#27865f;font-weight:700;font-size:8px}
+.ms-entry time,.ms-credential time{flex:0 0 auto;color:var(--ms-muted);font-size:7px;text-align:right}
+.ms-entry ul,.ms-project ul{padding-left:15px;margin:7px 0 0}
+.ms-entry li,.ms-project li{margin:3px 0;color:#394b42;font-size:8px;line-height:1.5}
+.ms-skill{margin:0 0 13px}
+.ms-skill strong,.ms-skill span{display:block;font-size:8px;line-height:1.5;overflow-wrap:anywhere}
+.ms-skill strong{margin-bottom:3px;color:#27865f}
+.ms-skill span{color:#394b42}
+.ms-credential{display:grid;gap:3px;margin:0 0 12px}
+.ms-credential strong,.ms-language strong{font-size:8px;overflow-wrap:anywhere}
+.ms-credential span,.ms-language span{color:var(--ms-muted);font-size:8px}
+.ms-credential time{text-align:left}
+.ms-language{display:flex;justify-content:space-between;gap:8px;margin:0 0 9px}
+.ms-language span{text-align:right}
+.ms-project{padding:0 0 14px;margin:0 0 15px;border-bottom:1px solid var(--ms-line)}
+.ms-tools{color:#27865f!important;font-size:7px!important;font-weight:700;letter-spacing:.4px}
+@media(max-width:600px){.ms-header{padding:25px 21px 20px}.ms-topline{margin-bottom:17px}.ms-header h1{font-size:24px}.ms-thesis{padding:15px 21px}.ms-layout{grid-template-columns:1fr}.ms-rail{padding:22px;border-right:0;border-bottom:1px solid var(--ms-line)}.ms-main{padding:22px}.ms-entry-head{gap:6px}.ms-entry time{white-space:normal}}
+@media print{.resume-preview.template-market_signal{padding:0;box-shadow:none;border:0}.resume-template-market-signal{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.ms-layout{min-height:0}}
