@@ -22,6 +22,7 @@ import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_c
 import { renderCarePathTemplate } from "./templates/healthcare/carepath.js";
 import { renderFinanceLedgerTemplate } from "./templates/finance/finance_ledger.js";
 import { renderCapitalBriefTemplate } from "./templates/finance/capital_brief.js";
+import { renderMarketSignalTemplate } from "./templates/finance/market_signal.js";
 const root = document.querySelector("[data-resume-builder]");
 
 if (!root) {
@@ -1786,6 +1787,10 @@ if (!root) {
     }
     if (template === "capital_brief") {
       elements.resumePreview.innerHTML = renderCapitalBriefTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "market_signal") {
+      elements.resumePreview.innerHTML = renderMarketSignalTemplate(content, escapeHtml);
       return;
     }
     if (template === "finance_ledger") {
