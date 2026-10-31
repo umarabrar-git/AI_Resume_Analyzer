@@ -43,6 +43,7 @@
 
 @import url("./templates/executive/executive_leadership.css");
 @import url("./templates/analytics/career_analytics.css");
+@import url("./templates/analytics/insight_grid.css");
 @import url("./templates/ai/ai_insights.css");
 @import url("./templates/creative/creative_portfolio.css");
 @import url("./templates/creative/creative_studio.css");
@@ -972,3 +973,32 @@
 .template-sample--carepath{position:relative;overflow:hidden;background:linear-gradient(90deg,#e9f3f5 0 29%,#fff 29% 100%);border-top:3px solid #183b4a}
 .template-sample--carepath::before{content:"";position:absolute;top:14%;left:37%;width:48%;height:4%;background:#287c91;box-shadow:0 8px 0 #b7d0d7,0 16px 0 #dce8eb}
 .template-sample--carepath::after{content:"";position:absolute;left:8%;bottom:12%;width:20%;height:37%;border-radius:3px;background:repeating-linear-gradient(to bottom,#a8c9d1 0 3px,transparent 3px 8px);border-top:2px solid #287c91}
+
+
+/* Insight Grid analytics template picker miniature */
+.template-sample--insight-grid {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #18334a 0 31%, #f7fafc 31% 100%);
+  border-top: 3px solid #3977a8;
+}
+.template-sample--insight-grid::before {
+  content: "";
+  position: absolute;
+  top: 17%;
+  left: 39%;
+  width: 46%;
+  height: 4%;
+  background: #3977a8;
+  box-shadow: 0 8px 0 #b8cbd9, 0 16px 0 #dce6ed;
+}
+.template-sample--insight-grid::after {
+  content: "";
+  position: absolute;
+  right: 9%;
+  bottom: 12%;
+  width: 42%;
+  height: 32%;
+  border: 1px solid #b8cbd9;
+  background: repeating-linear-gradient(to right, #dce9f1 0 5px, transparent 5px 10px);
+}
