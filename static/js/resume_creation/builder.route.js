@@ -8,6 +8,7 @@ import { renderLaunchpadTemplate } from "./templates/student/launchpad.js";
 import { renderExecutiveLeadershipTemplate } from "./templates/executive/executive_leadership.js";
 import { renderOperationsAtlasTemplate } from "./templates/executive/operations_atlas.js";
 import { renderCareerAnalyticsTemplate } from "./templates/analytics/career_analytics.js";
+import { renderInsightGridTemplate } from "./templates/analytics/insight_grid.js";
 import { renderAIInsightsTemplate } from "./templates/ai/ai_insights.js";
 import { renderCreativePortfolioTemplate } from "./templates/creative/creative_portfolio.js";
 import { renderCreativeStudioTemplate } from "./templates/creative/creative_studio.js";
@@ -1807,6 +1808,10 @@ if (!root) {
     }
     if (template === "career_analytics") {
       elements.resumePreview.innerHTML = renderCareerAnalyticsTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "insight_grid") {
+      elements.resumePreview.innerHTML = renderInsightGridTemplate(content, escapeHtml);
       return;
     }
     if (template === "ai_insights") {
