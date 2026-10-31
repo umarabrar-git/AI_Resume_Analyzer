@@ -1628,3 +1628,36 @@ def test_market_signal_template_is_available_and_selectable(client):
     )
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "market_signal"
+
+
+
+
+def test_insight_grid_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("insight-grid")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    insight_grid = next(item for item in catalog if item["id"] == "insight_grid")
+    assert insight_grid["available"] is False
+    assert insight_grid["label"] == "Insight Grid"
+    assert insight_grid["layout"] == "insight-grid"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    insight_grid = next(item for item in catalog if item["id"] == "insight_grid")
+    assert insight_grid["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Business Intelligence Analyst Resume",
+            "template": "insight_grid",
+        },
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "insight_grid"
