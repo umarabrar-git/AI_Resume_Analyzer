@@ -1630,7 +1630,9 @@ def test_market_signal_template_is_available_and_selectable(client):
     assert created.get_json()["resume"]["template"] == "market_signal"
 
 
-\n\ndef test_insight_grid_template_is_premium_and_selectable_by_pro_user(client):
+
+
+def test_insight_grid_template_is_premium_and_selectable_by_pro_user(client):
     user = _make_user("insight-grid")
     _auth_session(client, user.id)
 
