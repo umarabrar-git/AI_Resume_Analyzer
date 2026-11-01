@@ -89,16 +89,16 @@ export function renderBoardroomBriefTemplate(content, escapeHtml) {
     '<h1>' + e(personal.full_name || "Your Name") + "</h1>" +
     (personal.professional_title ? '<p class="bb-title">' + e(personal.professional_title) + "</p>" : "") +
     (contact.length ? '<div class="bb-contact">' + contact.join("<span> · </span>") + "</div>" : "") +
-    '<div class="bb-header-rule" aria-hidden="true"></div></header><div class="bb-layout"><aside class="bb-rail">' +
+    '<div class="bb-header-rule" aria-hidden="true"></div></header><div class="bb-layout"><main class="bb-main">' +
+    section("summary", "Leadership Thesis", data.summary ? "<p>" + e(data.summary) + "</p>" : "") +
+    section("experience", "Strategic Leadership", experience) +
+    section("projects", "Strategic Mandates & Outcomes", projects) + custom +
+    '</main><aside class="bb-rail">' +
     section("skills", "Board-Level Capabilities", skillsData) +
     section("education", "Education", education) +
     section("certifications", "Governance & Credentials", certifications) +
     section("languages", "Languages", languages) +
-    '</aside><main class="bb-main">' +
-    section("summary", "Leadership Thesis", data.summary ? "<p>" + e(data.summary) + "</p>" : "") +
-    section("experience", "Leadership & Strategy", experience) +
-    section("projects", "Strategic Mandates & Outcomes", projects) + custom +
-    "</main></div></div>";
+    "</aside></div></div>";
 
   const wrapper = document.createElement("div");
   wrapper.innerHTML = markup;
