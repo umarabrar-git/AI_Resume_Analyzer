@@ -4,6 +4,7 @@
 @import url("./templates/academic/research_dossier.css");
 @import url("./templates/academic/scholars_folio.css");
 @import url("./templates/executive/operations_atlas.css");
+@import url("./templates/executive/boardroom_brief.css");
 @import url("./templates/healthcare/clinical_compass.css");
 @import url("./templates/healthcare/carepath.css");
 @import url("./templates/finance/finance_ledger.css");
@@ -1001,4 +1002,32 @@
   height: 32%;
   border: 1px solid #b8cbd9;
   background: repeating-linear-gradient(to right, #dce9f1 0 5px, transparent 5px 10px);
+}
+
+
+.template-sample--boardroom-brief {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #202c43 0 39%, #f0f2f6 39% 100%);
+  border-bottom: 3px solid #c49a55;
+}
+.template-sample--boardroom-brief::before {
+  content: "";
+  position: absolute;
+  top: 13%;
+  left: 8%;
+  width: 48%;
+  height: 4%;
+  background: #ead7a7;
+  box-shadow: 0 8px 0 rgba(255,255,255,.9), 0 16px 0 rgba(255,255,255,.58);
+}
+.template-sample--boardroom-brief::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  bottom: 10%;
+  width: 28%;
+  height: 37%;
+  border-left: 2px solid #354d73;
+  background: repeating-linear-gradient(to bottom, #cbd4e3 0 3px, transparent 3px 8px);
 }

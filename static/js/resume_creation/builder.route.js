@@ -7,6 +7,7 @@ import { renderFirstMileTemplate } from "./templates/student/first_mile.js";
 import { renderLaunchpadTemplate } from "./templates/student/launchpad.js";
 import { renderExecutiveLeadershipTemplate } from "./templates/executive/executive_leadership.js";
 import { renderOperationsAtlasTemplate } from "./templates/executive/operations_atlas.js";
+import { renderBoardroomBriefTemplate } from "./templates/executive/boardroom_brief.js";
 import { renderCareerAnalyticsTemplate } from "./templates/analytics/career_analytics.js";
 import { renderInsightGridTemplate } from "./templates/analytics/insight_grid.js";
 import { renderAIInsightsTemplate } from "./templates/ai/ai_insights.js";
@@ -1784,6 +1785,10 @@ if (!root) {
     }
     if (template === "operations_atlas") {
       elements.resumePreview.innerHTML = renderOperationsAtlasTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "boardroom_brief") {
+      elements.resumePreview.innerHTML = renderBoardroomBriefTemplate(content, escapeHtml);
       return;
     }
     if (template === "capital_brief") {

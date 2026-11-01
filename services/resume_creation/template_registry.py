@@ -125,6 +125,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#246b55",
         "font": "Helvetica",
     },
+    "boardroom_brief": {
+        "label": "Boardroom Brief",
+        "tier": "premium",
+        "layout": "boardroom-brief",
+        "accent": "#354d73",
+        "font": "Helvetica",
+    },
     "finance_ledger": {
         "label": "Finance Ledger",
         "tier": "premium",
