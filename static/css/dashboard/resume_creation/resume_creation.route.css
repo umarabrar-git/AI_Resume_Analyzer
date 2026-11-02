@@ -1031,3 +1031,4 @@
   border-left: 2px solid #354d73;
   background: repeating-linear-gradient(to bottom, #cbd4e3 0 3px, transparent 3px 8px);
 }
+@import url("./templates/ai/model_card.css");
