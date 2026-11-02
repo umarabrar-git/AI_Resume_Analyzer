@@ -174,6 +174,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#b84d62",
         "font": "Helvetica",
     },
+    "model_card": {
+        "label": "Model Card",
+        "tier": "premium",
+        "layout": "model-card",
+        "accent": "#146b68",
+        "font": "Helvetica",
+    },
     "insight_grid": {
         "label": "Insight Grid",
         "tier": "premium",
