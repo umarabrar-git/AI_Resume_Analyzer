@@ -1723,3 +1723,31 @@ def test_model_card_template_is_premium_and_selectable_by_pro_user(client):
     )
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "model_card"
+
+
+
+def test_cloud_architect_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("cloud-architect")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    cloud_architect = next(item for item in catalog if item["id"] == "cloud_architect")
+    assert cloud_architect["available"] is False
+    assert cloud_architect["label"] == "Cloud Architect"
+    assert cloud_architect["layout"] == "cloud-architect"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    cloud_architect = next(item for item in catalog if item["id"] == "cloud_architect")
+    assert cloud_architect["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={"creation_method": "scratch", "title": "Cloud Architect Resume", "template": "cloud_architect"},
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "cloud_architect"
