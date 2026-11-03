@@ -54,6 +54,7 @@
 @import url("./templates/technical/data_scientist.css");
 @import url("./templates/technical/cybersecurity_analyst.css");
 @import url("./templates/technical/technical_blueprint.css");
+@import url("./templates/technical/cloud_architect.css");
 
 
 .template-sample--research-dossier {
@@ -1032,3 +1033,8 @@
   background: repeating-linear-gradient(to bottom, #cbd4e3 0 3px, transparent 3px 8px);
 }
 @import url("./templates/ai/model_card.css");
+
+
+.template-sample--cloud-architect { position:relative; overflow:hidden; background:linear-gradient(145deg,#10283f 0 42%,#f4f8fc 42% 100%); border-bottom:3px solid #3976a8; }
+.template-sample--cloud-architect::before { content:""; position:absolute; left:9%; top:18%; width:36%; height:7%; background:#9fc8eb; box-shadow:0 10px 0 rgba(255,255,255,.9),0 20px 0 rgba(255,255,255,.65); }
+.template-sample--cloud-architect::after { content:""; position:absolute; right:12%; bottom:13%; width:25%; height:31%; border:2px solid #3976a8; border-radius:9px; box-shadow:inset 0 9px 0 #dceaf6,inset 0 18px 0 #edf4fa; }

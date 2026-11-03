@@ -1,0 +1,31 @@
+.resume-preview.template-cloud_architect{padding:0;background:#eaf0f6;color:#182b3d;font-family:Arial,Helvetica,sans-serif}
+.resume-preview.template-cloud_architect .resume-template-cloud-architect{--ca-ink:#182b3d;--ca-muted:#617487;--ca-line:#d8e2ec;--ca-accent:#3976a8;box-sizing:border-box;width:100%;min-height:1050px;padding:clamp(1rem,3.5vw,2.3rem);background:#fff;color:var(--ca-ink);font-size:10px;line-height:1.52}
+.resume-template-cloud-architect *,.resume-template-cloud-architect *::before,.resume-template-cloud-architect *::after{box-sizing:border-box}
+.resume-template-cloud-architect .ca-header{display:grid;grid-template-columns:minmax(0,1fr) minmax(9rem,30%);gap:1rem;align-items:center;padding-bottom:1.3rem;border-bottom:4px solid var(--ca-accent)}
+.resume-template-cloud-architect .ca-kicker{margin:0 0 .45rem;color:var(--ca-accent);font-size:.62rem;font-weight:800;letter-spacing:.12em}
+.resume-template-cloud-architect h1{margin:0;font-size:clamp(1.8rem,4vw,2.55rem);line-height:1.08;letter-spacing:-.035em;overflow-wrap:anywhere}
+.resume-template-cloud-architect .ca-role{margin:.35rem 0 0;color:var(--ca-accent);font-size:1rem;font-weight:700}
+.resume-template-cloud-architect .ca-contact{display:flex;flex-direction:column;gap:.22rem;color:var(--ca-muted);font-size:.72rem;overflow-wrap:anywhere}
+.resume-template-cloud-architect a{color:var(--ca-accent);text-decoration:underline;text-underline-offset:2px}
+.resume-template-cloud-architect .ca-layout{display:grid;grid-template-columns:minmax(9rem,30%) minmax(0,1fr);gap:1.25rem;padding-top:1.1rem}
+.resume-template-cloud-architect .ca-sidebar{align-self:start;padding:.95rem;background:#f1f6fb;border-top:3px solid var(--ca-accent)}
+.resume-template-cloud-architect .ca-main{min-width:0}
+.resume-template-cloud-architect .ca-section{margin:0 0 1.05rem}
+.resume-template-cloud-architect .ca-section.is-hidden{display:none}
+.resume-template-cloud-architect h2{margin:0 0 .5rem;padding-bottom:.3rem;border-bottom:1px solid var(--ca-line);color:var(--ca-accent);font-size:.76rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.resume-template-cloud-architect h3{margin:0;font-size:.91rem;line-height:1.35}
+.resume-template-cloud-architect p{margin:.2rem 0 .35rem}
+.resume-template-cloud-architect .ca-entry{margin:0 0 .85rem;break-inside:avoid;page-break-inside:avoid}
+.resume-template-cloud-architect .ca-entry-head{display:flex;justify-content:space-between;gap:.5rem;align-items:baseline}
+.resume-template-cloud-architect .ca-entry-head p,.resume-template-cloud-architect time,.resume-template-cloud-architect .ca-entry-head span{color:var(--ca-muted);font-size:.72rem}
+.resume-template-cloud-architect ul{margin:.28rem 0;padding-left:1.05rem}
+.resume-template-cloud-architect li{margin:.12rem 0}
+.resume-template-cloud-architect .ca-skill{margin-bottom:.55rem}
+.resume-template-cloud-architect .ca-skill strong{font-size:.72rem}
+.resume-template-cloud-architect .ca-skill p,.resume-template-cloud-architect .ca-stack{color:var(--ca-muted);font-size:.72rem}
+.resume-template-cloud-architect .ca-credential{font-size:.74rem}
+.resume-template-cloud-architect .ca-note{margin-top:1rem;padding:.65rem;background:#e2edf7;border-left:3px solid var(--ca-accent)}
+.resume-template-cloud-architect .ca-note span{display:block;color:var(--ca-muted);font-size:.58rem;letter-spacing:.1em}
+.resume-template-cloud-architect .ca-note b{font-size:.72rem}
+@media(max-width:560px){.resume-preview.template-cloud_architect .resume-template-cloud-architect{padding:1rem}.resume-template-cloud-architect .ca-header,.resume-template-cloud-architect .ca-layout{grid-template-columns:1fr}.resume-template-cloud-architect .ca-sidebar{order:2}.resume-template-cloud-architect .ca-entry-head{flex-wrap:wrap}}
+@media print{.resume-preview.template-cloud_architect .resume-template-cloud-architect{min-height:0;padding:0;font-size:9.5px}.resume-template-cloud-architect .ca-sidebar{background:#f1f6fb!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}.resume-template-cloud-architect .ca-entry{break-inside:avoid;page-break-inside:avoid}}

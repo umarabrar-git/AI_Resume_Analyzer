@@ -21,6 +21,7 @@ import { renderProductImpactTemplate } from "./templates/product/product_impact.
 import { renderDataScientistTemplate } from "./templates/technical/data_scientist.js";
 import { renderCybersecurityAnalystTemplate } from "./templates/technical/cybersecurity_analyst.js";
 import { renderTechnicalBlueprintTemplate } from "./templates/technical/technical_blueprint.js";
+import { renderCloudArchitectTemplate } from "./templates/technical/cloud_architect.js";
 import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_compass.js";
 import { renderCarePathTemplate } from "./templates/healthcare/carepath.js";
 import { renderFinanceLedgerTemplate } from "./templates/finance/finance_ledger.js";
@@ -1862,6 +1863,10 @@ if (!root) {
     }
     if (template === "technical_blueprint") {
       elements.resumePreview.innerHTML = renderTechnicalBlueprintTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "cloud_architect") {
+      elements.resumePreview.innerHTML = renderCloudArchitectTemplate(content, escapeHtml);
       return;
     }
     if (template === "modern") {
