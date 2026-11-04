@@ -237,6 +237,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#cf6749",
         "font": "Helvetica",
     },
+    "discovery_research": {
+        "label": "Discovery Research",
+        "tier": "premium",
+        "layout": "discovery-research",
+        "accent": "#6357a5",
+        "font": "Helvetica",
+    },
     "cloud_architect": {
         "label": "Cloud Architect",
         "tier": "premium",
