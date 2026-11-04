@@ -51,6 +51,7 @@
 @import url("./templates/professional/ats_professional.css");
 @import url("./templates/product/product_manager.css");
 @import url("./templates/product/product_impact.css");
+@import url("./templates/product/discovery_research.css");
 @import url("./templates/technical/data_scientist.css");
 @import url("./templates/technical/cybersecurity_analyst.css");
 @import url("./templates/technical/technical_blueprint.css");
@@ -109,6 +110,34 @@
     height: 32%;
     border-left: 2px solid #cf6749;
     border-top: 2px solid #cf6749;
+}
+
+.template-sample--discovery-research {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #6357a5 0 28%, #f5f3fb 28% 100%);
+    border-top: 3px solid #6357a5;
+}
+.template-sample--discovery-research::before {
+    content: "";
+    position: absolute;
+    top: 16%;
+    left: 9%;
+    width: 42%;
+    height: 5%;
+    background: #fff;
+    box-shadow: 0 9px 0 rgba(99,87,165,.25), 0 18px 0 rgba(99,87,165,.18);
+}
+.template-sample--discovery-research::after {
+    content: "";
+    position: absolute;
+    right: 9%;
+    bottom: 12%;
+    width: 30%;
+    height: 34%;
+    border: 2px solid #8f86c1;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 7px #f5f3fb, inset 0 0 0 9px #c9c3e4;
 }
 
 .template-sample--cybersecurity-analyst {

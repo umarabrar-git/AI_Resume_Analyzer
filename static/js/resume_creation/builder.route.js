@@ -18,6 +18,7 @@ import { renderATSProfessionalTemplate } from "./templates/professional/ats_prof
 import { renderCareerCompassTemplate } from "./templates/professional/career_compass.js";
 import { renderProductManagerTemplate } from "./templates/product/product_manager.js";
 import { renderProductImpactTemplate } from "./templates/product/product_impact.js";
+import { renderDiscoveryResearchTemplate } from "./templates/product/discovery_research.js";
 import { renderDataScientistTemplate } from "./templates/technical/data_scientist.js";
 import { renderCybersecurityAnalystTemplate } from "./templates/technical/cybersecurity_analyst.js";
 import { renderTechnicalBlueprintTemplate } from "./templates/technical/technical_blueprint.js";
@@ -1847,6 +1848,10 @@ if (!root) {
     }
     if (template === "product_manager") {
       elements.resumePreview.innerHTML = renderProductManagerTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "discovery_research") {
+      elements.resumePreview.innerHTML = renderDiscoveryResearchTemplate(content, escapeHtml);
       return;
     }
     if (template === "product_impact") {
