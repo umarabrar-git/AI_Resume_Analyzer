@@ -1726,6 +1726,33 @@ def test_model_card_template_is_premium_and_selectable_by_pro_user(client):
 
 
 
+def test_discovery_research_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("discovery-research")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    discovery_research = next(item for item in catalog if item["id"] == "discovery_research")
+    assert discovery_research["available"] is False
+    assert discovery_research["label"] == "Discovery Research"
+    assert discovery_research["layout"] == "discovery-research"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    discovery_research = next(item for item in catalog if item["id"] == "discovery_research")
+    assert discovery_research["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={"creation_method": "scratch", "title": "Discovery Research Resume", "template": "discovery_research"},
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "discovery_research"
+
+
 def test_cloud_architect_template_is_premium_and_selectable_by_pro_user(client):
     user = _make_user("cloud-architect")
     _auth_session(client, user.id)
