@@ -1,0 +1,164 @@
+.resume-preview.template-discovery_research {
+  padding: 0;
+  background: #eef0f8;
+  color: #20263b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.resume-preview.template-discovery_research .resume-template-discovery-research {
+  --dr-ink: #20263b;
+  --dr-muted: #626b83;
+  --dr-line: #dce0ec;
+  --dr-accent: #6357a5;
+  width: 100%;
+  min-height: 1050px;
+  padding: clamp(1.3rem, 4vw, 2.8rem);
+  box-sizing: border-box;
+  background: #fff;
+  color: var(--dr-ink);
+  font-size: 10px;
+  line-height: 1.55;
+}
+.resume-template-discovery-research *,
+.resume-template-discovery-research *::before,
+.resume-template-discovery-research *::after { box-sizing: border-box; }
+.resume-template-discovery-research .dr-header {
+  padding: 1.2rem 1.25rem 1.1rem;
+  border: 1px solid #dce0ec;
+  border-top: 5px solid var(--dr-accent);
+  background: linear-gradient(135deg, #f6f5fc, #fff 72%);
+}
+.resume-template-discovery-research .dr-kicker {
+  margin-bottom: .8rem;
+  color: var(--dr-accent);
+  font-size: .63rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+.resume-template-discovery-research .dr-identity {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(9rem, 34%);
+  gap: .8rem 1.2rem;
+  align-items: end;
+}
+.resume-template-discovery-research h1 {
+  margin: 0;
+  color: var(--dr-ink);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.05;
+  letter-spacing: -.04em;
+  overflow-wrap: anywhere;
+}
+.resume-template-discovery-research .dr-title {
+  margin: .4rem 0 0;
+  color: var(--dr-accent);
+  font-size: .98rem;
+  font-weight: 700;
+}
+.resume-template-discovery-research .dr-contact {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  color: var(--dr-muted);
+  font-size: .72rem;
+  overflow-wrap: anywhere;
+}
+.resume-template-discovery-research a {
+  color: var(--dr-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+.resume-template-discovery-research .dr-positioning {
+  margin-top: 1rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--dr-line);
+  color: #424b65;
+  font-size: .83rem;
+}
+.resume-template-discovery-research main > section { margin-top: 1.05rem; }
+.resume-template-discovery-research main > section.is-hidden { display: none; }
+.resume-template-discovery-research h2 {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  margin: 0 0 .55rem;
+  color: var(--dr-accent);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.resume-template-discovery-research h2::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--dr-line);
+}
+.resume-template-discovery-research h3 { margin: 0; font-size: .91rem; line-height: 1.35; }
+.resume-template-discovery-research p { margin: .2rem 0 .35rem; }
+.resume-template-discovery-research .dr-entry,
+.resume-template-discovery-research .dr-project {
+  margin-bottom: .8rem;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.resume-template-discovery-research .dr-entry-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .35rem .8rem;
+}
+.resume-template-discovery-research .dr-muted,
+.resume-template-discovery-research .dr-date {
+  color: var(--dr-muted);
+  font-size: .73rem;
+}
+.resume-template-discovery-research .dr-date { flex: 0 0 auto; margin: 0; text-align: right; }
+.resume-template-discovery-research ul { margin: .25rem 0; padding-left: 1.1rem; }
+.resume-template-discovery-research li { margin: .14rem 0; padding-left: .08rem; }
+.resume-template-discovery-research .dr-evidence {
+  margin-top: .35rem;
+  padding-left: .65rem;
+  border-left: 2px solid #b9b2dc;
+  color: #414b68;
+}
+.resume-template-discovery-research .dr-metric {
+  margin-top: .35rem;
+  color: #51468c;
+  font-size: .76rem;
+  font-weight: 600;
+}
+.resume-template-discovery-research .dr-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.resume-template-discovery-research .dr-skill-list li {
+  margin: 0;
+  padding: .23rem .5rem;
+  border: 1px solid #d9d5ed;
+  border-radius: 2px;
+  background: #f7f6fc;
+  color: #51468c;
+  font-size: .73rem;
+}
+.resume-template-discovery-research .dr-compact { margin: .2rem 0; }
+@media (max-width: 560px) {
+  .resume-preview.template-discovery_research .resume-template-discovery-research { padding: 1rem; }
+  .resume-template-discovery-research .dr-identity { grid-template-columns: 1fr; }
+  .resume-template-discovery-research .dr-entry-heading { flex-wrap: wrap; }
+  .resume-template-discovery-research .dr-date { text-align: left; }
+}
+@media print {
+  .resume-preview.template-discovery_research .resume-template-discovery-research {
+    min-height: 0;
+    padding: 0;
+    background: #fff;
+    font-size: 9.5px;
+  }
+  .resume-template-discovery-research .dr-entry,
+  .resume-template-discovery-research .dr-project { break-inside: avoid; page-break-inside: avoid; }
+}
