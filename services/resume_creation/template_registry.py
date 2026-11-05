@@ -195,7 +195,14 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#4b7180",
         "font": "Helvetica",
     },
-    "brand_identity": {\n        "label": "Brand Identity",\n        "tier": "premium",\n        "layout": "brand-identity",\n        "accent": "#e65d3b",\n        "font": "Times-Roman",\n    },\n    "creative_portfolio": {
+    "brand_identity": {
+        "label": "Brand Identity",
+        "tier": "premium",
+        "layout": "brand-identity",
+        "accent": "#e65d3b",
+        "font": "Times-Roman",
+    },
+    "creative_portfolio": {
         "label": "Creative Portfolio",
         "tier": "premium",
         "layout": "creative",
