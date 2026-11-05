@@ -48,6 +48,7 @@
 @import url("./templates/ai/ai_insights.css");
 @import url("./templates/creative/creative_portfolio.css");
 @import url("./templates/creative/creative_studio.css");
+@import url("./templates/creative/brand_identity.css");
 @import url("./templates/professional/ats_professional.css");
 @import url("./templates/product/product_manager.css");
 @import url("./templates/product/product_impact.css");
@@ -1067,3 +1068,8 @@
 .template-sample--cloud-architect { position:relative; overflow:hidden; background:linear-gradient(145deg,#10283f 0 42%,#f4f8fc 42% 100%); border-bottom:3px solid #3976a8; }
 .template-sample--cloud-architect::before { content:""; position:absolute; left:9%; top:18%; width:36%; height:7%; background:#9fc8eb; box-shadow:0 10px 0 rgba(255,255,255,.9),0 20px 0 rgba(255,255,255,.65); }
 .template-sample--cloud-architect::after { content:""; position:absolute; right:12%; bottom:13%; width:25%; height:31%; border:2px solid #3976a8; border-radius:9px; box-shadow:inset 0 9px 0 #dceaf6,inset 0 18px 0 #edf4fa; }
+
+
+.template-sample--brand-identity { position:relative; overflow:hidden; background:#f3f0e8; border-bottom:3px solid #e65d3b; }
+.template-sample--brand-identity::before { content:""; position:absolute; top:22%; left:10%; width:70%; height:24%; border-top:2px solid #20231f; border-bottom:1px solid #aaa99f; }
+.template-sample--brand-identity::after { content:""; position:absolute; left:10%; bottom:17%; width:45%; height:8%; background:linear-gradient(90deg,#e65d3b 0 20%,#d7a84c 20% 40%,#536e62 40% 60%,#344b67 60% 80%,#d6cdbb 80%); }
