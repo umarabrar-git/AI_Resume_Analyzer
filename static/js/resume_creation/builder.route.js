@@ -14,6 +14,7 @@ import { renderAIInsightsTemplate } from "./templates/ai/ai_insights.js";
 import { renderModelCardTemplate } from "./templates/ai/model_card.js";
 import { renderCreativePortfolioTemplate } from "./templates/creative/creative_portfolio.js";
 import { renderCreativeStudioTemplate } from "./templates/creative/creative_studio.js";
+import { renderBrandIdentityTemplate } from "./templates/creative/brand_identity.js";
 import { renderATSProfessionalTemplate } from "./templates/professional/ats_professional.js";
 import { renderCareerCompassTemplate } from "./templates/professional/career_compass.js";
 import { renderProductManagerTemplate } from "./templates/product/product_manager.js";
@@ -1836,6 +1837,10 @@ if (!root) {
     }
     if (template === "creative_studio") {
       elements.resumePreview.innerHTML = renderCreativeStudioTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "brand_identity") {
+      elements.resumePreview.innerHTML = renderBrandIdentityTemplate(content, escapeHtml);
       return;
     }
     if (template === "ats_professional") {
