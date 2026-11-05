@@ -1778,3 +1778,31 @@ def test_cloud_architect_template_is_premium_and_selectable_by_pro_user(client):
     )
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "cloud_architect"
+
+
+
+def test_brand_identity_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("brand-identity")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    brand_identity = next(item for item in catalog if item["id"] == "brand_identity")
+    assert brand_identity["available"] is False
+    assert brand_identity["label"] == "Brand Identity"
+    assert brand_identity["layout"] == "brand-identity"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    brand_identity = next(item for item in catalog if item["id"] == "brand_identity")
+    assert brand_identity["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={"creation_method": "scratch", "title": "Brand Identity Designer Resume", "template": "brand_identity"},
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "brand_identity"
