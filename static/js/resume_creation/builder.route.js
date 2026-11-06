@@ -11,6 +11,7 @@ import { renderBoardroomBriefTemplate } from "./templates/executive/boardroom_br
 import { renderCareerAnalyticsTemplate } from "./templates/analytics/career_analytics.js";
 import { renderInsightGridTemplate } from "./templates/analytics/insight_grid.js";
 import { renderAIInsightsTemplate } from "./templates/ai/ai_insights.js";
+import { renderPromptEngineerTemplate } from "./templates/ai/prompt_engineer.js";
 import { renderModelCardTemplate } from "./templates/ai/model_card.js";
 import { renderCreativePortfolioTemplate } from "./templates/creative/creative_portfolio.js";
 import { renderCreativeStudioTemplate } from "./templates/creative/creative_studio.js";
@@ -1825,6 +1826,10 @@ if (!root) {
     }
     if (template === "ai_insights") {
       elements.resumePreview.innerHTML = renderAIInsightsTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "prompt_engineer") {
+      elements.resumePreview.innerHTML = renderPromptEngineerTemplate(content, escapeHtml);
       return;
     }
     if (template === "model_card") {
