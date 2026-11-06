@@ -1,10 +1,10 @@
-.resume-preview.template-ai_insights {
+.resume-preview.template-prompt_engineer {
   padding: 0;
   background: #fff;
   color: #20283d;
   font-family: Arial, Helvetica, sans-serif;
 }
-.resume-preview.template-ai_insights .resume-template-ai-insights {
+.resume-preview.template-prompt_engineer .resume-template-prompt-engineer {
   --pe-ink: #20283d;
   --pe-muted: #65718a;
   --pe-line: #e0e5ef;
@@ -19,8 +19,8 @@
   font-size: 9.5px;
   line-height: 1.55;
 }
-.resume-template-ai-insights * { box-sizing: border-box; }
-.resume-template-ai-insights .pe-header {
+.resume-template-prompt-engineer * { box-sizing: border-box; }
+.resume-template-prompt-engineer .pe-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -30,7 +30,7 @@
   background: #edf7fa;
   border: 1px solid #cfe6ed;
 }
-.resume-template-ai-insights .pe-kicker {
+.resume-template-prompt-engineer .pe-kicker {
   margin: 0 0 .4rem;
   color: var(--pe-accent-dark);
   font-size: .66rem;
@@ -38,7 +38,7 @@
   letter-spacing: .16em;
   text-transform: uppercase;
 }
-.resume-template-ai-insights h1 {
+.resume-template-prompt-engineer h1 {
   margin: 0;
   color: var(--pe-ink);
   font-size: clamp(1.7rem, 4vw, 2.45rem);
@@ -46,13 +46,13 @@
   letter-spacing: -.03em;
   overflow-wrap: anywhere;
 }
-.resume-template-ai-insights .pe-title {
+.resume-template-prompt-engineer .pe-title {
   margin: .45rem 0 .55rem;
   color: #4c5770;
   font-size: .9rem;
   font-weight: 600;
 }
-.resume-template-ai-insights .pe-contact {
+.resume-template-prompt-engineer .pe-contact {
   display: flex;
   flex-wrap: wrap;
   gap: .25rem .55rem;
@@ -60,9 +60,9 @@
   font-size: .72rem;
   overflow-wrap: anywhere;
 }
-.resume-template-ai-insights .pe-header a { color: var(--pe-accent-dark); text-decoration: none; }
-.resume-template-ai-insights .pe-header a:hover { text-decoration: underline; }
-.resume-template-ai-insights .pe-mark {
+.resume-template-prompt-engineer .pe-header a { color: var(--pe-accent-dark); text-decoration: none; }
+.resume-template-prompt-engineer .pe-header a:hover { text-decoration: underline; }
+.resume-template-prompt-engineer .pe-mark {
   display: grid;
   flex: 0 0 3.25rem;
   width: 3.25rem;
@@ -75,13 +75,13 @@
   font-weight: 800;
   letter-spacing: .05em;
 }
-.resume-template-ai-insights .pe-snapshot {
+.resume-template-prompt-engineer .pe-snapshot {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: .55rem;
   margin: .85rem 0 1.2rem;
 }
-.resume-template-ai-insights .pe-metric {
+.resume-template-prompt-engineer .pe-metric {
   display: flex;
   flex-direction: column;
   gap: .25rem;
@@ -91,17 +91,17 @@
   border-radius: .4rem;
   background: #f7fbfc;
 }
-.resume-template-ai-insights .pe-metric strong { color: var(--pe-accent-dark); font-size: 1.2rem; line-height: 1; }
-.resume-template-ai-insights .pe-metric span {
+.resume-template-prompt-engineer .pe-metric strong { color: var(--pe-accent-dark); font-size: 1.2rem; line-height: 1; }
+.resume-template-prompt-engineer .pe-metric span {
   color: var(--pe-muted);
   font-size: .62rem;
   font-weight: 700;
   letter-spacing: .05em;
   text-transform: uppercase;
 }
-.resume-template-ai-insights main > section { margin-top: 1.15rem; }
-.resume-template-ai-insights main > section.is-hidden { display: none; }
-.resume-template-ai-insights h2 {
+.resume-template-prompt-engineer main > section { margin-top: 1.15rem; }
+.resume-template-prompt-engineer main > section.is-hidden { display: none; }
+.resume-template-prompt-engineer h2 {
   margin: 0 0 .6rem;
   padding-bottom: .35rem;
   border-bottom: 1px solid var(--pe-line);
@@ -111,36 +111,36 @@
   letter-spacing: .1em;
   text-transform: uppercase;
 }
-.resume-template-ai-insights h3 { margin: 0; font-size: .92rem; }
-.resume-template-ai-insights p { margin: .3rem 0 .55rem; }
-.resume-template-ai-insights .pe-entry { margin: 0 0 .9rem; break-inside: avoid; }
-.resume-template-ai-insights .pe-entry-head {
+.resume-template-prompt-engineer h3 { margin: 0; font-size: .92rem; }
+.resume-template-prompt-engineer p { margin: .3rem 0 .55rem; }
+.resume-template-prompt-engineer .pe-entry { margin: 0 0 .9rem; break-inside: avoid; }
+.resume-template-prompt-engineer .pe-entry-head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: .25rem .8rem;
 }
-.resume-template-ai-insights .pe-subtitle { margin: .15rem 0 .25rem; color: var(--pe-muted); font-size: .75rem; }
-.resume-template-ai-insights .pe-date { color: var(--pe-muted); font-size: .68rem; white-space: nowrap; }
-.resume-template-ai-insights ul { margin: .3rem 0 .2rem; padding-left: 1.1rem; }
-.resume-template-ai-insights li { margin: .13rem 0; }
-.resume-template-ai-insights .pe-evidence {
+.resume-template-prompt-engineer .pe-subtitle { margin: .15rem 0 .25rem; color: var(--pe-muted); font-size: .75rem; }
+.resume-template-prompt-engineer .pe-date { color: var(--pe-muted); font-size: .68rem; white-space: nowrap; }
+.resume-template-prompt-engineer ul { margin: .3rem 0 .2rem; padding-left: 1.1rem; }
+.resume-template-prompt-engineer li { margin: .13rem 0; }
+.resume-template-prompt-engineer .pe-evidence {
   margin-top: .4rem;
   padding: .45rem .65rem;
   border-left: 3px solid var(--pe-accent);
   background: #eef7f9;
 }
-.resume-template-ai-insights .pe-evidence-label {
+.resume-template-prompt-engineer .pe-evidence-label {
   color: var(--pe-accent-dark);
   font-size: .62rem;
   font-weight: 800;
   letter-spacing: .1em;
   text-transform: uppercase;
 }
-.resume-template-ai-insights .pe-skill-group { margin: .45rem 0; }
-.resume-template-ai-insights .pe-skill-group h3 { margin-bottom: .3rem; color: #4c5770; font-size: .74rem; }
-.resume-template-ai-insights .pe-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
-.resume-template-ai-insights .pe-tag {
+.resume-template-prompt-engineer .pe-skill-group { margin: .45rem 0; }
+.resume-template-prompt-engineer .pe-skill-group h3 { margin-bottom: .3rem; color: #4c5770; font-size: .74rem; }
+.resume-template-prompt-engineer .pe-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
+.resume-template-prompt-engineer .pe-tag {
   padding: .22rem .45rem;
   border: 1px solid #cfe6ed;
   border-radius: .3rem;
@@ -148,24 +148,24 @@
   color: #174c63;
   font-size: .69rem;
 }
-.resume-template-ai-insights .pe-cert,
-.resume-template-ai-insights .pe-language { margin: .25rem 0; }
-.resume-template-ai-insights .pe-cert span,
-.resume-template-ai-insights .pe-language span { color: var(--pe-muted); }
+.resume-template-prompt-engineer .pe-cert,
+.resume-template-prompt-engineer .pe-language { margin: .25rem 0; }
+.resume-template-prompt-engineer .pe-cert span,
+.resume-template-prompt-engineer .pe-language span { color: var(--pe-muted); }
 @media (max-width: 520px) {
-  .resume-preview.template-ai_insights .resume-template-ai-insights { padding: 1rem; }
-  .resume-template-ai-insights .pe-header { padding: .85rem; }
-  .resume-template-ai-insights .pe-mark { display: none; }
-  .resume-template-ai-insights .pe-snapshot { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .resume-template-ai-insights .pe-entry-head { flex-wrap: wrap; }
+  .resume-preview.template-prompt_engineer .resume-template-prompt-engineer { padding: 1rem; }
+  .resume-template-prompt-engineer .pe-header { padding: .85rem; }
+  .resume-template-prompt-engineer .pe-mark { display: none; }
+  .resume-template-prompt-engineer .pe-snapshot { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .resume-template-prompt-engineer .pe-entry-head { flex-wrap: wrap; }
 }
 @media print {
-  .resume-preview.template-ai_insights .resume-template-ai-insights {
+  .resume-preview.template-prompt_engineer .resume-template-prompt-engineer {
     max-width: none;
     min-height: 0;
     padding: 0;
     background: #fff;
   }
-  .resume-template-ai-insights .pe-entry,
-  .resume-template-ai-insights main > section { break-inside: avoid; }
+  .resume-template-prompt-engineer .pe-entry,
+  .resume-template-prompt-engineer main > section { break-inside: avoid; }
 }
