@@ -174,6 +174,13 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#b84d62",
         "font": "Helvetica",
     },
+    "prompt_engineer": {
+        "label": "Prompt Engineer",
+        "tier": "premium",
+        "layout": "prompt-engineering",
+        "accent": "#287b9b",
+        "font": "Helvetica",
+    },
     "model_card": {
         "label": "Model Card",
         "tier": "premium",
