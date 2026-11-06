@@ -1806,3 +1806,31 @@ def test_brand_identity_template_is_premium_and_selectable_by_pro_user(client):
     )
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "brand_identity"
+
+
+
+def test_prompt_engineer_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("prompt-engineer")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    prompt_engineer = next(item for item in catalog if item["id"] == "prompt_engineer")
+    assert prompt_engineer["available"] is False
+    assert prompt_engineer["label"] == "Prompt Engineer"
+    assert prompt_engineer["layout"] == "prompt-engineering"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Prompt Engineer Resume",
+            "template": "prompt_engineer",
+        },
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "prompt_engineer"
