@@ -1,4 +1,4 @@
-export function renderAIInsightsTemplate(content, escapeHtml) {
+export function renderPromptEngineerTemplate(content, escapeHtml) {
   const root = document.createElement("div");
   const fallbackEscape = (value) => String(value == null ? "" : value).replace(/[&<>"']/g, (char) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
@@ -103,7 +103,7 @@ export function renderAIInsightsTemplate(content, escapeHtml) {
     ["Credentials", list(data.certifications).length]
   ];
   root.innerHTML =
-    '<div class="resume-template-ai-insights"><header class="pe-header"><div>' +
+    '<div class="resume-template-prompt-engineer"><header class="pe-header"><div>' +
     '<p class="pe-kicker">Prompt Engineer · LLM Workflow Profile</p><h1>' + e(personal.full_name || "Your Name") +
     '</h1><p class="pe-title">' + e(personal.professional_title || "") +
     '</p><div class="pe-contact">' + contact.join("<span> · </span>") +
