@@ -1,3 +1,4 @@
+@import url("./templates/technical/data_engineer.css");
 @import url("./templates/professional/modern_editorial.css");
 @import url("./templates/professional/career_compass.css");
 @import url("./templates/academic/academic_research.css");
@@ -1099,4 +1100,33 @@
   color: #fff;
   font: 700 15px/1 monospace;
   letter-spacing: .08em;
+}
+
+
+.template-sample--data-engineer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #123b3b 0 38%, #f1f8f6 38% 100%);
+  border-bottom: 3px solid #167d78;
+}
+.template-sample--data-engineer::before {
+  content: "";
+  position: absolute;
+  left: 9%;
+  top: 19%;
+  width: 31%;
+  height: 7%;
+  background: #a7d9ce;
+  box-shadow: 0 10px 0 rgba(255,255,255,.92), 0 20px 0 rgba(255,255,255,.7);
+}
+.template-sample--data-engineer::after {
+  content: "";
+  position: absolute;
+  right: 12%;
+  bottom: 13%;
+  width: 27%;
+  height: 32%;
+  border: 2px solid #167d78;
+  border-radius: 4px;
+  background: repeating-linear-gradient(to bottom, #d8eee8 0 5px, #fff 5px 10px);
 }

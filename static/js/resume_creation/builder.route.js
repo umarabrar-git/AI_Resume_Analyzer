@@ -25,6 +25,7 @@ import { renderDataScientistTemplate } from "./templates/technical/data_scientis
 import { renderCybersecurityAnalystTemplate } from "./templates/technical/cybersecurity_analyst.js";
 import { renderTechnicalBlueprintTemplate } from "./templates/technical/technical_blueprint.js";
 import { renderCloudArchitectTemplate } from "./templates/technical/cloud_architect.js";
+import { renderDataEngineerTemplate } from "./templates/technical/data_engineer.js";
 import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_compass.js";
 import { renderCarePathTemplate } from "./templates/healthcare/carepath.js";
 import { renderFinanceLedgerTemplate } from "./templates/finance/finance_ledger.js";
@@ -1882,6 +1883,10 @@ if (!root) {
     }
     if (template === "cloud_architect") {
       elements.resumePreview.innerHTML = renderCloudArchitectTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "data_engineer") {
+      elements.resumePreview.innerHTML = renderDataEngineerTemplate(content, escapeHtml);
       return;
     }
     if (template === "modern") {
