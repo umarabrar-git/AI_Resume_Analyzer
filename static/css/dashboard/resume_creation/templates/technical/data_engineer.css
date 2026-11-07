@@ -1,0 +1,35 @@
+.resume-preview.template-data_engineer{padding:0;background:#e8f1ef;color:#183431;font-family:Arial,Helvetica,sans-serif}
+.resume-preview.template-data_engineer .resume-template-data-engineer{--de-ink:#183431;--de-muted:#637b77;--de-line:#d7e5e1;--de-accent:#167d78;box-sizing:border-box;width:100%;min-height:1050px;padding:clamp(1rem,3.5vw,2.3rem);background:#fff;color:var(--de-ink);font-size:10px;line-height:1.52}
+.resume-template-data-engineer *,.resume-template-data-engineer *::before,.resume-template-data-engineer *::after{box-sizing:border-box}
+.resume-template-data-engineer .de-header{display:grid;grid-template-columns:minmax(0,1fr) minmax(9rem,30%);gap:1rem;align-items:center;padding-bottom:1.25rem;border-bottom:4px solid var(--de-accent)}
+.resume-template-data-engineer .de-kicker{margin:0 0 .45rem;color:var(--de-accent);font-size:.61rem;font-weight:800;letter-spacing:.12em}
+.resume-template-data-engineer h1{margin:0;font-size:clamp(1.8rem,4vw,2.55rem);line-height:1.08;letter-spacing:-.035em;overflow-wrap:anywhere}
+.resume-template-data-engineer .de-role{margin:.35rem 0 0;color:var(--de-accent);font-size:1rem;font-weight:700}
+.resume-template-data-engineer .de-contact{display:flex;flex-direction:column;gap:.22rem;color:var(--de-muted);font-size:.72rem;overflow-wrap:anywhere}
+.resume-template-data-engineer a{color:var(--de-accent);text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
+.resume-template-data-engineer .de-layout{display:grid;grid-template-columns:minmax(9rem,30%) minmax(0,1fr);gap:1.25rem;padding-top:1.1rem}
+.resume-template-data-engineer .de-sidebar{align-self:start;padding:.95rem;background:#eff7f4;border-top:3px solid var(--de-accent)}
+.resume-template-data-engineer .de-main{min-width:0}
+.resume-template-data-engineer .de-section{margin:0 0 1.05rem}
+.resume-template-data-engineer .de-section.is-hidden{display:none}
+.resume-template-data-engineer h2{margin:0 0 .5rem;padding-bottom:.3rem;border-bottom:1px solid var(--de-line);color:var(--de-accent);font-size:.76rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.resume-template-data-engineer h3{margin:0;font-size:.91rem;line-height:1.35}
+.resume-template-data-engineer p{margin:.2rem 0 .35rem}
+.resume-template-data-engineer .de-entry,.resume-template-data-engineer .de-project{margin:0 0 .85rem;break-inside:avoid;page-break-inside:avoid}
+.resume-template-data-engineer .de-entry-head{display:flex;justify-content:space-between;gap:.5rem;align-items:baseline}
+.resume-template-data-engineer .de-muted,.resume-template-data-engineer time{color:var(--de-muted);font-size:.72rem}
+.resume-template-data-engineer time{flex:0 0 auto;text-align:right}
+.resume-template-data-engineer ul{margin:.28rem 0;padding-left:1.05rem}
+.resume-template-data-engineer li{margin:.12rem 0}
+.resume-template-data-engineer .de-impact{padding-left:.55rem;border-left:2px solid var(--de-accent)}
+.resume-template-data-engineer .de-stack{color:var(--de-muted);font-size:.72rem}
+.resume-template-data-engineer .de-skill-group{margin-bottom:.6rem}
+.resume-template-data-engineer .de-skill-group>strong{display:block;margin-bottom:.25rem;font-size:.72rem}
+.resume-template-data-engineer .de-tags{display:flex;flex-wrap:wrap;gap:.25rem}
+.resume-template-data-engineer .de-tags span{padding:.16rem .38rem;border:1px solid #c9e2db;border-radius:3px;background:#fff;color:#245c53;font-size:.68rem}
+.resume-template-data-engineer .de-credential{font-size:.74rem}
+.resume-template-data-engineer .de-principle{margin-top:1rem;padding:.7rem;background:#deeee8;border-left:3px solid var(--de-accent)}
+.resume-template-data-engineer .de-principle span{display:block;margin-bottom:.2rem;color:var(--de-muted);font-size:.58rem;letter-spacing:.1em}
+.resume-template-data-engineer .de-principle strong{font-size:.72rem}
+@media(max-width:560px){.resume-preview.template-data_engineer .resume-template-data-engineer{padding:1rem}.resume-template-data-engineer .de-header,.resume-template-data-engineer .de-layout{grid-template-columns:1fr}.resume-template-data-engineer .de-sidebar{order:2}.resume-template-data-engineer .de-entry-head{flex-wrap:wrap}.resume-template-data-engineer time{text-align:left}}
+@media print{.resume-preview.template-data_engineer .resume-template-data-engineer{min-height:0;padding:0;font-size:9.5px}.resume-template-data-engineer .de-sidebar,.resume-template-data-engineer .de-principle{print-color-adjust:exact;-webkit-print-color-adjust:exact}.resume-template-data-engineer .de-entry,.resume-template-data-engineer .de-project{break-inside:avoid;page-break-inside:avoid}}
