@@ -1866,3 +1866,37 @@ def test_data_engineer_template_is_premium_and_selectable_by_pro_user(client):
     )
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "data_engineer"
+
+
+def test_legal_compliance_templates_are_registered_with_distinct_access_tiers(client):
+    user = _make_user("legal-category")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    legal_associate = next(item for item in catalog if item["id"] == "legal_associate")
+    counsel_portfolio = next(item for item in catalog if item["id"] == "counsel_portfolio")
+
+    assert legal_associate["available"] is True
+    assert legal_associate["layout"] == "legal-ats"
+    assert counsel_portfolio["available"] is False
+    assert counsel_portfolio["layout"] == "legal-editorial"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    counsel_portfolio = next(item for item in catalog if item["id"] == "counsel_portfolio")
+    assert counsel_portfolio["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Counsel Portfolio Resume",
+            "template": "counsel_portfolio",
+        },
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "counsel_portfolio"
