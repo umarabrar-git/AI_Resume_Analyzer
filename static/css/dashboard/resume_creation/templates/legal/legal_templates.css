@@ -1,0 +1,65 @@
+/* Legal & Compliance category: distinct ATS and premium counsel layouts. */
+.resume-preview.template-legal_associate{padding:0;background:#fff}
+.resume-template-legal-associate{--la-ink:#24384a;--la-muted:#617386;--la-accent:#315a78;--la-line:#d8e0e7;box-sizing:border-box;width:100%;min-height:1050px;padding:42px 54px;background:#fff;color:var(--la-ink);font:10px/1.55 Arial,Helvetica,sans-serif}
+.resume-template-legal-associate *{box-sizing:border-box}
+.la-header{padding-bottom:20px;border-bottom:2px solid var(--la-accent)}
+.la-kicker{margin-bottom:12px;color:var(--la-accent);font-size:8px;font-weight:800;letter-spacing:2px}
+.la-header h1{margin:0;font-size:29px;line-height:1.12;letter-spacing:-.5px;overflow-wrap:anywhere}
+.la-title{margin:7px 0 12px;color:var(--la-muted);font-size:12px;font-weight:600}
+.la-contact{display:flex;flex-wrap:wrap;gap:5px 11px;color:var(--la-muted);font-size:8px;overflow-wrap:anywhere}
+.la-contact a{color:var(--la-accent);text-decoration:none}
+.la-contact span{color:#9ba9b5}
+.la-body{padding-top:22px}
+.resume-template-legal-associate section{margin-bottom:19px;break-inside:avoid;page-break-inside:avoid}
+.resume-template-legal-associate section.is-hidden{display:none}
+.resume-template-legal-associate h2{margin:0 0 8px;padding-bottom:5px;border-bottom:1px solid var(--la-line);color:var(--la-accent);font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase}
+.resume-template-legal-associate section p{margin:0 0 5px;font-size:9px;line-height:1.6}
+.la-entry{margin-bottom:12px;break-inside:avoid}
+.la-entry h3{margin:0;font-size:9.5px;font-weight:800}
+.la-entry-head{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.la-entry time{color:var(--la-muted);font-size:8px;white-space:nowrap}
+.la-entry .la-org{margin:2px 0 4px;color:var(--la-accent);font-weight:700}
+.la-entry ul{margin:5px 0 0;padding-left:16px}
+.la-entry li{margin-bottom:3px;font-size:8.6px;line-height:1.5}
+.resume-template-legal-associate ul{padding-left:17px}
+.resume-preview.template-counsel_portfolio{padding:0;background:#fff}
+.resume-template-counsel-portfolio{--lc-ink:#262d35;--lc-muted:#68727b;--lc-gold:#9a7547;--lc-paper:#f5f2ec;--lc-line:#ded7cb;box-sizing:border-box;width:100%;min-height:1050px;background:#fff;color:var(--lc-ink);font:9px/1.55 Georgia,"Times New Roman",serif}
+.resume-template-counsel-portfolio *{box-sizing:border-box}
+.lc-header{position:relative;padding:38px 42px 29px;background:var(--lc-ink);color:#fff;border-bottom:4px solid var(--lc-gold)}
+.lc-monogram{position:absolute;top:33px;right:40px;display:grid;place-items:center;width:45px;height:45px;border:1px solid var(--lc-gold);border-radius:50%;color:#e4c99e;font:14px Georgia,serif}
+.lc-overline{margin-bottom:13px;color:#d8bd91;font:700 7px Arial,sans-serif;letter-spacing:2px}
+.lc-header h1{max-width:80%;margin:0;font-size:29px;line-height:1.1;font-weight:500;overflow-wrap:anywhere}
+.lc-header>p{margin:8px 0 13px;color:#e2d7c6;font:italic 12px Georgia,serif}
+.lc-contact{display:flex;flex-wrap:wrap;gap:5px 10px;color:#e4e0d9;font:7px Arial,sans-serif;overflow-wrap:anywhere}
+.lc-contact a{color:#e4c99e;text-decoration:none}
+.lc-contact span{color:var(--lc-gold);font-size:6px}
+.lc-layout{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.7fr);min-height:850px}
+.lc-rail{padding:27px 20px;background:var(--lc-paper);border-right:1px solid var(--lc-line)}
+.lc-main{min-width:0;padding:28px 34px}
+.resume-template-counsel-portfolio section{margin-bottom:22px;break-inside:avoid;page-break-inside:avoid}
+.resume-template-counsel-portfolio section.is-hidden{display:none}
+.lc-section-label{margin-bottom:4px;color:var(--lc-gold);font:700 6px Arial,sans-serif;letter-spacing:1.5px}
+.resume-template-counsel-portfolio h2{margin:0 0 10px;color:var(--lc-ink);font:500 15px Georgia,serif}
+.lc-summary,.resume-template-counsel-portfolio section>p{margin:0;font-size:9px;line-height:1.7}
+.lc-matter{margin-bottom:15px;break-inside:avoid}
+.lc-matter-top{display:flex;justify-content:space-between;gap:10px}
+.lc-matter h3,.lc-project h3{margin:0;font-size:10px;font-weight:700}
+.lc-matter p{margin:3px 0;color:var(--lc-gold);font:700 7.5px Arial,sans-serif}
+.lc-matter time{color:var(--lc-muted);font:7px Arial,sans-serif;white-space:nowrap}
+.lc-matter ul,.lc-project ul{margin:6px 0 0;padding-left:15px}
+.lc-matter li,.lc-project li{margin-bottom:3px;font-size:8px;line-height:1.5}
+.lc-credential{display:grid;gap:3px;margin-bottom:12px;font-size:8px}
+.lc-credential span,.lc-credential small{color:var(--lc-muted)}
+.lc-skill{display:grid;gap:4px;margin-bottom:12px;font-size:7.5px;overflow-wrap:anywhere}
+.lc-skill strong{color:var(--lc-gold);font:700 7px Arial,sans-serif;text-transform:uppercase;letter-spacing:.6px}
+.lc-project{margin-bottom:13px}
+.lc-project small{color:var(--lc-gold);font:700 7px Arial,sans-serif}
+.lc-project p{margin:4px 0;font-size:8px}
+.template-sample--legal-associate{position:relative;overflow:hidden;background:linear-gradient(180deg,#315a78 0 28%,#fff 28% 100%);border-bottom:3px solid #315a78}
+.template-sample--legal-associate:before{content:"";position:absolute;top:12%;left:9%;width:48%;height:5%;background:#fff;box-shadow:0 9px 0 rgba(255,255,255,.75),0 18px 0 rgba(255,255,255,.45)}
+.template-sample--legal-associate:after{content:"";position:absolute;left:9%;right:9%;bottom:12%;height:38%;background:repeating-linear-gradient(to bottom,#d9e0e7 0 2px,transparent 2px 8px)}
+.template-sample--counsel-portfolio{position:relative;overflow:hidden;background:linear-gradient(90deg,#f5f2ec 0 31%,#fff 31% 100%);border-top:3px solid #9a7547}
+.template-sample--counsel-portfolio:before{content:"";position:absolute;top:0;left:0;width:100%;height:32%;background:#262d35}
+.template-sample--counsel-portfolio:after{content:"";position:absolute;right:8%;bottom:12%;width:49%;height:42%;border-top:2px solid #9a7547;background:repeating-linear-gradient(to bottom,#d9d2c7 0 2px,transparent 2px 8px)}
+@media(max-width:620px){.resume-template-legal-associate{padding:28px 24px}.la-entry-head{gap:6px}.resume-template-counsel-portfolio .lc-header{padding:30px 25px}.lc-monogram{right:22px;top:25px}.lc-layout{grid-template-columns:1fr}.lc-rail{padding:22px;border-right:0;border-bottom:1px solid var(--lc-line)}.lc-main{padding:23px 25px}}
+@media print{.resume-preview.template-legal_associate,.resume-preview.template-counsel_portfolio{padding:0;border:0;box-shadow:none}.resume-template-legal-associate,.resume-template-counsel-portfolio{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.lc-layout{min-height:0}}

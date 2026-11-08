@@ -26,6 +26,8 @@ import { renderCybersecurityAnalystTemplate } from "./templates/technical/cybers
 import { renderTechnicalBlueprintTemplate } from "./templates/technical/technical_blueprint.js";
 import { renderCloudArchitectTemplate } from "./templates/technical/cloud_architect.js";
 import { renderDataEngineerTemplate } from "./templates/technical/data_engineer.js";
+import { renderLegalAssociateTemplate } from "./templates/legal/legal_associate.js";
+import { renderCounselPortfolioTemplate } from "./templates/legal/counsel_portfolio.js";
 import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_compass.js";
 import { renderCarePathTemplate } from "./templates/healthcare/carepath.js";
 import { renderFinanceLedgerTemplate } from "./templates/finance/finance_ledger.js";
@@ -1887,6 +1889,14 @@ if (!root) {
     }
     if (template === "data_engineer") {
       elements.resumePreview.innerHTML = renderDataEngineerTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "legal_associate") {
+      elements.resumePreview.innerHTML = renderLegalAssociateTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "counsel_portfolio") {
+      elements.resumePreview.innerHTML = renderCounselPortfolioTemplate(content, escapeHtml);
       return;
     }
     if (template === "modern") {
