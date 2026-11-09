@@ -28,6 +28,8 @@ import { renderCloudArchitectTemplate } from "./templates/technical/cloud_archit
 import { renderDataEngineerTemplate } from "./templates/technical/data_engineer.js";
 import { renderLegalAssociateTemplate } from "./templates/legal/legal_associate.js";
 import { renderCounselPortfolioTemplate } from "./templates/legal/counsel_portfolio.js";
+import { renderRevenueOperatorTemplate } from "./templates/sales/revenue_operator.js";
+import { renderAccountGrowthTemplate } from "./templates/sales/account_growth.js";
 import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_compass.js";
 import { renderCarePathTemplate } from "./templates/healthcare/carepath.js";
 import { renderFinanceLedgerTemplate } from "./templates/finance/finance_ledger.js";
@@ -1897,6 +1899,14 @@ if (!root) {
     }
     if (template === "counsel_portfolio") {
       elements.resumePreview.innerHTML = renderCounselPortfolioTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "revenue_operator") {
+      elements.resumePreview.innerHTML = renderRevenueOperatorTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "account_growth") {
+      elements.resumePreview.innerHTML = renderAccountGrowthTemplate(content, escapeHtml);
       return;
     }
     if (template === "modern") {
