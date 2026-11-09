@@ -1,0 +1,51 @@
+/* Templates: Sales & Customer Success */
+.resume-preview.template-revenue_operator,.resume-preview.template-account_growth{padding:0;background:#fff}
+.resume-template-revenue-operator{--ro-ink:#182b3b;--ro-blue:#245c86;--ro-muted:#637587;--ro-line:#dce5ec;min-height:1050px;background:#fff;color:var(--ro-ink);font-family:Arial,Helvetica,sans-serif;line-height:1.48}
+.resume-template-revenue-operator *,.resume-template-account-growth *{box-sizing:border-box}
+.ro-header{padding:32px 38px 27px;background:#182b3b;color:#fff;border-bottom:5px solid #4b9ac1}
+.ro-kicker{font-size:8px;font-weight:800;letter-spacing:1.6px;color:#8fc8e2;margin-bottom:21px}
+.ro-header h1{font-size:30px;line-height:1.12;margin:0;color:#fff;overflow-wrap:anywhere}
+.ro-title{font-size:12px;color:#c7d8e5;margin:8px 0 0;font-weight:600}
+.ro-contact{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;font-size:8px;color:#dce8ef}
+.ro-contact span{color:#78b9d9}.ro-contact a{color:#9bd5ed;text-decoration:none}
+.ro-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#dce5ec;border-bottom:1px solid var(--ro-line)}
+.ro-proof div{display:grid;gap:5px;padding:16px 20px;background:#edf4f8}
+.ro-proof strong{font-size:8px;letter-spacing:1px;color:var(--ro-blue)}
+.ro-proof span{font-size:8px;color:#53687a}
+.ro-main{padding:30px 38px 40px}
+.ro-section{margin:0 0 25px;break-inside:avoid;page-break-inside:avoid}
+.ro-section h2{font-size:10px;text-transform:uppercase;letter-spacing:1.1px;border-bottom:2px solid #4b9ac1;padding-bottom:7px;margin:0 0 12px}
+.ro-section p,.ro-entry li{font-size:9px;line-height:1.58;color:#405365}
+.ro-entry{margin:0 0 17px}.ro-entry-head{display:flex;justify-content:space-between;gap:12px}
+.ro-entry h3{font-size:10px;margin:0;color:#182b3b}.ro-entry p{margin:4px 0;color:var(--ro-blue);font-weight:700}
+.ro-entry time{font-size:7px;color:var(--ro-muted);white-space:nowrap}
+.ro-entry ul{padding-left:16px;margin:7px 0}.ro-entry li{margin:3px 0}
+.ro-skill{display:grid;grid-template-columns:150px 1fr;gap:12px;margin:0 0 9px;font-size:8px}
+.ro-skill strong{color:var(--ro-blue)}.ro-skill span{color:#405365}
+.resume-template-account-growth{--ag-ink:#292b2d;--ag-rust:#b66a43;--ag-muted:#77736e;--ag-line:#e6ddd5;min-height:1050px;background:#fff;color:var(--ag-ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+.ag-header{padding:31px 36px 25px;background:#292b2d;color:#fff;border-top:7px solid var(--ag-rust)}
+.ag-brandline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:7px;font-weight:800;letter-spacing:1.2px;color:#e6b99f;margin-bottom:23px}
+.ag-header h1{font-family:Georgia,serif;font-size:29px;line-height:1.12;margin:0;color:#fff;overflow-wrap:anywhere}
+.ag-title{font-size:12px;color:#ded9d4;margin:8px 0 0}
+.ag-contact{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;font-size:8px;color:#e6ddd5}
+.ag-contact span{color:#e6b99f}.ag-contact a{color:#e6b99f;text-decoration:none}
+.ag-manifesto{display:grid;gap:6px;padding:18px 36px;background:#f5eee8;border-bottom:1px solid var(--ag-line)}
+.ag-manifesto span{font-size:7px;letter-spacing:1.4px;font-weight:800;color:var(--ag-rust)}
+.ag-manifesto strong{font-family:Georgia,serif;font-size:12px;letter-spacing:.5px}
+.ag-columns{display:grid;grid-template-columns:minmax(155px,32%) minmax(0,1fr)}
+.ag-sidebar{padding:27px 22px;background:#f8f5f1;border-right:1px solid var(--ag-line)}
+.ag-main{padding:29px 31px;min-width:0}
+.ag-section{margin:0 0 24px;break-inside:avoid;page-break-inside:avoid}
+.ag-section h2{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#292b2d;border-bottom:2px solid var(--ag-rust);padding-bottom:7px;margin:0 0 12px}
+.ag-section p,.ag-role li,.ag-case p{font-size:9px;line-height:1.6;color:#4f4b47}
+.ag-role{margin:0 0 19px}.ag-role-top{display:flex;justify-content:space-between;gap:10px}
+.ag-role h3,.ag-case h3{font-size:10px;margin:0;color:#292b2d}.ag-role-top p{font-size:8px;color:var(--ag-rust);font-weight:700;margin:4px 0}
+.ag-role time,.ag-education time{font-size:7px;color:var(--ag-muted);white-space:nowrap}
+.ag-role ul,.ag-case ul{padding-left:15px;margin:7px 0}.ag-role li{margin:3px 0}
+.ag-skill{display:grid;gap:3px;margin-bottom:12px}.ag-skill strong,.ag-skill span,.ag-credential,.ag-language{font-size:8px;overflow-wrap:anywhere}
+.ag-skill strong{color:var(--ag-rust)}.ag-skill span,.ag-credential span,.ag-language span{color:var(--ag-muted)}
+.ag-credential{display:grid;gap:3px;margin-bottom:11px}.ag-language{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}
+.ag-education{display:grid;gap:3px;margin-bottom:12px;font-size:8px}.ag-education span{color:var(--ag-muted)}
+.ag-case{padding-bottom:13px;margin-bottom:14px;border-bottom:1px solid var(--ag-line)}
+@media(max-width:600px){.ro-header,.ag-header{padding:25px 21px}.ro-proof{grid-template-columns:1fr}.ro-main{padding:23px 21px}.ag-columns{grid-template-columns:1fr}.ag-sidebar{padding:22px;border-right:0;border-bottom:1px solid var(--ag-line)}.ag-main{padding:22px}.ag-manifesto{padding:15px 21px}.ro-entry-head,.ag-role-top{gap:6px}}
+@media print{.resume-preview.template-revenue_operator,.resume-preview.template-account_growth{padding:0;box-shadow:none;border:0}.resume-template-revenue-operator,.resume-template-account-growth{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
