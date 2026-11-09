@@ -1900,3 +1900,37 @@ def test_legal_compliance_templates_are_registered_with_distinct_access_tiers(cl
     )
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "counsel_portfolio"
+
+
+def test_sales_customer_success_templates_are_registered_with_distinct_access_tiers(client):
+    user = _make_user("sales-category")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    revenue_operator = next(item for item in catalog if item["id"] == "revenue_operator")
+    account_growth = next(item for item in catalog if item["id"] == "account_growth")
+
+    assert revenue_operator["available"] is True
+    assert revenue_operator["layout"] == "sales-ats"
+    assert account_growth["available"] is False
+    assert account_growth["layout"] == "customer-success"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    account_growth = next(item for item in catalog if item["id"] == "account_growth")
+    assert account_growth["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Account Growth Resume",
+            "template": "account_growth",
+        },
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "account_growth"
