@@ -22,9 +22,10 @@ export function renderRevenueOperatorTemplate(content, escapeHtml) {
     '</p></div><time>' + dates(item) + "</time></div>" +
     ((item.bullets || item.achievements || []).length ? "<ul>" + list([...(item.bullets || []), ...(item.achievements || [])]) + "</ul>" : "") +
     "</article>").join("");
-  const skills = Object.entries(data.skills_by_category || {}).filter(([, values]) => Array.isArray(values) && values.length)
-    .map(([name, values]) => '<div class="ro-skill"><strong>' + e(name) + '</strong><span>' + e(values.join(" · ")) + "</span></div>").join("")
-    || (data.skills || []).length ? '<div class="ro-skill"><span>' + e((data.skills || []).join(" · ")) + "</span></div>" : "";
+  const categorizedSkills = Object.entries(data.skills_by_category || {}).filter(([, values]) => Array.isArray(values) && values.length)
+    .map(([name, values]) => '<div class="ro-skill"><strong>' + e(name) + '</strong><span>' + e(values.join(" · ")) + "</span></div>").join("");
+  const skills = categorizedSkills || ((data.skills || []).length
+    ? '<div class="ro-skill"><span>' + e((data.skills || []).join(" · ")) + "</span></div>" : "");
   const education = (data.education || []).map((item) =>
     '<article class="ro-entry"><h3>' + e(item.degree || "") + (item.field_of_study ? " — " + e(item.field_of_study) : "") +
     '</h3><p>' + e(item.institution || "") + '</p><time>' + dates(item) + "</time></article>").join("");
