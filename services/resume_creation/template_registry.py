@@ -300,6 +300,20 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
         "accent": "#b66a43",
         "font": "Helvetica",
     },
+    "service_standard": {
+        "label": "Service Standard",
+        "tier": "free",
+        "layout": "hospitality-ats",
+        "accent": "#23645c",
+        "font": "Helvetica",
+    },
+    "guest_experience": {
+        "label": "Guest Experience",
+        "tier": "premium",
+        "layout": "hospitality-editorial",
+        "accent": "#b87945",
+        "font": "Times-Roman",
+    },
 }
 
 PREMIUM_PLANS = {"pro", "enterprise"}
