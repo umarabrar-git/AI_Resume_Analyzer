@@ -1934,3 +1934,38 @@ def test_sales_customer_success_templates_are_registered_with_distinct_access_ti
     )
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "account_growth"
+
+
+
+def test_hospitality_tourism_templates_are_registered_with_distinct_access_tiers(client):
+    user = _make_user("hospitality-category")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    service_standard = next(item for item in catalog if item["id"] == "service_standard")
+    guest_experience = next(item for item in catalog if item["id"] == "guest_experience")
+
+    assert service_standard["available"] is True
+    assert service_standard["layout"] == "hospitality-ats"
+    assert guest_experience["available"] is False
+    assert guest_experience["layout"] == "hospitality-editorial"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    guest_experience = next(item for item in catalog if item["id"] == "guest_experience")
+    assert guest_experience["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Guest Experience Resume",
+            "template": "guest_experience",
+        },
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "guest_experience"
