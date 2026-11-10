@@ -1,0 +1,56 @@
+/* Hospitality & Tourism resume templates */
+.resume-preview.template-service_standard,.resume-preview.template-guest_experience{padding:0;background:#fff}
+.resume-template-service-standard{--ss-ink:#20332f;--ss-green:#23645c;--ss-muted:#687a74;min-height:1050px;background:#fff;color:var(--ss-ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+.resume-template-service-standard *,.resume-template-guest-experience *{box-sizing:border-box}
+.ss-header{padding:34px 40px 29px;background:#20332f;color:#fff;border-bottom:5px solid #b9a16b}
+.ss-eyebrow{font-size:8px;font-weight:800;letter-spacing:1.8px;color:#c9d9cf;margin-bottom:22px}
+.ss-header h1{font-size:31px;line-height:1.1;margin:0;color:#fff;overflow-wrap:anywhere}
+.ss-title{font-size:12px;color:#d5e0db;margin:9px 0 0;font-weight:600}
+.ss-contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:17px;font-size:8px;color:#e5ece8}
+.ss-contact span{color:#c9b27c}.ss-contact a{color:#d8c89e;text-decoration:none}
+.ss-principles{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#dce5df;border-bottom:1px solid #dce5df}
+.ss-principles span{padding:15px 12px;text-align:center;background:#f0f4f0;color:#315c51;font-size:8px;font-weight:800;letter-spacing:1px}
+.ss-main{padding:31px 40px 42px}
+.ss-section{margin:0 0 25px;break-inside:avoid;page-break-inside:avoid}
+.ss-section h2{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:#23645c;border-bottom:2px solid #b9a16b;padding-bottom:8px;margin:0 0 12px}
+.ss-section p,.ss-role li{font-size:9px;line-height:1.62;color:#4b5b55}
+.ss-role{margin:0 0 17px}.ss-role-head{display:flex;justify-content:space-between;gap:12px}
+.ss-role h3{font-size:10px;margin:0;color:#20332f}.ss-role p{margin:4px 0;color:#23645c;font-weight:700}
+.ss-role time,.ss-education time{font-size:7px;color:#687a74;white-space:nowrap}
+.ss-role ul{padding-left:16px;margin:7px 0}.ss-role li{margin:3px 0}
+.ss-skill{display:grid;grid-template-columns:155px 1fr;gap:12px;margin:0 0 9px;font-size:8px}
+.ss-skill strong{color:#23645c}.ss-skill span,.ss-skill-list{color:#4b5b55}
+.ss-education{display:grid;gap:3px;margin-bottom:12px;font-size:8px}.ss-education span{color:#687a74}
+.resume-template-guest-experience{--gx-ink:#2d302d;--gx-gold:#b87945;--gx-muted:#77746d;--gx-line:#e8dfd3;min-height:1050px;background:#fff;color:var(--gx-ink);font-family:Arial,Helvetica,sans-serif;line-height:1.52}
+.gx-header{padding:32px 38px 27px;background:#292f2b;color:#fff;border-top:7px solid #b87945}
+.gx-overline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:7px;font-weight:800;letter-spacing:1.4px;color:#e5c49d;margin-bottom:24px}
+.gx-header h1{font-family:Georgia,serif;font-size:30px;line-height:1.12;margin:0;color:#fff;overflow-wrap:anywhere}
+.gx-title{font-size:12px;color:#e1ded7;margin:9px 0 0}
+.gx-contact{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;font-size:8px;color:#e6e1d8}
+.gx-contact span{color:#d5a66f}.gx-contact a{color:#e5c49d;text-decoration:none}
+.gx-manifesto{display:grid;gap:6px;padding:18px 38px;background:#f5efe7;border-bottom:1px solid var(--gx-line)}
+.gx-manifesto span{font-size:7px;letter-spacing:1.5px;font-weight:800;color:#a96d3e}
+.gx-manifesto strong{font-family:Georgia,serif;font-size:12px;letter-spacing:.5px}
+.gx-columns{display:grid;grid-template-columns:minmax(160px,32%) minmax(0,1fr)}
+.gx-sidebar{padding:28px 22px;background:#f8f5f0;border-right:1px solid var(--gx-line)}
+.gx-main{padding:30px 32px;min-width:0}
+.gx-section{margin:0 0 24px;break-inside:avoid;page-break-inside:avoid}
+.gx-section h2{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#30342f;border-bottom:2px solid var(--gx-gold);padding-bottom:7px;margin:0 0 12px}
+.gx-section p,.gx-role li,.gx-story p{font-size:9px;line-height:1.62;color:#514f49}
+.gx-role{margin:0 0 19px}.gx-role-head{display:flex;justify-content:space-between;gap:10px}
+.gx-role h3,.gx-story h3{font-size:10px;margin:0;color:#292f2b}.gx-role-head p{font-size:8px;color:#a96d3e;font-weight:700;margin:4px 0}
+.gx-role time,.gx-education time{font-size:7px;color:var(--gx-muted);white-space:nowrap}
+.gx-role ul,.gx-story ul{padding-left:15px;margin:7px 0}.gx-role li{margin:3px 0}
+.gx-skill{display:grid;gap:3px;margin-bottom:12px}.gx-skill strong,.gx-skill span,.gx-credential,.gx-language{font-size:8px;overflow-wrap:anywhere}
+.gx-skill strong{color:#a96d3e}.gx-skill span,.gx-credential span,.gx-language span{color:var(--gx-muted)}
+.gx-credential{display:grid;gap:3px;margin-bottom:11px}.gx-language{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}
+.gx-education{display:grid;gap:3px;margin-bottom:12px;font-size:8px}.gx-education span{color:var(--gx-muted)}
+.gx-story{padding-bottom:13px;margin-bottom:14px;border-bottom:1px solid var(--gx-line)}
+@media(max-width:600px){.ss-header,.gx-header{padding:25px 21px}.ss-main{padding:23px 21px}.ss-principles{grid-template-columns:1fr}.gx-columns{grid-template-columns:1fr}.gx-sidebar{padding:22px;border-right:0;border-bottom:1px solid var(--gx-line)}.gx-main{padding:22px}.gx-manifesto{padding:15px 21px}.ss-role-head,.gx-role-head{gap:6px}}
+@media print{.resume-preview.template-service_standard,.resume-preview.template-guest_experience{padding:0;box-shadow:none;border:0}.resume-template-service-standard,.resume-template-guest-experience{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.template-sample--service-standard{position:relative;overflow:hidden;background:linear-gradient(180deg,#20332f 0 40%,#f0f4f0 40% 100%);border-bottom:3px solid #b9a16b}
+.template-sample--service-standard::before{content:"";position:absolute;top:15%;left:9%;width:48%;height:4%;background:#c9d9cf;box-shadow:0 9px 0 rgba(255,255,255,.9),0 18px 0 rgba(255,255,255,.62)}
+.template-sample--service-standard::after{content:"";position:absolute;right:9%;bottom:12%;width:27%;height:34%;border-left:2px solid #23645c;background:repeating-linear-gradient(to bottom,#cbd9d1 0 3px,transparent 3px 8px)}
+.template-sample--guest-experience{position:relative;overflow:hidden;background:linear-gradient(160deg,#292f2b 0 43%,#f5efe7 43% 100%);border-top:3px solid #b87945}
+.template-sample--guest-experience::before{content:"";position:absolute;top:16%;left:8%;width:40%;height:5%;background:#e5c49d;box-shadow:0 10px 0 rgba(255,255,255,.85),0 20px 0 rgba(255,255,255,.55)}
+.template-sample--guest-experience::after{content:"";position:absolute;right:8%;bottom:12%;width:34%;height:35%;border-left:2px solid #b87945;border-top:2px solid #b87945}
