@@ -30,6 +30,8 @@ import { renderLegalAssociateTemplate } from "./templates/legal/legal_associate.
 import { renderCounselPortfolioTemplate } from "./templates/legal/counsel_portfolio.js";
 import { renderRevenueOperatorTemplate } from "./templates/sales/revenue_operator.js";
 import { renderAccountGrowthTemplate } from "./templates/sales/account_growth.js";
+import { renderServiceStandardTemplate } from "./templates/hospitality/service_standard.js";
+import { renderGuestExperienceTemplate } from "./templates/hospitality/guest_experience.js";
 import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_compass.js";
 import { renderCarePathTemplate } from "./templates/healthcare/carepath.js";
 import { renderFinanceLedgerTemplate } from "./templates/finance/finance_ledger.js";
@@ -1907,6 +1909,14 @@ if (!root) {
     }
     if (template === "account_growth") {
       elements.resumePreview.innerHTML = renderAccountGrowthTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "service_standard") {
+      elements.resumePreview.innerHTML = renderServiceStandardTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "guest_experience") {
+      elements.resumePreview.innerHTML = renderGuestExperienceTemplate(content, escapeHtml);
       return;
     }
     if (template === "modern") {
