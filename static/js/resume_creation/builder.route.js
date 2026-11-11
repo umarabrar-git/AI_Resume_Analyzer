@@ -32,6 +32,8 @@ import { renderRevenueOperatorTemplate } from "./templates/sales/revenue_operato
 import { renderAccountGrowthTemplate } from "./templates/sales/account_growth.js";
 import { renderServiceStandardTemplate } from "./templates/hospitality/service_standard.js";
 import { renderGuestExperienceTemplate } from "./templates/hospitality/guest_experience.js";
+import { renderEngineeringCoreTemplate } from "./templates/engineering/engineering_core.js";
+import { renderEngineeringPortfolioTemplate } from "./templates/engineering/engineering_portfolio.js";
 import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_compass.js";
 import { renderCarePathTemplate } from "./templates/healthcare/carepath.js";
 import { renderFinanceLedgerTemplate } from "./templates/finance/finance_ledger.js";
@@ -1917,6 +1919,14 @@ if (!root) {
     }
     if (template === "guest_experience") {
       elements.resumePreview.innerHTML = renderGuestExperienceTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "engineering_core") {
+      elements.resumePreview.innerHTML = renderEngineeringCoreTemplate(content, escapeHtml);
+      return;
+    }
+    if (template === "engineering_portfolio") {
+      elements.resumePreview.innerHTML = renderEngineeringPortfolioTemplate(content, escapeHtml);
       return;
     }
     if (template === "modern") {
