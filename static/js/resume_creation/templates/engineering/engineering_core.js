@@ -1,0 +1,17 @@
+const esc=(v)=>String(v==null?"":v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safe=(fn,v)=>typeof fn==="function"?fn(v):esc(v);
+export function renderEngineeringCoreTemplate(content, escapeHtml) {
+ const e=v=>safe(escapeHtml,v),d=content||{},p=d.personal_information||{},hide=new Set(d.hidden_sections||[]),a=v=>Array.isArray(v)?v:[];
+ const date=x=>[x.start_date||"",x.current?"Present":x.end_date||""].filter(Boolean).map(e).join(" – ");
+ const sec=(k,t,b)=>b&&!hide.has(k)?'<section class="ec-section" data-section="'+k+'"><h2>'+t+'</h2>'+b+'</section>':"";
+ const li=v=>a(v).filter(Boolean).map(x=>"<li>"+e(x)+"</li>").join("");
+ const contact=[p.email,p.phone,p.location].filter(Boolean).map(e);
+ [["LinkedIn",p.linkedin],["Portfolio",p.portfolio],["Website",p.website]].forEach(([n,u])=>{if(u&&/^https?:\/\//i.test(String(u)))contact.push('<a href="'+e(u)+'" target="_blank" rel="noopener noreferrer">'+n+"</a>");});
+ const jobs=a(d.experience).map(x=>'<article class="ec-entry"><div class="ec-head"><div><h3>'+e(x.title||"")+'</h3><p>'+e(x.company||"")+(x.location?" · "+e(x.location):"")+'</p></div><time>'+date(x)+'</time></div>'+(x.summary?"<p>"+e(x.summary)+"</p>":"")+(a(x.bullets).length?"<ul>"+li(x.bullets)+"</ul>":"")+(a(x.achievements).length?'<p class="ec-impact"><b>Impact:</b> '+x.achievements.map(e).join(" · ")+"</p>":"")+"</article>").join("");
+ const projects=a(d.projects).map(x=>'<article class="ec-entry"><div class="ec-head"><h3>'+e(x.name||"")+'</h3><time>'+date(x)+'</time></div>'+(x.description?"<p>"+e(x.description)+"</p>":"")+(a(x.technologies).length?'<p class="ec-stack"><b>Tools:</b> '+x.technologies.map(e).join(" · ")+"</p>":"")+(a(x.achievements).length?"<ul>"+li(x.achievements)+"</ul>":"")+"</article>").join("");
+ const groups=d.skills_by_category&&typeof d.skills_by_category==="object"?Object.entries(d.skills_by_category).filter(([,v])=>Array.isArray(v)&&v.length).map(([k,v])=>'<p class="ec-skill"><b>'+e(k)+'</b><span>'+v.map(e).join(" · ")+"</span></p>").join(""):"";
+ const education=a(d.education).map(x=>'<p class="ec-education"><b>'+e(x.degree||"")+'</b> — '+e(x.institution||"")+' <time>'+date(x)+"</time></p>").join("");
+ const certs=a(d.certifications).map(x=>"<p>"+e(x.name||"")+(x.issuer?" · "+e(x.issuer):"")+"</p>").join("");
+ const root=document.createElement("div");root.innerHTML='<div class="resume-template-engineering-core"><header class="ec-header"><p class="ec-kicker">ENGINEERING · DESIGN · MANUFACTURING</p><h1>'+e(p.full_name||"Your Name")+'</h1><p class="ec-role">'+e(p.professional_title||"Engineering Professional")+'</p><div class="ec-contact">'+contact.join('<span>•</span>')+'</div></header><main class="ec-main">'+sec("summary","Professional Summary",d.summary?"<p>"+e(d.summary)+"</p>":"")+sec("experience","Engineering Experience",jobs)+sec("projects","Selected Projects",projects)+sec("skills","Technical Skills",groups||(a(d.skills).length?"<p>"+d.skills.map(e).join(" · ")+"</p>":""))+sec("education","Education",education)+sec("certifications","Certifications & Safety Training",certs)+"</main></div>';
+ const main=root.firstElementChild.querySelector(".ec-main");a(d.section_order).forEach(k=>{const n=Array.from(main.children).find(x=>x.dataset.section===k);if(n)main.appendChild(n);});return root.firstElementChild.outerHTML;
+}
