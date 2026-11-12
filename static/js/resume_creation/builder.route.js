@@ -34,6 +34,8 @@ import { renderServiceStandardTemplate } from "./templates/hospitality/service_s
 import { renderGuestExperienceTemplate } from "./templates/hospitality/guest_experience.js";
 import { renderEngineeringCoreTemplate } from "./templates/engineering/engineering_core.js";
 import { renderEngineeringPortfolioTemplate } from "./templates/engineering/engineering_portfolio.js";
+import { renderEducatorStandardTemplate } from "./templates/education/educator_standard.js";
+import { renderLearningArchitectTemplate } from "./templates/education/learning_architect.js";
 import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_compass.js";
 import { renderCarePathTemplate } from "./templates/healthcare/carepath.js";
 import { renderFinanceLedgerTemplate } from "./templates/finance/finance_ledger.js";
@@ -1929,6 +1931,8 @@ if (!root) {
       elements.resumePreview.innerHTML = renderEngineeringPortfolioTemplate(content, escapeHtml);
       return;
     }
+    if (template === "educator_standard") { elements.resumePreview.innerHTML = renderEducatorStandardTemplate(content, escapeHtml); return; }
+    if (template === "learning_architect") { elements.resumePreview.innerHTML = renderLearningArchitectTemplate(content, escapeHtml); return; }
     if (template === "modern") {
       const contactItems = [
         personal.email ? `<p>${escapeHtml(personal.email)}</p>` : "",
