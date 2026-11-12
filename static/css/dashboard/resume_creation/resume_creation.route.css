@@ -1,3 +1,4 @@
+@import url("./templates/education/education_templates.css");
 @import url("./templates/engineering/engineering_templates.css");
 @import url("./templates/hospitality/hospitality_templates.css");
 @import url("./templates/sales/sales_templates.css");
@@ -1134,3 +1135,5 @@
   border-radius: 4px;
   background: repeating-linear-gradient(to bottom, #d8eee8 0 5px, #fff 5px 10px);
 }
+
+.template-sample--educator-standard{position:relative;overflow:hidden;background:linear-gradient(180deg,#244b5b 0 31%,#f4f8f8 31%);border-bottom:3px solid #4d9a91}.template-sample--educator-standard:before{content:"";position:absolute;left:9%;top:12%;width:42%;height:5%;background:#fff;box-shadow:0 9px 0 #ffffffb3,0 18px 0 #ffffff73}.template-sample--educator-standard:after{content:"";position:absolute;right:9%;bottom:12%;width:25%;height:36%;border:2px solid #4d9a91;background:repeating-linear-gradient(to bottom,#d7e9e7 0 4px,#fff 4px 9px)}.template-sample--learning-architect{position:relative;overflow:hidden;background:linear-gradient(135deg,#263c46 0 43%,#fbf6ec 43%);border-bottom:3px solid #b47a43}.template-sample--learning-architect:before{content:"";position:absolute;left:9%;top:16%;width:35%;height:6%;background:#e8c99f;box-shadow:0 11px 0 #ffffffe6,0 22px 0 #ffffffa6}.template-sample--learning-architect:after{content:"";position:absolute;right:10%;bottom:13%;width:29%;height:35%;border:2px solid #b47a43;border-radius:50% 50% 4px 4px}
