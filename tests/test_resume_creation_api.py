@@ -1989,3 +1989,23 @@ def test_engineering_manufacturing_templates_are_registered_with_distinct_access
     created = client.post("/resume-creation/api/resumes", json={"creation_method": "scratch", "title": "Engineering Portfolio Resume", "template": "engineering_portfolio"})
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "engineering_portfolio"
+
+
+def test_education_teaching_templates_are_registered_with_distinct_access_tiers(client):
+    user = _make_user("education-category")
+    _auth_session(client, user.id)
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    standard = next(item for item in catalog if item["id"] == "educator_standard")
+    architect = next(item for item in catalog if item["id"] == "learning_architect")
+    assert standard["available"] is True and standard["layout"] == "education-ats"
+    assert architect["available"] is False and architect["layout"] == "education-editorial"
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    architect = next(item for item in catalog if item["id"] == "learning_architect")
+    assert architect["available"] is True
+    created = client.post("/resume-creation/api/resumes", json={"creation_method":"scratch","title":"Learning Architect Resume","template":"learning_architect"})
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "learning_architect"
