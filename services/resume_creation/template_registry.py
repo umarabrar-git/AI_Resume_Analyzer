@@ -316,6 +316,8 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
     },
     "engineering_core": {"label": "Engineering Core", "tier": "free", "layout": "engineering-ats", "accent": "#315c78", "font": "Helvetica"},
     "engineering_portfolio": {"label": "Engineering Portfolio", "tier": "premium", "layout": "engineering-editorial", "accent": "#c16b42", "font": "Times-Roman"},
+    "educator_standard": {"label": "Educator Standard", "tier": "free", "layout": "education-ats", "accent": "#315f70", "font": "Helvetica"},
+    "learning_architect": {"label": "Learning Architect", "tier": "premium", "layout": "education-editorial", "accent": "#b47a43", "font": "Times-Roman"},
 }
 
 PREMIUM_PLANS = {"pro", "enterprise"}
