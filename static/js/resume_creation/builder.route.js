@@ -36,6 +36,8 @@ import { renderEngineeringCoreTemplate } from "./templates/engineering/engineeri
 import { renderEngineeringPortfolioTemplate } from "./templates/engineering/engineering_portfolio.js";
 import { renderEducatorStandardTemplate } from "./templates/education/educator_standard.js";
 import { renderLearningArchitectTemplate } from "./templates/education/learning_architect.js";
+import { renderPublicServiceStandardTemplate } from "./templates/public_service/public_service_standard.js";
+import { renderMissionImpactTemplate } from "./templates/public_service/mission_impact.js";
 import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_compass.js";
 import { renderCarePathTemplate } from "./templates/healthcare/carepath.js";
 import { renderFinanceLedgerTemplate } from "./templates/finance/finance_ledger.js";
@@ -1933,6 +1935,8 @@ if (!root) {
     }
     if (template === "educator_standard") { elements.resumePreview.innerHTML = renderEducatorStandardTemplate(content, escapeHtml); return; }
     if (template === "learning_architect") { elements.resumePreview.innerHTML = renderLearningArchitectTemplate(content, escapeHtml); return; }
+    if (template === "public_service_standard") { elements.resumePreview.innerHTML = renderPublicServiceStandardTemplate(content, escapeHtml); return; }
+    if (template === "mission_impact") { elements.resumePreview.innerHTML = renderMissionImpactTemplate(content, escapeHtml); return; }
     if (template === "modern") {
       const contactItems = [
         personal.email ? `<p>${escapeHtml(personal.email)}</p>` : "",
