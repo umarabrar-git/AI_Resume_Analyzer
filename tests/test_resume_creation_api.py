@@ -2009,3 +2009,25 @@ def test_education_teaching_templates_are_registered_with_distinct_access_tiers(
     created = client.post("/resume-creation/api/resumes", json={"creation_method":"scratch","title":"Learning Architect Resume","template":"learning_architect"})
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "learning_architect"
+
+
+def test_public_service_nonprofit_templates_have_distinct_access_tiers(client):
+    user = _make_user("public-service-category")
+    _auth_session(client, user.id)
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    standard = next(item for item in catalog if item["id"] == "public_service_standard")
+    impact = next(item for item in catalog if item["id"] == "mission_impact")
+    assert standard["available"] is True
+    assert standard["layout"] == "public-service-ats"
+    assert impact["available"] is False
+    assert impact["layout"] == "nonprofit-editorial"
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    impact = next(item for item in catalog if item["id"] == "mission_impact")
+    assert impact["available"] is True
+    created = client.post("/resume-creation/api/resumes", json={"creation_method": "scratch", "title": "Mission Impact Resume", "template": "mission_impact"})
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "mission_impact"
