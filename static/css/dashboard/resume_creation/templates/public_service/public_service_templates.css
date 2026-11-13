@@ -1,0 +1,33 @@
+/* Public Service & Nonprofit resume templates */
+.resume-preview.template-public_service_standard,.resume-preview.template-mission_impact{padding:0;background:#fff}
+.resume-template-public-service-standard{--pss-ink:#20342f;--pss-green:#245b50;--pss-muted:#65766f;min-height:1050px;background:#fff;color:var(--pss-ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+.resume-template-public-service-standard *,.resume-template-mission-impact *{box-sizing:border-box}
+.pss-header{padding:34px 40px 27px;background:#203b35;color:#fff;border-bottom:5px solid #8cae9d}
+.pss-kicker{font-size:8px;font-weight:800;letter-spacing:1.7px;color:#b7d2c4;margin-bottom:20px}
+.pss-header h1{font-size:30px;line-height:1.12;margin:0;color:#fff;overflow-wrap:anywhere}
+.pss-title{font-size:12px;color:#d5e4dc;margin:8px 0 0;font-weight:600}
+.pss-contact{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;font-size:8px;color:#e1ece6}.pss-contact span{color:#a8c9b8}.pss-contact a{color:#b7d2c4;text-decoration:none}
+.pss-principles{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#d8e4dd;border-bottom:1px solid #d8e4dd}
+.pss-principles div{display:grid;gap:5px;padding:16px 20px;background:#edf3ef}.pss-principles b{font-size:8px;letter-spacing:1px;color:#245b50}.pss-principles span{font-size:8px;color:#596c63}
+.pss-main{padding:30px 40px 42px}.pss-section{margin:0 0 24px;break-inside:avoid;page-break-inside:avoid}
+.pss-section h2{font-size:10px;text-transform:uppercase;letter-spacing:1.1px;border-bottom:2px solid #8cae9d;padding-bottom:7px;margin:0 0 12px}
+.pss-section p,.pss-entry li{font-size:9px;line-height:1.6;color:#465b52}.pss-entry{margin:0 0 16px}.pss-head{display:flex;justify-content:space-between;gap:12px}
+.pss-entry h3{font-size:10px;margin:0;color:#203b35}.pss-entry p{margin:4px 0;color:#245b50;font-weight:700}
+.pss-entry time{font-size:7px;color:#65766f;white-space:nowrap}.pss-entry ul{padding-left:16px;margin:7px 0}.pss-entry li{margin:3px 0}
+.resume-template-mission-impact{--mi-ink:#292e2b;--mi-rust:#b36c43;--mi-muted:#777a72;--mi-line:#e5e1d9;min-height:1050px;background:#fff;color:var(--mi-ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+.mi-header{padding:32px 38px 27px;background:#292e2b;color:#fff;border-top:7px solid #b36c43}
+.mi-brandline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:7px;font-weight:800;letter-spacing:1.3px;color:#e4b99d;margin-bottom:22px}
+.mi-header h1{font-family:Georgia,serif;font-size:30px;line-height:1.12;margin:0;color:#fff;overflow-wrap:anywhere}
+.mi-title{font-size:12px;color:#e0ddd6;margin:8px 0 0}.mi-contact{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;font-size:8px;color:#e5e1d9}.mi-contact i{color:#d49a75;font-style:normal}.mi-contact a{color:#e4b99d;text-decoration:none}
+.mi-manifesto{display:grid;gap:7px;padding:19px 38px;background:#f4eee7;border-bottom:1px solid var(--mi-line)}
+.mi-manifesto span{font-size:7px;letter-spacing:1.5px;font-weight:800;color:#a75f3b}.mi-manifesto strong{font-family:Georgia,serif;font-size:13px;font-weight:600;color:#292e2b}
+.mi-columns{display:grid;grid-template-columns:minmax(155px,32%) minmax(0,1fr)}.mi-sidebar{padding:28px 22px;background:#f8f6f1;border-right:1px solid var(--mi-line)}.mi-main{padding:30px 32px;min-width:0}
+.mi-section{margin:0 0 24px;break-inside:avoid;page-break-inside:avoid}.mi-section h2{font-size:9px;text-transform:uppercase;letter-spacing:1px;border-bottom:2px solid #b36c43;padding-bottom:7px;margin:0 0 12px}
+.mi-section p,.mi-role li,.mi-case p{font-size:9px;line-height:1.6;color:#514e48}.mi-role{margin:0 0 19px}.mi-role-head{display:flex;justify-content:space-between;gap:10px}
+.mi-role h3,.mi-case h3{font-size:10px;margin:0;color:#292e2b}.mi-role-head p{font-size:8px;color:#a75f3b;font-weight:700;margin:4px 0}
+.mi-role time{font-size:7px;color:#777a72;white-space:nowrap}.mi-role ul,.mi-case ul{padding-left:15px;margin:7px 0}.mi-role li{margin:3px 0}
+.mi-skill{display:grid;gap:4px;margin-bottom:12px;font-size:8px}.mi-skill b{color:#a75f3b}.mi-skill span,.mi-credential span{color:#777a72}
+.mi-education{display:grid;gap:3px;margin-bottom:12px;font-size:8px}.mi-education span,.mi-education time{color:#777a72;font-size:7px}.mi-credential{display:grid;gap:3px;font-size:8px;margin:0 0 11px}
+.mi-case{padding-bottom:14px;margin-bottom:15px;border-bottom:1px solid var(--mi-line)}.mi-case>span{font-size:7px;letter-spacing:1px;font-weight:800;color:#a75f3b}.mi-case h3{margin:5px 0}
+@media(max-width:600px){.pss-header,.mi-header{padding:25px 21px}.pss-principles{grid-template-columns:1fr}.pss-main{padding:23px 21px}.mi-columns{grid-template-columns:1fr}.mi-sidebar{padding:22px;border-right:0;border-bottom:1px solid var(--mi-line)}.mi-main{padding:23px 21px}.mi-manifesto{padding:16px 21px}.pss-head,.mi-role-head{gap:6px}}
+@media print{.resume-preview.template-public_service_standard,.resume-preview.template-mission_impact{padding:0;box-shadow:none;border:0}.resume-template-public-service-standard,.resume-template-mission-impact{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
