@@ -2031,3 +2031,25 @@ def test_public_service_nonprofit_templates_have_distinct_access_tiers(client):
     created = client.post("/resume-creation/api/resumes", json={"creation_method": "scratch", "title": "Mission Impact Resume", "template": "mission_impact"})
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "mission_impact"
+
+
+def test_marketing_communications_templates_have_distinct_access_tiers(client):
+    user = _make_user("marketing-communications-category")
+    _auth_session(client, user.id)
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    campaign = next(item for item in catalog if item["id"] == "campaign_strategist")
+    signal = next(item for item in catalog if item["id"] == "signal_story")
+    assert campaign["available"] is True
+    assert campaign["layout"] == "marketing-ats"
+    assert signal["available"] is False
+    assert signal["layout"] == "marketing-editorial"
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    signal = next(item for item in catalog if item["id"] == "signal_story")
+    assert signal["available"] is True
+    created = client.post("/resume-creation/api/resumes", json={"creation_method": "scratch", "title": "Signal and Story Resume", "template": "signal_story"})
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "signal_story"
