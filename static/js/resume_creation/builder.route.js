@@ -40,6 +40,8 @@ import { renderPublicServiceStandardTemplate } from "./templates/public_service/
 import { renderMissionImpactTemplate } from "./templates/public_service/mission_impact.js";
 import { renderCampaignStrategistTemplate } from "./templates/marketing/campaign_strategist.js";
 import { renderSignalStoryTemplate } from "./templates/marketing/signal_story.js";
+import { renderSystemsSupportTemplate } from "./templates/it_operations/systems_support.js";
+import { renderInfrastructureLeadTemplate } from "./templates/it_operations/infrastructure_lead.js";
 import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_compass.js";
 import { renderCarePathTemplate } from "./templates/healthcare/carepath.js";
 import { renderFinanceLedgerTemplate } from "./templates/finance/finance_ledger.js";
@@ -1941,6 +1943,8 @@ if (!root) {
     if (template === "mission_impact") { elements.resumePreview.innerHTML = renderMissionImpactTemplate(content, escapeHtml); return; }
     if (template === "campaign_strategist") { elements.resumePreview.innerHTML = renderCampaignStrategistTemplate(content, escapeHtml); return; }
     if (template === "signal_story") { elements.resumePreview.innerHTML = renderSignalStoryTemplate(content, escapeHtml); return; }
+    if (template === "systems_support") { elements.resumePreview.innerHTML = renderSystemsSupportTemplate(content, escapeHtml); return; }
+    if (template === "infrastructure_lead") { elements.resumePreview.innerHTML = renderInfrastructureLeadTemplate(content, escapeHtml); return; }
     if (template === "modern") {
       const contactItems = [
         personal.email ? `<p>${escapeHtml(personal.email)}</p>` : "",
