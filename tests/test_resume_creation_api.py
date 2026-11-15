@@ -2053,3 +2053,25 @@ def test_marketing_communications_templates_have_distinct_access_tiers(client):
     created = client.post("/resume-creation/api/resumes", json={"creation_method": "scratch", "title": "Signal and Story Resume", "template": "signal_story"})
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "signal_story"
+
+
+def test_it_operations_templates_have_distinct_access_tiers(client):
+    user = _make_user("it-operations-category")
+    _auth_session(client, user.id)
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    support = next(item for item in catalog if item["id"] == "systems_support")
+    infrastructure = next(item for item in catalog if item["id"] == "infrastructure_lead")
+    assert support["available"] is True
+    assert support["layout"] == "it-operations-ats"
+    assert infrastructure["available"] is False
+    assert infrastructure["layout"] == "infrastructure-editorial"
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    infrastructure = next(item for item in catalog if item["id"] == "infrastructure_lead")
+    assert infrastructure["available"] is True
+    created = client.post("/resume-creation/api/resumes", json={"creation_method": "scratch", "title": "Infrastructure Lead Resume", "template": "infrastructure_lead"})
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "infrastructure_lead"
