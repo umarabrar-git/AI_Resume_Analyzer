@@ -1,0 +1,30 @@
+/* IT Operations & Infrastructure resume templates */
+.resume-preview.template-systems_support,.resume-preview.template-infrastructure_lead{padding:0;background:#fff}
+.resume-template-systems-support{min-height:1050px;background:#fff;color:#26343e;font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+.ss-header{padding:34px 42px 28px;background:#203b49;color:#fff;border-bottom:5px solid #4c91a0}
+.ss-kicker{font-size:8px;letter-spacing:1.7px;font-weight:800;color:#a9d1d8;margin:0 0 19px}
+.ss-header h1{font-size:31px;line-height:1.1;margin:0;color:#fff;overflow-wrap:anywhere}
+.ss-role{font-size:12px;color:#d5e6e9;margin:9px 0 0}
+.ss-contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;font-size:8px;color:#e5f0f1}
+.ss-contact a{color:#b8e0e4;text-decoration:none}.ss-contact span{color:#72aeb8}
+.ss-main{padding:31px 42px}.ss-section,.il-section{margin:0 0 24px;break-inside:avoid;page-break-inside:avoid}
+.ss-section h2,.il-section h2{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:#286579;border-bottom:2px solid #9bc5ca;padding-bottom:8px;margin:0 0 12px}
+.ss-section p,.ss-entry li,.il-section p,.il-role li,.il-project li{font-size:9px;line-height:1.65;color:#4d5b62}
+.ss-entry{margin:0 0 16px}.ss-head{display:flex;justify-content:space-between;gap:12px}.ss-head h3,.ss-entry h3{font-size:10px;margin:0;color:#26343e}.ss-head p{font-size:8px;color:#39798a;margin:4px 0;font-weight:700}.ss-head time,.ss-section time{font-size:7px;color:#71818a;white-space:nowrap}.ss-entry ul,.il-role ul,.il-project ul{padding-left:16px;margin:7px 0}.ss-entry li,.il-role li,.il-project li{margin:3px 0}.ss-tools{font-size:8px!important;color:#286579!important}.ss-skills{line-height:2}.ss-skill{margin:0 0 8px}.ss-skill b{color:#286579}
+.resume-template-infrastructure-lead{min-height:1050px;background:#fff;color:#302f2b;font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+.il-header{padding:31px 38px 27px;background:#242d32;color:#fff;border-top:7px solid #c17a45}
+.il-topline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:7px;letter-spacing:1.35px;font-weight:800;color:#e7b991;margin-bottom:24px}
+.il-header h1{font-family:Georgia,serif;font-size:32px;line-height:1.1;margin:0;color:#fff;overflow-wrap:anywhere}
+.il-role-title{font-size:12px;color:#e5e1da;margin:9px 0 0}.il-contact{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;font-size:8px;color:#e9e4dd}.il-contact a{color:#efbd9e;text-decoration:none}.il-contact span{color:#d09a70}
+.il-intro{display:grid;gap:8px;padding:20px 38px;background:#f5eee7;border-bottom:1px solid #eadbd0}.il-intro span{font-size:7px;letter-spacing:1.5px;font-weight:800;color:#a96037}.il-intro strong{font-family:Georgia,serif;font-size:12px;line-height:1.6;font-weight:500;color:#373633}
+.il-columns{display:grid;grid-template-columns:minmax(155px,31%) minmax(0,1fr)}.il-sidebar{padding:28px 22px;background:#f8f6f2;border-right:1px solid #e9e2d9}.il-main{padding:29px 31px;min-width:0}
+.il-section h2{color:#383b38;border-bottom-color:#c17a45}.il-section p,.il-role li,.il-project li{font-size:9px;line-height:1.65;color:#55534e}
+.il-role,.il-project{margin:0 0 19px}.il-role-head{display:flex;justify-content:space-between;gap:10px}.il-role h3,.il-project h3{font-size:10px;margin:0;color:#292d2d}.il-role-head p{font-size:8px;color:#a96037;font-weight:700;margin:4px 0}.il-role time{font-size:7px;color:#77746d;white-space:nowrap}.il-impact{font-size:8px!important;color:#9a5839!important}.il-project{padding-bottom:13px;border-bottom:1px solid #e9e2d9}.il-stack{font-size:8px!important;color:#a75d3d!important}.il-skill{display:grid;gap:4px;margin-bottom:12px;font-size:8px}.il-skill b{color:#a75d3d}.il-skill span{color:#575650}
+.template-sample--systems-support{position:relative;overflow:hidden;background:linear-gradient(180deg,#203b49 0 39%,#fff 39% 100%);border-bottom:3px solid #4c91a0}
+.template-sample--systems-support:before{content:"";position:absolute;top:15%;left:9%;width:47%;height:4%;background:#a9d1d8;box-shadow:0 9px 0 #ffffffeb,0 18px 0 #ffffff99}
+.template-sample--systems-support:after{content:"";position:absolute;right:9%;bottom:12%;width:27%;height:34%;border-left:2px solid #286579;background:repeating-linear-gradient(to bottom,#d1e5e7 0 3px,transparent 3px 8px)}
+.template-sample--infrastructure-lead{position:relative;overflow:hidden;background:linear-gradient(155deg,#242d32 0 42%,#f5eee7 42% 100%);border-top:3px solid #c17a45}
+.template-sample--infrastructure-lead:before{content:"";position:absolute;top:16%;left:8%;width:43%;height:5%;background:#e7b991;box-shadow:0 10px 0 #ffffffdf,0 20px 0 #ffffff9c}
+.template-sample--infrastructure-lead:after{content:"";position:absolute;right:8%;bottom:12%;width:33%;height:35%;border-left:2px solid #c17a45;border-top:2px solid #c17a45}
+@media(max-width:600px){.ss-header,.il-header{padding:24px 21px}.ss-main{padding:22px 21px}.il-intro{padding:16px 21px}.il-columns{grid-template-columns:1fr}.il-sidebar{padding:21px;border-right:0;border-bottom:1px solid #e9e2d9}.il-main{padding:22px}.ss-head,.il-role-head{gap:6px}}
+@media print{.resume-preview.template-systems_support,.resume-preview.template-infrastructure_lead{padding:0;box-shadow:none;border:0}.resume-template-systems-support,.resume-template-infrastructure-lead{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
