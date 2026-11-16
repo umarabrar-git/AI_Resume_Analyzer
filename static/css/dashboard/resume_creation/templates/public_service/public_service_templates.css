@@ -31,3 +31,42 @@
 .mi-case{padding-bottom:14px;margin-bottom:15px;border-bottom:1px solid var(--mi-line)}.mi-case>span{font-size:7px;letter-spacing:1px;font-weight:800;color:#a75f3b}.mi-case h3{margin:5px 0}
 @media(max-width:600px){.pss-header,.mi-header{padding:25px 21px}.pss-principles{grid-template-columns:1fr}.pss-main{padding:23px 21px}.mi-columns{grid-template-columns:1fr}.mi-sidebar{padding:22px;border-right:0;border-bottom:1px solid var(--mi-line)}.mi-main{padding:23px 21px}.mi-manifesto{padding:16px 21px}.pss-head,.mi-role-head{gap:6px}}
 @media print{.resume-preview.template-public_service_standard,.resume-preview.template-mission_impact{padding:0;box-shadow:none;border:0}.resume-template-public-service-standard,.resume-template-mission-impact{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+
+/* Civic Record — public administration and policy leadership */
+.resume-preview.template-civic_record{padding:0;background:#fff}
+.resume-template-civic-record{--cr-ink:#203b39;--cr-green:#27645b;--cr-muted:#687872;--cr-line:#dce5df;min-height:1050px;background:#fff;color:var(--cr-ink);font-family:Georgia,"Times New Roman",serif;line-height:1.5}
+.resume-template-civic-record *{box-sizing:border-box}
+.cr-header{padding:32px 38px 27px;background:#203b39;color:#fff;border-top:7px solid #b58a4b}
+.cr-kicker{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#c6d8ce;font:800 7px Arial,sans-serif;letter-spacing:1.3px;margin-bottom:22px}
+.cr-header h1{font-size:30px;line-height:1.12;margin:0;color:#fff;overflow-wrap:anywhere}
+.cr-title{font:600 12px Arial,sans-serif;color:#d9e5df;margin:8px 0 0}
+.cr-contact{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;font:8px Arial,sans-serif;color:#e1ece6}
+.cr-contact i{color:#c7a36b;font-style:normal}.cr-contact a{color:#d6c29c;text-decoration:none}
+.cr-principle{display:grid;gap:7px;padding:19px 38px;background:#eef3ef;border-bottom:1px solid var(--cr-line)}
+.cr-principle span{font:800 7px Arial,sans-serif;letter-spacing:1.5px;color:#27645b}
+.cr-principle strong{font-size:13px;font-weight:600;color:#203b39}
+.cr-principle p{font:8px/1.5 Arial,sans-serif;color:#687872;margin:0}
+.cr-columns{display:grid;grid-template-columns:minmax(155px,32%) minmax(0,1fr)}
+.cr-sidebar{padding:28px 22px;background:#f5f7f3;border-right:1px solid var(--cr-line)}
+.cr-main{padding:30px 32px;min-width:0}
+.cr-section{margin:0 0 24px;break-inside:avoid;page-break-inside:avoid}
+.cr-section h2{font:800 9px Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;border-bottom:2px solid #b58a4b;padding-bottom:7px;margin:0 0 12px}
+.cr-section p,.cr-role li,.cr-initiative p{font:9px/1.6 Arial,sans-serif;color:#4f5d57}
+.cr-role{margin:0 0 19px}.cr-role-head{display:flex;justify-content:space-between;gap:10px}
+.cr-role h3,.cr-initiative h3{font:700 10px Arial,sans-serif;margin:0;color:#203b39}
+.cr-role-head p{font:700 8px Arial,sans-serif;color:#27645b;margin:4px 0}
+.cr-role time,.cr-education time{font:7px Arial,sans-serif;color:#687872;white-space:nowrap}
+.cr-role ul,.cr-initiative ul{padding-left:15px;margin:7px 0}.cr-role li{margin:3px 0}
+.cr-capability{display:grid;gap:4px;margin-bottom:12px;font:8px Arial,sans-serif}
+.cr-capability b{color:#27645b}.cr-capability span,.cr-credential span,.cr-language span{color:#687872}
+.cr-education{display:grid;gap:3px;margin-bottom:12px;font:8px Arial,sans-serif}
+.cr-education span,.cr-education time{color:#687872;font-size:7px}
+.cr-credential,.cr-language{display:grid;gap:3px;font:8px Arial,sans-serif;margin:0 0 11px}
+.cr-initiative{padding-bottom:14px;margin-bottom:15px;border-bottom:1px solid var(--cr-line)}
+.cr-initiative>span{font:800 7px Arial,sans-serif;letter-spacing:1px;color:#27645b}.cr-initiative h3{margin:5px 0}
+@media(max-width:600px){.cr-header{padding:25px 21px}.cr-columns{grid-template-columns:1fr}.cr-sidebar{padding:22px;border-right:0;border-bottom:1px solid var(--cr-line)}.cr-main{padding:23px 21px}.cr-principle{padding:16px 21px}.cr-role-head{gap:6px}}
+@media print{.resume-preview.template-civic_record{padding:0;box-shadow:none;border:0}.resume-template-civic-record{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.template-sample--civic-record{position:relative;overflow:hidden;background:linear-gradient(180deg,#203b39 0 42%,#f5f7f3 42% 100%);border-bottom:3px solid #b58a4b}
+.template-sample--civic-record::before{content:"";position:absolute;top:13%;left:8%;width:44%;height:4%;background:#c6d8ce;box-shadow:0 8px 0 rgba(255,255,255,.9),0 16px 0 rgba(255,255,255,.55)}
+.template-sample--civic-record::after{content:"";position:absolute;right:8%;bottom:10%;width:28%;height:38%;border-left:2px solid #27645b;background:repeating-linear-gradient(to bottom,#cbd8cf 0 3px,transparent 3px 8px)}

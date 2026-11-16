@@ -1,0 +1,35 @@
+.template-sample--civic-record{position:relative;overflow:hidden;background:linear-gradient(180deg,#21483f 0 38%,#f5f7f3 38% 100%);border-bottom:3px solid #c49a57}
+.template-sample--civic-record::before{content:"";position:absolute;top:13%;left:9%;width:43%;height:4%;background:#e8d8b6;box-shadow:0 8px 0 rgba(255,255,255,.9),0 16px 0 rgba(255,255,255,.58)}
+.template-sample--civic-record::after{content:"";position:absolute;right:9%;bottom:12%;width:27%;height:35%;border:2px solid #7b9a8d;background:repeating-linear-gradient(to bottom,#d8e4dc 0 3px,transparent 3px 8px)}
+.resume-template-civic-record{--cr-ink:#233b35;--cr-muted:#68766f;--cr-green:#285b53;--cr-gold:#b68b4d;max-width:100%;min-height:100%;padding:34px 38px;background:#fff;color:var(--cr-ink);font-family:Arial,Helvetica,sans-serif;box-sizing:border-box}
+.resume-template-civic-record *{box-sizing:border-box}
+.cr-header{padding-bottom:20px;border-bottom:2px solid var(--cr-green)}
+.cr-kicker{display:flex;justify-content:space-between;gap:12px;color:var(--cr-green);font-size:8px;font-weight:800;letter-spacing:1.35px}
+.cr-header h1{margin:22px 0 4px;font-family:Georgia,serif;font-size:30px;line-height:1.08;letter-spacing:-.5px}
+.cr-title{margin:0;color:var(--cr-green);font-size:12px;font-weight:700}
+.cr-contact{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;color:var(--cr-muted);font-size:9px}
+.cr-contact i{font-style:normal;color:var(--cr-gold)}
+.cr-contact a{color:var(--cr-green);text-decoration:none}
+.cr-principle{margin:18px 0 22px;padding:15px 18px;background:#f1f5f1;border-left:4px solid var(--cr-gold)}
+.cr-principle span,.cr-initiative>span{display:block;margin-bottom:7px;color:var(--cr-green);font-size:8px;font-weight:800;letter-spacing:1.2px}
+.cr-principle strong{display:block;font-family:Georgia,serif;font-size:16px;line-height:1.3}
+.cr-principle p{margin:5px 0 0;color:var(--cr-muted);font-size:9px}
+.cr-columns{display:grid;grid-template-columns:minmax(0,1fr) 2fr;gap:25px}
+.cr-section{margin:0 0 17px;break-inside:avoid}
+.cr-section h2{margin:0 0 9px;padding-bottom:6px;border-bottom:1px solid #dce5df;color:var(--cr-green);font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.cr-section p,.cr-section li{color:#43534c;font-size:9px;line-height:1.55}
+.cr-section ul{margin:7px 0 0;padding-left:15px}
+.cr-section li{margin:0 0 4px}
+.cr-role,.cr-initiative{margin:0 0 15px;break-inside:avoid}
+.cr-role-head{display:flex;justify-content:space-between;gap:12px}
+.cr-role h3,.cr-initiative h3{margin:0;color:#253d35;font-size:11px}
+.cr-role-head p{margin:3px 0;color:var(--cr-muted);font-size:9px}
+.cr-role time,.cr-education time{flex-shrink:0;color:var(--cr-muted);font-size:8px}
+.cr-initiative{padding:10px 12px;background:#f7f8f5;border:1px solid #e4e9e3}
+.cr-initiative>span{font-size:7px;color:#927044}
+.cr-initiative p{margin:5px 0}
+.cr-capability,.cr-education,.cr-credential,.cr-language{display:flex;flex-direction:column;gap:3px;margin:0 0 9px}
+.cr-capability b,.cr-education b,.cr-credential b,.cr-language b{font-size:9px}
+.cr-capability span,.cr-education span,.cr-credential span,.cr-language span{color:var(--cr-muted);font-size:8px;line-height:1.45}
+@media(max-width:640px){.resume-template-civic-record{padding:24px 20px}.cr-columns{grid-template-columns:1fr;gap:5px}.cr-kicker{font-size:7px}.cr-header h1{font-size:25px}.cr-role-head{flex-direction:column;gap:2px}}
+@media print{.resume-template-civic-record{padding:24px 28px}.cr-section,.cr-role,.cr-initiative{break-inside:avoid}}
