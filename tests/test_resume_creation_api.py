@@ -2075,3 +2075,34 @@ def test_it_operations_templates_have_distinct_access_tiers(client):
     created = client.post("/resume-creation/api/resumes", json={"creation_method": "scratch", "title": "Infrastructure Lead Resume", "template": "infrastructure_lead"})
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "infrastructure_lead"
+
+
+def test_civic_record_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("civic-record")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    civic_record = next(item for item in catalog if item["id"] == "civic_record")
+    assert civic_record["available"] is False
+    assert civic_record["label"] == "Civic Record"
+    assert civic_record["layout"] == "public-service-editorial"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    civic_record = next(item for item in catalog if item["id"] == "civic_record")
+    assert civic_record["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Civic Record Public Service Resume",
+            "template": "civic_record",
+        },
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "civic_record"
