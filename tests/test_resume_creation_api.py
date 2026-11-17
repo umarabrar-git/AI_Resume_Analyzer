@@ -2106,3 +2106,34 @@ def test_civic_record_template_is_premium_and_selectable_by_pro_user(client):
     )
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "civic_record"
+
+
+def test_growth_engine_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("growth-engine")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    growth_engine = next(item for item in catalog if item["id"] == "growth_engine")
+    assert growth_engine["available"] is False
+    assert growth_engine["label"] == "Growth Engine"
+    assert growth_engine["layout"] == "marketing-growth"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    growth_engine = next(item for item in catalog if item["id"] == "growth_engine")
+    assert growth_engine["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Growth Marketing Resume",
+            "template": "growth_engine",
+        },
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "growth_engine"

@@ -41,6 +41,7 @@ import { renderMissionImpactTemplate } from "./templates/public_service/mission_
 import { renderCivicRecordTemplate } from "./templates/public_service/civic_record.js";
 import { renderCampaignStrategistTemplate } from "./templates/marketing/campaign_strategist.js";
 import { renderSignalStoryTemplate } from "./templates/marketing/signal_story.js";
+import { renderGrowthEngineTemplate } from "./templates/marketing/growth_engine.js";
 import { renderSystemsSupportTemplate } from "./templates/it_operations/systems_support.js";
 import { renderInfrastructureLeadTemplate } from "./templates/it_operations/infrastructure_lead.js";
 import { renderClinicalCompassTemplate } from "./templates/healthcare/clinical_compass.js";
@@ -1945,6 +1946,7 @@ if (!root) {
     if (template === "civic_record") { elements.resumePreview.innerHTML = renderCivicRecordTemplate(content, escapeHtml); return; }
     if (template === "campaign_strategist") { elements.resumePreview.innerHTML = renderCampaignStrategistTemplate(content, escapeHtml); return; }
     if (template === "signal_story") { elements.resumePreview.innerHTML = renderSignalStoryTemplate(content, escapeHtml); return; }
+    if (template === "growth_engine") { elements.resumePreview.innerHTML = renderGrowthEngineTemplate(content, escapeHtml); return; }
     if (template === "systems_support") { elements.resumePreview.innerHTML = renderSystemsSupportTemplate(content, escapeHtml); return; }
     if (template === "infrastructure_lead") { elements.resumePreview.innerHTML = renderInfrastructureLeadTemplate(content, escapeHtml); return; }
     if (template === "modern") {
