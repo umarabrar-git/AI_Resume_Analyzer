@@ -328,7 +328,8 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
     "public_service_standard": {"label": "Public Service Standard", "tier": "free", "layout": "public-service-ats", "accent": "#245b50", "font": "Helvetica"},
     "mission_impact": {"label": "Mission Impact", "tier": "premium", "layout": "nonprofit-editorial", "accent": "#b36c43", "font": "Times-Roman"},
     "campaign_strategist": {"label": "Campaign Strategist", "tier": "free", "layout": "marketing-ats", "accent": "#245b72", "font": "Helvetica"},
-    "signal_story": {"label": "Signal & Story", "tier": "premium", "layout": "marketing-editorial", "accent": "#c05b43", "font": "Times-Roman"},    "systems_support": {
+    "signal_story": {"label": "Signal & Story", "tier": "premium", "layout": "marketing-editorial", "accent": "#c05b43", "font": "Times-Roman"},
+    "growth_engine": {"label": "Growth Engine", "tier": "premium", "layout": "marketing-growth", "accent": "#b6d64a", "font": "Helvetica"},    "systems_support": {
         "label": "Systems Support",
         "tier": "free",
         "layout": "it-operations-ats",
