@@ -47,5 +47,35 @@
 .ag-credential{display:grid;gap:3px;margin-bottom:11px}.ag-language{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}
 .ag-education{display:grid;gap:3px;margin-bottom:12px;font-size:8px}.ag-education span{color:var(--ag-muted)}
 .ag-case{padding-bottom:13px;margin-bottom:14px;border-bottom:1px solid var(--ag-line)}
+
+/* Territory Strategist — territory planning and revenue leadership */
+.resume-preview.template-territory_strategist{padding:0;background:#fff}
+.resume-template-territory-strategist{--ts-ink:#172d3a;--ts-blue:#245f78;--ts-copper:#c47a4a;--ts-muted:#687983;--ts-line:#dce5e8;min-height:1050px;background:#fff;color:var(--ts-ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+.resume-template-territory-strategist *{box-sizing:border-box}
+.ts-header{padding:32px 37px 27px;background:#172d3a;color:#fff;border-bottom:5px solid var(--ts-copper)}
+.ts-kicker{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:7px;font-weight:800;letter-spacing:1.3px;color:#e8b28c;margin-bottom:22px}
+.ts-header h1{font-size:30px;line-height:1.12;margin:0;color:#fff;overflow-wrap:anywhere}
+.ts-title{font-size:12px;color:#c9d9df;margin:8px 0 0;font-weight:600}
+.ts-contact{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;font-size:8px;color:#e1eaed}
+.ts-contact span{color:#e8b28c}.ts-contact a{color:#f0c29f;text-decoration:none}
+.ts-principles{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ts-line);border-bottom:1px solid var(--ts-line)}
+.ts-principles div{display:grid;gap:5px;padding:15px 20px;background:#eef4f5}
+.ts-principles strong{font-size:8px;letter-spacing:1px;color:var(--ts-blue)}.ts-principles span{font-size:8px;color:#526875}
+.ts-layout{display:grid;grid-template-columns:minmax(155px,31%) minmax(0,1fr)}
+.ts-sidebar{padding:27px 22px;background:#f3f6f5;border-right:1px solid var(--ts-line)}.ts-main{padding:29px 31px;min-width:0}
+.ts-section{margin:0 0 24px;break-inside:avoid;page-break-inside:avoid}
+.ts-section h2{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--ts-ink);border-bottom:2px solid var(--ts-copper);padding-bottom:7px;margin:0 0 12px}
+.ts-section p,.ts-role li,.ts-project p{font-size:9px;line-height:1.6;color:#465b65}
+.ts-role{margin:0 0 18px}.ts-role-head{display:flex;justify-content:space-between;gap:10px}.ts-role h3,.ts-project h3{font-size:10px;margin:0;color:var(--ts-ink)}
+.ts-role-head p{font-size:8px;color:var(--ts-blue);font-weight:700;margin:4px 0}.ts-role time,.ts-education time{font-size:7px;color:var(--ts-muted);white-space:nowrap}
+.ts-role ul,.ts-project ul{padding-left:15px;margin:7px 0}.ts-role li{margin:3px 0}
+.ts-skill{display:grid;gap:3px;margin-bottom:12px;overflow-wrap:anywhere}.ts-skill strong,.ts-skill span,.ts-credential,.ts-language{font-size:8px}
+.ts-skill strong{color:var(--ts-blue)}.ts-skill span,.ts-credential span,.ts-language span{color:var(--ts-muted)}
+.ts-credential{display:grid;gap:3px;margin-bottom:11px}.ts-language{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}
+.ts-education{display:grid;gap:3px;margin-bottom:12px;font-size:8px}.ts-education span{color:var(--ts-muted)}
+.ts-project{padding-bottom:13px;margin-bottom:14px;border-bottom:1px solid var(--ts-line)}
+@media(max-width:600px){.ts-header{padding:25px 21px}.ts-principles{grid-template-columns:1fr}.ts-layout{grid-template-columns:1fr}.ts-sidebar{padding:22px;border-right:0;border-bottom:1px solid var(--ts-line)}.ts-main{padding:22px}.ts-role-head{gap:6px}}
+@media print{.resume-preview.template-territory_strategist{padding:0;box-shadow:none;border:0}.resume-template-territory-strategist{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 @media(max-width:600px){.ro-header,.ag-header{padding:25px 21px}.ro-proof{grid-template-columns:1fr}.ro-main{padding:23px 21px}.ag-columns{grid-template-columns:1fr}.ag-sidebar{padding:22px;border-right:0;border-bottom:1px solid var(--ag-line)}.ag-main{padding:22px}.ag-manifesto{padding:15px 21px}.ro-entry-head,.ag-role-top{gap:6px}}
 @media print{.resume-preview.template-revenue_operator,.resume-preview.template-account_growth{padding:0;box-shadow:none;border:0}.resume-template-revenue-operator,.resume-template-account-growth{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
