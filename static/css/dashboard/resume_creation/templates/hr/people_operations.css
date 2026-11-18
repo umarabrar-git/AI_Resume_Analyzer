@@ -1,0 +1,36 @@
+/* People Operations — talent strategy and employee experience portfolio */
+.resume-preview.template-people_operations{padding:0;background:#f7f4f0}
+.resume-template-people-operations{--po-ink:#202d39;--po-copper:#b66b4b;--po-muted:#687783;min-height:1050px;background:#f7f4f0;color:var(--po-ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+.po-header{padding:38px 42px 30px;background:#202d39;color:#fff;border-bottom:5px solid var(--po-copper)}
+.po-kicker{font-size:8px;letter-spacing:2px;font-weight:800;color:#e2ae91;margin-bottom:17px}
+.po-header h1{font-size:30px;line-height:1.12;margin:0;color:#fff;overflow-wrap:anywhere}
+.po-title{font-size:12px;color:#d8e0e5;margin:8px 0 0;font-weight:600}
+.po-contact{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px;font-size:8px;color:#e3e9ed}
+.po-contact span{color:#e2ae91}.po-contact a{color:#efc4ad;text-decoration:none}
+.po-principles{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#ded6ce;border-bottom:1px solid #ded6ce}
+.po-principles div{padding:16px 19px;background:#eee8e1;display:grid;gap:5px}
+.po-principles b{font-size:8px;letter-spacing:1.2px;color:#995438}.po-principles span{font-size:8px;color:#687783}
+.po-layout{display:grid;grid-template-columns:minmax(160px,32%) minmax(0,1fr)}
+.po-sidebar{padding:28px 22px;background:#eee8e1;border-right:1px solid #ded6ce}
+.po-main{padding:29px 32px;min-width:0}
+.po-section{margin:0 0 24px;break-inside:avoid;page-break-inside:avoid}
+.po-section h2{font-size:9px;text-transform:uppercase;letter-spacing:1.1px;border-bottom:2px solid #d9a184;padding-bottom:7px;margin:0 0 12px;color:#202d39}
+.po-section p,.po-role li,.po-case p{font-size:9px;line-height:1.7;color:#52616b}
+.po-role{margin:0 0 19px}.po-role-head{display:flex;justify-content:space-between;gap:10px}
+.po-role h3,.po-case h3{font-size:10px;margin:0;color:#202d39}
+.po-role-head p{font-size:8px;color:#a15c3e;font-weight:700;margin:4px 0}
+.po-role time,.po-education time{font-size:7px;color:#687783;white-space:nowrap}
+.po-role ul,.po-case ul{padding-left:15px;margin:7px 0 0}
+.po-skill{display:grid;gap:4px;margin-bottom:12px}.po-skill strong{font-size:8px;color:#995438}
+.po-skill span{font-size:8px;line-height:1.6;color:#52616b}
+.po-education{display:grid;gap:3px;margin-bottom:12px;font-size:8px}
+.po-education span,.po-credential span{color:#687783}
+.po-credential{display:grid;gap:2px;font-size:8px;margin:0 0 10px}
+.po-case{padding:12px 14px;margin:0 0 12px;background:#fff;border-left:3px solid #b66b4b;break-inside:avoid}
+.po-case>span{font-size:7px;letter-spacing:1px;color:#a15c3e;font-weight:800}
+.po-case h3{margin-top:5px}
+.template-sample--people-operations{position:relative;overflow:hidden;background:linear-gradient(180deg,#202d39 0 40%,#eee8e1 40% 100%);border-bottom:3px solid #b66b4b}
+.template-sample--people-operations::before{content:"";position:absolute;top:13%;left:9%;width:44%;height:4%;background:#efc4ad;box-shadow:0 8px 0 rgba(255,255,255,.85),0 16px 0 rgba(255,255,255,.5)}
+.template-sample--people-operations::after{content:"";position:absolute;left:9%;bottom:10%;width:27%;height:38%;border-right:2px solid #b66b4b;background:repeating-linear-gradient(to bottom,#c9d0d2 0 3px,transparent 3px 8px)}
+@media(max-width:600px){.po-header{padding:27px 22px}.po-principles{grid-template-columns:1fr}.po-layout{grid-template-columns:1fr}.po-sidebar{padding:22px;border-right:0;border-bottom:1px solid #ded6ce}.po-main{padding:23px}.po-role-head{display:block}}
+@media print{.resume-preview.template-people_operations{padding:0;box-shadow:none;border:0}.resume-template-people-operations{width:210mm;min-height:297mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
