@@ -429,6 +429,38 @@ def test_ai_apply_rejects_unsupported_numeric_claims(client):
         assert saved_resume.get_content()["summary"] == "Software engineer with API development experience."
 
 
+
+def test_territory_strategist_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("territory-strategist")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    territory = next(item for item in catalog if item["id"] == "territory_strategist")
+    assert territory["available"] is False
+    assert territory["label"] == "Territory Strategist"
+    assert territory["layout"] == "territory-strategy"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    territory = next(item for item in catalog if item["id"] == "territory_strategist")
+    assert territory["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Territory Strategy Resume",
+            "template": "territory_strategist",
+        },
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "territory_strategist"
+
+
 def test_resume_agent_receives_owned_current_resume_and_job_description(client, monkeypatch):
     user = _make_user("resume-agent")
     _auth_session(client, user.id)
