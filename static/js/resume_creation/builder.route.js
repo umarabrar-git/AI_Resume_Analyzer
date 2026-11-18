@@ -1948,6 +1948,7 @@ if (!root) {
     if (template === "campaign_strategist") { elements.resumePreview.innerHTML = renderCampaignStrategistTemplate(content, escapeHtml); return; }
     if (template === "signal_story") { elements.resumePreview.innerHTML = renderSignalStoryTemplate(content, escapeHtml); return; }
     if (template === "growth_engine") { elements.resumePreview.innerHTML = renderGrowthEngineTemplate(content, escapeHtml); return; }
+    if (template === "territory_strategist") { elements.resumePreview.innerHTML = renderTerritoryStrategistTemplate(content, escapeHtml); return; }
     if (template === "systems_support") { elements.resumePreview.innerHTML = renderSystemsSupportTemplate(content, escapeHtml); return; }
     if (template === "infrastructure_lead") { elements.resumePreview.innerHTML = renderInfrastructureLeadTemplate(content, escapeHtml); return; }
     if (template === "modern") {
