@@ -30,6 +30,7 @@ import { renderLegalAssociateTemplate } from "./templates/legal/legal_associate.
 import { renderCounselPortfolioTemplate } from "./templates/legal/counsel_portfolio.js";
 import { renderRevenueOperatorTemplate } from "./templates/sales/revenue_operator.js";
 import { renderAccountGrowthTemplate } from "./templates/sales/account_growth.js";
+import { renderTerritoryStrategistTemplate } from "./templates/sales/territory_strategist.js";
 import { renderServiceStandardTemplate } from "./templates/hospitality/service_standard.js";
 import { renderGuestExperienceTemplate } from "./templates/hospitality/guest_experience.js";
 import { renderEngineeringCoreTemplate } from "./templates/engineering/engineering_core.js";
