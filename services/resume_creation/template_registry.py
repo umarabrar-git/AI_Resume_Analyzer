@@ -331,6 +331,7 @@ TEMPLATE_REGISTRY: Dict[str, Dict[str, Any]] = {
     "signal_story": {"label": "Signal & Story", "tier": "premium", "layout": "marketing-editorial", "accent": "#c05b43", "font": "Times-Roman"},
     "growth_engine": {"label": "Growth Engine", "tier": "premium", "layout": "marketing-growth", "accent": "#b6d64a", "font": "Helvetica"},
     "territory_strategist": {"label": "Territory Strategist", "tier": "premium", "layout": "territory-strategy", "accent": "#c47a4a", "font": "Helvetica"},
+    "people_operations": {"label": "People Operations", "tier": "premium", "layout": "people-operations", "accent": "#b66b4b", "font": "Helvetica"},
     "systems_support": {
         "label": "Systems Support",
         "tier": "free",
