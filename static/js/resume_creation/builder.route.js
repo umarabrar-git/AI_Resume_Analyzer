@@ -32,6 +32,7 @@ import { renderRevenueOperatorTemplate } from "./templates/sales/revenue_operato
 import { renderAccountGrowthTemplate } from "./templates/sales/account_growth.js";
 import { renderTerritoryStrategistTemplate } from "./templates/sales/territory_strategist.js";
 import { renderPeopleOperationsTemplate } from "./templates/hr/people_operations.js";
+import { renderPropertyPortfolioTemplate } from "./templates/real_estate/property_portfolio.js";
 import { renderSupplyChainNavigatorTemplate } from "./templates/supply_chain/supply_chain_navigator.js";
 import { renderServiceStandardTemplate } from "./templates/hospitality/service_standard.js";
 import { renderGuestExperienceTemplate } from "./templates/hospitality/guest_experience.js";
@@ -1952,6 +1953,7 @@ if (!root) {
     if (template === "growth_engine") { elements.resumePreview.innerHTML = renderGrowthEngineTemplate(content, escapeHtml); return; }
     if (template === "territory_strategist") { elements.resumePreview.innerHTML = renderTerritoryStrategistTemplate(content, escapeHtml); return; }
     if (template === "people_operations") { elements.resumePreview.innerHTML = renderPeopleOperationsTemplate(content, escapeHtml); return; }
+    if (template === "property_portfolio") { elements.resumePreview.innerHTML = renderPropertyPortfolioTemplate(content, escapeHtml); return; }
     if (template === "supply_chain_navigator") { elements.resumePreview.innerHTML = renderSupplyChainNavigatorTemplate(content, escapeHtml); return; }
     if (template === "systems_support") { elements.resumePreview.innerHTML = renderSystemsSupportTemplate(content, escapeHtml); return; }
     if (template === "infrastructure_lead") { elements.resumePreview.innerHTML = renderInfrastructureLeadTemplate(content, escapeHtml); return; }
