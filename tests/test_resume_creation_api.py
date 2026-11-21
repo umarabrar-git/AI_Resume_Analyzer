@@ -2232,3 +2232,35 @@ def test_supply_chain_navigator_template_is_premium_and_selectable_by_pro_user(c
     )
     assert created.status_code == 201
     assert created.get_json()["resume"]["template"] == "supply_chain_navigator"
+
+
+
+def test_property_portfolio_template_is_premium_and_selectable_by_pro_user(client):
+    user = _make_user("property-portfolio")
+    _auth_session(client, user.id)
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    property_template = next(item for item in catalog if item["id"] == "property_portfolio")
+    assert property_template["available"] is False
+    assert property_template["label"] == "Property Portfolio"
+    assert property_template["layout"] == "property-portfolio"
+
+    with app.app_context():
+        persisted_user = db.session.get(User, user.id)
+        persisted_user.subscription_plan = "pro"
+        db.session.commit()
+
+    catalog = client.get("/resume-creation/api/resumes").get_json()["templates"]
+    property_template = next(item for item in catalog if item["id"] == "property_portfolio")
+    assert property_template["available"] is True
+
+    created = client.post(
+        "/resume-creation/api/resumes",
+        json={
+            "creation_method": "scratch",
+            "title": "Property Portfolio Resume",
+            "template": "property_portfolio",
+        },
+    )
+    assert created.status_code == 201
+    assert created.get_json()["resume"]["template"] == "property_portfolio"
