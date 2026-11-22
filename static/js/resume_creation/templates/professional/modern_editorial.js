@@ -12,6 +12,7 @@ export function renderModernEditorialTemplate(content, escapeHtml) {
     const url = String(value || "").trim();
     return /^https?:\/\//i.test(url) ? e(url) : "";
   };
+  const profilePhoto = safeUrl(personal.profile_photo);
   const dates = (item) => {
     const start = item.start_date || "";
     const end = item.current ? "Present" : (item.end_date || "");
@@ -99,6 +100,7 @@ export function renderModernEditorialTemplate(content, escapeHtml) {
 
   root.innerHTML =
     '<div class="resume-template-modern-editorial"><header class="me-header">' +
+    (profilePhoto ? '<img class="me-profile-photo" src="' + profilePhoto + '" alt="Candidate profile photo">' : "") +
     '<p class="me-eyebrow">Professional Profile</p><h1>' + e(personal.full_name || "Your Name") +
     "</h1><p class=\"me-title\">" + e(personal.professional_title || "") +
     '</p><div class="me-contact">' + contact.join("<span> · </span>") +
