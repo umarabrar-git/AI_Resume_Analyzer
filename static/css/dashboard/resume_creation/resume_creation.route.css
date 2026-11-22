@@ -1147,3 +1147,6 @@
 
 /* Candidate profile photo: Classic */
 .resume-preview.template-classic .preview-photo{width:4.25rem;height:4.25rem;border:2px solid #2865df;border-radius:50%;object-fit:cover;}
+
+/* Candidate profile photo: Professional */
+.resume-preview.template-professional .preview-photo{width:4.5rem;height:4.5rem;border:2px solid #137f79;border-radius:12px;object-fit:cover;}
