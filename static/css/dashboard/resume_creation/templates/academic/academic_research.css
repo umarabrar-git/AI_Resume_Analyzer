@@ -57,3 +57,7 @@
   .resume-template-academic-research{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .resume-template-academic-research section,.ar-entry{break-inside:avoid;page-break-inside:avoid}
 }
+
+.ar-header{position:relative;min-height:76px;padding-right:86px;}
+.ar-profile-photo{position:absolute;top:0;right:0;width:66px;height:66px;object-fit:cover;border:2px solid var(--ar-accent);border-radius:50%;}
+@media(max-width:600px){.ar-header{padding-right:72px;}.ar-profile-photo{width:56px;height:56px;}}
