@@ -6,6 +6,8 @@ export function renderScholarsFolioTemplate(content, escapeHtml) {
     String(value == null ? "" : value).replace(/[&<>"']/g, (char) => ({
       "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
     })[char]);
+  const rawProfilePhoto = String(personal.profile_photo || "").trim();
+  const profilePhoto = (rawProfilePhoto.startsWith("https://") || rawProfilePhoto.startsWith("http://")) ? e(rawProfilePhoto) : "";
   const dates = (item) => {
     const start = item.start_date || "";
     const end = item.current ? "Present" : (item.end_date || "");
@@ -67,6 +69,7 @@ export function renderScholarsFolioTemplate(content, escapeHtml) {
         (entry.description ? "<p>" + e(entry.description) + "</p>" : "") +
         bullets(entry.bullets || []) + "</article>").join("") + "</section>").join("");
   const markup = '<div class="resume-template-scholars-folio"><header class="sf-header">' +
+    (profilePhoto ? '<img class="sf-profile-photo" src="' + profilePhoto + '" alt="Candidate profile photo">' : "") +
     '<p class="sf-kicker">Scholar\'s Folio · Curriculum Vitae</p><h1>' + e(personal.full_name || "Your Name") + "</h1>" +
     '<p class="sf-title">' + e(personal.professional_title || "Researcher · Educator · Scholar") + "</p>" +
     '<div class="sf-contact">' + contact.join('<span aria-hidden="true">·</span>') + "</div>" +
