@@ -47,3 +47,7 @@
  .resume-template-research-dossier{width:210mm;min-height:297mm;print-color-adjust:exact;-webkit-print-color-adjust:exact}
  .rd-entry,.rd-project{break-inside:avoid;page-break-inside:avoid}
 }
+
+.rd-header{position:relative;padding-right:136px;}
+.rd-profile-photo{position:absolute;top:34px;right:42px;width:76px;height:76px;object-fit:cover;border:2px solid rgba(255,255,255,.82);border-radius:10px;}
+@media(max-width:600px){.rd-header{padding-right:104px;}.rd-profile-photo{top:27px;right:24px;width:64px;height:64px;}}
