@@ -39,3 +39,7 @@
 .sf-custom{margin:0 0 14px}
 @media(max-width:600px){.sf-header{padding:27px 22px 21px}.sf-header h1{font-size:25px}.sf-layout{grid-template-columns:1fr}.sf-rail{padding:22px;border-right:0;border-bottom:1px solid var(--sf-line)}.sf-main{padding:22px}.sf-entry-head{gap:6px}.sf-entry time{white-space:normal}.sf-motto{gap:11px}}
 @media print{.resume-preview.template-scholars_folio{padding:0;box-shadow:none;border:0}.resume-template-scholars-folio{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.sf-layout{min-height:0}}
+
+.sf-header{position:relative;padding-right:126px;}
+.sf-profile-photo{position:absolute;top:32px;right:42px;width:68px;height:68px;object-fit:cover;border:2px solid var(--sf-gold);border-radius:50%;}
+@media(max-width:600px){.sf-header{padding-right:98px;}.sf-profile-photo{top:24px;right:22px;width:60px;height:60px;}}

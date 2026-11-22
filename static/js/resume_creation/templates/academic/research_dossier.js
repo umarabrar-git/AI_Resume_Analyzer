@@ -10,6 +10,7 @@ export function renderResearchDossierTemplate(content, escapeHtml) {
     const url = String(value || "").trim();
     return /^https?:\/\//i.test(url) ? e(url) : "";
   };
+  const profilePhoto = safeUrl(personal.profile_photo);
   const dates = (item) => {
     const start = item.start_date || "";
     const end = item.current ? "Present" : (item.end_date || "");
@@ -75,6 +76,7 @@ export function renderResearchDossierTemplate(content, escapeHtml) {
         bullets(entry.bullets) + "</article>").join(""))).join("");
 
   const html = '<div class="resume-template-research-dossier"><header class="rd-header">' +
+    (profilePhoto ? '<img class="rd-profile-photo" src="' + profilePhoto + '" alt="Candidate profile photo">' : "") +
     '<div class="rd-header-top"><span>Research dossier / CV</span><span>' + e(personal.location || "") + "</span></div>" +
     "<h1>" + e(personal.full_name || "Your Name") + "</h1><p class=\"rd-title\">" +
     e(personal.professional_title || "") + '</p><div class="rd-contact">' + contact.join("<span> / </span>") +

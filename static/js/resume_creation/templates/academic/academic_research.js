@@ -12,6 +12,7 @@ export function renderAcademicResearchTemplate(content, escapeHtml) {
     const url = String(value || "").trim();
     return /^https?:\/\//i.test(url) ? e(url) : "";
   };
+  const profilePhoto = safeUrl(personal.profile_photo);
   const dates = (item) => {
     const start = item.start_date || "";
     const end = item.current ? "Present" : (item.end_date || "");
@@ -102,6 +103,7 @@ export function renderAcademicResearchTemplate(content, escapeHtml) {
 
   root.innerHTML =
     '<div class="resume-template-academic-research"><header class="ar-header">' +
+    (profilePhoto ? '<img class="ar-profile-photo" src="' + profilePhoto + '" alt="Candidate profile photo">' : "") +
     '<p class="ar-kicker">Academic Curriculum Vitae</p><h1>' + e(personal.full_name || "Your Name") +
     '</h1><p class="ar-title">' + e(personal.professional_title || "") +
     '</p><div class="ar-contact">' + contact.join("<span> · </span>") +
