@@ -2,6 +2,8 @@ function renderCampusLaunchTemplate(content, escapeHtml) {
   const personal = content.personal_information || {};
   const esc = typeof escapeHtml === "function" ? escapeHtml : (value) => String(value == null ? "" : value);
   const list = (items, renderItem) => (Array.isArray(items) ? items : []).map(renderItem).join("");
+  const rawProfilePhoto = String(personal.profile_photo || "").trim();
+  const profilePhoto = /^https?:\\/\\//i.test(rawProfilePhoto) ? esc(rawProfilePhoto) : "";
   const contact = [personal.email, personal.phone, personal.location].filter(Boolean).map(esc).join(" · ");
   const links = [
     [personal.linkedin, "LinkedIn"],
@@ -71,14 +73,16 @@ function renderCampusLaunchTemplate(content, escapeHtml) {
       ) + '</section>'
   );
   return '<div class="resume-template resume-template-campus-launch">' +
-    '<header class="campus-header"><div class="campus-kicker">EARLY CAREER PROFILE</div>' +
+    '<header class="campus-header"><div class="campus-header-layout"><div class="campus-header-content">' +
+      '<div class="campus-kicker">EARLY CAREER PROFILE</div>' +
       '<h1>' + esc(personal.full_name || "") + '</h1>' +
       (personal.professional_title ? '<p class="campus-title">' + esc(personal.professional_title) + '</p>' : "") +
       (contact ? '<p class="campus-contact">' + contact + '</p>' : "") +
       (links.length ? '<div class="campus-links">' + links.map((link) =>
         '<a href="' + esc(link[0]) + '" target="_blank" rel="noopener noreferrer">' + esc(link[1]) + '</a>'
       ).join("") + '</div>' : "") +
-    '</header><div class="campus-layout"><main class="campus-main">' +
+      '</div>' + (profilePhoto ? '<img class="campus-profile-photo" src="' + profilePhoto + '" alt="Candidate profile photo">' : "") +
+    '</div></header><div class="campus-layout"><main class="campus-main">' +
       (content.summary ? '<section><h2>Profile</h2><p>' + esc(content.summary) + '</p></section>' : "") +
       (content.career_objective ? '<section><h2>Career Objective</h2><p>' + esc(content.career_objective) + '</p></section>' : "") +
       (projects ? '<section><h2>Selected Projects</h2>' + projects + '</section>' : "") +
