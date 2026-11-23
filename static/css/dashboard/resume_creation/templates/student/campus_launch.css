@@ -14,6 +14,27 @@
   background: linear-gradient(125deg, #242b54 0%, #394779 68%, #52659a 100%);
   border-bottom: 5px solid #f0b35a;
 }
+.resume-template-campus-launch .campus-header-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.resume-template-campus-launch .campus-header-content {
+  min-width: 0;
+  flex: 1;
+}
+.resume-template-campus-launch .campus-profile-photo {
+  display: block;
+  width: 88px;
+  height: 88px;
+  flex: 0 0 88px;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid rgba(255, 255, 255, .9);
+  border-radius: 50%;
+  background: #e8edf6;
+}
 .resume-template-campus-launch .campus-kicker {
   margin-bottom: 12px;
   color: #f4c879;
@@ -110,6 +131,9 @@
 .resume-template-campus-launch .skill-group strong { color: #394779; }
 @media (max-width: 640px) {
   .resume-template-campus-launch .campus-header { padding: 28px 24px 24px; }
+  .resume-template-campus-launch .campus-header-layout { align-items: flex-start; gap: 16px; }
+  .resume-template-campus-launch .campus-profile-photo { width: 68px; height: 68px; flex-basis: 68px; }
+  .resume-template-campus-launch .campus-header h1 { font-size: 25px; }
   .resume-template-campus-launch .campus-layout { grid-template-columns: 1fr; }
   .resume-template-campus-launch .campus-main,
   .resume-template-campus-launch .campus-sidebar { padding: 24px; }
