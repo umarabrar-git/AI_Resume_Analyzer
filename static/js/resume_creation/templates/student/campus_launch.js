@@ -3,7 +3,7 @@ function renderCampusLaunchTemplate(content, escapeHtml) {
   const esc = typeof escapeHtml === "function" ? escapeHtml : (value) => String(value == null ? "" : value);
   const list = (items, renderItem) => (Array.isArray(items) ? items : []).map(renderItem).join("");
   const rawProfilePhoto = String(personal.profile_photo || "").trim();
-  const profilePhoto = /^https?:\\/\\//i.test(rawProfilePhoto) ? esc(rawProfilePhoto) : "";
+  const profilePhoto = /^https?:\/\//i.test(rawProfilePhoto) ? esc(rawProfilePhoto) : "";
   const contact = [personal.email, personal.phone, personal.location].filter(Boolean).map(esc).join(" · ");
   const links = [
     [personal.linkedin, "LinkedIn"],
