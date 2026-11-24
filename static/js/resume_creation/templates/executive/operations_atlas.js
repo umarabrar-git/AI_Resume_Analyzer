@@ -18,6 +18,7 @@ export function renderOperationsAtlasTemplate(content, escapeHtml) {
     const url = String(value || "").trim();
     return /^https?:\/\//i.test(url) ? e(url) : "";
   };
+  const profilePhoto = safeUrl(personal.profile_photo);
   const section = (key, title, html) => html && !hidden.has(key)
     ? '<section data-section="' + e(key) + '"><h2>' + e(title) + "</h2>" + html + "</section>"
     : "";
@@ -86,8 +87,9 @@ export function renderOperationsAtlasTemplate(content, escapeHtml) {
   const markup =
     '<div class="resume-template-operations-atlas"><header class="oa-header">' +
     '<div class="oa-brand"><span class="oa-mark">OA</span><span>OPERATIONS / LEADERSHIP PROFILE</span></div>' +
-    '<h1>' + e(personal.full_name || "Your Name") + "</h1>" +
-    (personal.professional_title ? '<p class="oa-title">' + e(personal.professional_title) + "</p>" : "") +
+    '<div class="oa-identity"><div class="oa-identity-copy"><h1>' + e(personal.full_name || "Your Name") + "</h1>" +
+    (personal.professional_title ? '<p class="oa-title">' + e(personal.professional_title) + "</p>" : "") + '</div>' +
+    (profilePhoto ? '<img class="oa-profile-photo" src="' + profilePhoto + '" alt="Candidate profile photo">' : "") + '</div>' +
     (contact.length ? '<div class="oa-contact">' + contact.join("<span> · </span>") + "</div>" : "") +
     '<div class="oa-header-rule" aria-hidden="true"></div></header><div class="oa-layout"><aside class="oa-rail">' +
     section("skills", "Capabilities", skillsData) +
