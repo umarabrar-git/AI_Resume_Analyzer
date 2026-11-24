@@ -24,6 +24,26 @@
   letter-spacing: .2em;
   text-transform: uppercase;
 }
+.resume-template-executive-leadership .el-identity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+.resume-template-executive-leadership .el-identity-copy {
+  min-width: 0;
+}
+.resume-template-executive-leadership .el-profile-photo {
+  display: block;
+  width: 86px;
+  height: 86px;
+  flex: 0 0 86px;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid #e5dfd1;
+  border-radius: 50%;
+  background: #f1eee7;
+}
 .resume-template-executive-leadership .el-header h1 {
   margin: 0;
   color: var(--el-ink);
@@ -124,6 +144,10 @@
 }
 .resume-template-executive-leadership .el-custom-item {
   margin-bottom: .7rem;
+}
+@media (max-width: 560px) {
+  .resume-template-executive-leadership .el-identity { gap: .75rem; }
+  .resume-template-executive-leadership .el-profile-photo { width: 66px; height: 66px; flex-basis: 66px; }
 }
 @media print {
   .resume-preview.template-executive .resume-template-executive-leadership {
