@@ -6,13 +6,13 @@ export function renderExecutiveLeadershipTemplate(content, escapeHtml) {
   const e = typeof escapeHtml === "function" ? escapeHtml : fallbackEscape;
   const data = content || {};
   const personal = data.personal_information || {};
-  const profilePhoto = safeProfilePhoto(personal.profile_photo);
   const hidden = new Set(data.hidden_sections || []);
   const safeUrl = (value) => {
     const url = String(value || "").trim();
     return /^https?:\/\//i.test(url) ? e(url) : "";
   };
   const safeProfilePhoto = (value) => safeUrl(value);
+  const profilePhoto = safeProfilePhoto(personal.profile_photo);
   const dates = (item) => {
     const start = item.start_date || "";
     const end = item.current ? "Present" : (item.end_date || "");
