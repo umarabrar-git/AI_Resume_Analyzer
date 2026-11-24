@@ -54,11 +54,34 @@
   font-size: .8rem;
   letter-spacing: 0;
 }
+.resume-template-operations-atlas .oa-identity {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+.resume-template-operations-atlas .oa-identity-copy {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.resume-template-operations-atlas .oa-profile-photo {
+  display: block;
+  width: 86px;
+  height: 86px;
+  flex: 0 0 86px;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid rgba(248, 248, 242, .9);
+  border-radius: 50%;
+  background: #e7ede8;
+}
 .resume-template-operations-atlas .oa-header h1 {
   position: relative;
   z-index: 1;
   margin: 0;
-  max-width: 75%;
+  max-width: 100%;
   color: #fffefb;
   font: 700 clamp(1.8rem, 4vw, 2.7rem)/1.08 Georgia, "Times New Roman", serif;
   overflow-wrap: anywhere;
@@ -181,6 +204,8 @@
   .resume-preview.template-operations_atlas .resume-template-operations-atlas { box-shadow: none; }
   .resume-template-operations-atlas .oa-header { padding: 1.6rem 1.35rem; }
   .resume-template-operations-atlas .oa-header h1 { max-width: 100%; }
+  .resume-template-operations-atlas .oa-profile-photo { width: 66px; height: 66px; flex-basis: 66px; }
+  .resume-template-operations-atlas .oa-identity { gap: .75rem; }
   .resume-template-operations-atlas .oa-layout { grid-template-columns: 1fr; }
   .resume-template-operations-atlas .oa-rail { order: 2; border-right: 0; border-top: 1px solid #dce2d8; }
   .resume-template-operations-atlas .oa-main { order: 1; padding: 1.5rem 1.35rem; }
