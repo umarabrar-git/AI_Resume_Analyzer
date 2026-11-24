@@ -6,6 +6,8 @@ export function renderLaunchpadTemplate(content, escapeHtml) {
       })[char]);
   const data = content || {};
   const personal = data.personal_information || {};
+  const rawProfilePhoto = String(personal.profile_photo || "").trim();
+  const profilePhoto = /^https?:\/\//i.test(rawProfilePhoto) ? e(rawProfilePhoto) : "";
   const hidden = new Set(data.hidden_sections || []);
   const list = (items, render) => (Array.isArray(items) ? items : []).map(render).join("");
   const section = (key, title, body) => body && !hidden.has(key)
@@ -66,8 +68,9 @@ export function renderLaunchpadTemplate(content, escapeHtml) {
         '</article>')) : "");
   return '<div class="resume-template-launchpad">' +
     '<header class="lp-header"><div class="lp-kicker"><span>STUDENT / EARLY CAREER</span><span>PROFILE 01</span></div>' +
-    '<div class="lp-identity"><div><h1>' + e(personal.full_name || "Your Name") + '</h1><p class="lp-title">' +
+    '<div class="lp-identity"><div class="lp-identity-copy"><h1>' + e(personal.full_name || "Your Name") + '</h1><p class="lp-title">' +
     e(personal.professional_title || "Student & Emerging Professional") + '</p></div>' +
+    (profilePhoto ? '<img class="lp-profile-photo" src="' + profilePhoto + '" alt="Candidate profile photo">' : "") +
     '<div class="lp-marker" aria-hidden="true"><span></span><span></span><span></span></div></div>' +
     (contacts.length ? '<div class="lp-contact">' + contacts.join('<span aria-hidden="true">•</span>') + '</div>' : "") +
     '</header><div class="lp-layout"><main class="lp-main">' +

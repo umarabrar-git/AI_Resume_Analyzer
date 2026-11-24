@@ -20,6 +20,18 @@
 .lp-header { padding: 34px 40px 28px; color: #f8fafc; background: var(--lp-ink); border-bottom: 5px solid var(--lp-amber); }
 .lp-kicker { display: flex; justify-content: space-between; gap: 14px; margin-bottom: 24px; color: #f0c96f; font-size: 8px; font-weight: 800; letter-spacing: 1.5px; }
 .lp-identity { display: flex; justify-content: space-between; align-items: center; gap: 22px; }
+.lp-identity-copy { flex: 1 1 auto; min-width: 0; }
+.lp-profile-photo {
+  display: block;
+  width: 86px;
+  height: 86px;
+  flex: 0 0 86px;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid rgba(248, 250, 252, .9);
+  border-radius: 50%;
+  background: #e7edf5;
+}
 .lp-header h1 { margin: 0; max-width: 100%; font-size: 31px; line-height: 1.08; letter-spacing: -.5px; overflow-wrap: anywhere; }
 .lp-title { margin: 8px 0 0; color: #cbd9ed; font-size: 11px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; }
 .lp-marker { display: flex; align-items: end; gap: 4px; flex: 0 0 auto; height: 38px; }
@@ -58,6 +70,8 @@
   .lp-header { padding: 25px 22px 22px; }
   .lp-kicker { margin-bottom: 19px; font-size: 7px; }
   .lp-header h1 { font-size: 25px; }
+  .lp-profile-photo { width: 66px; height: 66px; flex-basis: 66px; }
+  .lp-identity { gap: 14px; }
   .lp-marker { height: 29px; }
   .lp-layout { grid-template-columns: 1fr; }
   .lp-main { padding: 23px; }
@@ -68,5 +82,6 @@
 @media print {
   .resume-preview.template-launchpad { padding: 0; border: 0; box-shadow: none; }
   .resume-template-launchpad { width: 210mm; min-height: 297mm; page-break-after: always; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .lp-profile-photo { width: 78px; height: 78px; flex-basis: 78px; }
   .lp-section, .lp-entry, .lp-project { break-inside: avoid; page-break-inside: avoid; }
 }

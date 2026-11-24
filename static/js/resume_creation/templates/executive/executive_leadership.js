@@ -11,6 +11,8 @@ export function renderExecutiveLeadershipTemplate(content, escapeHtml) {
     const url = String(value || "").trim();
     return /^https?:\/\//i.test(url) ? e(url) : "";
   };
+  const safeProfilePhoto = (value) => safeUrl(value);
+  const profilePhoto = safeProfilePhoto(personal.profile_photo);
   const dates = (item) => {
     const start = item.start_date || "";
     const end = item.current ? "Present" : (item.end_date || "");
@@ -84,9 +86,10 @@ export function renderExecutiveLeadershipTemplate(content, escapeHtml) {
 
   root.innerHTML =
     '<div class="resume-template-executive-leadership"><header class="el-header">' +
-    '<p class="el-kicker">Leadership Profile</p><h1>' + e(personal.full_name || "Your Name") +
-    '</h1><p class="el-title">' + e(personal.professional_title || "") +
-    '</p><div class="el-contact">' + contact.join("<span> · </span>") +
+    '<p class="el-kicker">Leadership Profile</p><div class="el-identity"><div class="el-identity-copy"><h1>' + e(personal.full_name || "Your Name") +
+    '</h1><p class="el-title">' + e(personal.professional_title || "") + '</p></div>' +
+    (profilePhoto ? '<img class="el-profile-photo" src="' + profilePhoto + '" alt="Candidate profile photo">' : "") +
+    '</div><div class="el-contact">' + contact.join("<span> · </span>") +
     '</div><div class="el-rule" aria-hidden="true"></div></header><main>' +
     section("summary", "Executive Summary", data.summary ? "<p>" + e(data.summary) + "</p>" : "") +
     section("experience", "Leadership Experience", experience) +

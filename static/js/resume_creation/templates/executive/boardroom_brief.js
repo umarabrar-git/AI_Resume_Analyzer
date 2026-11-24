@@ -18,6 +18,7 @@ export function renderBoardroomBriefTemplate(content, escapeHtml) {
     const url = String(value || "").trim();
     return /^https?:\/\//i.test(url) ? e(url) : "";
   };
+  const profilePhoto = safeUrl(personal.profile_photo);
   const section = (key, title, html) => html && !hidden.has(key)
     ? '<section data-section="' + e(key) + '"><h2>' + e(title) + "</h2>" + html + "</section>"
     : "";
@@ -86,8 +87,9 @@ export function renderBoardroomBriefTemplate(content, escapeHtml) {
   const markup =
     '<div class="resume-template-boardroom-brief"><header class="bb-header">' +
     '<div class="bb-brand"><span class="bb-mark">BB</span><span>STRATEGY / GOVERNANCE / LEADERSHIP</span></div>' +
-    '<h1>' + e(personal.full_name || "Your Name") + "</h1>" +
-    (personal.professional_title ? '<p class="bb-title">' + e(personal.professional_title) + "</p>" : "") +
+    '<div class="bb-identity"><div class="bb-identity-copy"><h1>' + e(personal.full_name || "Your Name") + "</h1>" +
+    (personal.professional_title ? '<p class="bb-title">' + e(personal.professional_title) + "</p>" : "") + '</div>' +
+    (profilePhoto ? '<img class="bb-profile-photo" src="' + profilePhoto + '" alt="Candidate profile photo">' : "") + '</div>' +
     (contact.length ? '<div class="bb-contact">' + contact.join("<span> · </span>") + "</div>" : "") +
     '<div class="bb-header-rule" aria-hidden="true"></div></header><div class="bb-layout"><main class="bb-main">' +
     section("summary", "Leadership Thesis", data.summary ? "<p>" + e(data.summary) + "</p>" : "") +
