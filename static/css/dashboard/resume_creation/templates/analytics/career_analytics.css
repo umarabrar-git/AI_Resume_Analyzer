@@ -59,6 +59,10 @@
 }
 .resume-template-career-analytics a { color: var(--ca-accent-dark); text-decoration: none; }
 .resume-template-career-analytics a:hover { text-decoration: underline; }
+.resume-template-career-analytics .ca-profile-photo {
+  flex: 0 0 3.2rem; width: 3.2rem; height: 3.2rem;
+  border: 2px solid var(--ca-line); border-radius: 50%; object-fit: cover; object-position: center;
+}
 .resume-template-career-analytics .ca-header-mark {
   display: grid;
   flex: 0 0 3.2rem;
