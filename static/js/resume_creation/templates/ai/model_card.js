@@ -22,6 +22,9 @@ export function renderModelCardTemplate(content, escapeHtml) {
     ? '<section data-section="' + e(key) + '"><div class="mc-section-heading"><span>' +
       e(String(list(data.section_order).indexOf(key) + 1).padStart(2, "0")) +
       '</span><h2>' + e(title) + "</h2></div>" + body + "</section>" : "";
+  const profilePhoto = safeUrl(personal.profile_photo)
+    ? '<img class="mc-profile-photo" src="' + safeUrl(personal.profile_photo) + '" alt="Candidate profile photo" loading="eager" referrerpolicy="no-referrer">'
+    : "";
   const contact = [personal.email, personal.phone, personal.location].filter(Boolean).map(e);
   [["LinkedIn", personal.linkedin], ["GitHub", personal.github], ["Portfolio", personal.portfolio], ["Website", personal.website]]
     .forEach(([label, value]) => { const url = safeUrl(value); if (url) contact.push('<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + label + "</a>"); });
@@ -73,7 +76,7 @@ export function renderModelCardTemplate(content, escapeHtml) {
     '<p class="mc-eyebrow"><span class="mc-pulse"></span> MACHINE LEARNING / ENGINEERING PROFILE</p><h1>' +
     e(personal.full_name || "Your Name") + '</h1><p class="mc-role">' + e(personal.professional_title || "AI / ML Engineer") +
     '</p><div class="mc-contact">' + contact.join('<span class="mc-dot">/</span>') + '</div></div>' +
-    '<div class="mc-monogram" aria-hidden="true">ML<span>_</span></div></header>' +
+    profilePhoto + '<div class="mc-monogram" aria-hidden="true">ML<span>_</span></div></header>' +
     '<div class="mc-metrics">' + metrics.map(([label, value]) => '<div><strong>' + e(value) + '</strong><span>' + e(label) + "</span></div>").join("") +
     '</div><main>' + section("summary", "Engineering Thesis", data.summary ? '<p class="mc-summary">' + e(data.summary) + "</p>" : "") +
     section("projects", "Model Portfolio & Applied Systems", projects) +

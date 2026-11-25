@@ -23,6 +23,9 @@ export function renderAIInsightsTemplate(content, escapeHtml) {
     ? '<section data-section="' + e(key) + '"><h2>' + e(title) + "</h2>" + html + "</section>"
     : "";
 
+  const profilePhoto = safeUrl(personal.profile_photo)
+    ? '<img class="aii-profile-photo" src="' + safeUrl(personal.profile_photo) + '" alt="Candidate profile photo" loading="eager" referrerpolicy="no-referrer">'
+    : "";
   const contact = [personal.email, personal.phone, personal.location].filter(Boolean).map(e);
   [["LinkedIn", personal.linkedin], ["GitHub", personal.github], ["Portfolio", personal.portfolio], ["Website", personal.website]]
     .forEach(([label, value]) => {
@@ -107,7 +110,7 @@ export function renderAIInsightsTemplate(content, escapeHtml) {
     '<p class="aii-kicker">AI Insights · Career Profile</p><h1>' + e(personal.full_name || "Your Name") +
     '</h1><p class="aii-title">' + e(personal.professional_title || "") +
     '</p><div class="aii-contact">' + contact.join("<span> · </span>") +
-    '</div></div><div class="aii-mark" aria-hidden="true">AI</div></header>' +
+    '</div></div>' + profilePhoto + '<div class="aii-mark" aria-hidden="true">AI</div></header>' +
     '<section class="aii-snapshot" aria-label="Resume snapshot">' + metrics.map(([label, value]) =>
       '<div class="aii-metric"><span>' + e(label) + '</span><strong>' + e(value) + "</strong></div>"
     ).join("") + "</section><main>" +

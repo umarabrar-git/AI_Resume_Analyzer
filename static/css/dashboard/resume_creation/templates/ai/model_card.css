@@ -13,6 +13,10 @@
 .resume-template-model-card .mc-contact { display:flex; flex-wrap:wrap; gap:.25rem .55rem; color:#d1e2df; font-size:.7rem; overflow-wrap:anywhere; }
 .resume-template-model-card .mc-contact a { color:#8fe0c7; text-decoration:none; }
 .resume-template-model-card .mc-dot { color:#6fa79c; }
+.resume-template-model-card .mc-profile-photo {
+  flex: 0 0 3.7rem; width: 3.7rem; height: 3.7rem;
+  border: 2px solid #55b9a6; border-radius: 50%; object-fit: cover; object-position: center;
+}
 .resume-template-model-card .mc-monogram { flex:0 0 3.7rem; width:3.7rem; height:3.7rem; display:grid; place-items:center; border:1px solid #4d827b; color:#9be2cf; font-size:1.1rem; font-weight:800; letter-spacing:-.08em; }
 .resume-template-model-card .mc-monogram span { color:#fff; }
 .resume-template-model-card .mc-metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.5rem; margin:1rem 0 1.35rem; }
