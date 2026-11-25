@@ -22,6 +22,9 @@ export function renderCareerAnalyticsTemplate(content, escapeHtml) {
   const section = (key, title, html) => html
     ? '<section data-section="' + e(key) + '"><h2>' + e(title) + "</h2>" + html + "</section>"
     : "";
+  const profilePhoto = safeUrl(personal.profile_photo)
+    ? '<img class="ca-profile-photo" src="' + safeUrl(personal.profile_photo) + '" alt="Candidate profile photo" loading="eager" referrerpolicy="no-referrer">'
+    : "";
   const contact = [personal.email, personal.phone, personal.location].filter(Boolean).map(e);
   [["LinkedIn", personal.linkedin], ["GitHub", personal.github], ["Portfolio", personal.portfolio], ["Website", personal.website]]
     .forEach(([label, value]) => {
@@ -102,7 +105,7 @@ export function renderCareerAnalyticsTemplate(content, escapeHtml) {
     '<p class="ca-kicker">Career Analytics Profile</p><h1>' + e(personal.full_name || "Your Name") +
     '</h1><p class="ca-title">' + e(personal.professional_title || "") +
     '</p><div class="ca-contact">' + contact.join("<span> · </span>") +
-    '</div></div><div class="ca-header-mark" aria-hidden="true">CA</div></header>' +
+    '</div></div>' + profilePhoto + '<div class="ca-header-mark" aria-hidden="true">CA</div></header>' +
     '<section class="ca-metrics" aria-label="Resume highlights">' + metrics.map(([label, value]) =>
       '<div class="ca-metric"><span>' + e(label) + '</span><strong>' + e(value) + "</strong></div>"
     ).join("") + "</section><main>" +
