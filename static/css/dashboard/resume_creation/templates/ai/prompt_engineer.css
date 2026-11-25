@@ -62,6 +62,10 @@
 }
 .resume-template-prompt-engineer .pe-header a { color: var(--pe-accent-dark); text-decoration: none; }
 .resume-template-prompt-engineer .pe-header a:hover { text-decoration: underline; }
+.resume-template-prompt-engineer .pe-profile-photo {
+  flex: 0 0 3.25rem; width: 3.25rem; height: 3.25rem;
+  border: 2px solid #cfe6ed; border-radius: 50%; object-fit: cover; object-position: center;
+}
 .resume-template-prompt-engineer .pe-mark {
   display: grid;
   flex: 0 0 3.25rem;
