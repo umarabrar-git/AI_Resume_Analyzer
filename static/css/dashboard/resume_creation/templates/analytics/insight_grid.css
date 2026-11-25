@@ -45,6 +45,10 @@
 .resume-template-insight-grid .ig-contact { display: flex; flex-wrap: wrap; gap: .2rem .5rem; color: var(--ig-muted); font-size: .7rem; overflow-wrap: anywhere; }
 .resume-template-insight-grid a { color: #245f8d; text-decoration: none; }
 .resume-template-insight-grid a:hover { text-decoration: underline; }
+.resume-template-insight-grid .ig-profile-photo {
+  flex: 0 0 3.4rem; width: 3.4rem; height: 3.4rem;
+  border: 2px solid #b8cbd9; border-radius: 50%; object-fit: cover; object-position: center;
+}
 .resume-template-insight-grid .ig-monogram {
   display: grid; flex: 0 0 3.4rem; width: 3.4rem; height: 3.4rem;
   place-items: center; border: 1px solid #b8cbd9; border-radius: .45rem;
