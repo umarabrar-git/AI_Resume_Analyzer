@@ -21,6 +21,9 @@ export function renderInsightGridTemplate(content, escapeHtml) {
   const section = (key, title, body) => body
     ? '<section data-section="' + e(key) + '"><h2>' + e(title) + "</h2>" + body + "</section>"
     : "";
+  const profilePhoto = safeUrl(personal.profile_photo)
+    ? '<img class="ig-profile-photo" src="' + safeUrl(personal.profile_photo) + '" alt="Candidate profile photo" loading="eager" referrerpolicy="no-referrer">'
+    : "";
   const contact = [personal.email, personal.phone, personal.location].filter(Boolean).map(e);
   [["LinkedIn", personal.linkedin], ["GitHub", personal.github], ["Portfolio", personal.portfolio], ["Website", personal.website]]
     .forEach(([label, value]) => {
@@ -86,7 +89,7 @@ export function renderInsightGridTemplate(content, escapeHtml) {
   root.innerHTML = '<div class="resume-template-insight-grid"><header class="ig-header"><div>' +
     '<p class="ig-eyebrow">Analytics & Business Intelligence</p><h1>' + e(personal.full_name || "Your Name") +
     '</h1><p class="ig-role">' + e(personal.professional_title || "") + '</p><div class="ig-contact">' +
-    contact.join("<span> / </span>") + '</div></div><div class="ig-monogram" aria-hidden="true">IG</div></header>' +
+    contact.join("<span> / </span>") + '</div></div>' + profilePhoto + '<div class="ig-monogram" aria-hidden="true">IG</div></header>' +
     '<section class="ig-highlights" aria-label="Profile highlights">' + highlights.map(([label, value], index) =>
       '<div class="ig-highlight"><span>0' + (index + 1) + " / " + e(label) + '</span><strong>' + e(value) + "</strong></div>"
     ).join("") + '</section><main>' +
