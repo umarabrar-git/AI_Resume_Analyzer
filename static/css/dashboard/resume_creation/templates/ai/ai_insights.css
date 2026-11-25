@@ -62,6 +62,10 @@
 }
 .resume-template-ai-insights .aii-header a { color: var(--aii-accent-dark); text-decoration: none; }
 .resume-template-ai-insights .aii-header a:hover { text-decoration: underline; }
+.resume-template-ai-insights .aii-profile-photo {
+  flex: 0 0 3.25rem; width: 3.25rem; height: 3.25rem;
+  border: 2px solid #e3defd; border-radius: 50%; object-fit: cover; object-position: center;
+}
 .resume-template-ai-insights .aii-mark {
   display: grid;
   flex: 0 0 3.25rem;
