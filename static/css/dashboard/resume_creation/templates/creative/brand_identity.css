@@ -8,6 +8,8 @@
 .resume-template-brand-identity .bi-contact { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:.35rem; color:var(--bi-muted); text-align:right; }
 .resume-template-brand-identity .bi-contact a { color:var(--bi-ink); }
 .resume-template-brand-identity .bi-hero { position:relative; padding:3rem 0 2rem; border-bottom:1px solid #b9b8ae; }
+.resume-template-brand-identity .bi-hero-intro { display:flex; align-items:center; gap:1.25rem; }
+.resume-template-brand-identity .bi-profile-photo { flex:0 0 5.25rem; width:5.25rem; height:5.25rem; border:2px solid #d6cdbb; border-radius:50%; object-fit:cover; object-position:center; }
 .resume-template-brand-identity .bi-eyebrow { margin:0 0 1rem; color:var(--bi-accent); font-size:.65rem; font-weight:800; letter-spacing:.2em; }
 .resume-template-brand-identity h1 { max-width:850px; margin:0; font-family:Georgia,serif; font-size:clamp(2.5rem,8vw,5.5rem); font-weight:400; letter-spacing:-.075em; line-height:.92; overflow-wrap:anywhere; }
 .resume-template-brand-identity .bi-title { margin:.9rem 0 0; font-size:1rem; font-weight:700; }
@@ -38,5 +40,5 @@
 .resume-template-brand-identity .bi-skill-group h3 { display:inline; margin-right:.5rem; }
 .resume-template-brand-identity .bi-skill-group p { display:inline; color:var(--bi-muted); }
 .resume-template-brand-identity .bi-footer { margin-top:1.5rem; padding-top:.7rem; padding-bottom:0; border-top:1px solid #b9b8ae; border-bottom:0; color:var(--bi-muted); }
-@media(max-width:560px) { .resume-preview.template-brand_identity .resume-template-brand-identity { padding:1rem; } .resume-template-brand-identity .bi-masthead,.resume-template-brand-identity .bi-footer { align-items:flex-start; flex-direction:column; } .resume-template-brand-identity .bi-contact { justify-content:flex-start; text-align:left; } .resume-template-brand-identity .bi-hero { padding:2rem 0 1.5rem; } .resume-template-brand-identity .bi-case { grid-template-columns:3.2rem 1fr; gap:.5rem; } .resume-template-brand-identity .bi-entry { flex-wrap:wrap; } }
+@media(max-width:560px) { .resume-preview.template-brand_identity .resume-template-brand-identity { padding:1rem; } .resume-template-brand-identity .bi-masthead,.resume-template-brand-identity .bi-footer { align-items:flex-start; flex-direction:column; } .resume-template-brand-identity .bi-contact { justify-content:flex-start; text-align:left; } .resume-template-brand-identity .bi-hero { padding:2rem 0 1.5rem; } .resume-template-brand-identity .bi-hero-intro { align-items:flex-start; gap:.8rem; } .resume-template-brand-identity .bi-profile-photo { flex-basis:4rem; width:4rem; height:4rem; } .resume-template-brand-identity .bi-case { grid-template-columns:3.2rem 1fr; gap:.5rem; } .resume-template-brand-identity .bi-entry { flex-wrap:wrap; } }
 @media print { .resume-preview.template-brand_identity .resume-template-brand-identity { min-height:0; padding:.35rem; } .resume-template-brand-identity .bi-case,.resume-template-brand-identity .bi-entry { break-inside:avoid; } }
