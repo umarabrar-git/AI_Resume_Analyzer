@@ -46,6 +46,9 @@ export function renderBrandIdentityTemplate(content, escapeHtml) {
       values.map(e).join(" / ") + '</p></div>').join("")
     : list(data.skills).map(e).join(" / ");
   const contacts = [personal.email, personal.phone, personal.location].filter(Boolean).map(e);
+  const profilePhoto = safeUrl(personal.profile_photo)
+    ? '<img class="bi-profile-photo" src="' + safeUrl(personal.profile_photo) + '" alt="Candidate profile photo" loading="eager" referrerpolicy="no-referrer">'
+    : "";
   [[ "Portfolio", personal.portfolio ], [ "Website", personal.website ], [ "LinkedIn", personal.linkedin ]].forEach(([label, value]) => {
     const url = safeUrl(value);
     if (url) contacts.push('<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + label + ' ↗</a>');
@@ -56,9 +59,9 @@ export function renderBrandIdentityTemplate(content, escapeHtml) {
       '</h3><p>' + e(entry.subtitle || entry.description || "") + '</p></div></article>').join(""))).join("");
   const html = '<div class="resume-template-brand-identity"><header class="bi-masthead">' +
     '<div class="bi-mark">B/I <span>CREATIVE PRACTICE</span></div><div class="bi-contact">' + contacts.join('<span>·</span>') +
-    '</div></header><main><section class="bi-hero"><p class="bi-eyebrow">BRAND / DESIGN / DIRECTION</p><h1>' +
+    '</div></header><main><section class="bi-hero"><div class="bi-hero-intro">' + profilePhoto + '<div><p class="bi-eyebrow">BRAND / DESIGN / DIRECTION</p><h1>' +
     e(personal.full_name || "Your Name") + '</h1><p class="bi-title">' + e(personal.professional_title || "Brand Identity Designer") +
-    '</p>' + (data.summary ? '<p class="bi-summary">' + e(data.summary) + '</p>' : "") +
+    '</p></div></div>' + (data.summary ? '<p class="bi-summary">' + e(data.summary) + '</p>' : "") +
     '<div class="bi-color-strip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></section>' +
     section("projects", "Selected Identity Work", projects) + section("experience", "Practice & Experience", experience) +
     section("skills", "Design Languages & Tools", skills) + section("education", "Education", education) + custom +
