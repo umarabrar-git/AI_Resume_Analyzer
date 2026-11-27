@@ -62,8 +62,22 @@
 .resume-template-creative-studio .cs-rail-meta a { color: #bfc5ff; overflow-wrap: anywhere; }
 .resume-template-creative-studio .cs-main { min-width: 0; padding: clamp(1rem, 3.5vw, 2.2rem); }
 .resume-template-creative-studio .cs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   padding: .4rem 0 1.3rem;
   border-bottom: 2px solid var(--cs-ink);
+}
+.resume-template-creative-studio .cs-header-copy { min-width: 0; }
+.resume-template-creative-studio .cs-profile-photo {
+  display: block;
+  flex: 0 0 76px;
+  width: 76px;
+  height: 76px;
+  border: 2px solid var(--cs-line);
+  border-radius: 50%;
+  object-fit: cover;
 }
 .resume-template-creative-studio .cs-kicker { color: var(--cs-accent); }
 .resume-template-creative-studio h1 {
@@ -119,6 +133,8 @@
   .resume-template-creative-studio .cs-index { margin: .7rem 0; font-size: 2rem; }
   .resume-template-creative-studio .cs-rail-meta { margin-top: .7rem; }
   .resume-template-creative-studio .cs-main { padding: 1rem; }
+  .resume-template-creative-studio .cs-header { align-items: flex-start; }
+  .resume-template-creative-studio .cs-profile-photo { flex-basis: 64px; width: 64px; height: 64px; }
   .resume-template-creative-studio .cs-entry-head { flex-wrap: wrap; }
 }
 @media print {
