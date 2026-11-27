@@ -28,6 +28,7 @@
   padding: 0 0 1.25rem;
   border-bottom: 1px solid var(--cp-line);
 }
+.resume-template-creative-portfolio .cp-profile-photo { flex:0 0 4.25rem; width:4.25rem; height:4.25rem; border:2px solid var(--cp-line); border-radius:50%; object-fit:cover; object-position:center; }
 .resume-template-creative-portfolio .cp-kicker {
   margin: 0 0 .45rem;
   color: var(--cp-accent-dark);
@@ -162,6 +163,7 @@
 @media (max-width: 520px) {
   .resume-preview.template-creative_portfolio .resume-template-creative-portfolio { padding: 1rem; }
   .resume-template-creative-portfolio .cp-monogram { display: none; }
+  .resume-template-creative-portfolio .cp-profile-photo { flex-basis:3.5rem; width:3.5rem; height:3.5rem; }
   .resume-template-creative-portfolio .cp-intro { grid-template-columns: 1fr; gap: .3rem; }
   .resume-template-creative-portfolio .cp-entry-head { flex-wrap: wrap; }
 }
