@@ -24,6 +24,9 @@ export function renderCreativePortfolioTemplate(content, escapeHtml) {
     : "";
 
   const contact = [personal.email, personal.phone, personal.location].filter(Boolean).map(e);
+  const profilePhoto = safeUrl(personal.profile_photo)
+    ? '<img class="cp-profile-photo" src="' + safeUrl(personal.profile_photo) + '" alt="Candidate profile photo" loading="eager" referrerpolicy="no-referrer">'
+    : "";
   [["LinkedIn", personal.linkedin], ["GitHub", personal.github], ["Portfolio", personal.portfolio], ["Website", personal.website]]
     .forEach(([label, value]) => {
       const url = safeUrl(value);
@@ -96,11 +99,11 @@ export function renderCreativePortfolioTemplate(content, escapeHtml) {
     )).join("");
 
   root.innerHTML =
-    '<div class="resume-template-creative-portfolio"><header class="cp-header"><div class="cp-header-copy">' +
+    '<div class="resume-template-creative-portfolio"><header class="cp-header">' + profilePhoto + '<div class="cp-header-copy">' +
     '<p class="cp-kicker">Selected Work · Professional Profile</p><h1>' + e(personal.full_name || "Your Name") +
     '</h1><p class="cp-title">' + e(personal.professional_title || "") +
     '</p><div class="cp-contact">' + contact.join("<span> · </span>") +
-    '</div></div><div class="cp-monogram" aria-hidden="true">CP</div></header>' +
+    '</div><div class="cp-monogram" aria-hidden="true">CP</div></header>' +
     (data.summary ? '<section class="cp-intro"><span class="cp-intro-label">About</span><p>' + e(data.summary) + "</p></section>" : "") +
     "<main>" +
     section("experience", "Experience", experience) +
