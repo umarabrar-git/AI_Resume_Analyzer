@@ -5,6 +5,8 @@ export function renderEducatorStandardTemplate(content, escapeHtml) {
   const section = (key,title,body) => body ? '<section data-section="'+key+'"><h2>'+title+'</h2>'+body+'</section>' : "";
   const list = xs => Array.isArray(xs) ? xs.filter(Boolean).map(x=>"<li>"+e(x)+"</li>").join("") : "";
   const contact = [p.email,p.phone,p.location].filter(Boolean).map(e);
+  const safeUrl = value => { const url = String(value || "").trim(); return /^https?:\/\//i.test(url) ? e(url) : ""; };
+  const profilePhoto = safeUrl(p.profile_photo);
   [[ "LinkedIn",p.linkedin ],["Portfolio",p.portfolio],["Website",p.website]].forEach(([label,url])=>{if(url)contact.push('<a href="'+e(url)+'" target="_blank" rel="noopener noreferrer">'+label+"</a>");});
   const skills = Object.entries(d.skills_by_category || {}).filter(([,v])=>Array.isArray(v)&&v.length).map(([k,v])=>'<div class="es-skill"><strong>'+e(k)+'</strong><span>'+e(v.join(", "))+"</span></div>").join("") || (d.skills?.length ? '<div class="es-skill">'+e(d.skills.join(", "))+"</div>" : "");
   const exp = (d.experience||[]).map(x=>'<article class="es-entry"><div class="es-entry-head"><h3>'+e(x.title||"")+'</h3><time>'+dates(x)+'</time></div><div class="es-meta">'+e(x.company||"")+(x.location?" · "+e(x.location):"")+"</div>"+(x.description?"<p>"+e(x.description)+"</p>":"")+((x.bullets||x.achievements)?"<ul>"+list([...(x.bullets||[]),...(x.achievements||[])])+"</ul>":"")+"</article>").join("");
@@ -15,7 +17,7 @@ export function renderEducatorStandardTemplate(content, escapeHtml) {
   const custom = (d.custom_sections||[]).filter(x=>x.items?.length).map(x=>'<section class="es-custom"><h2>'+e(x.title||"Additional Teaching Experience")+"</h2>"+x.items.map(y=>"<article><h3>"+e(y.title||"")+"</h3>"+(y.description?"<p>"+e(y.description)+"</p>":"")+(y.bullets?.length?"<ul>"+list(y.bullets)+"</ul>":"")+"</article>").join("")+"</section>").join("");
   const cls = "educator-standard", short = "es";
   const root = document.createElement("div");
-  root.innerHTML = '<div class="resume-template-'+cls+'"><header class="'+short+'-header">'+( false ? '<div class="la-kicker">EDUCATION / PRACTICE / IMPACT</div>' : '<div class="es-mark" aria-hidden="true">ED</div>' )+'<div><h1>'+e(p.full_name||"Your Name")+'</h1><p>'+e(p.professional_title||"Educator / Teacher")+'</p><div class="'+short+'-contact">'+contact.join(" <span>•</span> ")+"</div></div></header><main>"+
+  root.innerHTML = '<div class="resume-template-'+cls+'"><header class="'+short+'-header">'+( false ? '<div class="la-kicker">EDUCATION / PRACTICE / IMPACT</div>' : '<div class="es-mark" aria-hidden="true">ED</div>' )+'<div class="es-header-content"><div><h1>'+e(p.full_name||"Your Name")+'</h1><p>'+e(p.professional_title||"Educator / Teacher")+'</p><div class="es-contact">'+contact.join(" <span>•</span> ")+"</div></div>"+(profilePhoto ? '<img class="es-profile-photo" src="' + profilePhoto + '" alt="' + e((p.full_name || "Candidate") + " profile photo") + '">' : "")+"</div></header><main>"+
     section("summary","Professional Teaching Profile",d.summary?"<p>"+e(d.summary)+"</p>":"")+
     section("skills","Teaching & Instructional Skills",skills?'<div class="'+short+'-skills">'+skills+"</div>":"")+
     section("experience","Teaching & Professional Experience",exp)+
