@@ -103,7 +103,7 @@ export function renderCreativePortfolioTemplate(content, escapeHtml) {
     '<p class="cp-kicker">Selected Work · Professional Profile</p><h1>' + e(personal.full_name || "Your Name") +
     '</h1><p class="cp-title">' + e(personal.professional_title || "") +
     '</p><div class="cp-contact">' + contact.join("<span> · </span>") +
-    '</div><div class="cp-monogram" aria-hidden="true">CP</div></header>' +
+    '</div></div><div class="cp-monogram" aria-hidden="true">CP</div></header>' +
     (data.summary ? '<section class="cp-intro"><span class="cp-intro-label">About</span><p>' + e(data.summary) + "</p></section>" : "") +
     "<main>" +
     section("experience", "Experience", experience) +
