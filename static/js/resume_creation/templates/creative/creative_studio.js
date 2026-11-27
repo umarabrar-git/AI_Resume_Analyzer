@@ -11,6 +11,7 @@ export function renderCreativeStudioTemplate(content, escapeHtml) {
     const url = String(value || "").trim();
     return /^https?:\/\//i.test(url) ? e(url) : "";
   };
+  const profilePhoto = safeUrl(personal.profile_photo);
   const dates = (item) => {
     const start = item.start_date || "";
     const end = item.current ? "Present" : (item.end_date || "");
@@ -86,9 +87,11 @@ export function renderCreativeStudioTemplate(content, escapeHtml) {
   const html = '<div class="resume-template-creative-studio"><aside class="cs-rail"><p class="cs-label">Independent Practice</p>' +
     '<span class="cs-index" aria-hidden="true">01</span>' + skillMarkup +
     '<div class="cs-rail-meta">' + contact.join("") + '</div></aside><main class="cs-main">' +
-    '<header class="cs-header"><p class="cs-kicker">Selected work / profile</p><h1>' +
+    '<header class="cs-header"><div class="cs-header-copy"><p class="cs-kicker">Selected work / profile</p><h1>' +
     e(personal.full_name || "Your Name") + '</h1><p class="cs-title">' +
-    e(personal.professional_title || "") + "</p></header>" +
+    e(personal.professional_title || "") + "</p></div>" +
+    (profilePhoto ? '<img class="cs-profile-photo" src="' + profilePhoto + '" alt="' + e((personal.full_name || "Candidate") + " profile photo") + '">' : "") +
+    "</header>" +
     (data.summary ? '<section class="cs-summary"><p>' + e(data.summary) + "</p></section>" : "") +
     section("projects", "Selected Work", projects) + section("experience", "Experience", experience) +
     section("education", "Education", education) + section("certifications", "Credentials", certifications) +
