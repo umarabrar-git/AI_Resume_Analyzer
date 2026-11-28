@@ -6,6 +6,10 @@ export function renderGuestExperienceTemplate(content, escapeHtml) {
   const data = content || {};
   const person = data.personal_information || {};
   const hidden = new Set(data.hidden_sections || []);
+  const photoUrl = String(person.profile_photo || "").trim();
+  const profilePhoto = /^https?:\/\//i.test(photoUrl)
+    ? '<img class="gx-profile-photo" src="' + e(photoUrl) + '" alt="Candidate profile photo">'
+    : "";
   const section = (key, title, body) => body && !hidden.has(key)
     ? '<section class="gx-section" data-section="' + key + '"><h2>' + title + '</h2>' + body + '</section>' : "";
   const dates = (item) => [item.start_date || "", item.current ? "Present" : (item.end_date || "")]
@@ -39,7 +43,7 @@ export function renderGuestExperienceTemplate(content, escapeHtml) {
   const languages = (data.languages || []).map((item) =>
     '<div class="gx-language"><strong>' + e(item.language || "") + '</strong><span>' + e(item.proficiency || "") + "</span></div>").join("");
   const markup = '<div class="resume-template-guest-experience"><header class="gx-header">' +
-    '<div class="gx-overline"><span>HOSPITALITY LEADERSHIP</span><span>THE ART OF WELCOMING</span></div>' +
+    '<div class="gx-overline"><span>HOSPITALITY LEADERSHIP</span><span>THE ART OF WELCOMING</span></div>' + profilePhoto +
     '<h1>' + e(person.full_name || "Your Name") + '</h1><p class="gx-title">' +
     e(person.professional_title || "Guest Experience & Hospitality Leader") + '</p><div class="gx-contact">' +
     contact.join('<span>•</span>') + "</div></header>" +
