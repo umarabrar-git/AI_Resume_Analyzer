@@ -54,3 +54,6 @@
 .template-sample--guest-experience{position:relative;overflow:hidden;background:linear-gradient(160deg,#292f2b 0 43%,#f5efe7 43% 100%);border-top:3px solid #b87945}
 .template-sample--guest-experience::before{content:"";position:absolute;top:16%;left:8%;width:40%;height:5%;background:#e5c49d;box-shadow:0 10px 0 rgba(255,255,255,.85),0 20px 0 rgba(255,255,255,.55)}
 .template-sample--guest-experience::after{content:"";position:absolute;right:8%;bottom:12%;width:34%;height:35%;border-left:2px solid #b87945;border-top:2px solid #b87945}
+
+/* Optional candidate profile photo */
+.gx-header{position:relative}.gx-profile-photo{position:absolute;top:54px;right:38px;width:76px;height:76px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.85);background:#fff}.gx-header h1{padding-right:92px}@media(max-width:600px){.gx-profile-photo{top:48px;right:21px;width:62px;height:62px}.gx-header h1{padding-right:72px}}@media print{.gx-profile-photo{print-color-adjust:exact}}
