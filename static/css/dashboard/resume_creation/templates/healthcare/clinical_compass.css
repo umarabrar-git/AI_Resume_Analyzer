@@ -36,3 +36,5 @@
 .cc-methods{color:var(--cc-muted)}
 @media(max-width:600px){.cc-header{padding:25px 22px 20px}.cc-layout{grid-template-columns:1fr}.cc-rail{padding:22px;border-right:0;border-bottom:1px solid var(--cc-line)}.cc-main{padding:22px}.cc-rail section{margin-bottom:15px}.cc-entry-head{gap:6px}.cc-date{white-space:normal;text-align:right}}
 @media print{.resume-preview.template-clinical_compass{padding:0;box-shadow:none;border:0}.resume-template-clinical-compass{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.cc-layout{min-height:0}.resume-template-clinical-compass section{break-inside:avoid;page-break-inside:avoid}}
+/* Optional candidate profile photo */
+.cc-header{position:relative}.cc-profile-photo{position:absolute;top:30px;right:38px;width:76px;height:76px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.85);background:#fff}.cc-header h1{padding-right:92px}@media(max-width:600px){.cc-profile-photo{top:20px;right:22px;width:62px;height:62px}.cc-header h1{padding-right:72px}}@media print{.cc-profile-photo{print-color-adjust:exact}}
