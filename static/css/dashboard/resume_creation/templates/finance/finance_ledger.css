@@ -36,3 +36,8 @@
 .fl-tools{color:var(--fl-muted)}
 @media(max-width:600px){.fl-header{padding:25px 22px 20px}.fl-layout{grid-template-columns:1fr}.fl-rail{padding:22px;border-right:0;border-bottom:1px solid var(--fl-line)}.fl-main{padding:22px}.fl-rail section{margin-bottom:15px}.fl-entry-head{gap:6px}.fl-date{white-space:normal;text-align:right}}
 @media print{.resume-preview.template-finance_ledger{padding:0;box-shadow:none;border:0}.resume-template-finance-ledger{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.fl-layout{min-height:0}.resume-template-finance-ledger section{break-inside:avoid;page-break-inside:avoid}}
+
+/* Optional candidate profile photo */
+.fl-header{position:relative}.fl-profile-photo{position:absolute;top:30px;right:38px;width:76px;height:76px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.9);background:#fff}.fl-header h1{padding-right:92px}
+@media(max-width:600px){.fl-profile-photo{top:23px;right:22px;width:62px;height:62px}.fl-header h1{padding-right:72px}}
+@media print{.fl-profile-photo{print-color-adjust:exact}}
