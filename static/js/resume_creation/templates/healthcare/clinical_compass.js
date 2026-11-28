@@ -19,6 +19,10 @@ export function renderClinicalCompassTemplate(content, escapeHtml) {
     ? '<section data-section="' + key + '"><h2>' + title + "</h2>" + body + "</section>"
     : "";
   const contact = [personal.email, personal.phone, personal.location].filter(Boolean).map(e);
+  const photoUrl = String(personal.profile_photo || "").trim();
+  const profilePhoto = /^https?:\/\//i.test(photoUrl)
+    ? '<img class="cc-profile-photo" src="' + e(photoUrl) + '" alt="Candidate profile photo">'
+    : "";
   [["LinkedIn", personal.linkedin], ["Portfolio", personal.portfolio], ["Website", personal.website]]
     .forEach(([label, url]) => {
       if (url) contact.push('<a href="' + e(url) + '" target="_blank" rel="noopener noreferrer">' + label + "</a>");
@@ -76,7 +80,7 @@ export function renderClinicalCompassTemplate(content, escapeHtml) {
         "</article>").join(""))).join("");
 
   return '<div class="resume-template-clinical-compass"><header class="cc-header">' +
-    '<div class="cc-kicker">PATIENT CARE · CLINICAL PRACTICE</div><h1>' +
+    '<div class="cc-kicker">PATIENT CARE · CLINICAL PRACTICE</div>' + profilePhoto + '<h1>' +
     e(personal.full_name || "Your Name") + "</h1><p>" +
     e(personal.professional_title || "Healthcare Professional") + '</p><div class="cc-contact">' +
     contact.join('<span aria-hidden="true">•</span>') + "</div></header><div class=\"cc-layout\"><aside class=\"cc-rail\">" +
