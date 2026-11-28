@@ -14,6 +14,10 @@ export function renderMarketSignalTemplate(content, escapeHtml) {
   const section = (key, title, body) => body && !hidden.has(key)
     ? '<section class="ms-section" data-section="' + key + '"><h2>' + title + "</h2>" + body + "</section>" : "";
   const contact = [personal.email, personal.phone, personal.location].filter(Boolean).map(e);
+  const photoUrl = String(personal.profile_photo || "").trim();
+  const profilePhoto = /^https?:\/\//i.test(photoUrl)
+    ? '<img class="ms-profile-photo" src="' + e(photoUrl) + '" alt="Candidate profile photo">'
+    : "";
   [["LinkedIn", personal.linkedin], ["Portfolio", personal.portfolio], ["Website", personal.website]]
     .forEach(([label, url]) => {
       if (url && /^https?:\/\//i.test(String(url).trim()))
@@ -60,7 +64,7 @@ export function renderMarketSignalTemplate(content, escapeHtml) {
     ).join(""))).join("");
   const markup = '<div class="resume-template-market-signal"><header class="ms-header">' +
     '<div class="ms-topline"><span>MARKET SIGNAL / RESEARCH NOTE</span><span>INVESTMENT · EQUITY · PORTFOLIO</span></div>' +
-    '<h1>' + e(personal.full_name || "Your Name") + "</h1>" +
+    profilePhoto + '<h1>' + e(personal.full_name || "Your Name") + "</h1>" +
     '<p class="ms-title">' + e(personal.professional_title || "Investment Research Professional") + "</p>" +
     '<div class="ms-contact">' + contact.join('<span aria-hidden="true">/</span>') + "</div></header>" +
     '<div class="ms-thesis"><span>INVESTMENT APPROACH</span><strong>RESEARCH WITH CONVICTION. DECISIONS WITH DISCIPLINE.</strong></div>' +

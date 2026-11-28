@@ -37,3 +37,6 @@
 .cp-rail-note strong{color:var(--cp-accent);font-size:6.5px;letter-spacing:1px}
 @media(max-width:600px){.cp-header{padding:24px 22px 20px}.cp-grid{grid-template-columns:1fr}.cp-rail{padding:22px;border-right:0;border-bottom:1px solid var(--cp-line)}.cp-main{padding:22px}.cp-entry-head{gap:6px}.cp-entry time{white-space:normal;text-align:right}}
 @media print{.resume-preview.template-carepath{padding:0;box-shadow:none;border:0}.resume-template-carepath{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.cp-grid{min-height:0}.resume-template-carepath section{break-inside:avoid;page-break-inside:avoid}}
+
+/* Optional candidate profile photo */
+.cp-header{position:relative}.cp-profile-photo{position:absolute;top:30px;right:38px;width:76px;height:76px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.85);background:#fff}.cp-header h1{padding-right:92px}@media(max-width:600px){.cp-profile-photo{top:20px;right:22px;width:62px;height:62px}.cp-header h1{padding-right:72px}}@media print{.cp-profile-photo{print-color-adjust:exact}}

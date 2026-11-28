@@ -31,3 +31,5 @@
 .hp-custom{margin-bottom:19px}
 @media(max-width:600px){.resume-template-healthcare-professional{padding:25px 23px}.hp-header{align-items:flex-start;gap:11px}.hp-header-mark{flex-basis:34px;width:34px;height:34px;font-size:23px}.hp-skills{grid-template-columns:1fr}.hp-entry-head{gap:7px}.hp-entry-date{white-space:normal;text-align:right}}
 @media print{.resume-preview.template-healthcare_professional{padding:0;box-shadow:none;border:0}.resume-template-healthcare-professional{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.resume-template-healthcare-professional section{break-inside:avoid;page-break-inside:avoid}}
+/* Optional candidate profile photo */
+.hp-header{position:relative}.hp-profile-photo{position:absolute;top:0;right:0;width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--hp-soft);background:#fff}.hp-header-main h1{padding-right:84px}@media(max-width:600px){.hp-profile-photo{width:60px;height:60px}.hp-header-main h1{padding-right:70px}}@media print{.hp-profile-photo{print-color-adjust:exact}}

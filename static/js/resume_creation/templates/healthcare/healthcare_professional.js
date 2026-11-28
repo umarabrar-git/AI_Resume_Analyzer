@@ -7,6 +7,10 @@ export function renderHealthcareProfessionalTemplate(content, escapeHtml) {
   const data = content || {};
   const personal = data.personal_information || {};
   const hidden = new Set(data.hidden_sections || []);
+  const photoUrl = String(personal.profile_photo || "").trim();
+  const profilePhoto = /^https?:\/\//i.test(photoUrl)
+    ? '<img class="hp-profile-photo" src="' + e(photoUrl) + '" alt="Candidate profile photo">'
+    : "";
 
   const dates = (item) => {
     const start = item.start_date || "";
@@ -96,7 +100,7 @@ export function renderHealthcareProfessionalTemplate(content, escapeHtml) {
 
   root.innerHTML =
     '<div class="resume-template-healthcare-professional"><header class="hp-header">' +
-    '<div class="hp-header-mark" aria-hidden="true">+</div><div class="hp-header-main"><h1>' +
+    '<div class="hp-header-mark" aria-hidden="true">+</div>' + profilePhoto + '<div class="hp-header-main"><h1>' +
     e(personal.full_name || "Your Name") + "</h1><p>" + e(personal.professional_title || "Healthcare Professional") +
     "</p><div>" + contact.join("<span>•</span>") + "</div></div></header><main>" +
     section("summary", data.summary ? '<p class="hp-summary">' + e(data.summary) + "</p>" : "", "Professional Profile") +

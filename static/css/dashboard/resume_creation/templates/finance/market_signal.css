@@ -39,3 +39,6 @@
 .ms-tools{color:#27865f!important;font-size:7px!important;font-weight:700;letter-spacing:.4px}
 @media(max-width:600px){.ms-header{padding:25px 21px 20px}.ms-topline{margin-bottom:17px}.ms-header h1{font-size:24px}.ms-thesis{padding:15px 21px}.ms-layout{grid-template-columns:1fr}.ms-rail{padding:22px;border-right:0;border-bottom:1px solid var(--ms-line)}.ms-main{padding:22px}.ms-entry-head{gap:6px}.ms-entry time{white-space:normal}}
 @media print{.resume-preview.template-market_signal{padding:0;box-shadow:none;border:0}.resume-template-market-signal{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.ms-layout{min-height:0}}
+
+/* Optional candidate profile photo */
+.ms-header{position:relative}.ms-profile-photo{position:absolute;top:28px;right:36px;width:76px;height:76px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.85);background:#fff}.ms-header h1{padding-right:92px}@media(max-width:600px){.ms-profile-photo{top:18px;right:21px;width:62px;height:62px}.ms-header h1{padding-right:72px}}@media print{.ms-profile-photo{print-color-adjust:exact}}
