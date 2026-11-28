@@ -14,6 +14,8 @@ export function renderFinanceLedgerTemplate(content, escapeHtml) {
   const section = (key, title, body) => body && !hidden.has(key)
     ? '<section data-section="' + key + '"><h2>' + title + "</h2>" + body + "</section>" : "";
   const contact = [personal.email, personal.phone, personal.location].filter(Boolean).map(e);
+  const photoUrl = String(personal.profile_photo || "").trim();
+  const photo = /^https?:\/\//i.test(photoUrl) ? '<img class="fl-profile-photo" src="' + e(photoUrl) + '" alt="Candidate profile photo">' : "";
   [["LinkedIn", personal.linkedin], ["Portfolio", personal.portfolio], ["Website", personal.website]]
     .forEach(([label, url]) => {
       if (url) contact.push('<a href="' + e(url) + '" target="_blank" rel="noopener noreferrer">' + label + "</a>");
@@ -67,7 +69,7 @@ export function renderFinanceLedgerTemplate(content, escapeHtml) {
         (entry.bullets && entry.bullets.length ? "<ul>" + bullets(entry.bullets) + "</ul>" : "") +
         "</article>").join(""))).join("");
   return '<div class="resume-template-finance-ledger"><header class="fl-header">' +
-    '<div class="fl-kicker">FINANCE · CONTROLS · PERFORMANCE</div><h1>' +
+    '<div class="fl-kicker">FINANCE · CONTROLS · PERFORMANCE</div>' + photo + '<h1>' +
     e(personal.full_name || "Your Name") + "</h1><p>" +
     e(personal.professional_title || "Finance Professional") + '</p><div class="fl-contact">' +
     contact.join('<span aria-hidden="true">•</span>') + "</div></header><div class=\"fl-layout\"><aside class=\"fl-rail\">" +
