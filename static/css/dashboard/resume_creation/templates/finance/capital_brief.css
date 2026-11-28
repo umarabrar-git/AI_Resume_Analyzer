@@ -40,3 +40,8 @@
 .cb-tools{color:var(--cb-teal)!important;font-size:7px!important;font-weight:700;letter-spacing:.4px}
 @media(max-width:600px){.cb-header{padding:25px 21px 20px}.cb-topline{margin-bottom:17px}.cb-header h1{font-size:24px}.cb-metrics{padding:14px 21px;gap:5px}.cb-metrics strong{font-size:17px}.cb-metrics span{font-size:6px}.cb-layout{grid-template-columns:1fr}.cb-rail{padding:22px;border-right:0;border-bottom:1px solid var(--cb-line)}.cb-main{padding:22px}.cb-entry-head{gap:6px}.cb-entry time{white-space:normal}}
 @media print{.resume-preview.template-capital_brief{padding:0;box-shadow:none;border:0}.resume-template-capital-brief{width:210mm;min-height:297mm;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.cb-layout{min-height:0}}
+
+/* Optional candidate profile photo */
+.cb-header{position:relative}.cb-profile-photo{position:absolute;top:55px;right:36px;width:76px;height:76px;border-radius:50%;object-fit:cover;border:3px solid #fff;background:#fff}.cb-header h1{padding-right:92px}
+@media(max-width:600px){.cb-profile-photo{top:48px;right:21px;width:62px;height:62px}.cb-header h1{padding-right:72px}}
+@media print{.cb-profile-photo{print-color-adjust:exact}}
